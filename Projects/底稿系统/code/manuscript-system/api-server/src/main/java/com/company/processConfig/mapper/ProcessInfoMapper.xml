@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.processConfig.dao.ProcessInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.processConfig.model.ProcessInfo">
+    <id column="PROCESSID" jdbcType="VARCHAR" property="processid" />
+    <result column="STARTPROCESSNODE" jdbcType="VARCHAR" property="startprocessnode" />
+    <result column="ENDPROCESSNODE" jdbcType="VARCHAR" property="endprocessnode" />
+    <result column="OPERID" jdbcType="VARCHAR" property="operid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PROCESSID, STARTPROCESSNODE, ENDPROCESSNODE, OPERID
+  </sql>
+  <select id="selectByExample" parameterType="com.company.processConfig.model.ProcessInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from processinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from processinfo
+    where PROCESSID = #{processid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from processinfo
+    where PROCESSID = #{processid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.processConfig.model.ProcessInfoExample">
+    delete from processinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.processConfig.model.ProcessInfo">
+    <selectKey keyProperty="processid" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into processinfo (PROCESSID, STARTPROCESSNODE, ENDPROCESSNODE, 
+      OPERID)
+    values (#{processid,jdbcType=VARCHAR}, #{startprocessnode,jdbcType=VARCHAR}, #{endprocessnode,jdbcType=VARCHAR}, 
+      #{operid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.processConfig.model.ProcessInfo">
+    <selectKey keyProperty="processid" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into processinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      PROCESSID,
+      <if test="startprocessnode != null">
+        STARTPROCESSNODE,
+      </if>
+      <if test="endprocessnode != null">
+        ENDPROCESSNODE,
+      </if>
+      <if test="operid != null">
+        OPERID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{processid,jdbcType=VARCHAR},
+      <if test="startprocessnode != null">
+        #{startprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="endprocessnode != null">
+        #{endprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="operid != null">
+        #{operid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.processConfig.model.ProcessInfoExample" resultType="java.lang.Long">
+    select count(*) from processinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update processinfo
+    <set>
+      <if test="record.processid != null">
+        PROCESSID = #{record.processid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startprocessnode != null">
+        STARTPROCESSNODE = #{record.startprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endprocessnode != null">
+        ENDPROCESSNODE = #{record.endprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operid != null">
+        OPERID = #{record.operid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update processinfo
+    set PROCESSID = #{record.processid,jdbcType=VARCHAR},
+      STARTPROCESSNODE = #{record.startprocessnode,jdbcType=VARCHAR},
+      ENDPROCESSNODE = #{record.endprocessnode,jdbcType=VARCHAR},
+      OPERID = #{record.operid,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.processConfig.model.ProcessInfo">
+    update processinfo
+    <set>
+      <if test="startprocessnode != null">
+        STARTPROCESSNODE = #{startprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="endprocessnode != null">
+        ENDPROCESSNODE = #{endprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="operid != null">
+        OPERID = #{operid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PROCESSID = #{processid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.processConfig.model.ProcessInfo">
+    update processinfo
+    set STARTPROCESSNODE = #{startprocessnode,jdbcType=VARCHAR},
+      ENDPROCESSNODE = #{endprocessnode,jdbcType=VARCHAR},
+      OPERID = #{operid,jdbcType=VARCHAR}
+    where PROCESSID = #{processid,jdbcType=VARCHAR}
+  </update>
+</mapper>

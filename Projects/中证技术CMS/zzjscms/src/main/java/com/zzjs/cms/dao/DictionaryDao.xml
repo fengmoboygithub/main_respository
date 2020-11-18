@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.DictionaryDao">
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="getDictionariesByKey" resultType="com.zzjs.cms.entity.Dictionary">
+		select * from dictionary where `dicKey`=#{dicKey}
+	</select>
+	
+</mapper>  

@@ -1,0 +1,299 @@
+2018-09-05 16:07:44.720 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application startup failed
+java.lang.IllegalStateException: java.io.FileNotFoundException: D:\work13\springboot-app\logback.xml (系统找不到指定的文件。)
+	at org.springframework.boot.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:315)
+	at org.springframework.boot.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:276)
+	at org.springframework.boot.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:212)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:122)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:74)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:296)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.interapi.app.App.main(App.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.io.FileNotFoundException: D:\work13\springboot-app\logback.xml (系统找不到指定的文件。)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at org.springframework.boot.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:307)
+	... 19 common frames omitted
+2018-09-05 16:08:44.335 [restartedMain] INFO  com.interapi.app.App - Starting App on DESKTOP-11MB8RT with PID 4252 (D:\work13\springboot-app\target\classes started by yangyanchao in D:\work13\springboot-app)
+2018-09-05 16:08:44.338 [restartedMain] INFO  com.interapi.app.App - The following profiles are active: dev
+2018-09-05 16:08:44.703 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@70a0b93a: startup date [Wed Sep 05 16:08:44 CST 2018]; root of context hierarchy
+2018-09-05 16:08:45.847 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-09-05 16:08:50.741 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8091 (http)
+2018-09-05 16:08:50.775 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-09-05 16:08:50.776 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-05 16:08:51.185 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-09-05 16:08:51.186 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6483 ms
+2018-09-05 16:08:51.673 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-05 16:08:51.676 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-05 16:08:51.676 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-05 16:08:51.676 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-05 16:08:51.677 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'MyFilter' to urls: [/getUser, /hello]
+2018-09-05 16:08:51.678 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-05 16:08:53.032 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-09-05 16:08:53.673 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:08:53.767 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-05 16:08:54.071 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-05 16:08:54.074 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-09-05 16:08:54.076 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-09-05 16:08:54.441 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-05 16:08:54.972 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-09-05 16:08:55.729 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:08:56.243 [restartedMain] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ComponentInstanceTabController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabServiceImpl': Unsatisfied dependency expressed through field 'mapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabMapper' defined in file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\dao\ComponentInstanceTabMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+2018-09-05 16:08:56.243 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:08:56.258 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-09-05 16:08:56.262 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-09-05 16:08:56.316 [restartedMain] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-09-05 16:08:56.330 [restartedMain] ERROR org.springframework.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ComponentInstanceTabController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabServiceImpl': Unsatisfied dependency expressed through field 'mapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabMapper' defined in file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\dao\ComponentInstanceTabMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.interapi.app.App.main(App.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabServiceImpl': Unsatisfied dependency expressed through field 'mapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabMapper' defined in file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\dao\ComponentInstanceTabMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'componentInstanceTabMapper' defined in file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\dao\ComponentInstanceTabMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1249)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1342)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 60 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\work13\springboot-app\target\classes\com\interapi\app\generator\mapper\ComponentInstanceTabMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:139)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$322a5e78.CGLIB$sqlSessionFactory$1(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$322a5e78$$FastClassBySpringCGLIB$$308189ed.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$322a5e78.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 61 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 74 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.interapi.app.generator.dao.ComponentInstanceTabMapper.BaseResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:859)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:831)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:613)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:214)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:47)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:285)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 76 common frames omitted
+2018-09-05 16:10:38.281 [restartedMain] INFO  com.interapi.app.App - Starting App on DESKTOP-11MB8RT with PID 9764 (D:\work13\springboot-app\target\classes started by yangyanchao in D:\work13\springboot-app)
+2018-09-05 16:10:38.284 [restartedMain] INFO  com.interapi.app.App - The following profiles are active: dev
+2018-09-05 16:10:38.437 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4601600e: startup date [Wed Sep 05 16:10:38 CST 2018]; root of context hierarchy
+2018-09-05 16:10:39.100 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-09-05 16:10:42.113 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8091 (http)
+2018-09-05 16:10:42.141 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-09-05 16:10:42.145 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-05 16:10:42.341 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-09-05 16:10:42.341 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3904 ms
+2018-09-05 16:10:42.694 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-05 16:10:42.696 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-05 16:10:42.696 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-05 16:10:42.696 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-05 16:10:42.697 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'MyFilter' to urls: [/getUser, /hello]
+2018-09-05 16:10:42.697 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-05 16:10:43.062 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-09-05 16:10:43.483 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:10:43.508 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-05 16:10:43.650 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-05 16:10:43.654 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-09-05 16:10:43.657 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-09-05 16:10:43.745 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-05 16:10:44.027 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-09-05 16:10:44.344 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:10:45.475 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4601600e: startup date [Wed Sep 05 16:10:38 CST 2018]; root of context hierarchy
+2018-09-05 16:10:45.656 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/add],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseModel com.interapi.app.generator.controller.ComponentInstanceTabController.add(com.interapi.app.generator.model.ComponentInstanceTab)
+2018-09-05 16:10:45.658 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/get],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseDataModel<com.interapi.app.generator.model.ComponentInstanceTab> com.interapi.app.generator.controller.ComponentInstanceTabController.get(java.lang.Long)
+2018-09-05 16:10:45.661 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/update],methods=[PUT],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseModel com.interapi.app.generator.controller.ComponentInstanceTabController.update(com.interapi.app.generator.model.ComponentInstanceTab)
+2018-09-05 16:10:45.663 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/getListByPage/{currentPage}/{itemsPerPage}],methods=[GET]}" onto public com.interapi.app.generator.bean.ResponseDataPageListModel<com.interapi.app.generator.model.ComponentInstanceTab> com.interapi.app.generator.controller.ComponentInstanceTabController.getListByPage(int,int,java.lang.String)
+2018-09-05 16:10:45.665 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/del],methods=[DELETE],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseModel com.interapi.app.generator.controller.ComponentInstanceTabController.del(java.lang.Long)
+2018-09-05 16:10:45.668 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-05 16:10:45.671 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-05 16:10:45.712 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-05 16:10:45.713 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-05 16:10:45.803 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-05 16:10:46.526 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-09-05 16:10:46.631 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-09-05 16:10:46.638 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-05 16:10:46.649 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-09-05 16:10:46.749 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2018-09-05 16:10:46.807 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2018-09-05 16:10:46.883 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-09-05 16:10:46.908 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8091 (http)
+2018-09-05 16:10:46.921 [restartedMain] INFO  com.interapi.app.App - Started App in 9.08 seconds (JVM running for 9.925)
+2018-09-05 16:12:11.633 [http-nio-8091-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1535771113,1535783633] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2018-09-05 16:12:11.643 [http-nio-8091-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-05 16:12:11.643 [http-nio-8091-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-05 16:12:11.683 [http-nio-8091-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 40 ms
+2018-09-05 16:26:03.293 [http-nio-8091-exec-2] INFO  c.i.a.g.controller.ComponentInstanceTabController - currentPage:1,itemsPerPage:10,param:null
+2018-09-05 16:26:03.296 [http-nio-8091-exec-2] INFO  c.i.a.g.s.ComponentInstanceTabServiceImpl - 设置第1页10条数据!
+2018-09-05 16:26:03.475 [http-nio-8091-exec-2] DEBUG c.i.a.g.d.C.selectByExample_COUNT - ==>  Preparing: SELECT count(0) FROM component_instance_tab 
+2018-09-05 16:26:03.512 [http-nio-8091-exec-2] DEBUG c.i.a.g.d.C.selectByExample_COUNT - ==> Parameters: 
+2018-09-05 16:26:03.546 [http-nio-8091-exec-2] DEBUG c.i.a.g.d.C.selectByExample_COUNT - <==      Total: 1
+2018-09-05 16:26:03.568 [http-nio-8091-exec-2] DEBUG c.i.a.g.d.C.selectByExample - ==>  Preparing: select 'true' as QUERYID, id, componentId, fileId, isDelete, createTime, createUser, updateTime, updateUser from component_instance_tab LIMIT ? 
+2018-09-05 16:26:03.569 [http-nio-8091-exec-2] DEBUG c.i.a.g.d.C.selectByExample - ==> Parameters: 10(Integer)
+2018-09-05 16:26:03.573 [http-nio-8091-exec-2] DEBUG c.i.a.g.d.C.selectByExample - <==      Total: 10
+2018-09-05 16:26:03.575 [http-nio-8091-exec-2] INFO  c.i.a.g.s.ComponentInstanceTabServiceImpl - 总共有:18条数据,实际返回:10条数据!
+2018-09-05 16:26:26.433 [http-nio-8091-exec-4] INFO  c.i.a.g.controller.ComponentInstanceTabController - currentPage:1,itemsPerPage:10,param:null
+2018-09-05 16:26:26.433 [http-nio-8091-exec-4] INFO  c.i.a.g.s.ComponentInstanceTabServiceImpl - 设置第1页10条数据!
+2018-09-05 16:26:26.435 [http-nio-8091-exec-4] DEBUG c.i.a.g.d.C.selectByExample_COUNT - ==>  Preparing: SELECT count(0) FROM component_instance_tab 
+2018-09-05 16:26:26.435 [http-nio-8091-exec-4] DEBUG c.i.a.g.d.C.selectByExample_COUNT - ==> Parameters: 
+2018-09-05 16:26:26.436 [http-nio-8091-exec-4] DEBUG c.i.a.g.d.C.selectByExample_COUNT - <==      Total: 1
+2018-09-05 16:26:26.437 [http-nio-8091-exec-4] DEBUG c.i.a.g.d.C.selectByExample - ==>  Preparing: select 'true' as QUERYID, id, componentId, fileId, isDelete, createTime, createUser, updateTime, updateUser from component_instance_tab LIMIT ? 
+2018-09-05 16:26:26.437 [http-nio-8091-exec-4] DEBUG c.i.a.g.d.C.selectByExample - ==> Parameters: 10(Integer)
+2018-09-05 16:26:26.443 [http-nio-8091-exec-4] DEBUG c.i.a.g.d.C.selectByExample - <==      Total: 10
+2018-09-05 16:26:26.444 [http-nio-8091-exec-4] INFO  c.i.a.g.s.ComponentInstanceTabServiceImpl - 总共有:18条数据,实际返回:10条数据!
+2018-09-05 16:39:29.846 [restartedMain] INFO  com.interapi.app.App - Starting App on DESKTOP-11MB8RT with PID 860 (D:\work13\springboot-app\target\classes started by yangyanchao in D:\work13\springboot-app)
+2018-09-05 16:39:29.849 [restartedMain] INFO  com.interapi.app.App - The following profiles are active: dev
+2018-09-05 16:39:29.944 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1323e945: startup date [Wed Sep 05 16:39:29 CST 2018]; root of context hierarchy
+2018-09-05 16:39:30.612 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-09-05 16:39:33.221 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8091 (http)
+2018-09-05 16:39:33.241 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-09-05 16:39:33.244 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-05 16:39:33.533 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-09-05 16:39:33.535 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3591 ms
+2018-09-05 16:39:33.795 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-05 16:39:33.796 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-05 16:39:33.797 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-05 16:39:33.797 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-05 16:39:33.798 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'MyFilter' to urls: [/getUser, /hello]
+2018-09-05 16:39:33.798 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-05 16:39:34.148 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-09-05 16:39:34.495 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:39:34.512 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-05 16:39:34.606 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-05 16:39:34.609 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-09-05 16:39:34.611 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-09-05 16:39:34.775 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-05 16:39:34.934 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-09-05 16:39:35.311 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-05 16:39:36.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1323e945: startup date [Wed Sep 05 16:39:29 CST 2018]; root of context hierarchy
+2018-09-05 16:39:36.548 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/add],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseModel com.interapi.app.generator.controller.ComponentInstanceTabController.add(com.interapi.app.generator.model.ComponentInstanceTab)
+2018-09-05 16:39:36.549 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/get],methods=[GET],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseDataModel<com.interapi.app.generator.model.ComponentInstanceTab> com.interapi.app.generator.controller.ComponentInstanceTabController.get(java.lang.Long)
+2018-09-05 16:39:36.550 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/update],methods=[PUT],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseModel com.interapi.app.generator.controller.ComponentInstanceTabController.update(com.interapi.app.generator.model.ComponentInstanceTab)
+2018-09-05 16:39:36.551 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/del],methods=[DELETE],produces=[application/json;charset=UTF-8]}" onto public com.interapi.app.generator.bean.ResponseModel com.interapi.app.generator.controller.ComponentInstanceTabController.del(java.lang.Long)
+2018-09-05 16:39:36.552 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/ComponentInstanceTab/getListByPage/{currentPage}/{itemsPerPage}],methods=[GET]}" onto public com.interapi.app.generator.bean.ResponseDataPageListModel<com.interapi.app.generator.model.ComponentInstanceTab> com.interapi.app.generator.controller.ComponentInstanceTabController.getListByPage(int,int,java.lang.String)
+2018-09-05 16:39:36.555 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-05 16:39:36.557 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-05 16:39:36.595 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-05 16:39:36.596 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-05 16:39:36.662 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-05 16:39:37.086 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-09-05 16:39:37.165 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-09-05 16:39:37.168 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-05 16:39:37.175 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-09-05 16:39:37.194 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2018-09-05 16:39:37.214 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2018-09-05 16:39:37.235 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-09-05 16:39:37.257 [restartedMain] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8091 (http)
+2018-09-05 16:39:37.269 [restartedMain] INFO  com.interapi.app.App - Started App in 7.805 seconds (JVM running for 8.624)
+2018-09-05 16:40:31.236 [http-nio-8091-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-05 16:40:31.238 [http-nio-8091-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-05 16:40:31.277 [http-nio-8091-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 39 ms
+2018-09-05 16:40:31.382 [http-nio-8091-exec-1] INFO  c.i.a.g.controller.ComponentInstanceTabController - currentPage:1,itemsPerPage:10,param:null
+2018-09-05 16:40:31.384 [http-nio-8091-exec-1] INFO  c.i.a.g.s.ComponentInstanceTabServiceImpl - 设置第1页10条数据!
+2018-09-05 16:40:31.480 [http-nio-8091-exec-1] DEBUG c.i.a.g.d.C.selectByExample_COUNT - ==>  Preparing: SELECT count(0) FROM component_instance_tab 
+2018-09-05 16:40:31.504 [http-nio-8091-exec-1] DEBUG c.i.a.g.d.C.selectByExample_COUNT - ==> Parameters: 
+2018-09-05 16:40:31.518 [http-nio-8091-exec-1] DEBUG c.i.a.g.d.C.selectByExample_COUNT - <==      Total: 1
+2018-09-05 16:40:31.521 [http-nio-8091-exec-1] DEBUG c.i.a.g.d.C.selectByExample - ==>  Preparing: select 'true' as QUERYID, id, componentId, fileId, isDelete, createTime, createUser, updateTime, updateUser from component_instance_tab LIMIT ? 
+2018-09-05 16:40:31.522 [http-nio-8091-exec-1] DEBUG c.i.a.g.d.C.selectByExample - ==> Parameters: 10(Integer)
+2018-09-05 16:40:31.528 [http-nio-8091-exec-1] DEBUG c.i.a.g.d.C.selectByExample - <==      Total: 10
+2018-09-05 16:40:31.529 [http-nio-8091-exec-1] INFO  c.i.a.g.s.ComponentInstanceTabServiceImpl - 总共有:18条数据,实际返回:10条数据!

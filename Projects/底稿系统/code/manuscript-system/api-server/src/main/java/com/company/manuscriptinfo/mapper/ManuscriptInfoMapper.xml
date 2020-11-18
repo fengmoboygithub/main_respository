@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.manuscriptinfo.dao.ManuscriptInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.manuscriptinfo.model.ManuscriptInfo">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROJECTID" jdbcType="VARCHAR" property="projectid" />
+    <result column="DIRECTORYID" jdbcType="VARCHAR" property="directoryid" />
+    <result column="DOCNAME" jdbcType="VARCHAR" property="docname" />
+    <result column="HASHNAME" jdbcType="VARCHAR" property="hashname" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="UPLOADDATE" jdbcType="TIMESTAMP" property="uploaddate" />
+    <result column="USERID" jdbcType="VARCHAR" property="userid" />
+    <result column="ORDERNO" jdbcType="BIGINT" property="orderno" />
+    <result column="ISAPP" jdbcType="INTEGER" property="isapp" />
+    <result column="PROCESSNODE" jdbcType="VARCHAR" property="processnode" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="FILETYPE" jdbcType="VARCHAR" property="filetype" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PROJECTID, DIRECTORYID, DOCNAME, HASHNAME, STATUS, UPLOADDATE, USERID, ORDERNO,
+    ISAPP, PROCESSNODE, REMARKS, FILETYPE
+  </sql>
+  <select id="selectByExample" parameterType="com.company.manuscriptinfo.model.ManuscriptInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from manuscriptinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from manuscriptinfo
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from manuscriptinfo
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.manuscriptinfo.model.ManuscriptInfoExample">
+    delete from manuscriptinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.manuscriptinfo.model.ManuscriptInfo">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into manuscriptinfo (ID, PROJECTID, DIRECTORYID,
+    DOCNAME, HASHNAME, STATUS,
+    UPLOADDATE, USERID, ORDERNO,
+    ISAPP, PROCESSNODE, REMARKS,
+    FILETYPE)
+    values (#{id,jdbcType=VARCHAR}, #{projectid,jdbcType=VARCHAR}, #{directoryid,jdbcType=VARCHAR},
+    #{docname,jdbcType=VARCHAR}, #{hashname,jdbcType=VARCHAR}, #{status,jdbcType=CHAR},
+    #{uploaddate,jdbcType=TIMESTAMP}, #{userid,jdbcType=VARCHAR}, #{orderno,jdbcType=BIGINT},
+    #{isapp,jdbcType=INTEGER}, #{processnode,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR},
+    #{filetype,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.manuscriptinfo.model.ManuscriptInfo">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into manuscriptinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="projectid != null">
+        PROJECTID,
+      </if>
+      <if test="directoryid != null">
+        DIRECTORYID,
+      </if>
+      <if test="docname != null">
+        DOCNAME,
+      </if>
+      <if test="hashname != null">
+        HASHNAME,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="uploaddate != null">
+        UPLOADDATE,
+      </if>
+      <if test="userid != null">
+        USERID,
+      </if>
+      <if test="orderno != null">
+        ORDERNO,
+      </if>
+      <if test="isapp != null">
+        ISAPP,
+      </if>
+      <if test="processnode != null">
+        PROCESSNODE,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+      <if test="filetype != null">
+        FILETYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=VARCHAR},
+      <if test="projectid != null">
+        #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryid != null">
+        #{directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="docname != null">
+        #{docname,jdbcType=VARCHAR},
+      </if>
+      <if test="hashname != null">
+        #{hashname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="uploaddate != null">
+        #{uploaddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="isapp != null">
+        #{isapp,jdbcType=INTEGER},
+      </if>
+      <if test="processnode != null">
+        #{processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null">
+        #{filetype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.manuscriptinfo.model.ManuscriptInfoExample" resultType="java.lang.Long">
+    select count(*) from manuscriptinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update manuscriptinfo
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectid != null">
+        PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.directoryid != null">
+        DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.docname != null">
+        DOCNAME = #{record.docname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hashname != null">
+        HASHNAME = #{record.hashname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=CHAR},
+      </if>
+      <if test="record.uploaddate != null">
+        UPLOADDATE = #{record.uploaddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.userid != null">
+        USERID = #{record.userid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderno != null">
+        ORDERNO = #{record.orderno,jdbcType=BIGINT},
+      </if>
+      <if test="record.isapp != null">
+        ISAPP = #{record.isapp,jdbcType=INTEGER},
+      </if>
+      <if test="record.processnode != null">
+        PROCESSNODE = #{record.processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remarks != null">
+        REMARKS = #{record.remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filetype != null">
+        FILETYPE = #{record.filetype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update manuscriptinfo
+    set ID = #{record.id,jdbcType=VARCHAR},
+    PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+    DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+    DOCNAME = #{record.docname,jdbcType=VARCHAR},
+    HASHNAME = #{record.hashname,jdbcType=VARCHAR},
+    STATUS = #{record.status,jdbcType=CHAR},
+    UPLOADDATE = #{record.uploaddate,jdbcType=TIMESTAMP},
+    USERID = #{record.userid,jdbcType=VARCHAR},
+    ORDERNO = #{record.orderno,jdbcType=BIGINT},
+    ISAPP = #{record.isapp,jdbcType=INTEGER},
+    PROCESSNODE = #{record.processnode,jdbcType=VARCHAR},
+    REMARKS = #{record.remarks,jdbcType=VARCHAR},
+    FILETYPE = #{record.filetype,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.manuscriptinfo.model.ManuscriptInfo">
+    update manuscriptinfo
+    <set>
+      <if test="projectid != null">
+        PROJECTID = #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryid != null">
+        DIRECTORYID = #{directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="docname != null">
+        DOCNAME = #{docname,jdbcType=VARCHAR},
+      </if>
+      <if test="hashname != null">
+        HASHNAME = #{hashname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="uploaddate != null">
+        UPLOADDATE = #{uploaddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        USERID = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="orderno != null">
+        ORDERNO = #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="isapp != null">
+        ISAPP = #{isapp,jdbcType=INTEGER},
+      </if>
+      <if test="processnode != null">
+        PROCESSNODE = #{processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null">
+        FILETYPE = #{filetype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.manuscriptinfo.model.ManuscriptInfo">
+    update manuscriptinfo
+    set PROJECTID = #{projectid,jdbcType=VARCHAR},
+      DIRECTORYID = #{directoryid,jdbcType=VARCHAR},
+      DOCNAME = #{docname,jdbcType=VARCHAR},
+      HASHNAME = #{hashname,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      UPLOADDATE = #{uploaddate,jdbcType=TIMESTAMP},
+      USERID = #{userid,jdbcType=VARCHAR},
+      ORDERNO = #{orderno,jdbcType=BIGINT},
+      ISAPP = #{isapp,jdbcType=INTEGER},
+      PROCESSNODE = #{processnode,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR},
+      FILETYPE = #{filetype,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!--批量更新适用性-->
+  <update id="batchUpdateIsapp" parameterType="map">
+    update manuscriptinfo
+    set isapp = #{isapp,jdbcType=VARCHAR}
+    where id in
+    <foreach collection="milist" item="item" open="(" separator="," close=")">
+      #{item,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+</mapper>

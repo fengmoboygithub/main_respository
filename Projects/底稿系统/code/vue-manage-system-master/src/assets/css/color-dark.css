@@ -1,0 +1,100 @@
+.header{
+    background-color: #242f42;
+}
+.plugins-tips{
+    background: #eef1f6;
+}
+.plugins-tips a{
+    color: #20a0ff;
+}
+.el-upload--text em {
+    color: #20a0ff;
+}
+.pure-button{
+    background: #20a0ff;
+}
+.tags-li.active {
+    border: 1px solid #409EFF;
+    background-color: #409EFF;
+}
+.message-title{
+    color: #20a0ff;
+}
+.collapse-btn:hover{
+    background: rgb(40,52,70);
+}
+
+/* 右键菜单样式相关 */
+.v-contextmenu--default{
+    background-color: rgb(50, 65, 87) !important;
+}
+.v-contextmenu-item{
+    color: #bfcbd9;
+    background-color: rgb(50, 65, 87);
+}
+.v-contextmenu-item--hover{
+    color: #bfcbd9;
+    background-color: rgb(40, 52, 70);
+}
+/* 右键菜单样式相关 */
+
+.login-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../img/login-bg.jpg);
+    background-size: 100%;
+}
+.ms-title {
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.ms-login {
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    width: 510px;
+    margin: -190px 0 0 -175px;
+    border-radius: 5px;
+    background: rgba(0,10,48,0.65);
+    overflow: hidden;
+}
+.ms-content {
+    padding: 55px 55px;
+}
+.login-btn {
+    text-align: center;
+}
+.login-btn button {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+    font-size: 24px !important;
+    color: #000;
+    background-color:#20afe3;
+}
+.login-tips {
+    font-size: 12px;
+    line-height: 30px;
+    color: #fff;
+}
+.login-icon-i {
+    color:#20afe3 !important;
+    background-color: #000929 !important;
+    font-size: 24px !important;
+}
+.form-item-input-me .el-input-group__prepend{
+    background-color:#000929 !important;
+    border: 1px solid #000929 !important;
+}
+.form-item-input-me input{
+    background-color: #000929 !important;
+    border: 1px solid #000929 !important;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px !important;
+}

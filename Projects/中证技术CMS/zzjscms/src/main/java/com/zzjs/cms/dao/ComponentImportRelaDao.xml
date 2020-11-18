@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zzjs.cms.dao.ComponentImportRelaDao">
+	<resultMap id="BaseResultMap" type="com.zzjs.cms.entity.ComponentImportRela" >
+    <id column="id" property="id"/>
+    <result column="componentId" property="componentId"/>
+    <result column="componentName" property="componentName"/>
+	<result column="importId" property="importId"/>
+	<result column="sort" property="sort"/>
+	<result column="isDelete" property="isDelete"/>
+	<result column="createTime" property="createTime"/>
+	<result column="createUser" property="createUser"/>
+	<result column="updateTime" property="updateTime"/>
+	<result column="updateUser" property="updateUser"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t.id,
+    t.componentId,
+    tc.componentName,
+    tc.htmlCode,
+	t.importId,
+	t.sort,
+	t.isDelete,
+	t.createTime,
+	t.createUser,
+	t.updateTime,
+	t.updateUser
+  </sql>
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="insert" parameterType="com.zzjs.cms.entity.ComponentImportRela">
+		insert into 
+		component_import_rela (
+			id,
+			componentId,
+			importId,
+			sort,
+			isDelete,
+			createTime,
+			createUser
+		) value (
+			#{id},
+			#{componentId},
+			#{importId},
+			#{sort},
+			'1',
+			#{createTime},
+			#{createUser}
+		)
+		<selectKey resultType="long" keyProperty="id">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<update id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from component_import_rela where
+		id=#{id}
+	</update>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateByPrimaryKey" parameterType="com.zzjs.cms.entity.ComponentImportRela">
+		update component_import_rela set 
+		sort=#{sort}
+		where id=#{id}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="selectByPrimaryKey" parameterType="com.zzjs.cms.entity.ComponentImportRela"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from component_import_rela t join component tc on tc.componentId=t.importId
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByPrimaryKeys" parameterType="com.zzjs.cms.entity.ComponentImportRela"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from component_import_rela t join component tc on tc.componentId=t.importId
+	    <include refid="Base_Where_Clause" />
+	    order by t.sort asc
+	</select>
+	<!-- 查询条件 -->
+	<sql id="Base_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="componentId  != null and componentId != ''">
+	        	<![CDATA[ and  t.componentId = #{componentId} ]]>
+			</if>
+			<if test="id != null">
+	        	<![CDATA[ and  t.id != #{id}  ]]>
+		    </if>
+		</trim>
+	</sql>
+
+	<!-- 查询,排序,分页,模型 -->
+	<select id="selectByModelPagingCount" parameterType="com.zzjs.cms.entity.ComponentImportRela" resultType="int">
+		select count(*) from component_import_rela t join component tc on tc.componentId=t.importId
+		<include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByModelPaging" resultMap="BaseResultMap"
+		parameterType="com.zzjs.cms.entity.ComponentImportRela">
+		select
+		<include refid="Base_Column_List" />
+		from component_import_rela t join component tc on tc.componentId=t.importId
+		<include refid="Base_Where_Clause" />
+		limit #{offset},#{rows}
+	</select>
+</mapper>  

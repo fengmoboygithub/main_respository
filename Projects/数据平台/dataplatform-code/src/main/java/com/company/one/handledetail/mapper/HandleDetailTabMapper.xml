@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.one.handledetail.dao.HandleDetailTabMapper">
+  <resultMap id="BaseResultMap" type="com.company.one.handledetail.model.HandleDetailTab">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="file_id" jdbcType="INTEGER" property="fileId" />
+    <result column="file_creater_code" jdbcType="VARCHAR" property="fileCreaterCode" />
+    <result column="file_receiver_code" jdbcType="VARCHAR" property="fileReceiverCode" />
+    <result column="interface_id" jdbcType="VARCHAR" property="interfaceId" />
+    <result column="submission_date" jdbcType="VARCHAR" property="submissionDate" />
+    <result column="file_num" jdbcType="VARCHAR" property="fileNum" />
+    <result column="operation_id" jdbcType="VARCHAR" property="operationId" />
+    <result column="submission_record_id" jdbcType="VARCHAR" property="submissionRecordId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="submission_msg" jdbcType="VARCHAR" property="submissionMsg" />
+    <result column="submission_error" jdbcType="VARCHAR" property="submissionError" />
+    <result column="submission_bizid" jdbcType="VARCHAR" property="submissionBizid" />
+    <result column="submission_protcolid" jdbcType="VARCHAR" property="submissionProtcolid" />
+    <result column="submission_data" jdbcType="VARCHAR" property="submissionData" />
+    <result column="response_msg" jdbcType="VARCHAR" property="responseMsg" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.company.one.handledetail.model.HandleDetailTab">
+    <result column="data_json" jdbcType="LONGVARCHAR" property="dataJson" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, file_id, file_creater_code, file_receiver_code, interface_id, submission_date, 
+    file_num, operation_id, submission_record_id, status, submission_msg, submission_error, 
+    submission_bizid, submission_protcolid, submission_data, response_msg, create_date, 
+    update_date
+  </sql>
+  <sql id="Blob_Column_List">
+    data_json
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.company.one.handledetail.model.HandleDetailTabExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from handle_detail_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.company.one.handledetail.model.HandleDetailTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from handle_detail_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from handle_detail_tab
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from handle_detail_tab
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.one.handledetail.model.HandleDetailTabExample">
+    delete from handle_detail_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.one.handledetail.model.HandleDetailTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into handle_detail_tab (file_id, file_creater_code, file_receiver_code, 
+      interface_id, submission_date, file_num, 
+      operation_id, submission_record_id, status, 
+      submission_msg, submission_error, submission_bizid, 
+      submission_protcolid, submission_data, response_msg, 
+      create_date, update_date, data_json
+      )
+    values (#{fileId,jdbcType=INTEGER}, #{fileCreaterCode,jdbcType=VARCHAR}, #{fileReceiverCode,jdbcType=VARCHAR}, 
+      #{interfaceId,jdbcType=VARCHAR}, #{submissionDate,jdbcType=VARCHAR}, #{fileNum,jdbcType=VARCHAR}, 
+      #{operationId,jdbcType=VARCHAR}, #{submissionRecordId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{submissionMsg,jdbcType=VARCHAR}, #{submissionError,jdbcType=VARCHAR}, #{submissionBizid,jdbcType=VARCHAR}, 
+      #{submissionProtcolid,jdbcType=VARCHAR}, #{submissionData,jdbcType=VARCHAR}, #{responseMsg,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{dataJson,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.one.handledetail.model.HandleDetailTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into handle_detail_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fileId != null">
+        file_id,
+      </if>
+      <if test="fileCreaterCode != null">
+        file_creater_code,
+      </if>
+      <if test="fileReceiverCode != null">
+        file_receiver_code,
+      </if>
+      <if test="interfaceId != null">
+        interface_id,
+      </if>
+      <if test="submissionDate != null">
+        submission_date,
+      </if>
+      <if test="fileNum != null">
+        file_num,
+      </if>
+      <if test="operationId != null">
+        operation_id,
+      </if>
+      <if test="submissionRecordId != null">
+        submission_record_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="submissionMsg != null">
+        submission_msg,
+      </if>
+      <if test="submissionError != null">
+        submission_error,
+      </if>
+      <if test="submissionBizid != null">
+        submission_bizid,
+      </if>
+      <if test="submissionProtcolid != null">
+        submission_protcolid,
+      </if>
+      <if test="submissionData != null">
+        submission_data,
+      </if>
+      <if test="responseMsg != null">
+        response_msg,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="dataJson != null">
+        data_json,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fileId != null">
+        #{fileId,jdbcType=INTEGER},
+      </if>
+      <if test="fileCreaterCode != null">
+        #{fileCreaterCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fileReceiverCode != null">
+        #{fileReceiverCode,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceId != null">
+        #{interfaceId,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionDate != null">
+        #{submissionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="fileNum != null">
+        #{fileNum,jdbcType=VARCHAR},
+      </if>
+      <if test="operationId != null">
+        #{operationId,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionRecordId != null">
+        #{submissionRecordId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="submissionMsg != null">
+        #{submissionMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionError != null">
+        #{submissionError,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionBizid != null">
+        #{submissionBizid,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionProtcolid != null">
+        #{submissionProtcolid,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionData != null">
+        #{submissionData,jdbcType=VARCHAR},
+      </if>
+      <if test="responseMsg != null">
+        #{responseMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataJson != null">
+        #{dataJson,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.one.handledetail.model.HandleDetailTabExample" resultType="java.lang.Long">
+    select count(*) from handle_detail_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update handle_detail_tab
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileId != null">
+        file_id = #{record.fileId,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileCreaterCode != null">
+        file_creater_code = #{record.fileCreaterCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileReceiverCode != null">
+        file_receiver_code = #{record.fileReceiverCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.interfaceId != null">
+        interface_id = #{record.interfaceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionDate != null">
+        submission_date = #{record.submissionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileNum != null">
+        file_num = #{record.fileNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operationId != null">
+        operation_id = #{record.operationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionRecordId != null">
+        submission_record_id = #{record.submissionRecordId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.submissionMsg != null">
+        submission_msg = #{record.submissionMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionError != null">
+        submission_error = #{record.submissionError,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionBizid != null">
+        submission_bizid = #{record.submissionBizid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionProtcolid != null">
+        submission_protcolid = #{record.submissionProtcolid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.submissionData != null">
+        submission_data = #{record.submissionData,jdbcType=VARCHAR},
+      </if>
+      <if test="record.responseMsg != null">
+        response_msg = #{record.responseMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateDate != null">
+        update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dataJson != null">
+        data_json = #{record.dataJson,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update handle_detail_tab
+    set id = #{record.id,jdbcType=INTEGER},
+      file_id = #{record.fileId,jdbcType=INTEGER},
+      file_creater_code = #{record.fileCreaterCode,jdbcType=VARCHAR},
+      file_receiver_code = #{record.fileReceiverCode,jdbcType=VARCHAR},
+      interface_id = #{record.interfaceId,jdbcType=VARCHAR},
+      submission_date = #{record.submissionDate,jdbcType=VARCHAR},
+      file_num = #{record.fileNum,jdbcType=VARCHAR},
+      operation_id = #{record.operationId,jdbcType=VARCHAR},
+      submission_record_id = #{record.submissionRecordId,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      submission_msg = #{record.submissionMsg,jdbcType=VARCHAR},
+      submission_error = #{record.submissionError,jdbcType=VARCHAR},
+      submission_bizid = #{record.submissionBizid,jdbcType=VARCHAR},
+      submission_protcolid = #{record.submissionProtcolid,jdbcType=VARCHAR},
+      submission_data = #{record.submissionData,jdbcType=VARCHAR},
+      response_msg = #{record.responseMsg,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP},
+      data_json = #{record.dataJson,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update handle_detail_tab
+    set id = #{record.id,jdbcType=INTEGER},
+      file_id = #{record.fileId,jdbcType=INTEGER},
+      file_creater_code = #{record.fileCreaterCode,jdbcType=VARCHAR},
+      file_receiver_code = #{record.fileReceiverCode,jdbcType=VARCHAR},
+      interface_id = #{record.interfaceId,jdbcType=VARCHAR},
+      submission_date = #{record.submissionDate,jdbcType=VARCHAR},
+      file_num = #{record.fileNum,jdbcType=VARCHAR},
+      operation_id = #{record.operationId,jdbcType=VARCHAR},
+      submission_record_id = #{record.submissionRecordId,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      submission_msg = #{record.submissionMsg,jdbcType=VARCHAR},
+      submission_error = #{record.submissionError,jdbcType=VARCHAR},
+      submission_bizid = #{record.submissionBizid,jdbcType=VARCHAR},
+      submission_protcolid = #{record.submissionProtcolid,jdbcType=VARCHAR},
+      submission_data = #{record.submissionData,jdbcType=VARCHAR},
+      response_msg = #{record.responseMsg,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      update_date = #{record.updateDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.one.handledetail.model.HandleDetailTab">
+    update handle_detail_tab
+    <set>
+      <if test="fileId != null">
+        file_id = #{fileId,jdbcType=INTEGER},
+      </if>
+      <if test="fileCreaterCode != null">
+        file_creater_code = #{fileCreaterCode,jdbcType=VARCHAR},
+      </if>
+      <if test="fileReceiverCode != null">
+        file_receiver_code = #{fileReceiverCode,jdbcType=VARCHAR},
+      </if>
+      <if test="interfaceId != null">
+        interface_id = #{interfaceId,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionDate != null">
+        submission_date = #{submissionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="fileNum != null">
+        file_num = #{fileNum,jdbcType=VARCHAR},
+      </if>
+      <if test="operationId != null">
+        operation_id = #{operationId,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionRecordId != null">
+        submission_record_id = #{submissionRecordId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="submissionMsg != null">
+        submission_msg = #{submissionMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionError != null">
+        submission_error = #{submissionError,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionBizid != null">
+        submission_bizid = #{submissionBizid,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionProtcolid != null">
+        submission_protcolid = #{submissionProtcolid,jdbcType=VARCHAR},
+      </if>
+      <if test="submissionData != null">
+        submission_data = #{submissionData,jdbcType=VARCHAR},
+      </if>
+      <if test="responseMsg != null">
+        response_msg = #{responseMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dataJson != null">
+        data_json = #{dataJson,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.company.one.handledetail.model.HandleDetailTab">
+    update handle_detail_tab
+    set file_id = #{fileId,jdbcType=INTEGER},
+      file_creater_code = #{fileCreaterCode,jdbcType=VARCHAR},
+      file_receiver_code = #{fileReceiverCode,jdbcType=VARCHAR},
+      interface_id = #{interfaceId,jdbcType=VARCHAR},
+      submission_date = #{submissionDate,jdbcType=VARCHAR},
+      file_num = #{fileNum,jdbcType=VARCHAR},
+      operation_id = #{operationId,jdbcType=VARCHAR},
+      submission_record_id = #{submissionRecordId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      submission_msg = #{submissionMsg,jdbcType=VARCHAR},
+      submission_error = #{submissionError,jdbcType=VARCHAR},
+      submission_bizid = #{submissionBizid,jdbcType=VARCHAR},
+      submission_protcolid = #{submissionProtcolid,jdbcType=VARCHAR},
+      submission_data = #{submissionData,jdbcType=VARCHAR},
+      response_msg = #{responseMsg,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      data_json = #{dataJson,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.one.handledetail.model.HandleDetailTab">
+    update handle_detail_tab
+    set file_id = #{fileId,jdbcType=INTEGER},
+      file_creater_code = #{fileCreaterCode,jdbcType=VARCHAR},
+      file_receiver_code = #{fileReceiverCode,jdbcType=VARCHAR},
+      interface_id = #{interfaceId,jdbcType=VARCHAR},
+      submission_date = #{submissionDate,jdbcType=VARCHAR},
+      file_num = #{fileNum,jdbcType=VARCHAR},
+      operation_id = #{operationId,jdbcType=VARCHAR},
+      submission_record_id = #{submissionRecordId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      submission_msg = #{submissionMsg,jdbcType=VARCHAR},
+      submission_error = #{submissionError,jdbcType=VARCHAR},
+      submission_bizid = #{submissionBizid,jdbcType=VARCHAR},
+      submission_protcolid = #{submissionProtcolid,jdbcType=VARCHAR},
+      submission_data = #{submissionData,jdbcType=VARCHAR},
+      response_msg = #{responseMsg,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,8 @@
+package ${mapperUrl};
+
+import com.company.base.dao.IBaseDao;
+import ${url};
+import ${exampleurl};
+public interface ${name}Mapper extends IBaseDao<${name}, ${name}Example>{
+
+}

@@ -1,0 +1,510 @@
+#云计算基础
+##弹性计算
+###云服务器
+#####云服务器 ECS,https://www.aliyun.com/product/ecs
+#####弹性裸金属服务器（神龙）,https://www.aliyun.com/product/ebm
+#####轻量应用服务器,https://www.aliyun.com/product/swas
+#####FPGA 云服务器,https://www.aliyun.com/product/ecs/fpga
+#####GPU 云服务器,https://www.aliyun.com/product/ecs/gpu
+#####专有宿主机,https://www.aliyun.com/product/ddh
+#####阿里云服务器操作系统 Aliyun Linux,https://www.aliyun.com/product/alinux
+###高性能计算 HPC
+#####超级计算集群,https://www.aliyun.com/product/scc
+#####弹性高性能计算 E-HPC,https://www.aliyun.com/product/ehpc
+#####批量计算,https://www.aliyun.com/product/batchcompute
+###容器服务
+#####容器服务 ACK,https://www.aliyun.com/product/kubernetes
+#####Serverless容器服务 ASK,https://www.aliyun.com/product/cs/ask
+#####服务网格 ASM,https://www.aliyun.com/product/servicemesh
+#####弹性容器实例 ECI,https://www.aliyun.com/product/eci
+#####容器镜像服务 ACR,https://www.aliyun.com/product/acr
+###弹性编排
+#####弹性伸缩,https://www.aliyun.com/product/ecs/ess
+#####资源编排 ROS,https://www.aliyun.com/product/ros
+#####运维编排 OOS,https://www.aliyun.com/product/oos
+###应用托管
+#####Web应用托管服务（Web+）,https://www.aliyun.com/product/webx
+###Serverless
+#####函数计算 FC,https://www.aliyun.com/product/fc
+#####Serverless 应用引擎 SAE,https://www.aliyun.com/product/aliware/product/sae
+#####Serverless 工作流,https://www.aliyun.com/product/fnf
+###其他
+#####云桌面,https://www.aliyun.com/product/gws
+##存储服务
+###云存储
+#####存储容量单位包,https://www.aliyun.com/product/scu
+#####对象存储 OSS,https://www.aliyun.com/product/oss
+#####块存储,https://www.aliyun.com/product/disk
+#####数据库文件存储 DBFS（公测中）,https://www.aliyun.com/product/dbfs
+#####文件存储 NAS,https://www.aliyun.com/product/nas
+#####文件存储 CPFS,https://www.aliyun.com/product/nas_cpfs
+#####文件存储 HDFS（公测中）,https://www.aliyun.com/product/alidfs
+###个人存储
+#####内容协作平台（公测中）,https://www.aliyun.com/product/ccp
+###存储数据迁移
+#####闪电立方,https://www.aliyun.com/product/mgw
+###智能存储
+#####智能云相册（公测中）,https://www.aliyun.com/product/cloudphoto
+#####智能媒体管理,https://www.aliyun.com/product/imm
+###混合云存储
+#####混合云备份 HBR,https://www.aliyun.com/product/hbr
+#####混合云容灾 HDR,https://www.aliyun.com/product/hdr
+#####云存储网关,https://www.aliyun.com/product/hcs
+#####混合云存储阵列,https://www.aliyun.com/product/hgw
+##CDN与边缘
+#####CDN,https://www.aliyun.com/product/cdn
+#####安全加速 SCDN,https://www.aliyun.com/product/scdn
+#####全站加速 DCDN,https://www.aliyun.com/product/dcdn
+#####PCDN,https://www.aliyun.com/product/pcdn
+#####边缘节点服务 ENS,https://www.aliyun.com/product/ens
+##云通信
+#####短信服务,https://www.aliyun.com/product/sms
+#####语音服务,https://www.aliyun.com/product/vms
+#####智能联络中心（公测中）,https://www.aliyun.com/product/aiccs
+#####物联网无线连接服务,https://www.aliyun.com/product/dyiot
+#####号码隐私保护,https://www.aliyun.com/product/pls
+#####号码认证服务（公测中）,https://www.aliyun.com/product/dypns
+#####号码百科,https://www.aliyun.com/product/dytns
+#####云通信网络加速（公测中）,https://www.aliyun.com/product/snsu
+##网络
+###云上网络
+#####专有网络 VPC,https://www.aliyun.com/product/vpc
+#####云解析 PrivateZone,https://www.aliyun.com/product/pvtz
+#####负载均衡 SLB,https://www.aliyun.com/product/slb
+#####NAT 网关,https://www.aliyun.com/product/nat
+#####弹性公网 IP,https://www.aliyun.com/product/eip
+#####IPv6 转换服务（公测中）,https://www.aliyun.com/product/ipv6trans
+#####共享带宽,https://www.aliyun.com/product/cbwp
+#####共享流量包,https://www.aliyun.com/product/flowbag
+###跨地域网络
+#####云企业网,https://www.aliyun.com/product/cbn
+#####全球加速（公测中）,https://www.aliyun.com/product/ga
+###混合云网络
+#####VPN 网关,https://www.aliyun.com/product/vpn
+#####智能接入网关,https://www.aliyun.com/product/smartag
+#####高速通道,https://www.aliyun.com/product/expressconnect
+##视频云
+#####视频直播,https://www.aliyun.com/product/live
+#####视频点播,https://www.aliyun.com/product/vod
+#####媒体处理,https://www.aliyun.com/product/mts
+#####音视频通信 RTC,https://www.aliyun.com/product/rtc
+#####云视频会议 (公测中）,https://www.aliyun.com/product/aliyuncvc
+#####视频监控,https://www.aliyun.com/product/vs
+#####智能视觉,https://ai.aliyun.com/vi/ivision
+#####视频DNA,https://ai.aliyun.com/vi/dna
+#####视频审核,https://ai.aliyun.com/vi/censor
+#####多模态内容理解,https://ai.aliyun.com/vi/multimodal
+#####视频智能生产,https://ai.aliyun.com/vi/produce
+#####智能封面,https://ai.aliyun.com/vi/cover
+##区块链
+#####区块链服务,https://www.aliyun.com/product/blockchainasaservice/blockchain
+#数据库
+##数据库专属集群
+#####云数据库专属集群MyBase,https://www.aliyun.com/product/apsaradb/cddc
+##关系型数据库
+#####云数据库 PolarDB,https://www.aliyun.com/product/polardb
+#####云原生分布式数据库PolarDB-X（原DRDS升级版）,https://www.aliyun.com/product/drds
+#####云数据库 RDS MySQL 版,https://www.aliyun.com/product/rds/mysql
+#####云数据库 RDS MariaDB TX 版,https://www.aliyun.com/product/rds/mariadb
+#####云数据库 RDS SQL Server 版,https://www.aliyun.com/product/rds/sqlserver
+#####云数据库 RDS PostgreSQL 版,https://www.aliyun.com/product/rds/postgresql
+#####云数据库 RDS PPAS 版,https://www.aliyun.com/product/rds/ppas
+#####云数据库 OceanBase,https://www.aliyun.com/product/oceanbase
+#####PolarDB Box 一体机,https://www.aliyun.com/product/polarbox
+##NoSQL数据库
+#####云数据库 Redis 版,https://www.aliyun.com/product/kvstore
+#####云数据库 MongoDB 版,https://www.aliyun.com/product/mongodb
+#####云数据库 HBase 版,https://cn.aliyun.com/product/hbase
+#####云数据库 Cassandra版,https://www.aliyun.com/product/cds
+#####时序数据库 TSDB版,https://www.aliyun.com/product/hitsdb
+#####云原生多模数据库 Lindorm,https://www.aliyun.com/product/apsaradb/lindorm
+#####时序数据库 InfluxDB® 版,https://www.aliyun.com/product/hitsdb_influxdb_pre
+#####图数据库 GDB,https://www.aliyun.com/product/gdb
+#####云数据库 Memcache 版,https://www.aliyun.com/product/ocs
+#####表格存储 TableStore,https://www.aliyun.com/product/ots
+#####可信账本数据库 LedgerDB （公测中）,https://www.aliyun.com/product/ledgerdb
+##数据仓库
+#####云原生数据仓库AnalyticDB MySQL版,https://www.aliyun.com/product/ads
+#####云原生数据仓库AnalyticDB PostgreSQL版,https://www.aliyun.com/product/gpdb
+#####云数据库 ClickHouse,https://www.aliyun.com/product/clickhouse
+#####数据湖分析,https://www.aliyun.com/product/datalakeanalytics
+##数据库生态工具
+#####数据传输服务 DTS,https://www.aliyun.com/product/dts
+#####数据管理 DMS,https://www.aliyun.com/product/dms
+#####数据库备份 DBS,https://www.aliyun.com/product/dbs
+#####数据库自治服务 DAS,https://www.aliyun.com/product/hdm
+#####数据库网关 DG（公测中）,https://www.aliyun.com/product/dg
+#####数据库专家服务,https://www.aliyun.com/product/dbes
+#####数据库和应用迁移 ADAM（公测中）,https://www.aliyun.com/product/adam
+#安全
+##云安全
+#####DDoS防护,https://www.aliyun.com/product/security/ddos
+#####Web应用防火墙,https://www.aliyun.com/product/waf
+#####SSL 证书,https://www.aliyun.com/product/security/markets/aliyun/product/cas
+#####云安全中心（态势感知）,https://www.aliyun.com/product/sas
+#####云防火墙,https://www.aliyun.com/product/cfw
+#####堡垒机,https://www.aliyun.com/product/bastionhost
+#####漏洞扫描,https://www.aliyun.com/product/avds
+#####操作审计,https://www.aliyun.com/product/actiontrail
+#####配置审计（公测中）,https://www.aliyun.com/product/config
+#####云安全中心（安骑士）,https://www.aliyun.com/product/aegis
+##身份管理
+#####终端访问控制系统（公测中）,https://www.aliyun.com/product/uem
+#####访问控制,https://www.aliyun.com/product/ram
+#####应用身份服务 (IDaaS),https://www.aliyun.com/product/idaas
+##数据安全
+#####数据库审计,https://www.aliyun.com/product/dbaudit
+#####加密服务,https://www.aliyun.com/product/hsm
+#####敏感数据保护 SDDP,https://cn.aliyun.com/product/sddp
+#####密钥管理服务,https://www.aliyun.com/product/kms
+##业务安全
+#####游戏盾,https://www.aliyun.com/product/GameShield
+#####内容安全,https://www.aliyun.com/product/lvwang
+#####风险识别,https://www.aliyun.com/product/saf
+#####实人认证,https://www.aliyun.com/product/cloudauth
+#####爬虫风险管理,https://www.aliyun.com/product/antibot
+##安全服务
+#####安全管家,https://www.aliyun.com/product/sos
+#####渗透测试,https://www.aliyun.com/product/pt
+#####安全众测,https://www.aliyun.com/product/xianzhi
+#####等保咨询,https://www.aliyun.com/product/xianzhi/mlpse
+#####应急响应,https://www.aliyun.com/product/yundun_incident_response
+#####安全培训,https://www.aliyun.com/product/xianzhi_securitytrain
+#####安全评估,https://www.aliyun.com/product/xianzhi_online_car-hailing
+#####代码审计,https://www.aliyun.com/product/xianzhi_codeaudit
+#####安全加固,https://www.aliyun.com/product/xianzhi_securityconsolidate
+#####安全通告,https://www.aliyun.com/product/xianzhi_SecurityNotificationService
+#####PCI DSS合规咨询,https://www.aliyun.com/product/xianzhi_PCIDSS
+##安全解决方案
+#####企业上云安全建设,https://www.aliyun.com/solution/security/basicsecurity
+#####等保合规安全,https://www.aliyun.com/solution/security/compliance
+#####新零售安全,https://www.aliyun.com/solution/security/business
+#####社交/媒体 Anti Spam,https://www.aliyun.com/solution/security/spam
+#####政务云安全,https://www.aliyun.com/solution/security/affairs
+#####专有云安全（云盾）,https://www.aliyun.com/product/apsara-stack_security?wh_ttid=pc
+#大数据
+##大数据计算与分析
+#####MaxCompute,https://www.aliyun.com/product/odps
+#####E-MapReduce,https://www.aliyun.com/product/emapreduce
+#####实时计算 Flink版,https://www.aliyun.com/product/bigdata/product/sc
+#####交互式分析 Hologres,https://www.aliyun.com/product/hologram
+#####Databricks 数据洞察（公测中）,https://www.aliyun.com/product/spark
+#####Elasticsearch,https://www.aliyun.com/product/bigdata/product/elasticsearch
+#####开放搜索,https://www.aliyun.com/product/opensearch
+#####图计算服务（公测中）,https://www.aliyun.com/product/graphcompute
+##数据开发和治理
+#####DataWorks,https://www.aliyun.com/product/bigdata/ide
+#####Dataphin,https://www.aliyun.com/product/dataphin
+##大数据应用与可视化
+#####Quick BI数据可视化分析,https://www.aliyun.com/product/bigdata/bi
+#####DataV数据可视化,https://www.aliyun.com/product/bigdata/datav
+#####智能推荐,https://www.aliyun.com/product/airec
+#####Quick Audience （公测中）,https://www.aliyun.com/product/retailadvqa
+#####DataQuotient 画像分析（公测中）,https://www.aliyun.com/product/drp
+##大数据工具与服务
+#####数据集成,https://www.aliyun.com/product/cdp
+#####数据总线DataHub,https://www.aliyun.com/product/datahub
+##营销场景解决方案
+#####精准营销,https://et.aliyun.com/bigdata/solution
+##大数据基础设施解决方案
+#####大数据仓库,https://data.aliyun.com/solution/base
+#####企业数据服务,https://data.aliyun.com/solution/cds
+#####云上数据集成,https://data.aliyun.com/solution/cdp
+##大数据智能应用解决方案
+#####人地关系数据智能,https://www.aliyun.com/solution/lbsdi
+#####个性化搜索和推荐,https://www.aliyun.com/solution/datavexpo/airec
+#人工智能
+#####录音文件识别,https://ai.aliyun.com/nls/filetrans
+#####实时语音转写,https://ai.aliyun.com/nls/trans
+#####一句话识别,https://ai.aliyun.com/nls/asr
+#####智能语音设备端解决方案,https://www.aliyun.com/product/ai/nls/sdk
+#####语音本地化部署方案,https://ai.aliyun.com/nls/nlslocal
+#####语音合成,https://ai.aliyun.com/nls/tts
+#####语音合成声音定制,https://ai.aliyun.com/nls/customtts
+#####语言模型自学习工具,https://ai.aliyun.com/nls/lmlearning
+##机器翻译
+#####通用版翻译引擎,https://www.aliyun.com/product/ai/base_alimt
+#####专业版翻译引擎,https://www.aliyun.com/product/ai/domain_alimt
+#####定制化翻译服务,https://www.aliyun.com/product/ai/alimt/private_alimt
+#####标准证件翻译,https://www.aliyun.com/product/ai/alimt/certifictetranslation
+#####语种识别,https://www.aliyun.com/product/ai/alimt/language_detection
+#####文档翻译,https://www.aliyun.com/product/ai/alimt/document_translation
+#####协同翻译工具平台,https://www.aliyun.com/product/ai/internationalization
+##遥感影像智能解译
+#####卫星及无人机遥感影像分析产品,https://www.aliyun.com/product/rsimganalys
+#####图像搜索,https://ai.aliyun.com/imagesearch
+#####图像识别,https://ai.aliyun.com/image
+##视觉计算
+#####视觉计算服务 VCS（公测中）,https://www.aliyun.com/product/vcs
+##视觉生产
+#####智能视觉生产,https://www.aliyun.com/product/ai/ivpd
+#####通用型卡证类,https://ai.aliyun.com/ocr/card
+#####汽车相关识别,https://ai.aliyun.com/ocr/vehicle
+#####行业票据识别,https://ai.aliyun.com/ocr/invoice
+#####资产类识别,https://ai.aliyun.com/ocr/certification
+#####通用类文字识别,https://ai.aliyun.com/ocr/general
+#####行业文档类识别,https://ai.aliyun.com/ocr/document
+#####自定义模板识别,https://ai.aliyun.com/ocr/template
+#####教育类识别,https://ai.aliyun.com/ocr/edu
+#####仪器仪表识别,https://ai.aliyun.com/ocr/Instrument
+#####混贴票据识别,https://ai.aliyun.com/ocr/mixinvoice
+#####多卡证智能分类识别,https://ai.aliyun.com/ocr/mixcard
+#####NLP自学习平台,https://ai.aliyun.com/nlp/nlpautoml
+#####智能短信解析,https://www.aliyun.com/product/ai/sms
+#####多语言分词,https://ai.aliyun.com/nlp/ws
+#####词性标注,https://ai.aliyun.com/nlp/pos
+#####命名实体,https://ai.aliyun.com/nlp/ner
+#####情感分析,https://ai.aliyun.com/nlp/sa
+#####中心词提取,https://ai.aliyun.com/nlp/ke
+#####智能文本分类,https://ai.aliyun.com/nlp/tc
+#####文本信息抽取,https://ai.aliyun.com/nlp/ie
+#####商品评价解析,https://ai.aliyun.com/nlp/ra
+#####知识图谱,https://www.aliyun.com/product/ai/nlp/kg
+##三维视觉
+#####三维空间重建（临云镜）,https://www.aliyun.com/product/tdsr
+#####人脸识别,https://ai.aliyun.com/face
+#####文本相似度 （公测中）,https://www.aliyun.com/product/iqa_faq_pre
+#####机器阅读理解（公测中）,https://www.aliyun.com/product/iqa_mrc_pre
+#####视觉智能开放平台,https://vision.aliyun.com/
+##机器学习平台
+#####机器学习平台 PAI ,https://www.aliyun.com/product/bigdata/product/learn
+#####人工智能众包（公测中）,https://www.aliyun.com/product/aicrowd
+##多媒体AI
+#####视频内容分析,https://www.aliyun.com/activity/intelligent/media-ai-portal#/contentStructure
+#####视频封面生成,https://www.aliyun.com/activity/intelligent/media-ai-portal#/contentCreate
+#####视频内容检索（公测中）,https://www.aliyun.com/activity/intelligent/media-ai-portal#/videoFingerprinting
+##城市视觉
+#####城市视觉智能引擎（公测中）,https://www.aliyun.com/product/cityvisual
+#####图片鉴黄,https://ai.aliyun.com/lvwang/imgadult
+#####图片涉政暴恐识别,https://ai.aliyun.com/lvwang/imgterrorism
+#####图片Logo商标检测,https://ai.aliyun.com/lvwang/imglogo
+#####图片垃圾广告识别,https://ai.aliyun.com/lvwang/imgad
+#####图片不良场景识别,https://ai.aliyun.com/lvwang/imglive
+#####图片风险人物识别,https://ai.aliyun.com/lvwang/imgsface
+#####视频风险内容识别,https://ai.aliyun.com/lvwang/video
+#####文本反垃圾识别,https://ai.aliyun.com/lvwang/text
+#####语音垃圾识别,https://ai.aliyun.com/lvwang/audio
+##解决方案
+#####图像自动外检,https://et.aliyun.com/brain/image
+#####工艺参数优化,https://et.aliyun.com/brain/process
+#####城市交通态势评价,https://et.aliyun.com/brain/urbantraffic
+#####特种车辆优先通行,https://et.aliyun.com/brain/vehicle
+#####大规模网格AI信号优化,https://et.aliyun.com/ai/urbantraffic
+#####“见远”视觉智能诊断方案,https://et.aliyun.com/ai/visual_diagnosis
+#####门禁/闸机人脸识别,https://et.aliyun.com/ai/facegate
+#####供应链智能,https://et.aliyun.com/brain/supplychainai
+#####智慧场馆,https://www.aliyun.com/solution/datavexpo
+#####设备数字运维,https://et.aliyun.com/brain/industryoperation
+#####工业设备故障诊断,https://et.aliyun.com/brain/plantmanagement
+#####智能助手,https://et.aliyun.com/aisolution/itma
+#####智能双录,https://et.aliyun.com/ai/nls_aidoublerecord
+#####智能培训,https://et.aliyun.com/aisolution/training
+##数据智能
+#####城市大脑,https://et.aliyun.com/brain/city
+#####工业大脑,https://et.aliyun.com/brain/industry
+#####农业大脑,https://et.aliyun.com/brain/aos
+#####环境大脑,https://et.aliyun.com/brain/environment
+#####医疗大脑,https://et.aliyun.com/brain/healthcare
+#####航空大脑,https://et.aliyun.com/brain/aviation
+#物联网
+##设备服务
+#####设备接入服务,https://www.aliyun.com/product/iot-deviceconnect
+#####AliOS Things (物操作系统),https://www.aliyun.com/product/aliosthings
+#####设备身份认证,https://www.aliyun.com/product/iotid
+##物联网云服务
+#####物联网平台,https://www.aliyun.com/product/iot
+#####物联网应用开发,https://www.aliyun.com/product/iotstudio
+#####物联网数据分析,https://www.aliyun.com/product/linkanalytics
+##边缘计算
+#####边缘计算服务,https://www.aliyun.com/product/iotedge
+#####视频边缘智能服务,https://www.aliyun.com/product/linkvisual
+##网络服务
+#####物联网络管理,https://www.aliyun.com/product/linkwan
+#####物联网无线连接服务,https://www.aliyun.com/product/dyiot
+#####LoRaWAN组网服务,https://www.aliyun.com/product/linkwan
+##物联网安全
+#####物联网安全运营中心,https://www.aliyun.com/product/isoc
+#####物联网可信执行环境,https://www.aliyun.com/product/iotid_tee_pre
+#####物联网固件安全检测,https://www.aliyun.com/product/isoc_fss_pre
+#####物联网区块链可信应用系统,https://www.aliyun.com/product/iotid_ltl_pre
+##生态
+#####物联网市场,https://linkmarket.aliyun.com
+#####ICA物联网标准联盟,https://www.ica-alliance.org
+##相关云服务
+#####智联车管理云平台,https://www.aliyun.com/product/iovcc
+#####物联网云资源套餐,https://iot.aliyun.com/zebra/cloudproductiot
+##行业平台
+#####生活物联网平台（飞燕）,https://www.aliyun.com/product/livinglink
+#####城市物联网平台,https://www.aliyun.com/product/iot/linkcity
+##行业场景解决方案
+#####全域停车,https://www.aliyun.com/solution/iot/parking
+#####全域旅游,https://www.aliyun.com/solution/iot/culturaltourism
+#####非现场执法,https://www.aliyun.com/solution/iot/flexibility
+#####社区治理,https://www.aliyun.com/solution/iot/community
+#####智慧消防,https://www.aliyun.com/solution/iot/outfire
+#####玩具行业数字工厂,https://www.aliyun.com/solution/iot/toyfactory
+#####家电行业数字工厂,https://www.aliyun.com/solution/iot/appliancefactory
+#####数字农业,https://www.aliyun.com/solution/iot/farm
+#####智慧建筑,https://www.aliyun.com/solution/iot/building
+#####智能长租,https://www.aliyun.com/solution/iot/longterm
+#####AIoT教育实训,https://www.aliyun.com/solution/iot/practicetraining
+#开发与运维
+##备份、迁移与容灾
+#####应用发现服务 APDS（公测中）,https://www.aliyun.com/product/apds
+#####闪电立方,https://www.aliyun.com/product/mgw
+#####迁移工具,https://help.aliyun.com/product/121538.html
+##开发者平台
+#####小程序云（公测中）,https://www.aliyun.com/product/miniappdev
+#####开发者中心,https://developer.aliyun.com/index
+#####物联网开发者平台,https://www.aliyun.com/product/iot
+#####项目协作,https://www.aliyun.com/product/yunxiao/project
+#####知识库,https://www.aliyun.com/product/yunxiao/thoughts
+#####代码管理,https://www.aliyun.com/product/yunxiao/codeup
+#####测试管理,https://www.aliyun.com/product/yunxiao/testhub
+#####流水线,https://www.aliyun.com/product/yunxiao/flow
+#####制品仓库,https://www.aliyun.com/product/yunxiao/packages
+###研发
+#####移动 DevOps（公测中）,https://www.aliyun.com/product/emascrash/mobile_devops
+###测试
+#####移动测试,https://www.aliyun.com/product/mqc
+###运维
+#####移动热修复,https://www.aliyun.com/product/hotfix
+#####崩溃分析,https://www.aliyun.com/product/emascrash/crash
+#####性能分析,https://www.aliyun.com/product/emascrash/apm
+#####远程日志,https://www.aliyun.com/product/emascrash/tlog
+###运营
+#####移动推送,https://www.aliyun.com/product/cps
+#####移动数据分析,https://www.aliyun.com/product/man
+#####移动用户反馈,https://www.aliyun.com/product/feedback
+###网络
+#####HTTPDNS,https://www.aliyun.com/product/httpdns
+##测试
+#####性能测试 PTS,https://www.aliyun.com/product/pts
+#####移动测试,https://www.aliyun.com/product/mqc
+##仓库服务
+#####Maven 公共仓库服务,https://m.aliyun.com/markets/aliyun/ali-repo
+#####容器镜像服务,https://www.aliyun.com/product/acr
+#####Node 模块仓库,https://node.console.aliyun.com/registry/home
+##企业IT治理
+#####访问控制,https://www.aliyun.com/product/ram
+#####资源管理（公测中）,https://www.aliyun.com/product/entconsole
+#####操作审计（公测中）,https://www.aliyun.com/product/actiontrail
+#####配置审计 （公测中）,https://www.aliyun.com/product/config
+##API与工具
+#####OpenAPI,https://open.aliyun.com/apis
+#####SDK,https://open.aliyun.com/sdk
+#####OpenAPI Explorer（公测中）,https://www.aliyun.com/product/openapiexplorer
+#####云命令行（公测中）,https://www.aliyun.com/product/cloudshell
+#####逻辑编排（公测中）,https://www.aliyun.com/product/logiccomposer
+##API 控制中心
+#####API 错误中心,https://error-center.aliyun.com/
+#####Cloud Toolkit,https://www.aliyun.com/product/cloudtoolkit
+#####Dragonwell,https://www.aliyun.com/product/dragonwell
+##开发与运维
+#####应用实时监控服务 ARMS,https://www.aliyun.com/product/arms
+#####云监控,https://www.aliyun.com/product/jiankong
+#####应用高可用服务 AHAS,https://www.aliyun.com/product/ahas
+#####智能顾问（公测中）,https://www.aliyun.com/product/advisor
+#####日志服务 ,https://www.aliyun.com/product/sls
+#####Node.js性能平台,https://www.aliyun.com/product/nodejs
+#####链路追踪,https://www.aliyun.com/product/xtrace
+#####代码托管 ,https://promotion.aliyun.com/ntms/act/code.html
+##解决方案
+#####DevOps解决方案,https://develop.aliyun.com/devops
+#####敏捷研发,https://www.aliyun.com/solution/devops/scrum
+#企业应用
+#####域名注册,https://wanwang.aliyun.com/
+#####云解析 DNS,https://wanwang.aliyun.com/domain/dns
+#####域名交易,https://mi.aliyun.com/
+#####网站建设,https://ac.aliyun.com/jianzhan
+#####企业网站定制,https://ac.aliyun.com/jianzhan/webdesign
+#####网站模板,https://ac.aliyun.com/jianzhan/website
+#####云虚拟主机,https://wanwang.aliyun.com/hosting
+#####海外云虚拟主机,https://www.aliyun.com/chinaglobal/promotion/virtual2017
+#####备案,https://beian.aliyun.com/
+#####公司/个体工商注册,https://gs.aliyun.com/product/gongshang
+#####园区代理记账,https://gs.aliyun.com/product/yqdz
+#####ICP经营性备案,https://tm.aliyun.com/channel/product/icp
+##知识产权服务
+#####商标注册,https://tm.aliyun.com/
+#####商标交易,https://tm.aliyun.com/trans
+#####智能LOGO设计,https://logo.aliyun.com/
+#####软件著作权登记,https://www.aliyun.com/acts/domain/copyright
+##应用服务
+#####cloud desktop,https://www.aliyun.com/product/clouddesktop
+#####云AP,https://www.aliyun.com/product/cloudap
+#####API 网关,https://www.aliyun.com/product/apigateway
+#####邮件推送,https://www.aliyun.com/product/directmail
+#####云价签（公测中）,https://www.aliyun.com/product/cloudesl
+#####专属钉钉,https://www.aliyun.com/product/dingtalkpro
+##智能设计服务
+#####智能设计,https://www.aliyun.com/product/luban
+##专有云
+#####Apsara Stack,https://www.aliyun.com/product/apsara-stack
+#####消息队列 RocketMQ 版,https://www.aliyun.com/product/rocketmq
+#####消息队列 Kafka 版,https://www.aliyun.com/product/kafka
+#####消息队列 AMQP 版,https://www.aliyun.com/product/amqp
+#####微消息队列 MQTT 版,https://www.aliyun.com/product/mq4iot
+#####消息服务 MNS,https://www.aliyun.com/product/mns
+#####事件总线 EventBridge,https://www.aliyun.com/product/aliware/eventbridge
+#####企业级分布式应用服务 EDAS,https://www.aliyun.com/product/edas
+#####微服务引擎 MSE,https://www.aliyun.com/product/aliware/mse
+#####应用配置管理 ACM,https://www.aliyun.com/product/acm
+#####全局事务服务 GTS,https://www.aliyun.com/aliware/txc
+#####云服务总线 CSB,https://www.aliyun.com/product/csb
+##智能客服
+#####云呼叫中心,https://www.aliyun.com/product/ccc
+#####云小蜜,https://www.aliyun.com/product/beebot
+#####智能外呼(公测中),https://www.aliyun.com/product/outboundbot
+#####智能语音导航(公测中),https://www.aliyun.com/product/voicebot
+#####智能对话分析,https://www.aliyun.com/product/sca
+#####云客服,https://www.aliyun.com/product/ccs
+##企业办公协同
+#####Teambition企业协同,https://www.teambition.com
+#####宜搭,https://www.aliyun.com/product/yida
+#####云投屏,https://www.aliyun.com/product/cd
+#####企业邮箱,https://wanwang.aliyun.com/mail
+#####机器人流程自动化 RPA,https://www.aliyun.com/product/codestore
+#####专属钉钉,https://www.aliyun.com/solution/dingtalkpro/index
+##企业服务解决方案
+#####SAP云,https://www.aliyun.com/solution/sap/index
+#####双中台的会员营销,https://www.aliyun.com/solution/membermarketing/index
+#####业务中台技术,https://www.aliyun.com/solution/bme/index
+#####全域集成（iPaaS）,https://www.aliyun.com/solution/ipaas/index
+#####敏捷研发,https://www.aliyun.com/solution/devops/scrum
+#####DevOps解决方案,https://www.aliyun.com/solution/devops/yunxiao
+#####钉钉云小程序,https://www.aliyun.com/solution/dingtalk/la/index
+#####VMware云,https://www.aliyun.com/solution/vmware/index
+#####跨网机器人,https://www.aliyun.com/solution/linkmore/index
+#####AIOps故障管理,https://www.aliyun.com/solution/aiops/index
+#####端点全渠道零售,https://www.aliyun.com/solution/terminuslingshou/
+#####端点采购供应链,https://www.aliyun.com/solution/CollaborationProcurements/index
+#####端点企业级PaaS平台,https://www.aliyun.com/solution/terminusPaaS/
+#行业引擎
+##智能交通
+#####智能出行引擎,https://m.aliyun.com/markets/aliyun/citybraintraffic
+##智能工业
+#####工业视觉智能,https://www.aliyun.com/product/indvi
+##新零售
+#####货架商品识别与管理（公测中）,https://www.aliyun.com/product/retailir
+##数字政府
+#####政务钉钉（公测中）,https://www.aliyun.com/product/govdingtalk
+##数字金融
+#####金融分布式架构 SOFAStack ,https://www.aliyun.com/product/sofa
+#####云行情http://aliyun.com/product/assettech
+###小程序
+#####mPaaS小程序,https://www.aliyun.com/product/mobilepaas/mpaas-miniprogram
+###发布
+#####移动发布,https://www.aliyun.com/product/mobilepaas/mobile-deployment
+###分析
+#####移动分析,https://www.aliyun.com/product/mobilepaas/mobile-analysis
+###运营
+#####智能投放,https://www.aliyun.com/product/mobilepaas/mobile-contents-delivery
+###后台连接
+#####移动网关,https://www.aliyun.com/product/mobilepaas/mobile-gateway
+#####数据同步,https://www.aliyun.com/product/mobilepaas/mobile-sync
+##通用行业
+#####地址标准化,https://www.aliyun.com/product/addresspurification/addrp
+#####IP地理位置库,https://www.aliyun.com/product/dns/geoip
+##云游戏
+#####云游戏平台,https://www.aliyun.com/product/industryengine/cloudgamingplatform

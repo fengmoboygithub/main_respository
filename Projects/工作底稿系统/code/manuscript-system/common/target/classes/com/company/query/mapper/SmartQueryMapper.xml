@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.query.dao.SmartQueryMapper" >
+	<resultMap id="BaseResultMap" type="com.company.query.model.SmartQueryModel">
+    <result column="PROPERTY1" jdbcType="VARCHAR" property="property1" />
+    <result column="PROPERTY2" jdbcType="VARCHAR" property="property2" />
+    <result column="PROPERTY3" jdbcType="VARCHAR" property="property3" />
+    <result column="PROPERTY4" jdbcType="VARCHAR" property="property4" />
+    <result column="PROPERTY5" jdbcType="VARCHAR" property="property5" />
+    <result column="PROPERTY6" jdbcType="VARCHAR" property="property6" />
+    <result column="PROPERTY7" jdbcType="VARCHAR" property="property7" />
+    <result column="PROPERTY8" jdbcType="VARCHAR" property="property8" />
+    <result column="PROPERTY9" jdbcType="VARCHAR" property="property9" />
+    <result column="PROPERTY10" jdbcType="VARCHAR" property="property10" />
+    <result column="PROPERTY11" jdbcType="VARCHAR" property="property11" />
+    <result column="PROPERTY12" jdbcType="VARCHAR" property="property12" />
+    <result column="PROPERTY13" jdbcType="VARCHAR" property="property13" />
+    <result column="PROPERTY14" jdbcType="VARCHAR" property="property14" />
+    <result column="PROPERTY15" jdbcType="VARCHAR" property="property15" />
+    <result column="PROPERTY16" jdbcType="VARCHAR" property="property16" />
+    <result column="PROPERTY17" jdbcType="VARCHAR" property="property17" />
+    <result column="PROPERTY18" jdbcType="VARCHAR" property="property18" />
+    <result column="PROPERTY19" jdbcType="VARCHAR" property="property19" />
+    <result column="PROPERTY20" jdbcType="VARCHAR" property="property20" />
+    <result column="PROPERTY21" jdbcType="VARCHAR" property="property21" />
+    <result column="PROPERTY22" jdbcType="VARCHAR" property="property22" />
+    <result column="PROPERTY23" jdbcType="VARCHAR" property="property23" />
+    <result column="PROPERTY24" jdbcType="VARCHAR" property="property24" />
+    <result column="PROPERTY25" jdbcType="VARCHAR" property="property25" />
+    <result column="PROPERTY26" jdbcType="VARCHAR" property="property26" />
+    <result column="PROPERTY27" jdbcType="VARCHAR" property="property27" />
+    <result column="PROPERTY28" jdbcType="VARCHAR" property="property28" />
+    <result column="PROPERTY29" jdbcType="VARCHAR" property="property29" />
+    <result column="PROPERTY30" jdbcType="VARCHAR" property="property30" />
+    <result column="PROPERTY31" jdbcType="VARCHAR" property="property31" />
+    <result column="PROPERTY32" jdbcType="VARCHAR" property="property32" />
+    <result column="PROPERTY33" jdbcType="VARCHAR" property="property33" />
+    <result column="PROPERTY34" jdbcType="VARCHAR" property="property34" />
+    <result column="PROPERTY35" jdbcType="VARCHAR" property="property35" />
+    <result column="PROPERTY36" jdbcType="VARCHAR" property="property36" />
+    <result column="PROPERTY37" jdbcType="VARCHAR" property="property37" />
+    <result column="PROPERTY38" jdbcType="VARCHAR" property="property38" />
+    <result column="PROPERTY39" jdbcType="VARCHAR" property="property39" />
+    <result column="PROPERTY40" jdbcType="VARCHAR" property="property40" />
+    <result column="PROPERTY41" jdbcType="VARCHAR" property="property41" />
+    <result column="PROPERTY42" jdbcType="VARCHAR" property="property42" />
+    <result column="PROPERTY43" jdbcType="VARCHAR" property="property43" />
+    <result column="PROPERTY44" jdbcType="VARCHAR" property="property44" />
+    <result column="PROPERTY45" jdbcType="VARCHAR" property="property45" />
+    <result column="PROPERTY46" jdbcType="VARCHAR" property="property46" />
+    <result column="PROPERTY47" jdbcType="VARCHAR" property="property47" />
+    <result column="PROPERTY48" jdbcType="VARCHAR" property="property48" />
+    <result column="PROPERTY49" jdbcType="VARCHAR" property="property49" />
+    <result column="PROPERTY50" jdbcType="VARCHAR" property="property50" />
+    <result column="PROPERTY51" jdbcType="VARCHAR" property="property51" />
+    <result column="PROPERTY52" jdbcType="VARCHAR" property="property52" />
+    <result column="PROPERTY53" jdbcType="VARCHAR" property="property53" />
+    <result column="PROPERTY54" jdbcType="VARCHAR" property="property54" />
+    <result column="PROPERTY55" jdbcType="VARCHAR" property="property55" />
+    <result column="PROPERTY56" jdbcType="VARCHAR" property="property56" />
+    <result column="PROPERTY57" jdbcType="VARCHAR" property="property57" />
+    <result column="PROPERTY58" jdbcType="VARCHAR" property="property58" />
+    <result column="PROPERTY59" jdbcType="VARCHAR" property="property59" />
+    <result column="PROPERTY60" jdbcType="VARCHAR" property="property60" />
+    <result column="PROPERTY61" jdbcType="VARCHAR" property="property61" />
+    <result column="PROPERTY62" jdbcType="VARCHAR" property="property62" />
+    <result column="PROPERTY63" jdbcType="VARCHAR" property="property63" />
+    <result column="PROPERTY64" jdbcType="VARCHAR" property="property64" />
+    <result column="PROPERTY65" jdbcType="VARCHAR" property="property65" />
+    <result column="PROPERTY66" jdbcType="VARCHAR" property="property66" />
+    <result column="PROPERTY67" jdbcType="VARCHAR" property="property67" />
+    <result column="PROPERTY68" jdbcType="VARCHAR" property="property68" />
+    <result column="PROPERTY69" jdbcType="VARCHAR" property="property69" />
+    <result column="PROPERTY70" jdbcType="VARCHAR" property="property70" />
+    <result column="PROPERTY71" jdbcType="VARCHAR" property="property71" />
+    <result column="PROPERTY72" jdbcType="VARCHAR" property="property72" />
+    <result column="PROPERTY73" jdbcType="VARCHAR" property="property73" />
+    <result column="PROPERTY74" jdbcType="VARCHAR" property="property74" />
+    <result column="PROPERTY75" jdbcType="VARCHAR" property="property75" />
+    <result column="PROPERTY76" jdbcType="VARCHAR" property="property76" />
+    <result column="PROPERTY77" jdbcType="VARCHAR" property="property77" />
+    <result column="PROPERTY78" jdbcType="VARCHAR" property="property78" />
+    <result column="PROPERTY79" jdbcType="VARCHAR" property="property79" />
+    <result column="PROPERTY80" jdbcType="VARCHAR" property="property80" />
+    <result column="PROPERTY81" jdbcType="VARCHAR" property="property81" />
+    <result column="PROPERTY82" jdbcType="VARCHAR" property="property82" />
+    <result column="PROPERTY83" jdbcType="VARCHAR" property="property83" />
+    <result column="PROPERTY84" jdbcType="VARCHAR" property="property84" />
+    <result column="PROPERTY85" jdbcType="VARCHAR" property="property85" />
+    <result column="PROPERTY86" jdbcType="VARCHAR" property="property86" />
+    <result column="PROPERTY87" jdbcType="VARCHAR" property="property87" />
+    <result column="PROPERTY88" jdbcType="VARCHAR" property="property88" />
+    <result column="PROPERTY89" jdbcType="VARCHAR" property="property89" />
+    <result column="PROPERTY90" jdbcType="VARCHAR" property="property90" />
+    <result column="PROPERTY91" jdbcType="VARCHAR" property="property91" />
+    <result column="PROPERTY92" jdbcType="VARCHAR" property="property92" />
+    <result column="PROPERTY93" jdbcType="VARCHAR" property="property93" />
+    <result column="PROPERTY94" jdbcType="VARCHAR" property="property94" />
+    <result column="PROPERTY95" jdbcType="VARCHAR" property="property95" />
+    <result column="PROPERTY96" jdbcType="VARCHAR" property="property96" />
+    <result column="PROPERTY97" jdbcType="VARCHAR" property="property97" />
+    <result column="PROPERTY98" jdbcType="VARCHAR" property="property98" />
+    <result column="PROPERTY99" jdbcType="VARCHAR" property="property99" />
+    <result column="PROPERTY100" jdbcType="DECIMAL" property="property100" />
+    <result column="PROPERTY101" jdbcType="DECIMAL" property="property101" />
+    <result column="PROPERTY102" jdbcType="DECIMAL" property="property102" />
+    <result column="PROPERTY103" jdbcType="DECIMAL" property="property103" />
+    <result column="PROPERTY104" jdbcType="DECIMAL" property="property104" />
+    <result column="PROPERTY105" jdbcType="DECIMAL" property="property105" />
+    <result column="PROPERTY106" jdbcType="DECIMAL" property="property106" />
+    <result column="PROPERTY107" jdbcType="DECIMAL" property="property107" />
+    <result column="PROPERTY108" jdbcType="DECIMAL" property="property108" />
+    <result column="PROPERTY109" jdbcType="DECIMAL" property="property109" />
+    <result column="PROPERTY110" jdbcType="DECIMAL" property="property110" />
+    <result column="PROPERTY111" jdbcType="DECIMAL" property="property111" />
+    <result column="PROPERTY112" jdbcType="DECIMAL" property="property112" />
+    <result column="PROPERTY113" jdbcType="DECIMAL" property="property113" />
+    <result column="PROPERTY114" jdbcType="DECIMAL" property="property114" />
+    <result column="PROPERTY115" jdbcType="DECIMAL" property="property115" />
+    <result column="PROPERTY116" jdbcType="DECIMAL" property="property116" />
+    <result column="PROPERTY117" jdbcType="DECIMAL" property="property117" />
+    <result column="PROPERTY118" jdbcType="DECIMAL" property="property118" />
+    <result column="PROPERTY119" jdbcType="DECIMAL" property="property119" />
+    <result column="PROPERTY120" jdbcType="DECIMAL" property="property120" />
+    <result column="PROPERTY121" jdbcType="DECIMAL" property="property121" />
+    <result column="PROPERTY122" jdbcType="DECIMAL" property="property122" />
+    <result column="PROPERTY123" jdbcType="DECIMAL" property="property123" />
+    <result column="PROPERTY124" jdbcType="DECIMAL" property="property124" />
+    <result column="PROPERTY125" jdbcType="DECIMAL" property="property125" />
+    <result column="PROPERTY126" jdbcType="DECIMAL" property="property126" />
+    <result column="PROPERTY127" jdbcType="DECIMAL" property="property127" />
+    <result column="PROPERTY128" jdbcType="DECIMAL" property="property128" />
+    <result column="PROPERTY129" jdbcType="DECIMAL" property="property129" />
+    <result column="PROPERTY130" jdbcType="DECIMAL" property="property130" />
+    <result column="PROPERTY131" jdbcType="DECIMAL" property="property131" />
+    <result column="PROPERTY132" jdbcType="DECIMAL" property="property132" />
+    <result column="PROPERTY133" jdbcType="DECIMAL" property="property133" />
+    <result column="PROPERTY134" jdbcType="DECIMAL" property="property134" />
+    <result column="PROPERTY135" jdbcType="DECIMAL" property="property135" />
+    <result column="PROPERTY136" jdbcType="DECIMAL" property="property136" />
+    <result column="PROPERTY137" jdbcType="DECIMAL" property="property137" />
+    <result column="PROPERTY138" jdbcType="DECIMAL" property="property138" />
+    <result column="PROPERTY139" jdbcType="DECIMAL" property="property139" />
+    <result column="PROPERTY140" jdbcType="DECIMAL" property="property140" />
+    <result column="PROPERTY141" jdbcType="DECIMAL" property="property141" />
+    <result column="PROPERTY142" jdbcType="DECIMAL" property="property142" />
+    <result column="PROPERTY143" jdbcType="DECIMAL" property="property143" />
+    <result column="PROPERTY144" jdbcType="DECIMAL" property="property144" />
+    <result column="PROPERTY145" jdbcType="DECIMAL" property="property145" />
+    <result column="PROPERTY146" jdbcType="DECIMAL" property="property146" />
+    <result column="PROPERTY147" jdbcType="DECIMAL" property="property147" />
+    <result column="PROPERTY148" jdbcType="DECIMAL" property="property148" />
+    <result column="PROPERTY149" jdbcType="DECIMAL" property="property149" />
+    <result column="PROPERTY150" jdbcType="DECIMAL" property="property150" />
+    <result column="PROPERTY151" jdbcType="DECIMAL" property="property151" />
+    <result column="PROPERTY152" jdbcType="DECIMAL" property="property152" />
+    <result column="PROPERTY153" jdbcType="DECIMAL" property="property153" />
+    <result column="PROPERTY154" jdbcType="DECIMAL" property="property154" />
+    <result column="PROPERTY155" jdbcType="DECIMAL" property="property155" />
+    <result column="PROPERTY156" jdbcType="DECIMAL" property="property156" />
+    <result column="PROPERTY157" jdbcType="DECIMAL" property="property157" />
+    <result column="PROPERTY158" jdbcType="DECIMAL" property="property158" />
+    <result column="PROPERTY159" jdbcType="DECIMAL" property="property159" />
+    <result column="PROPERTY160" jdbcType="DECIMAL" property="property160" />
+    <result column="PROPERTY161" jdbcType="DECIMAL" property="property161" />
+    <result column="PROPERTY162" jdbcType="DECIMAL" property="property162" />
+    <result column="PROPERTY163" jdbcType="DECIMAL" property="property163" />
+    <result column="PROPERTY164" jdbcType="DECIMAL" property="property164" />
+    <result column="PROPERTY165" jdbcType="DECIMAL" property="property165" />
+    <result column="PROPERTY166" jdbcType="DECIMAL" property="property166" />
+    <result column="PROPERTY167" jdbcType="DECIMAL" property="property167" />
+    <result column="PROPERTY168" jdbcType="DECIMAL" property="property168" />
+    <result column="PROPERTY169" jdbcType="DECIMAL" property="property169" />
+    <result column="PROPERTY170" jdbcType="DECIMAL" property="property170" />
+    <result column="PROPERTY171" jdbcType="DECIMAL" property="property171" />
+    <result column="PROPERTY172" jdbcType="DECIMAL" property="property172" />
+    <result column="PROPERTY173" jdbcType="DECIMAL" property="property173" />
+    <result column="PROPERTY174" jdbcType="DECIMAL" property="property174" />
+    <result column="PROPERTY175" jdbcType="DECIMAL" property="property175" />
+    <result column="PROPERTY176" jdbcType="DECIMAL" property="property176" />
+    <result column="PROPERTY177" jdbcType="DECIMAL" property="property177" />
+    <result column="PROPERTY178" jdbcType="DECIMAL" property="property178" />
+    <result column="PROPERTY179" jdbcType="DECIMAL" property="property179" />
+    <result column="PROPERTY180" jdbcType="DECIMAL" property="property180" />
+    <result column="PROPERTY181" jdbcType="DECIMAL" property="property181" />
+    <result column="PROPERTY182" jdbcType="DECIMAL" property="property182" />
+    <result column="PROPERTY183" jdbcType="DECIMAL" property="property183" />
+    <result column="PROPERTY184" jdbcType="DECIMAL" property="property184" />
+    <result column="PROPERTY185" jdbcType="DECIMAL" property="property185" />
+    <result column="PROPERTY186" jdbcType="DECIMAL" property="property186" />
+    <result column="PROPERTY187" jdbcType="DECIMAL" property="property187" />
+    <result column="PROPERTY188" jdbcType="DECIMAL" property="property188" />
+    <result column="PROPERTY189" jdbcType="DECIMAL" property="property189" />
+    <result column="PROPERTY190" jdbcType="DECIMAL" property="property190" />
+    <result column="PROPERTY191" jdbcType="DECIMAL" property="property191" />
+    <result column="PROPERTY192" jdbcType="DECIMAL" property="property192" />
+    <result column="PROPERTY193" jdbcType="DECIMAL" property="property193" />
+    <result column="PROPERTY194" jdbcType="DECIMAL" property="property194" />
+    <result column="PROPERTY195" jdbcType="DECIMAL" property="property195" />
+    <result column="PROPERTY196" jdbcType="DECIMAL" property="property196" />
+    <result column="PROPERTY197" jdbcType="DECIMAL" property="property197" />
+    <result column="PROPERTY198" jdbcType="DECIMAL" property="property198" />
+    <result column="PROPERTY199" jdbcType="DECIMAL" property="property199" />
+    <result column="PROPERTY200" jdbcType="DATE" property="property200" />
+    <result column="PROPERTY201" jdbcType="DATE" property="property201" />
+    <result column="PROPERTY202" jdbcType="DATE" property="property202" />
+    <result column="PROPERTY203" jdbcType="DATE" property="property203" />
+    <result column="PROPERTY204" jdbcType="DATE" property="property204" />
+    <result column="PROPERTY205" jdbcType="DATE" property="property205" />
+    <result column="PROPERTY206" jdbcType="DATE" property="property206" />
+    <result column="PROPERTY207" jdbcType="DATE" property="property207" />
+    <result column="PROPERTY208" jdbcType="DATE" property="property208" />
+    <result column="PROPERTY209" jdbcType="DATE" property="property209" />
+    <result column="PROPERTY210" jdbcType="DATE" property="property210" />
+    <result column="PROPERTY211" jdbcType="DATE" property="property211" />
+    <result column="PROPERTY212" jdbcType="DATE" property="property212" />
+    <result column="PROPERTY213" jdbcType="DATE" property="property213" />
+    <result column="PROPERTY214" jdbcType="DATE" property="property214" />
+    <result column="PROPERTY215" jdbcType="DATE" property="property215" />
+    <result column="PROPERTY216" jdbcType="DATE" property="property216" />
+    <result column="PROPERTY217" jdbcType="DATE" property="property217" />
+    <result column="PROPERTY218" jdbcType="DATE" property="property218" />
+    <result column="PROPERTY219" jdbcType="DATE" property="property219" />
+    <result column="PROPERTY220" jdbcType="DATE" property="property220" />
+    <result column="PROPERTY221" jdbcType="DATE" property="property221" />
+    <result column="PROPERTY222" jdbcType="DATE" property="property222" />
+    <result column="PROPERTY223" jdbcType="DATE" property="property223" />
+    <result column="PROPERTY224" jdbcType="DATE" property="property224" />
+    <result column="PROPERTY225" jdbcType="DATE" property="property225" />
+    <result column="PROPERTY226" jdbcType="DATE" property="property226" />
+    <result column="PROPERTY227" jdbcType="DATE" property="property227" />
+    <result column="PROPERTY228" jdbcType="DATE" property="property228" />
+    <result column="PROPERTY229" jdbcType="DATE" property="property229" />
+    <result column="PROPERTY230" jdbcType="DATE" property="property230" />
+    <result column="PROPERTY231" jdbcType="DATE" property="property231" />
+    <result column="PROPERTY232" jdbcType="DATE" property="property232" />
+    <result column="PROPERTY233" jdbcType="DATE" property="property233" />
+    <result column="PROPERTY234" jdbcType="DATE" property="property234" />
+    <result column="PROPERTY235" jdbcType="DATE" property="property235" />
+    <result column="PROPERTY236" jdbcType="DATE" property="property236" />
+    <result column="PROPERTY237" jdbcType="DATE" property="property237" />
+    <result column="PROPERTY238" jdbcType="DATE" property="property238" />
+    <result column="PROPERTY239" jdbcType="DATE" property="property239" />
+    <result column="PROPERTY240" jdbcType="DATE" property="property240" />
+    <result column="PROPERTY241" jdbcType="DATE" property="property241" />
+    <result column="PROPERTY242" jdbcType="DATE" property="property242" />
+    <result column="PROPERTY243" jdbcType="DATE" property="property243" />
+    <result column="PROPERTY244" jdbcType="DATE" property="property244" />
+    <result column="PROPERTY245" jdbcType="DATE" property="property245" />
+    <result column="PROPERTY246" jdbcType="DATE" property="property246" />
+    <result column="PROPERTY247" jdbcType="DATE" property="property247" />
+    <result column="PROPERTY248" jdbcType="DATE" property="property248" />
+    <result column="PROPERTY249" jdbcType="DATE" property="property249" />
+    <result column="PROPERTY250" jdbcType="DATE" property="property250" />
+    <result column="PROPERTY251" jdbcType="DATE" property="property251" />
+    <result column="PROPERTY252" jdbcType="DATE" property="property252" />
+    <result column="PROPERTY253" jdbcType="DATE" property="property253" />
+    <result column="PROPERTY254" jdbcType="DATE" property="property254" />
+    <result column="PROPERTY255" jdbcType="DATE" property="property255" />
+    <result column="PROPERTY256" jdbcType="DATE" property="property256" />
+    <result column="PROPERTY257" jdbcType="DATE" property="property257" />
+    <result column="PROPERTY258" jdbcType="DATE" property="property258" />
+    <result column="PROPERTY259" jdbcType="DATE" property="property259" />
+    <result column="PROPERTY260" jdbcType="DATE" property="property260" />
+    <result column="PROPERTY261" jdbcType="DATE" property="property261" />
+    <result column="PROPERTY262" jdbcType="DATE" property="property262" />
+    <result column="PROPERTY263" jdbcType="DATE" property="property263" />
+    <result column="PROPERTY264" jdbcType="DATE" property="property264" />
+    <result column="PROPERTY265" jdbcType="DATE" property="property265" />
+    <result column="PROPERTY266" jdbcType="DATE" property="property266" />
+    <result column="PROPERTY267" jdbcType="DATE" property="property267" />
+    <result column="PROPERTY268" jdbcType="DATE" property="property268" />
+    <result column="PROPERTY269" jdbcType="DATE" property="property269" />
+    <result column="PROPERTY270" jdbcType="DATE" property="property270" />
+    <result column="PROPERTY271" jdbcType="DATE" property="property271" />
+    <result column="PROPERTY272" jdbcType="DATE" property="property272" />
+    <result column="PROPERTY273" jdbcType="DATE" property="property273" />
+    <result column="PROPERTY274" jdbcType="DATE" property="property274" />
+    <result column="PROPERTY275" jdbcType="DATE" property="property275" />
+    <result column="PROPERTY276" jdbcType="DATE" property="property276" />
+    <result column="PROPERTY277" jdbcType="DATE" property="property277" />
+    <result column="PROPERTY278" jdbcType="DATE" property="property278" />
+    <result column="PROPERTY279" jdbcType="DATE" property="property279" />
+    <result column="PROPERTY280" jdbcType="DATE" property="property280" />
+    <result column="PROPERTY281" jdbcType="DATE" property="property281" />
+    <result column="PROPERTY282" jdbcType="DATE" property="property282" />
+    <result column="PROPERTY283" jdbcType="DATE" property="property283" />
+    <result column="PROPERTY284" jdbcType="DATE" property="property284" />
+    <result column="PROPERTY285" jdbcType="DATE" property="property285" />
+    <result column="PROPERTY286" jdbcType="DATE" property="property286" />
+    <result column="PROPERTY287" jdbcType="DATE" property="property287" />
+    <result column="PROPERTY288" jdbcType="DATE" property="property288" />
+    <result column="PROPERTY289" jdbcType="DATE" property="property289" />
+    <result column="PROPERTY290" jdbcType="DATE" property="property290" />
+    <result column="PROPERTY291" jdbcType="DATE" property="property291" />
+    <result column="PROPERTY292" jdbcType="DATE" property="property292" />
+    <result column="PROPERTY293" jdbcType="DATE" property="property293" />
+    <result column="PROPERTY294" jdbcType="DATE" property="property294" />
+    <result column="PROPERTY295" jdbcType="DATE" property="property295" />
+    <result column="PROPERTY296" jdbcType="DATE" property="property296" />
+    <result column="PROPERTY297" jdbcType="DATE" property="property297" />
+    <result column="PROPERTY298" jdbcType="DATE" property="property298" />
+    <result column="PROPERTY299" jdbcType="DATE" property="property299" />
+  </resultMap>
+	  <sql id="Example_Where_Clause" >
+	    <where>
+	      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+	        <if test="criteria.valid" >
+	          <trim prefix="(" prefixOverrides="and" suffix=")">
+	            <foreach collection="criteria.criteria" item="criterion" >
+	              <choose >
+	                <when test="criterion.noValue" >
+	                  and ${criterion.condition}
+	                </when>
+	                <!--<when test='criterion.singleValue and criterion.condition.indexOf("like") != -1'>
+	                		and ${criterion.condition}   CONCAT(CONCAT('%', #{criterion.value}),'%')
+	                </when>
+	                <when test='criterion.singleValue and criterion.condition.indexOf("like") == -1' >
+	                		and ${criterion.condition} #{criterion.value}
+	                </when> -->
+	                <when test="criterion.singleValue">
+	                  and ${criterion.condition} #{criterion.value}
+	                </when>
+	                <when test="criterion.betweenValue" >
+	                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+	                </when>
+	                <when test="criterion.listValue" >
+	                  and ${criterion.condition}
+	                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+	                    #{listItem}
+	                  </foreach>
+	                </when>
+	              </choose>
+	            </foreach>
+	          </trim>
+	        </if>
+	      </foreach>
+	    </where>
+  	</sql>
+	<select id="select" resultMap="BaseResultMap" parameterType="map">
+		${sql}
+		<if test="example.oredCriteria != null" >
+	      <include refid="Example_Where_Clause" />
+	    </if>
+	    <if test="example.orderByClause != null" >
+	      order by ${example.orderByClause}
+	    </if>
+	</select>
+	
+	<!-- 定义存储过程 -->
+    <select id="callProcedure" parameterType="map" statementType="CALLABLE" >
+	    {
+	       call ${name}(
+	             #{p1,mode=IN,jdbcType=DATE},
+	             #{p2,mode=IN,jdbcType=VARCHAR},
+	             #{p3,mode=IN,jdbcType=VARCHAR}
+	       )
+	    }
+	</select>
+	<!-- 定义导入数据存储过程 -->
+    <select id="callProcedureImportData" parameterType="map" statementType="CALLABLE" resultType="java.lang.Object">
+	    {
+	       call ${name}(
+	             #{p1,mode=IN,jdbcType=INTEGER},
+	             #{p2,mode=OUT,jdbcType=INTEGER},
+	             #{p3,mode=OUT,jdbcType=INTEGER}
+	       )
+	    }
+	</select>
+	<!-- 定义函数 -->
+	<select id="callFunction" parameterType="map" statementType="CALLABLE">
+	        {
+	            #{p3,mode=OUT,jdbcType=NUMERIC}=call ${name}(
+	                #{p1,mode=IN,jdbcType=NUMERIC},
+	             #{p2,mode=IN,jdbcType=NUMERIC}
+	            )
+	        }
+	</select>
+</mapper>

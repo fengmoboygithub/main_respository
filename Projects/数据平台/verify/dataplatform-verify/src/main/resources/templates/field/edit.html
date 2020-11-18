@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-template-edit" th:object="${template}">
+            <input id="id" name="id" th:field="*{id}"  type="hidden">
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">模板编号：</label>
+                <div class="col-sm-8">
+                    <input id="tTemplateType" name="tTemplateType" th:field="*{tTemplateType}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+            	<label class="col-sm-3 control-label">中文名称：</label>
+            	<div class="col-sm-8">
+                	<input id="tElementName" name="tElementName" th:field="*{tElementName}" class="form-control" type="text">
+            	</div>
+       		</div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">英文名称：</label>
+                <div class="col-sm-8">
+                    <input id="tElementId" name="tElementId" th:field="*{tElementId}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">业务校验规则编号：</label>
+                <div class="col-sm-8">
+                    <input id="tValidateRules" name="tValidateRules" th:field="*{tValidateRules}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">数据库字段名称：</label>
+                <div class="col-sm-8">
+                    <input id="dField" name="dField" th:field="*{dField}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">数据库字段类型：</label>
+                <div class="col-sm-8">
+                    <input id="dFieldType" name="dFieldType" th:field="*{dFieldType}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">对应数据库表名：</label>
+                <div class="col-sm-8">
+                    <input id="dTableName" name="dTableName" th:field="*{dTableName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">上级tuple数据库字段名称：</label>
+                <div class="col-sm-8">
+                    <input id="dTupleUpName" name="dTupleUpName" th:field="*{dTupleUpName}" class="form-control" type="text">
+                </div>
+            </div>
+           
+<!-- 			<div class="form-group"> -->
+<!-- 				<label class="col-sm-3 control-label">系统内置：</label> -->
+<!-- 				<div class="col-sm-8"> -->
+<!-- 				    <div class="radio-box" th:each="dict : ${@dict.getType('sys_yes_no')}"> -->
+<!-- 						<input type="radio" th:id="${dict.dictCode}" name="configType" th:value="${dict.dictValue}" th:field="*{configType}"> -->
+<!-- 						<label th:for="${dict.dictCode}" th:text="${dict.dictLabel}"></label> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+			<div class="form-group">
+				<label class="col-sm-3 control-label">字段状态：</label>
+				<label class="btn  ">
+  			  	 	<input type="radio" name="status" id="option1" value="0" autocomplete="off" th:field="*{status}" > 正常
+  				</label>
+   				<label class="btn ">
+   				 	<input type="radio" name="status" id="option2" value="1" autocomplete="off" th:field="*{status}"> 禁用
+  				</label>
+			</div>
+			<div class="form-group">	
+            	<label class="col-sm-3 control-label">控件类型：</label>
+				<div class="col-sm-8">
+					<select id="tControlType" name="tControlType" th:field="*{tControlType}" class="form-control m-b" >
+						<option  value="0">普通元素</option>
+						<option  value="1">Tuple子项元素</option>
+						<option  value="2">多附件</option>
+	                    <option  value="3">单附件</option>
+	                    <option  value="4">Tuple父元素</option>
+	                </select>
+				</div>
+			</div>
+			<div class="form-group">	
+	            <label class="col-sm-3 control-label">备注：</label>
+	            <div class="col-sm-8">
+	                <textarea id="remark" name="remark" class="form-control">[[*{remark}]]</textarea>
+	            </div>
+	        </div>
+    	</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+	    var prefix = ctx + "template";
+	    
+	    $("#form-template-edit").validate({
+	    	rules: {
+	    		dField: {
+	                required: true,
+	                remote: {
+	                    url: prefix + "/checkTemplateUnique",
+	                    type: "post",
+	                    dataType: "json",
+	                    data: {
+	                    	"id": function() {
+	                        	return $("#id").val();
+	                        },
+	                        "dField": function() {
+	                            return $.common.trim($("#dField").val());
+	                        }
+	                    },
+	                    dataFilter: function(data, type) {
+	                        return $.validate.unique(data);
+	                    }
+	                }
+	            },
+	           
+	            tElementName: {
+	                required: true
+	            },
+	            tElementId: {
+	                required: true
+	            },
+	            tTemplateType: {
+	                required: true
+	            },
+	            dFieldType: {
+	                required: true
+	            },
+	            dTableName: {
+	                required: true
+	            },
+	            tControlType: {
+	                required: true
+	            },
+	            status: {
+	                required: true
+	            }
+	        },
+	        messages: {
+	            "dField": {
+	                remote: "字段名称已经存在"
+	            }
+	        }
+	    });
+	    
+	    function submitHandler() {
+	        if ($.validate.form()) {
+	        	$.operate.save(prefix + "/edit", $('#form-template-edit').serialize());
+	        }
+	    }
+    </script>
+</body>
+</html>

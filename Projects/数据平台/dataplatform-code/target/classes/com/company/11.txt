@@ -1,0 +1,7 @@
+id	主键
+t_template_type	模板编号
+t_element_name	业务字段名称
+d_field	数据库字段名称
+d_tuple_up_name	上级tuple数据库字段名称
+t_control_type	控件类型0|普通元素、1|Tuple子项元素、2|多附件、3|单附件、4|Tuple父元素（虚元素）
+index_value	字段存储的索引值

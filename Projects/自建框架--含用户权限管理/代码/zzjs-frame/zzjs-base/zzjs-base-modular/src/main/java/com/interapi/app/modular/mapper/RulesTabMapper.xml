@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interapi.app.modular.dao.RulesTabMapper">
+  <resultMap id="BaseResultMap" type="com.interapi.app.modular.model.RulesTab">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="FORM_ITEM_ID" jdbcType="BIGINT" property="formItemId" />
+    <result column="RULES_TYPE" jdbcType="VARCHAR" property="rulesType" />
+    <result column="RULES_TYPE_NAME" jdbcType="VARCHAR" property="rulesTypeName" />
+    <result column="REQUIRED" jdbcType="VARCHAR" property="required" />
+    <result column="MESSAGE" jdbcType="VARCHAR" property="message" />
+    <result column="TRIGGER_NAME" jdbcType="VARCHAR" property="triggerName" />
+    <result column="TYPE_ID" jdbcType="VARCHAR" property="typeId" />
+    <result column="MIN" jdbcType="INTEGER" property="min" />
+    <result column="MAX" jdbcType="INTEGER" property="max" />
+    <result column="LEN" jdbcType="INTEGER" property="len" />
+    <result column="VALIDATOR" jdbcType="VARCHAR" property="validator" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="BIGINT" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, FORM_ITEM_ID, RULES_TYPE, RULES_TYPE_NAME, REQUIRED, MESSAGE, TRIGGER_NAME, TYPE_ID, 
+    MIN, MAX, LEN, VALIDATOR, IS_DELETE, CREATE_TIME, CREATE_USER, UPDATE_TIME, UPDATE_USER
+  </sql>
+  <select id="selectByExample" parameterType="com.interapi.app.modular.model.RulesTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from rules_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rules_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from rules_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.interapi.app.modular.model.RulesTabExample">
+    delete from rules_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.interapi.app.modular.model.RulesTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rules_tab (FORM_ITEM_ID, RULES_TYPE, RULES_TYPE_NAME, 
+      REQUIRED, MESSAGE, TRIGGER_NAME, 
+      TYPE_ID, MIN, MAX, LEN, 
+      VALIDATOR, IS_DELETE, CREATE_TIME, 
+      CREATE_USER, UPDATE_TIME, UPDATE_USER
+      )
+    values (#{formItemId,jdbcType=BIGINT}, #{rulesType,jdbcType=VARCHAR}, #{rulesTypeName,jdbcType=VARCHAR}, 
+      #{required,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{triggerName,jdbcType=VARCHAR}, 
+      #{typeId,jdbcType=VARCHAR}, #{min,jdbcType=INTEGER}, #{max,jdbcType=INTEGER}, #{len,jdbcType=INTEGER}, 
+      #{validator,jdbcType=VARCHAR}, #{isDelete,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.interapi.app.modular.model.RulesTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rules_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="formItemId != null">
+        FORM_ITEM_ID,
+      </if>
+      <if test="rulesType != null">
+        RULES_TYPE,
+      </if>
+      <if test="rulesTypeName != null">
+        RULES_TYPE_NAME,
+      </if>
+      <if test="required != null">
+        REQUIRED,
+      </if>
+      <if test="message != null">
+        MESSAGE,
+      </if>
+      <if test="triggerName != null">
+        TRIGGER_NAME,
+      </if>
+      <if test="typeId != null">
+        TYPE_ID,
+      </if>
+      <if test="min != null">
+        MIN,
+      </if>
+      <if test="max != null">
+        MAX,
+      </if>
+      <if test="len != null">
+        LEN,
+      </if>
+      <if test="validator != null">
+        VALIDATOR,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="formItemId != null">
+        #{formItemId,jdbcType=BIGINT},
+      </if>
+      <if test="rulesType != null">
+        #{rulesType,jdbcType=VARCHAR},
+      </if>
+      <if test="rulesTypeName != null">
+        #{rulesTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="triggerName != null">
+        #{triggerName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="min != null">
+        #{min,jdbcType=INTEGER},
+      </if>
+      <if test="max != null">
+        #{max,jdbcType=INTEGER},
+      </if>
+      <if test="len != null">
+        #{len,jdbcType=INTEGER},
+      </if>
+      <if test="validator != null">
+        #{validator,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.interapi.app.modular.model.RulesTabExample" resultType="java.lang.Long">
+    select count(*) from rules_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update rules_tab
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.formItemId != null">
+        FORM_ITEM_ID = #{record.formItemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.rulesType != null">
+        RULES_TYPE = #{record.rulesType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rulesTypeName != null">
+        RULES_TYPE_NAME = #{record.rulesTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.required != null">
+        REQUIRED = #{record.required,jdbcType=VARCHAR},
+      </if>
+      <if test="record.message != null">
+        MESSAGE = #{record.message,jdbcType=VARCHAR},
+      </if>
+      <if test="record.triggerName != null">
+        TRIGGER_NAME = #{record.triggerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.typeId != null">
+        TYPE_ID = #{record.typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.min != null">
+        MIN = #{record.min,jdbcType=INTEGER},
+      </if>
+      <if test="record.max != null">
+        MAX = #{record.max,jdbcType=INTEGER},
+      </if>
+      <if test="record.len != null">
+        LEN = #{record.len,jdbcType=INTEGER},
+      </if>
+      <if test="record.validator != null">
+        VALIDATOR = #{record.validator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update rules_tab
+    set ID = #{record.id,jdbcType=BIGINT},
+      FORM_ITEM_ID = #{record.formItemId,jdbcType=BIGINT},
+      RULES_TYPE = #{record.rulesType,jdbcType=VARCHAR},
+      RULES_TYPE_NAME = #{record.rulesTypeName,jdbcType=VARCHAR},
+      REQUIRED = #{record.required,jdbcType=VARCHAR},
+      MESSAGE = #{record.message,jdbcType=VARCHAR},
+      TRIGGER_NAME = #{record.triggerName,jdbcType=VARCHAR},
+      TYPE_ID = #{record.typeId,jdbcType=VARCHAR},
+      MIN = #{record.min,jdbcType=INTEGER},
+      MAX = #{record.max,jdbcType=INTEGER},
+      LEN = #{record.len,jdbcType=INTEGER},
+      VALIDATOR = #{record.validator,jdbcType=VARCHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.interapi.app.modular.model.RulesTab">
+    update rules_tab
+    <set>
+      <if test="formItemId != null">
+        FORM_ITEM_ID = #{formItemId,jdbcType=BIGINT},
+      </if>
+      <if test="rulesType != null">
+        RULES_TYPE = #{rulesType,jdbcType=VARCHAR},
+      </if>
+      <if test="rulesTypeName != null">
+        RULES_TYPE_NAME = #{rulesTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        REQUIRED = #{required,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        MESSAGE = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="triggerName != null">
+        TRIGGER_NAME = #{triggerName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        TYPE_ID = #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="min != null">
+        MIN = #{min,jdbcType=INTEGER},
+      </if>
+      <if test="max != null">
+        MAX = #{max,jdbcType=INTEGER},
+      </if>
+      <if test="len != null">
+        LEN = #{len,jdbcType=INTEGER},
+      </if>
+      <if test="validator != null">
+        VALIDATOR = #{validator,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.interapi.app.modular.model.RulesTab">
+    update rules_tab
+    set FORM_ITEM_ID = #{formItemId,jdbcType=BIGINT},
+      RULES_TYPE = #{rulesType,jdbcType=VARCHAR},
+      RULES_TYPE_NAME = #{rulesTypeName,jdbcType=VARCHAR},
+      REQUIRED = #{required,jdbcType=VARCHAR},
+      MESSAGE = #{message,jdbcType=VARCHAR},
+      TRIGGER_NAME = #{triggerName,jdbcType=VARCHAR},
+      TYPE_ID = #{typeId,jdbcType=VARCHAR},
+      MIN = #{min,jdbcType=INTEGER},
+      MAX = #{max,jdbcType=INTEGER},
+      LEN = #{len,jdbcType=INTEGER},
+      VALIDATOR = #{validator,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

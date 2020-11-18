@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.one.absinfo.dao.AbsBaseInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.one.absinfo.model.AbsBaseInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="abs_name" jdbcType="VARCHAR" property="absName" />
+    <result column="abs_type" jdbcType="VARCHAR" property="absType" />
+    <result column="abs_code" jdbcType="VARCHAR" property="absCode" />
+    <result column="abs_short_name" jdbcType="VARCHAR" property="absShortName" />
+    <result column="trem" jdbcType="VARCHAR" property="trem" />
+    <result column="trem_remark" jdbcType="VARCHAR" property="tremRemark" />
+    <result column="bond_rating" jdbcType="VARCHAR" property="bondRating" />
+    <result column="credit_measures" jdbcType="VARCHAR" property="creditMeasures" />
+    <result column="trading_location" jdbcType="VARCHAR" property="tradingLocation" />
+    <result column="current_bond_rating" jdbcType="VARCHAR" property="currentBondRating" />
+    <result column="issue_rate" jdbcType="VARCHAR" property="issueRate" />
+    <result column="issue_time" jdbcType="TIMESTAMP" property="issueTime" />
+    <result column="interest_time" jdbcType="TIMESTAMP" property="interestTime" />
+    <result column="debt_account" jdbcType="INTEGER" property="debtAccount" />
+    <result column="individual_investor_account" jdbcType="INTEGER" property="individualInvestorAccount" />
+    <result column="personal_debt_rate" jdbcType="VARCHAR" property="personalDebtRate" />
+    <result column="current_rate" jdbcType="VARCHAR" property="currentRate" />
+    <result column="due_time" jdbcType="TIMESTAMP" property="dueTime" />
+    <result column="proper_management" jdbcType="VARCHAR" property="properManagement" />
+    <result column="proper_management_time" jdbcType="TIMESTAMP" property="properManagementTime" />
+    <result column="original_owner_name" jdbcType="VARCHAR" property="originalOwnerName" />
+    <result column="original_owner_srb" jdbcType="VARCHAR" property="originalOwnerSrb" />
+    <result column="registered_place" jdbcType="VARCHAR" property="registeredPlace" />
+    <result column="registration_place" jdbcType="VARCHAR" property="registrationPlace" />
+    <result column="industry" jdbcType="VARCHAR" property="industry" />
+    <result column="business_scope" jdbcType="VARCHAR" property="businessScope" />
+    <result column="nature" jdbcType="VARCHAR" property="nature" />
+    <result column="main_business" jdbcType="VARCHAR" property="mainBusiness" />
+    <result column="if_belongs_financial" jdbcType="VARCHAR" property="ifBelongsFinancial" />
+    <result column="main_rating" jdbcType="VARCHAR" property="mainRating" />
+    <result column="relate_srb" jdbcType="VARCHAR" property="relateSrb" />
+    <result column="manager_name" jdbcType="VARCHAR" property="managerName" />
+    <result column="manager_disclosure_specialist" jdbcType="VARCHAR" property="managerDisclosureSpecialist" />
+    <result column="specialist_contact_way" jdbcType="VARCHAR" property="specialistContactWay" />
+    <result column="manager_charger" jdbcType="VARCHAR" property="managerCharger" />
+    <result column="manager_contact_way" jdbcType="VARCHAR" property="managerContactWay" />
+    <result column="manager_registered_place" jdbcType="VARCHAR" property="managerRegisteredPlace" />
+    <result column="manager_srb" jdbcType="VARCHAR" property="managerSrb" />
+    <result column="accounting_name" jdbcType="VARCHAR" property="accountingName" />
+    <result column="accounting_signature" jdbcType="VARCHAR" property="accountingSignature" />
+    <result column="law_name" jdbcType="VARCHAR" property="lawName" />
+    <result column="law_signature" jdbcType="VARCHAR" property="lawSignature" />
+    <result column="rating_agency_name" jdbcType="VARCHAR" property="ratingAgencyName" />
+    <result column="rating_agency_contact_way" jdbcType="VARCHAR" property="ratingAgencyContactWay" />
+    <result column="rating_agency_charge" jdbcType="VARCHAR" property="ratingAgencyCharge" />
+    <result column="asset_appraisal_agency" jdbcType="VARCHAR" property="assetAppraisalAgency" />
+    <result column="asset_appraisal_agency_charge" jdbcType="VARCHAR" property="assetAppraisalAgencyCharge" />
+    <result column="security_rate" jdbcType="VARCHAR" property="securityRate" />
+    <result column="JUR_SRB" jdbcType="VARCHAR" property="jurSrb" />
+    <result column="edit_state" jdbcType="INTEGER" property="editState" />
+    <result column="no_action_letter_time" jdbcType="TIMESTAMP" property="noActionLetterTime" />
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber" />
+    <result column="child_code" jdbcType="VARCHAR" property="childCode" />
+    <result column="Custodian" jdbcType="VARCHAR" property="custodian" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.company.one.absinfo.model.AbsBaseInfo">
+    <result column="other_rating_agency_name" jdbcType="LONGVARCHAR" property="otherRatingAgencyName" />
+  </resultMap>
+  <resultMap id="BaseResultMap1" type="com.company.one.absinfo.model.AbsBaseInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="abs_name" jdbcType="VARCHAR" property="absName" />
+    <result column="abs_type" jdbcType="VARCHAR" property="absType" />
+    <result column="abs_code" jdbcType="VARCHAR" property="absCode" />
+    <result column="abs_short_name" jdbcType="VARCHAR" property="absShortName" />
+    <result column="trem" jdbcType="VARCHAR" property="trem" />
+    <result column="trem_remark" jdbcType="VARCHAR" property="tremRemark" />
+    <result column="bond_rating" jdbcType="VARCHAR" property="bondRating" />
+    <result column="credit_measures" jdbcType="VARCHAR" property="creditMeasures" />
+    <result column="trading_location" jdbcType="VARCHAR" property="tradingLocation" />
+    <result column="current_bond_rating" jdbcType="VARCHAR" property="currentBondRating" />
+    <result column="issue_rate" jdbcType="VARCHAR" property="issueRate" />
+    <result column="issue_time" jdbcType="TIMESTAMP" property="issueTime" />
+    <result column="interest_time" jdbcType="TIMESTAMP" property="interestTime" />
+    <result column="debt_account" jdbcType="INTEGER" property="debtAccount" />
+    <result column="individual_investor_account" jdbcType="INTEGER" property="individualInvestorAccount" />
+    <result column="personal_debt_rate" jdbcType="VARCHAR" property="personalDebtRate" />
+    <result column="current_rate" jdbcType="VARCHAR" property="currentRate" />
+    <result column="due_time" jdbcType="TIMESTAMP" property="dueTime" />
+    <result column="proper_management" jdbcType="VARCHAR" property="properManagement" />
+    <result column="proper_management_time" jdbcType="TIMESTAMP" property="properManagementTime" />
+    <result column="original_owner_name" jdbcType="VARCHAR" property="originalOwnerName" />
+    <result column="original_owner_srb" jdbcType="VARCHAR" property="originalOwnerSrb" />
+    <result column="registered_place" jdbcType="VARCHAR" property="registeredPlace" />
+    <result column="registration_place" jdbcType="VARCHAR" property="registrationPlace" />
+    <result column="industry" jdbcType="VARCHAR" property="industry" />
+    <result column="business_scope" jdbcType="VARCHAR" property="businessScope" />
+    <result column="nature" jdbcType="VARCHAR" property="nature" />
+    <result column="main_business" jdbcType="VARCHAR" property="mainBusiness" />
+    <result column="if_belongs_financial" jdbcType="VARCHAR" property="ifBelongsFinancial" />
+    <result column="main_rating" jdbcType="VARCHAR" property="mainRating" />
+    <result column="relate_srb" jdbcType="VARCHAR" property="relateSrb" />
+    <result column="manager_name" jdbcType="VARCHAR" property="managerName" />
+    <result column="manager_disclosure_specialist" jdbcType="VARCHAR" property="managerDisclosureSpecialist" />
+    <result column="specialist_contact_way" jdbcType="VARCHAR" property="specialistContactWay" />
+    <result column="manager_charger" jdbcType="VARCHAR" property="managerCharger" />
+    <result column="manager_contact_way" jdbcType="VARCHAR" property="managerContactWay" />
+    <result column="manager_registered_place" jdbcType="VARCHAR" property="managerRegisteredPlace" />
+    <result column="manager_srb" jdbcType="VARCHAR" property="managerSrb" />
+    <result column="accounting_name" jdbcType="VARCHAR" property="accountingName" />
+    <result column="accounting_signature" jdbcType="VARCHAR" property="accountingSignature" />
+    <result column="law_name" jdbcType="VARCHAR" property="lawName" />
+    <result column="law_signature" jdbcType="VARCHAR" property="lawSignature" />
+    <result column="rating_agency_name" jdbcType="VARCHAR" property="ratingAgencyName" />
+    <result column="rating_agency_contact_way" jdbcType="VARCHAR" property="ratingAgencyContactWay" />
+    <result column="rating_agency_charge" jdbcType="VARCHAR" property="ratingAgencyCharge" />
+    <result column="asset_appraisal_agency" jdbcType="VARCHAR" property="assetAppraisalAgency" />
+    <result column="asset_appraisal_agency_charge" jdbcType="VARCHAR" property="assetAppraisalAgencyCharge" />
+    <result column="security_rate" jdbcType="VARCHAR" property="securityRate" />
+    <result column="JUR_SRB" jdbcType="VARCHAR" property="jurSrb" />
+    <result column="edit_state" jdbcType="INTEGER" property="editState" />
+    <result column="no_action_letter_time" jdbcType="TIMESTAMP" property="noActionLetterTime" />
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber" />
+    <result column="child_code" jdbcType="VARCHAR" property="childCode" />
+    <result column="Custodian" jdbcType="VARCHAR" property="custodian" />
+	<result column="listing_time" jdbcType="TIMESTAMP" property="listingTime" />
+	<result column="state" jdbcType="INTEGER" property="state" />
+  </resultMap>
+  <resultMap extends="BaseResultMap1" id="ResultMapWithBLOBs1" type="com.company.one.absinfo.model.AbsBaseInfo">
+    <result column="other_rating_agency_name" jdbcType="LONGVARCHAR" property="otherRatingAgencyName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, abs_name, abs_type, abs_code, abs_short_name, trem, trem_remark, bond_rating, 
+    credit_measures, trading_location, current_bond_rating, issue_rate, issue_time, interest_time, 
+    debt_account, individual_investor_account, personal_debt_rate, current_rate, due_time, 
+    proper_management, proper_management_time, original_owner_name, original_owner_srb, 
+    registered_place, registration_place, industry, business_scope, nature, main_business, 
+    if_belongs_financial, main_rating, relate_srb, manager_name, manager_disclosure_specialist, 
+    specialist_contact_way, manager_charger, manager_contact_way, manager_registered_place, 
+    manager_srb, accounting_name, accounting_signature, law_name, law_signature, rating_agency_name, 
+    rating_agency_contact_way, rating_agency_charge, asset_appraisal_agency, asset_appraisal_agency_charge, 
+    security_rate, JUR_SRB, edit_state, no_action_letter_time, serial_number, child_code, 
+    Custodian
+  </sql>
+  <sql id="Blob_Column_List">
+    other_rating_agency_name
+  </sql>
+  <sql id="Base_Column_List_1">
+    a.id, a.abs_name, a.abs_type, a.abs_code, a.abs_short_name, a.trem, a.trem_remark, a.bond_rating, a.
+    credit_measures, a.trading_location, a.current_bond_rating, a.issue_rate, a.issue_time, a.interest_time, a.
+    debt_account, a.individual_investor_account, a.personal_debt_rate, a.current_rate, a.due_time, a.
+    proper_management, a.proper_management_time, a.original_owner_name, a.original_owner_srb, a.
+    registered_place, a.registration_place, a.industry, a.business_scope, a.nature, a.main_business, a.
+    if_belongs_financial, a.main_rating, a.relate_srb, a.manager_name, a.manager_disclosure_specialist, a.
+    specialist_contact_way, a.manager_charger, a.manager_contact_way, a.manager_registered_place, a.
+    manager_srb, a.accounting_name, a.accounting_signature, a.law_name, a.law_signature, a.rating_agency_name, a.
+    rating_agency_contact_way, a.rating_agency_charge, a.asset_appraisal_agency, a.asset_appraisal_agency_charge, a.
+    security_rate, a.JUR_SRB, a.edit_state, a.no_action_letter_time, a.serial_number, a.child_code, a.
+    Custodian, a1.listing_time, a1.state
+  </sql>
+  <sql id="Blob_Column_List_1">
+    a.other_rating_agency_name
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.company.one.absinfo.model.AbsBaseInfoExample" resultMap="ResultMapWithBLOBs1">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from abs_base_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.company.one.absinfo.model.AbsBaseInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+	<include refid="Base_Column_List_1" />
+    ,
+    <include refid="Blob_Column_List_1" />
+    from abs_base_info a right join abs_issue_info a1 on a1.base_id=a.id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from abs_base_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from abs_base_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.one.absinfo.model.AbsBaseInfoExample">
+    delete from abs_base_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.one.absinfo.model.AbsBaseInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into abs_base_info (abs_name, abs_type, abs_code, 
+      abs_short_name, trem, trem_remark, 
+      bond_rating, credit_measures, trading_location, 
+      current_bond_rating, issue_rate, issue_time, 
+      interest_time, debt_account, individual_investor_account, 
+      personal_debt_rate, current_rate, due_time, 
+      proper_management, proper_management_time, 
+      original_owner_name, original_owner_srb, registered_place, 
+      registration_place, industry, business_scope, 
+      nature, main_business, if_belongs_financial, 
+      main_rating, relate_srb, manager_name, 
+      manager_disclosure_specialist, specialist_contact_way, 
+      manager_charger, manager_contact_way, manager_registered_place, 
+      manager_srb, accounting_name, accounting_signature, 
+      law_name, law_signature, rating_agency_name, 
+      rating_agency_contact_way, rating_agency_charge, 
+      asset_appraisal_agency, asset_appraisal_agency_charge, 
+      security_rate, JUR_SRB, edit_state, 
+      no_action_letter_time, serial_number, child_code, 
+      Custodian, other_rating_agency_name)
+    values (#{absName,jdbcType=VARCHAR}, #{absType,jdbcType=VARCHAR}, #{absCode,jdbcType=VARCHAR}, 
+      #{absShortName,jdbcType=VARCHAR}, #{trem,jdbcType=VARCHAR}, #{tremRemark,jdbcType=VARCHAR}, 
+      #{bondRating,jdbcType=VARCHAR}, #{creditMeasures,jdbcType=VARCHAR}, #{tradingLocation,jdbcType=VARCHAR}, 
+      #{currentBondRating,jdbcType=VARCHAR}, #{issueRate,jdbcType=VARCHAR}, #{issueTime,jdbcType=TIMESTAMP}, 
+      #{interestTime,jdbcType=TIMESTAMP}, #{debtAccount,jdbcType=INTEGER}, #{individualInvestorAccount,jdbcType=INTEGER}, 
+      #{personalDebtRate,jdbcType=VARCHAR}, #{currentRate,jdbcType=VARCHAR}, #{dueTime,jdbcType=TIMESTAMP}, 
+      #{properManagement,jdbcType=VARCHAR}, #{properManagementTime,jdbcType=TIMESTAMP}, 
+      #{originalOwnerName,jdbcType=VARCHAR}, #{originalOwnerSrb,jdbcType=VARCHAR}, #{registeredPlace,jdbcType=VARCHAR}, 
+      #{registrationPlace,jdbcType=VARCHAR}, #{industry,jdbcType=VARCHAR}, #{businessScope,jdbcType=VARCHAR}, 
+      #{nature,jdbcType=VARCHAR}, #{mainBusiness,jdbcType=VARCHAR}, #{ifBelongsFinancial,jdbcType=VARCHAR}, 
+      #{mainRating,jdbcType=VARCHAR}, #{relateSrb,jdbcType=VARCHAR}, #{managerName,jdbcType=VARCHAR}, 
+      #{managerDisclosureSpecialist,jdbcType=VARCHAR}, #{specialistContactWay,jdbcType=VARCHAR}, 
+      #{managerCharger,jdbcType=VARCHAR}, #{managerContactWay,jdbcType=VARCHAR}, #{managerRegisteredPlace,jdbcType=VARCHAR}, 
+      #{managerSrb,jdbcType=VARCHAR}, #{accountingName,jdbcType=VARCHAR}, #{accountingSignature,jdbcType=VARCHAR}, 
+      #{lawName,jdbcType=VARCHAR}, #{lawSignature,jdbcType=VARCHAR}, #{ratingAgencyName,jdbcType=VARCHAR}, 
+      #{ratingAgencyContactWay,jdbcType=VARCHAR}, #{ratingAgencyCharge,jdbcType=VARCHAR}, 
+      #{assetAppraisalAgency,jdbcType=VARCHAR}, #{assetAppraisalAgencyCharge,jdbcType=VARCHAR}, 
+      #{securityRate,jdbcType=VARCHAR}, #{jurSrb,jdbcType=VARCHAR}, #{editState,jdbcType=INTEGER}, 
+      #{noActionLetterTime,jdbcType=TIMESTAMP}, #{serialNumber,jdbcType=VARCHAR}, #{childCode,jdbcType=VARCHAR}, 
+      #{custodian,jdbcType=VARCHAR}, #{otherRatingAgencyName,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.one.absinfo.model.AbsBaseInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into abs_base_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="absName != null">
+        abs_name,
+      </if>
+      <if test="absType != null">
+        abs_type,
+      </if>
+      <if test="absCode != null">
+        abs_code,
+      </if>
+      <if test="absShortName != null">
+        abs_short_name,
+      </if>
+      <if test="trem != null">
+        trem,
+      </if>
+      <if test="tremRemark != null">
+        trem_remark,
+      </if>
+      <if test="bondRating != null">
+        bond_rating,
+      </if>
+      <if test="creditMeasures != null">
+        credit_measures,
+      </if>
+      <if test="tradingLocation != null">
+        trading_location,
+      </if>
+      <if test="currentBondRating != null">
+        current_bond_rating,
+      </if>
+      <if test="issueRate != null">
+        issue_rate,
+      </if>
+      <if test="issueTime != null">
+        issue_time,
+      </if>
+      <if test="interestTime != null">
+        interest_time,
+      </if>
+      <if test="debtAccount != null">
+        debt_account,
+      </if>
+      <if test="individualInvestorAccount != null">
+        individual_investor_account,
+      </if>
+      <if test="personalDebtRate != null">
+        personal_debt_rate,
+      </if>
+      <if test="currentRate != null">
+        current_rate,
+      </if>
+      <if test="dueTime != null">
+        due_time,
+      </if>
+      <if test="properManagement != null">
+        proper_management,
+      </if>
+      <if test="properManagementTime != null">
+        proper_management_time,
+      </if>
+      <if test="originalOwnerName != null">
+        original_owner_name,
+      </if>
+      <if test="originalOwnerSrb != null">
+        original_owner_srb,
+      </if>
+      <if test="registeredPlace != null">
+        registered_place,
+      </if>
+      <if test="registrationPlace != null">
+        registration_place,
+      </if>
+      <if test="industry != null">
+        industry,
+      </if>
+      <if test="businessScope != null">
+        business_scope,
+      </if>
+      <if test="nature != null">
+        nature,
+      </if>
+      <if test="mainBusiness != null">
+        main_business,
+      </if>
+      <if test="ifBelongsFinancial != null">
+        if_belongs_financial,
+      </if>
+      <if test="mainRating != null">
+        main_rating,
+      </if>
+      <if test="relateSrb != null">
+        relate_srb,
+      </if>
+      <if test="managerName != null">
+        manager_name,
+      </if>
+      <if test="managerDisclosureSpecialist != null">
+        manager_disclosure_specialist,
+      </if>
+      <if test="specialistContactWay != null">
+        specialist_contact_way,
+      </if>
+      <if test="managerCharger != null">
+        manager_charger,
+      </if>
+      <if test="managerContactWay != null">
+        manager_contact_way,
+      </if>
+      <if test="managerRegisteredPlace != null">
+        manager_registered_place,
+      </if>
+      <if test="managerSrb != null">
+        manager_srb,
+      </if>
+      <if test="accountingName != null">
+        accounting_name,
+      </if>
+      <if test="accountingSignature != null">
+        accounting_signature,
+      </if>
+      <if test="lawName != null">
+        law_name,
+      </if>
+      <if test="lawSignature != null">
+        law_signature,
+      </if>
+      <if test="ratingAgencyName != null">
+        rating_agency_name,
+      </if>
+      <if test="ratingAgencyContactWay != null">
+        rating_agency_contact_way,
+      </if>
+      <if test="ratingAgencyCharge != null">
+        rating_agency_charge,
+      </if>
+      <if test="assetAppraisalAgency != null">
+        asset_appraisal_agency,
+      </if>
+      <if test="assetAppraisalAgencyCharge != null">
+        asset_appraisal_agency_charge,
+      </if>
+      <if test="securityRate != null">
+        security_rate,
+      </if>
+      <if test="jurSrb != null">
+        JUR_SRB,
+      </if>
+      <if test="editState != null">
+        edit_state,
+      </if>
+      <if test="noActionLetterTime != null">
+        no_action_letter_time,
+      </if>
+      <if test="serialNumber != null">
+        serial_number,
+      </if>
+      <if test="childCode != null">
+        child_code,
+      </if>
+      <if test="custodian != null">
+        Custodian,
+      </if>
+      <if test="otherRatingAgencyName != null">
+        other_rating_agency_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="absName != null">
+        #{absName,jdbcType=VARCHAR},
+      </if>
+      <if test="absType != null">
+        #{absType,jdbcType=VARCHAR},
+      </if>
+      <if test="absCode != null">
+        #{absCode,jdbcType=VARCHAR},
+      </if>
+      <if test="absShortName != null">
+        #{absShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="trem != null">
+        #{trem,jdbcType=VARCHAR},
+      </if>
+      <if test="tremRemark != null">
+        #{tremRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bondRating != null">
+        #{bondRating,jdbcType=VARCHAR},
+      </if>
+      <if test="creditMeasures != null">
+        #{creditMeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingLocation != null">
+        #{tradingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="currentBondRating != null">
+        #{currentBondRating,jdbcType=VARCHAR},
+      </if>
+      <if test="issueRate != null">
+        #{issueRate,jdbcType=VARCHAR},
+      </if>
+      <if test="issueTime != null">
+        #{issueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interestTime != null">
+        #{interestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="debtAccount != null">
+        #{debtAccount,jdbcType=INTEGER},
+      </if>
+      <if test="individualInvestorAccount != null">
+        #{individualInvestorAccount,jdbcType=INTEGER},
+      </if>
+      <if test="personalDebtRate != null">
+        #{personalDebtRate,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRate != null">
+        #{currentRate,jdbcType=VARCHAR},
+      </if>
+      <if test="dueTime != null">
+        #{dueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="properManagement != null">
+        #{properManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="properManagementTime != null">
+        #{properManagementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="originalOwnerName != null">
+        #{originalOwnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="originalOwnerSrb != null">
+        #{originalOwnerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredPlace != null">
+        #{registeredPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="registrationPlace != null">
+        #{registrationPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null">
+        #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null">
+        #{businessScope,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="mainBusiness != null">
+        #{mainBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="ifBelongsFinancial != null">
+        #{ifBelongsFinancial,jdbcType=VARCHAR},
+      </if>
+      <if test="mainRating != null">
+        #{mainRating,jdbcType=VARCHAR},
+      </if>
+      <if test="relateSrb != null">
+        #{relateSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="managerName != null">
+        #{managerName,jdbcType=VARCHAR},
+      </if>
+      <if test="managerDisclosureSpecialist != null">
+        #{managerDisclosureSpecialist,jdbcType=VARCHAR},
+      </if>
+      <if test="specialistContactWay != null">
+        #{specialistContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="managerCharger != null">
+        #{managerCharger,jdbcType=VARCHAR},
+      </if>
+      <if test="managerContactWay != null">
+        #{managerContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="managerRegisteredPlace != null">
+        #{managerRegisteredPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="managerSrb != null">
+        #{managerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingName != null">
+        #{accountingName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingSignature != null">
+        #{accountingSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="lawName != null">
+        #{lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="lawSignature != null">
+        #{lawSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyName != null">
+        #{ratingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyContactWay != null">
+        #{ratingAgencyContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyCharge != null">
+        #{ratingAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="assetAppraisalAgency != null">
+        #{assetAppraisalAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="assetAppraisalAgencyCharge != null">
+        #{assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="securityRate != null">
+        #{securityRate,jdbcType=VARCHAR},
+      </if>
+      <if test="jurSrb != null">
+        #{jurSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="editState != null">
+        #{editState,jdbcType=INTEGER},
+      </if>
+      <if test="noActionLetterTime != null">
+        #{noActionLetterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serialNumber != null">
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="childCode != null">
+        #{childCode,jdbcType=VARCHAR},
+      </if>
+      <if test="custodian != null">
+        #{custodian,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRatingAgencyName != null">
+        #{otherRatingAgencyName,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.one.absinfo.model.AbsBaseInfoExample" resultType="java.lang.Long">
+    select count(*) from abs_base_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update abs_base_info
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.absName != null">
+        abs_name = #{record.absName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.absType != null">
+        abs_type = #{record.absType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.absCode != null">
+        abs_code = #{record.absCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.absShortName != null">
+        abs_short_name = #{record.absShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trem != null">
+        trem = #{record.trem,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tremRemark != null">
+        trem_remark = #{record.tremRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bondRating != null">
+        bond_rating = #{record.bondRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creditMeasures != null">
+        credit_measures = #{record.creditMeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradingLocation != null">
+        trading_location = #{record.tradingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currentBondRating != null">
+        current_bond_rating = #{record.currentBondRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issueRate != null">
+        issue_rate = #{record.issueRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issueTime != null">
+        issue_time = #{record.issueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.interestTime != null">
+        interest_time = #{record.interestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.debtAccount != null">
+        debt_account = #{record.debtAccount,jdbcType=INTEGER},
+      </if>
+      <if test="record.individualInvestorAccount != null">
+        individual_investor_account = #{record.individualInvestorAccount,jdbcType=INTEGER},
+      </if>
+      <if test="record.personalDebtRate != null">
+        personal_debt_rate = #{record.personalDebtRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currentRate != null">
+        current_rate = #{record.currentRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dueTime != null">
+        due_time = #{record.dueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.properManagement != null">
+        proper_management = #{record.properManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="record.properManagementTime != null">
+        proper_management_time = #{record.properManagementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.originalOwnerName != null">
+        original_owner_name = #{record.originalOwnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.originalOwnerSrb != null">
+        original_owner_srb = #{record.originalOwnerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registeredPlace != null">
+        registered_place = #{record.registeredPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registrationPlace != null">
+        registration_place = #{record.registrationPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industry != null">
+        industry = #{record.industry,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessScope != null">
+        business_scope = #{record.businessScope,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nature != null">
+        nature = #{record.nature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mainBusiness != null">
+        main_business = #{record.mainBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ifBelongsFinancial != null">
+        if_belongs_financial = #{record.ifBelongsFinancial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mainRating != null">
+        main_rating = #{record.mainRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relateSrb != null">
+        relate_srb = #{record.relateSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerName != null">
+        manager_name = #{record.managerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerDisclosureSpecialist != null">
+        manager_disclosure_specialist = #{record.managerDisclosureSpecialist,jdbcType=VARCHAR},
+      </if>
+      <if test="record.specialistContactWay != null">
+        specialist_contact_way = #{record.specialistContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerCharger != null">
+        manager_charger = #{record.managerCharger,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerContactWay != null">
+        manager_contact_way = #{record.managerContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerRegisteredPlace != null">
+        manager_registered_place = #{record.managerRegisteredPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerSrb != null">
+        manager_srb = #{record.managerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountingName != null">
+        accounting_name = #{record.accountingName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountingSignature != null">
+        accounting_signature = #{record.accountingSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawName != null">
+        law_name = #{record.lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawSignature != null">
+        law_signature = #{record.lawSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ratingAgencyName != null">
+        rating_agency_name = #{record.ratingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ratingAgencyContactWay != null">
+        rating_agency_contact_way = #{record.ratingAgencyContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ratingAgencyCharge != null">
+        rating_agency_charge = #{record.ratingAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.assetAppraisalAgency != null">
+        asset_appraisal_agency = #{record.assetAppraisalAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="record.assetAppraisalAgencyCharge != null">
+        asset_appraisal_agency_charge = #{record.assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.securityRate != null">
+        security_rate = #{record.securityRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jurSrb != null">
+        JUR_SRB = #{record.jurSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editState != null">
+        edit_state = #{record.editState,jdbcType=INTEGER},
+      </if>
+      <if test="record.noActionLetterTime != null">
+        no_action_letter_time = #{record.noActionLetterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.serialNumber != null">
+        serial_number = #{record.serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childCode != null">
+        child_code = #{record.childCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.custodian != null">
+        Custodian = #{record.custodian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.otherRatingAgencyName != null">
+        other_rating_agency_name = #{record.otherRatingAgencyName,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update abs_base_info
+    set id = #{record.id,jdbcType=INTEGER},
+      abs_name = #{record.absName,jdbcType=VARCHAR},
+      abs_type = #{record.absType,jdbcType=VARCHAR},
+      abs_code = #{record.absCode,jdbcType=VARCHAR},
+      abs_short_name = #{record.absShortName,jdbcType=VARCHAR},
+      trem = #{record.trem,jdbcType=VARCHAR},
+      trem_remark = #{record.tremRemark,jdbcType=VARCHAR},
+      bond_rating = #{record.bondRating,jdbcType=VARCHAR},
+      credit_measures = #{record.creditMeasures,jdbcType=VARCHAR},
+      trading_location = #{record.tradingLocation,jdbcType=VARCHAR},
+      current_bond_rating = #{record.currentBondRating,jdbcType=VARCHAR},
+      issue_rate = #{record.issueRate,jdbcType=VARCHAR},
+      issue_time = #{record.issueTime,jdbcType=TIMESTAMP},
+      interest_time = #{record.interestTime,jdbcType=TIMESTAMP},
+      debt_account = #{record.debtAccount,jdbcType=INTEGER},
+      individual_investor_account = #{record.individualInvestorAccount,jdbcType=INTEGER},
+      personal_debt_rate = #{record.personalDebtRate,jdbcType=VARCHAR},
+      current_rate = #{record.currentRate,jdbcType=VARCHAR},
+      due_time = #{record.dueTime,jdbcType=TIMESTAMP},
+      proper_management = #{record.properManagement,jdbcType=VARCHAR},
+      proper_management_time = #{record.properManagementTime,jdbcType=TIMESTAMP},
+      original_owner_name = #{record.originalOwnerName,jdbcType=VARCHAR},
+      original_owner_srb = #{record.originalOwnerSrb,jdbcType=VARCHAR},
+      registered_place = #{record.registeredPlace,jdbcType=VARCHAR},
+      registration_place = #{record.registrationPlace,jdbcType=VARCHAR},
+      industry = #{record.industry,jdbcType=VARCHAR},
+      business_scope = #{record.businessScope,jdbcType=VARCHAR},
+      nature = #{record.nature,jdbcType=VARCHAR},
+      main_business = #{record.mainBusiness,jdbcType=VARCHAR},
+      if_belongs_financial = #{record.ifBelongsFinancial,jdbcType=VARCHAR},
+      main_rating = #{record.mainRating,jdbcType=VARCHAR},
+      relate_srb = #{record.relateSrb,jdbcType=VARCHAR},
+      manager_name = #{record.managerName,jdbcType=VARCHAR},
+      manager_disclosure_specialist = #{record.managerDisclosureSpecialist,jdbcType=VARCHAR},
+      specialist_contact_way = #{record.specialistContactWay,jdbcType=VARCHAR},
+      manager_charger = #{record.managerCharger,jdbcType=VARCHAR},
+      manager_contact_way = #{record.managerContactWay,jdbcType=VARCHAR},
+      manager_registered_place = #{record.managerRegisteredPlace,jdbcType=VARCHAR},
+      manager_srb = #{record.managerSrb,jdbcType=VARCHAR},
+      accounting_name = #{record.accountingName,jdbcType=VARCHAR},
+      accounting_signature = #{record.accountingSignature,jdbcType=VARCHAR},
+      law_name = #{record.lawName,jdbcType=VARCHAR},
+      law_signature = #{record.lawSignature,jdbcType=VARCHAR},
+      rating_agency_name = #{record.ratingAgencyName,jdbcType=VARCHAR},
+      rating_agency_contact_way = #{record.ratingAgencyContactWay,jdbcType=VARCHAR},
+      rating_agency_charge = #{record.ratingAgencyCharge,jdbcType=VARCHAR},
+      asset_appraisal_agency = #{record.assetAppraisalAgency,jdbcType=VARCHAR},
+      asset_appraisal_agency_charge = #{record.assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      security_rate = #{record.securityRate,jdbcType=VARCHAR},
+      JUR_SRB = #{record.jurSrb,jdbcType=VARCHAR},
+      edit_state = #{record.editState,jdbcType=INTEGER},
+      no_action_letter_time = #{record.noActionLetterTime,jdbcType=TIMESTAMP},
+      serial_number = #{record.serialNumber,jdbcType=VARCHAR},
+      child_code = #{record.childCode,jdbcType=VARCHAR},
+      Custodian = #{record.custodian,jdbcType=VARCHAR},
+      other_rating_agency_name = #{record.otherRatingAgencyName,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update abs_base_info
+    set id = #{record.id,jdbcType=INTEGER},
+      abs_name = #{record.absName,jdbcType=VARCHAR},
+      abs_type = #{record.absType,jdbcType=VARCHAR},
+      abs_code = #{record.absCode,jdbcType=VARCHAR},
+      abs_short_name = #{record.absShortName,jdbcType=VARCHAR},
+      trem = #{record.trem,jdbcType=VARCHAR},
+      trem_remark = #{record.tremRemark,jdbcType=VARCHAR},
+      bond_rating = #{record.bondRating,jdbcType=VARCHAR},
+      credit_measures = #{record.creditMeasures,jdbcType=VARCHAR},
+      trading_location = #{record.tradingLocation,jdbcType=VARCHAR},
+      current_bond_rating = #{record.currentBondRating,jdbcType=VARCHAR},
+      issue_rate = #{record.issueRate,jdbcType=VARCHAR},
+      issue_time = #{record.issueTime,jdbcType=TIMESTAMP},
+      interest_time = #{record.interestTime,jdbcType=TIMESTAMP},
+      debt_account = #{record.debtAccount,jdbcType=INTEGER},
+      individual_investor_account = #{record.individualInvestorAccount,jdbcType=INTEGER},
+      personal_debt_rate = #{record.personalDebtRate,jdbcType=VARCHAR},
+      current_rate = #{record.currentRate,jdbcType=VARCHAR},
+      due_time = #{record.dueTime,jdbcType=TIMESTAMP},
+      proper_management = #{record.properManagement,jdbcType=VARCHAR},
+      proper_management_time = #{record.properManagementTime,jdbcType=TIMESTAMP},
+      original_owner_name = #{record.originalOwnerName,jdbcType=VARCHAR},
+      original_owner_srb = #{record.originalOwnerSrb,jdbcType=VARCHAR},
+      registered_place = #{record.registeredPlace,jdbcType=VARCHAR},
+      registration_place = #{record.registrationPlace,jdbcType=VARCHAR},
+      industry = #{record.industry,jdbcType=VARCHAR},
+      business_scope = #{record.businessScope,jdbcType=VARCHAR},
+      nature = #{record.nature,jdbcType=VARCHAR},
+      main_business = #{record.mainBusiness,jdbcType=VARCHAR},
+      if_belongs_financial = #{record.ifBelongsFinancial,jdbcType=VARCHAR},
+      main_rating = #{record.mainRating,jdbcType=VARCHAR},
+      relate_srb = #{record.relateSrb,jdbcType=VARCHAR},
+      manager_name = #{record.managerName,jdbcType=VARCHAR},
+      manager_disclosure_specialist = #{record.managerDisclosureSpecialist,jdbcType=VARCHAR},
+      specialist_contact_way = #{record.specialistContactWay,jdbcType=VARCHAR},
+      manager_charger = #{record.managerCharger,jdbcType=VARCHAR},
+      manager_contact_way = #{record.managerContactWay,jdbcType=VARCHAR},
+      manager_registered_place = #{record.managerRegisteredPlace,jdbcType=VARCHAR},
+      manager_srb = #{record.managerSrb,jdbcType=VARCHAR},
+      accounting_name = #{record.accountingName,jdbcType=VARCHAR},
+      accounting_signature = #{record.accountingSignature,jdbcType=VARCHAR},
+      law_name = #{record.lawName,jdbcType=VARCHAR},
+      law_signature = #{record.lawSignature,jdbcType=VARCHAR},
+      rating_agency_name = #{record.ratingAgencyName,jdbcType=VARCHAR},
+      rating_agency_contact_way = #{record.ratingAgencyContactWay,jdbcType=VARCHAR},
+      rating_agency_charge = #{record.ratingAgencyCharge,jdbcType=VARCHAR},
+      asset_appraisal_agency = #{record.assetAppraisalAgency,jdbcType=VARCHAR},
+      asset_appraisal_agency_charge = #{record.assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      security_rate = #{record.securityRate,jdbcType=VARCHAR},
+      JUR_SRB = #{record.jurSrb,jdbcType=VARCHAR},
+      edit_state = #{record.editState,jdbcType=INTEGER},
+      no_action_letter_time = #{record.noActionLetterTime,jdbcType=TIMESTAMP},
+      serial_number = #{record.serialNumber,jdbcType=VARCHAR},
+      child_code = #{record.childCode,jdbcType=VARCHAR},
+      Custodian = #{record.custodian,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.one.absinfo.model.AbsBaseInfo">
+    update abs_base_info
+    <set>
+      <if test="absName != null">
+        abs_name = #{absName,jdbcType=VARCHAR},
+      </if>
+      <if test="absType != null">
+        abs_type = #{absType,jdbcType=VARCHAR},
+      </if>
+      <if test="absCode != null">
+        abs_code = #{absCode,jdbcType=VARCHAR},
+      </if>
+      <if test="absShortName != null">
+        abs_short_name = #{absShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="trem != null">
+        trem = #{trem,jdbcType=VARCHAR},
+      </if>
+      <if test="tremRemark != null">
+        trem_remark = #{tremRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bondRating != null">
+        bond_rating = #{bondRating,jdbcType=VARCHAR},
+      </if>
+      <if test="creditMeasures != null">
+        credit_measures = #{creditMeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingLocation != null">
+        trading_location = #{tradingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="currentBondRating != null">
+        current_bond_rating = #{currentBondRating,jdbcType=VARCHAR},
+      </if>
+      <if test="issueRate != null">
+        issue_rate = #{issueRate,jdbcType=VARCHAR},
+      </if>
+      <if test="issueTime != null">
+        issue_time = #{issueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interestTime != null">
+        interest_time = #{interestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="debtAccount != null">
+        debt_account = #{debtAccount,jdbcType=INTEGER},
+      </if>
+      <if test="individualInvestorAccount != null">
+        individual_investor_account = #{individualInvestorAccount,jdbcType=INTEGER},
+      </if>
+      <if test="personalDebtRate != null">
+        personal_debt_rate = #{personalDebtRate,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRate != null">
+        current_rate = #{currentRate,jdbcType=VARCHAR},
+      </if>
+      <if test="dueTime != null">
+        due_time = #{dueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="properManagement != null">
+        proper_management = #{properManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="properManagementTime != null">
+        proper_management_time = #{properManagementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="originalOwnerName != null">
+        original_owner_name = #{originalOwnerName,jdbcType=VARCHAR},
+      </if>
+      <if test="originalOwnerSrb != null">
+        original_owner_srb = #{originalOwnerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredPlace != null">
+        registered_place = #{registeredPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="registrationPlace != null">
+        registration_place = #{registrationPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null">
+        industry = #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null">
+        business_scope = #{businessScope,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        nature = #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="mainBusiness != null">
+        main_business = #{mainBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="ifBelongsFinancial != null">
+        if_belongs_financial = #{ifBelongsFinancial,jdbcType=VARCHAR},
+      </if>
+      <if test="mainRating != null">
+        main_rating = #{mainRating,jdbcType=VARCHAR},
+      </if>
+      <if test="relateSrb != null">
+        relate_srb = #{relateSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="managerName != null">
+        manager_name = #{managerName,jdbcType=VARCHAR},
+      </if>
+      <if test="managerDisclosureSpecialist != null">
+        manager_disclosure_specialist = #{managerDisclosureSpecialist,jdbcType=VARCHAR},
+      </if>
+      <if test="specialistContactWay != null">
+        specialist_contact_way = #{specialistContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="managerCharger != null">
+        manager_charger = #{managerCharger,jdbcType=VARCHAR},
+      </if>
+      <if test="managerContactWay != null">
+        manager_contact_way = #{managerContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="managerRegisteredPlace != null">
+        manager_registered_place = #{managerRegisteredPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="managerSrb != null">
+        manager_srb = #{managerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingName != null">
+        accounting_name = #{accountingName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingSignature != null">
+        accounting_signature = #{accountingSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="lawName != null">
+        law_name = #{lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="lawSignature != null">
+        law_signature = #{lawSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyName != null">
+        rating_agency_name = #{ratingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyContactWay != null">
+        rating_agency_contact_way = #{ratingAgencyContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyCharge != null">
+        rating_agency_charge = #{ratingAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="assetAppraisalAgency != null">
+        asset_appraisal_agency = #{assetAppraisalAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="assetAppraisalAgencyCharge != null">
+        asset_appraisal_agency_charge = #{assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="securityRate != null">
+        security_rate = #{securityRate,jdbcType=VARCHAR},
+      </if>
+      <if test="jurSrb != null">
+        JUR_SRB = #{jurSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="editState != null">
+        edit_state = #{editState,jdbcType=INTEGER},
+      </if>
+      <if test="noActionLetterTime != null">
+        no_action_letter_time = #{noActionLetterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serialNumber != null">
+        serial_number = #{serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="childCode != null">
+        child_code = #{childCode,jdbcType=VARCHAR},
+      </if>
+      <if test="custodian != null">
+        Custodian = #{custodian,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRatingAgencyName != null">
+        other_rating_agency_name = #{otherRatingAgencyName,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.company.one.absinfo.model.AbsBaseInfo">
+    update abs_base_info
+    set abs_name = #{absName,jdbcType=VARCHAR},
+      abs_type = #{absType,jdbcType=VARCHAR},
+      abs_code = #{absCode,jdbcType=VARCHAR},
+      abs_short_name = #{absShortName,jdbcType=VARCHAR},
+      trem = #{trem,jdbcType=VARCHAR},
+      trem_remark = #{tremRemark,jdbcType=VARCHAR},
+      bond_rating = #{bondRating,jdbcType=VARCHAR},
+      credit_measures = #{creditMeasures,jdbcType=VARCHAR},
+      trading_location = #{tradingLocation,jdbcType=VARCHAR},
+      current_bond_rating = #{currentBondRating,jdbcType=VARCHAR},
+      issue_rate = #{issueRate,jdbcType=VARCHAR},
+      issue_time = #{issueTime,jdbcType=TIMESTAMP},
+      interest_time = #{interestTime,jdbcType=TIMESTAMP},
+      debt_account = #{debtAccount,jdbcType=INTEGER},
+      individual_investor_account = #{individualInvestorAccount,jdbcType=INTEGER},
+      personal_debt_rate = #{personalDebtRate,jdbcType=VARCHAR},
+      current_rate = #{currentRate,jdbcType=VARCHAR},
+      due_time = #{dueTime,jdbcType=TIMESTAMP},
+      proper_management = #{properManagement,jdbcType=VARCHAR},
+      proper_management_time = #{properManagementTime,jdbcType=TIMESTAMP},
+      original_owner_name = #{originalOwnerName,jdbcType=VARCHAR},
+      original_owner_srb = #{originalOwnerSrb,jdbcType=VARCHAR},
+      registered_place = #{registeredPlace,jdbcType=VARCHAR},
+      registration_place = #{registrationPlace,jdbcType=VARCHAR},
+      industry = #{industry,jdbcType=VARCHAR},
+      business_scope = #{businessScope,jdbcType=VARCHAR},
+      nature = #{nature,jdbcType=VARCHAR},
+      main_business = #{mainBusiness,jdbcType=VARCHAR},
+      if_belongs_financial = #{ifBelongsFinancial,jdbcType=VARCHAR},
+      main_rating = #{mainRating,jdbcType=VARCHAR},
+      relate_srb = #{relateSrb,jdbcType=VARCHAR},
+      manager_name = #{managerName,jdbcType=VARCHAR},
+      manager_disclosure_specialist = #{managerDisclosureSpecialist,jdbcType=VARCHAR},
+      specialist_contact_way = #{specialistContactWay,jdbcType=VARCHAR},
+      manager_charger = #{managerCharger,jdbcType=VARCHAR},
+      manager_contact_way = #{managerContactWay,jdbcType=VARCHAR},
+      manager_registered_place = #{managerRegisteredPlace,jdbcType=VARCHAR},
+      manager_srb = #{managerSrb,jdbcType=VARCHAR},
+      accounting_name = #{accountingName,jdbcType=VARCHAR},
+      accounting_signature = #{accountingSignature,jdbcType=VARCHAR},
+      law_name = #{lawName,jdbcType=VARCHAR},
+      law_signature = #{lawSignature,jdbcType=VARCHAR},
+      rating_agency_name = #{ratingAgencyName,jdbcType=VARCHAR},
+      rating_agency_contact_way = #{ratingAgencyContactWay,jdbcType=VARCHAR},
+      rating_agency_charge = #{ratingAgencyCharge,jdbcType=VARCHAR},
+      asset_appraisal_agency = #{assetAppraisalAgency,jdbcType=VARCHAR},
+      asset_appraisal_agency_charge = #{assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      security_rate = #{securityRate,jdbcType=VARCHAR},
+      JUR_SRB = #{jurSrb,jdbcType=VARCHAR},
+      edit_state = #{editState,jdbcType=INTEGER},
+      no_action_letter_time = #{noActionLetterTime,jdbcType=TIMESTAMP},
+      serial_number = #{serialNumber,jdbcType=VARCHAR},
+      child_code = #{childCode,jdbcType=VARCHAR},
+      Custodian = #{custodian,jdbcType=VARCHAR},
+      other_rating_agency_name = #{otherRatingAgencyName,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.one.absinfo.model.AbsBaseInfo">
+    update abs_base_info
+    set abs_name = #{absName,jdbcType=VARCHAR},
+      abs_type = #{absType,jdbcType=VARCHAR},
+      abs_code = #{absCode,jdbcType=VARCHAR},
+      abs_short_name = #{absShortName,jdbcType=VARCHAR},
+      trem = #{trem,jdbcType=VARCHAR},
+      trem_remark = #{tremRemark,jdbcType=VARCHAR},
+      bond_rating = #{bondRating,jdbcType=VARCHAR},
+      credit_measures = #{creditMeasures,jdbcType=VARCHAR},
+      trading_location = #{tradingLocation,jdbcType=VARCHAR},
+      current_bond_rating = #{currentBondRating,jdbcType=VARCHAR},
+      issue_rate = #{issueRate,jdbcType=VARCHAR},
+      issue_time = #{issueTime,jdbcType=TIMESTAMP},
+      interest_time = #{interestTime,jdbcType=TIMESTAMP},
+      debt_account = #{debtAccount,jdbcType=INTEGER},
+      individual_investor_account = #{individualInvestorAccount,jdbcType=INTEGER},
+      personal_debt_rate = #{personalDebtRate,jdbcType=VARCHAR},
+      current_rate = #{currentRate,jdbcType=VARCHAR},
+      due_time = #{dueTime,jdbcType=TIMESTAMP},
+      proper_management = #{properManagement,jdbcType=VARCHAR},
+      proper_management_time = #{properManagementTime,jdbcType=TIMESTAMP},
+      original_owner_name = #{originalOwnerName,jdbcType=VARCHAR},
+      original_owner_srb = #{originalOwnerSrb,jdbcType=VARCHAR},
+      registered_place = #{registeredPlace,jdbcType=VARCHAR},
+      registration_place = #{registrationPlace,jdbcType=VARCHAR},
+      industry = #{industry,jdbcType=VARCHAR},
+      business_scope = #{businessScope,jdbcType=VARCHAR},
+      nature = #{nature,jdbcType=VARCHAR},
+      main_business = #{mainBusiness,jdbcType=VARCHAR},
+      if_belongs_financial = #{ifBelongsFinancial,jdbcType=VARCHAR},
+      main_rating = #{mainRating,jdbcType=VARCHAR},
+      relate_srb = #{relateSrb,jdbcType=VARCHAR},
+      manager_name = #{managerName,jdbcType=VARCHAR},
+      manager_disclosure_specialist = #{managerDisclosureSpecialist,jdbcType=VARCHAR},
+      specialist_contact_way = #{specialistContactWay,jdbcType=VARCHAR},
+      manager_charger = #{managerCharger,jdbcType=VARCHAR},
+      manager_contact_way = #{managerContactWay,jdbcType=VARCHAR},
+      manager_registered_place = #{managerRegisteredPlace,jdbcType=VARCHAR},
+      manager_srb = #{managerSrb,jdbcType=VARCHAR},
+      accounting_name = #{accountingName,jdbcType=VARCHAR},
+      accounting_signature = #{accountingSignature,jdbcType=VARCHAR},
+      law_name = #{lawName,jdbcType=VARCHAR},
+      law_signature = #{lawSignature,jdbcType=VARCHAR},
+      rating_agency_name = #{ratingAgencyName,jdbcType=VARCHAR},
+      rating_agency_contact_way = #{ratingAgencyContactWay,jdbcType=VARCHAR},
+      rating_agency_charge = #{ratingAgencyCharge,jdbcType=VARCHAR},
+      asset_appraisal_agency = #{assetAppraisalAgency,jdbcType=VARCHAR},
+      asset_appraisal_agency_charge = #{assetAppraisalAgencyCharge,jdbcType=VARCHAR},
+      security_rate = #{securityRate,jdbcType=VARCHAR},
+      JUR_SRB = #{jurSrb,jdbcType=VARCHAR},
+      edit_state = #{editState,jdbcType=INTEGER},
+      no_action_letter_time = #{noActionLetterTime,jdbcType=TIMESTAMP},
+      serial_number = #{serialNumber,jdbcType=VARCHAR},
+      child_code = #{childCode,jdbcType=VARCHAR},
+      Custodian = #{custodian,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

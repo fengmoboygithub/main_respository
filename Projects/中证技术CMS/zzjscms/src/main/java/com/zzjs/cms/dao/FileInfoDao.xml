@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.FileInfoDao">
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+	<insert id="addFileInfo" parameterType="com.zzjs.cms.entity.FileInfo">
+		insert into
+		fileInfo(siteId,folderId,path,ename,name,status,createTime,updateTime)
+		values(#{siteId},#{folderId},#{path},#{ename},#{name},#{status},#{createTime},#{updateTime})
+		<selectKey resultType="long" keyProperty="fileId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteFileInfoById" parameterType="com.zzjs.cms.entity.FileInfo">
+		delete from fileInfo
+		where fileId=#{fileId}
+	</delete>
+
+	<delete id="deleteFileInfoListByStatus">
+		delete from fileInfo
+		where status=#{status}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateFileInfo" parameterType="com.zzjs.cms.entity.FileInfo">
+		UPDATE fileInfo SET
+		folderId=#{folderId},
+		path=#{path},
+		ename=#{ename},
+		name=#{name},
+		sourceCode=#{sourceCode},
+		htmlCodeByEdit=#{htmlCodeByEdit},
+		status=#{status},
+		createTime=#{createTime},
+		updateTime=#{updateTime}
+		WHERE
+		fileId=#{fileId}
+	</update>
+
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+
+	<select id="getFileInfoById" parameterType="long"
+		resultType="com.zzjs.cms.entity.vo.FileInfoVo">
+		select * from fileInfo where fileId=#{fileId}
+	</select>
+
+	<select id="getFileInfoListOfDisplayByPath" resultType="com.zzjs.cms.entity.vo.FileInfoVo">
+		select *
+		from fileInfo
+		where
+		path like #{path}"%" and status = 'display'
+		order by
+		createTime desc limit #{offset},#{rows}
+	</select>
+
+	<select id="getFileInfoCountOfDisplayByPath" resultType="Integer">
+		select
+		count(*)
+		from fileInfo
+		where
+		path like #{path}"%" and status = 'display'
+	</select>
+
+	<select id="getFileInfoCountByFolderId" resultType="Integer">
+		select
+		count(*)
+		from fileInfo where folderId = #{folderId}
+	</select>
+	<select id="getFileInfoCountBySiteIdAndPath" resultType="Integer">
+		select
+		count(*)
+		from fileInfo where path like #{path}"%"  and siteId = #{siteId}
+	</select>
+
+	<select id="getFileInfoListBySiteIdAndPath" resultType="com.zzjs.cms.entity.vo.FileInfoVo">
+		select * from
+		fileInfo
+		where path like #{path}"%" and siteId = #{siteId} 
+		order by createTime
+		desc limit
+		#{offset},#{rows}
+	</select>
+
+</mapper>  

@@ -1,0 +1,561 @@
+
+查询数据库中所有表名
+select TABLE_NAME from information_schema.tables 
+	where table_schema=schema() and table_type='base table';
+
+查询指定数据库中指定表的所有数据类型DATA_TYPE,字段名COLUMN_NAM
+select DATA_TYPE,lower(COLUMN_NAME) as COLUMN_NAME,COLUMN_COMMENT,CHARACTER_MAXIMUM_LENGTH 
+	from information_schema.columns 
+	where table_schema=schema() and table_name='modular_tab'
+select lower(COLUMN_NAME) as COLUMN_NAME,CONCAT(lower(COLUMN_NAME), '#',COLUMN_COMMENT) as COLUMN_COMMENT
+	from information_schema.columns 
+	where table_schema='bmp' and table_name='user_tab'
+
+
+
+1、通过模块名称例如：UserTab查询模块信息(modular_tab) 
+	{name(NAMESPACE),cnName(NAME)}
+2、通过模块ID查询表格项信息(table_item_tab) 
+	{prop(PROP),label(LABEL),sortable(SORTABLE),minWidth(MIN_WIDTH)}
+3、通过模块ID查询表单项信息(form_item_tab) 
+	{prop(PROP),label(LABEL)}
+4、通过表单项ID查询验证规则信息(rules_tab)
+	ps: RULES_TYPE:验证规则类型
+	    RULES_TYPE_NAME:验证规则类型名称
+	    通过组名查询配置表
+	    rulesType:验证规则类型
+	    	requiredType:必填验证(默认)		
+			{required(REQUIRED),message(MESSAGE),trigger(TRIGGER_NAME)}
+				通过组名查询配置表
+				requiredType#trigger:触发类型
+					blur:失去焦点事件
+					change:变更事件
+			{ required: true, message: '请输入登录名称', trigger: 'blur' }
+		lengthType:长度验证		
+			{min(MIN),max(MAX),len(LEN),message(MESSAGE),trigger(TRIGGER_NAME)}
+			{ min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+		formatType:格式验证		
+			{type(TYPE_ID),message(MESSAGE),trigger(TRIGGER_NAME)}
+				通过组名查询配置表
+				formatType#type:格式验证类型
+					string:字符格式
+					number:数字格式
+					integer:正整数格式
+					float:浮点数格式
+					date:日期格式
+					url:链接格式
+					email:邮箱格式
+			{ type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur' }
+		validatorType:自定义验证	
+			{validator(VALIDATOR),message(MESSAGE),trigger(TRIGGER_NAME)}
+				通过组名查询配置表
+				validatorType#validator自定义验证函数
+					eval#checkMobile:验证手机号码
+					eval#checkNumPot2:验证数字保留2位小数
+					eval#checkIdNum:验证身份证
+			{ "validator": "eval:checkMobile", "message": "请输入正确的手机号码", "trigger": ["blur", "change"] }
+5、通过表单项ID查询元素信息(element_tab)
+	ps: ELEMENT_TYPE:元素类型
+	    ELEMENT_TYPE_NAME:元素类型名称
+	    通过组名查询配置表
+	    elementType:元素类型
+	    	FormInput:文本输入框(默认)
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormTextArea:文本域
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormSelector:选择器
+			{
+			modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER),multiple(MULTIPLE),
+			filterable(FILTERABLE),options(OPTIONS)
+			}
+			options==>>选项集  命名规则为：模块名称#属性名称 
+				通过组名查询配置表
+				{value(KEY),label(VALUE)}
+				{"options":[ { "value":"1", "label":"男" }, { "value":"2", "label":"女" } ]}
+		FormRadio:单选框
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),options(OPTIONS)}
+		FormCheckbox:多选框
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),options(OPTIONS)}
+		FormDatePicker:日期选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormTimePicker:时间选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormDateTimePicker:日期时间选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormSwitch:开关选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME)}
+6、通过模块ID查询查询条件项信息(query_criteria_item_tab) 
+	{prop(CONNECTOR_NAME+PROP+COMPARISON_RULE+DATA_TYPE),label(LABEL)}
+	ps: CONNECTOR_NAME:连接符
+		通过组名查询配置表
+		connectorName:连接符
+			and:和      (默认)
+			or:或
+	    PROP:属性名称 首字母大写
+	    COMPARISON_RULE:比较规则
+	    	通过组名查询配置表
+		comparisonRule:比较规则
+			IsNull:为空
+			IsNotNull:不为空
+			EqualTo:等于
+			NotEqualTo:不等于
+			GreaterThan:大于
+			GreaterThanOrEqualTo:大于等于
+			LessThan:小于
+			LessThanOrEqualTo:小于等于
+			Like:模糊  (默认)
+			NotLike:不模糊
+	    DATA_TYPE:数据类型
+	    	通过组名查询配置表
+		dataType:数据类型
+			0:无参数
+			1:数字类型
+			2:长数字类型
+			3:日期类型
+			4:字符串类型  (默认)
+			5:浮点精度类型
+7、通过查询条件项ID查询元素信息(element_tab)
+	ps: ELEMENT_TYPE:元素类型
+	    ELEMENT_TYPE_NAME:元素类型名称
+	    通过组名查询配置表
+	    elementType:元素类型
+	    	FormInput:文本输入框
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormTextArea:文本域
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormSelector:选择器
+			{
+			modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER),multiple(MULTIPLE),
+			filterable(FILTERABLE),options(OPTIONS)
+			}
+			options==>>选项集  命名规则为：模块名称#属性名称 
+				通过组名查询配置表
+				{value(KEY),label(VALUE)}
+				{"options":[ { "value":"1", "label":"男" }, { "value":"2", "label":"女" } ]}
+		FormRadio:单选框
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),options(OPTIONS)}
+		FormCheckbox:多选框
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),options(OPTIONS)}
+		FormDatePicker:日期选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormTimePicker:时间选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormDateTimePicker:日期时间选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME),placeholder(PLACEHOLDER)}
+		FormSwitch:开关选择器
+			{modelName(MODEL_NAME),styleName(STYLE_NAME)}
+以下是以用户模块为例 生成的模块信息json信息,以此来配置用户模块的表格项、表单项、查询条件项信息
+目前已经实现用此格式的json串 传入封装的组件,展示该模块的表格项、表单项、查询条件项信息，增、删、改信息
+{
+	"name":"UserTab",
+	"cnName":"用户",
+	"modularTableItemArr"(表格项):[
+		 {
+			 "prop":"id",
+			 "label":"ID",
+			 "sortable":true,
+			 "minWidth":"50px"
+		 },
+		 {
+			 "prop":"name",
+			 "label":"姓名",
+			 "sortable":true,
+			 "minWidth":"150px"
+		 },
+		 {
+			 "prop":"account",
+			 "label":"登录名",
+			 "sortable":true,
+			 "minWidth":"150px"
+		 },
+		 {
+			 "prop":"email",
+			 "label":"邮箱",
+			 "sortable":true,
+			 "minWidth":"150px"
+		 }
+	],
+	"modularFormItemObj"(表单项及验证规则):{
+			"rules"(验证规则):{
+				"email":[
+					{ required: true, message: '请输入邮箱地址', trigger: 'blur' },
+					{ type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur' }	
+				],
+				"account":[
+					{ required: true, message: '请输入登录名称', trigger: 'blur' },
+					{ min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+				],
+				"name":[
+					{ required: true, message: '请输入真实姓名', trigger: 'blur' },
+					{ min: 2, max: 10, message: '长度在 2 到 10 个字符', trigger: 'blur' }
+				],
+				"sex":[
+					{ required: true, message: '请选择性别', trigger: 'change' }	
+				],
+				"mobile":[
+					{ "validator": "eval#checkMobile", "message": "请输入正确的手机号码", "trigger": ["blur", "change"] }
+				]
+			},
+			"formItemArr"(表单项):[
+						{
+							"label":"登录邮箱",
+							"prop":"email",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"email",
+									"placeholder":"输入邮箱地址"
+								}
+							]
+						},
+						{
+							"label":"登录名称",
+							"prop":"account",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"account",
+									"placeholder":"我们该如何称呼您？"
+								}
+							]
+						},
+						{
+							"label":"真实姓名",
+							"prop":"name",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"name",
+									"placeholder":"真实姓名"
+								}
+							]
+						},
+						{
+							"label":"性别",
+							"prop":"sex",
+							"formRadioFlag":true,
+							"formRadiosDataSource":[
+								{
+									"modelName":"sex",
+									"options":[
+										{
+											"value":"1",
+											"label":"男"
+										},
+										{
+											"value":"2",
+											"label":"女"
+										}
+									]
+								}
+							]
+						},
+						{
+							"label":"手机号码",
+							"prop":"mobile",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"mobile",
+									"placeholder":"手机号码"
+								}
+							]
+						}
+					]
+		},
+	"modularQueryCriteriaRowArr"(查询条件):[
+		{
+			"queryCriteriaItemIndex":0,
+			"queryCriteriaItemArr":[
+				{
+					"label":"姓名",
+					"prop":"andNameLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andNameLike",
+							"placeholder":"姓名",
+							"styleName":"width: 200px"
+						}
+					]
+				},
+				{
+					"label":"登录名",
+					"prop":"andAccountLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andAccountLike",
+							"placeholder":"登录名",
+							"styleName":"width: 200px"
+						}
+					]
+				},
+				{
+					"label":"邮箱",
+					"prop":"andEmailLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andEmailLike",
+							"placeholder":"邮箱",
+							"styleName":"width: 200px"
+						}
+					]
+				}
+			]
+		},
+		{	
+			"queryCriteriaItemIndex":1,
+			"queryCriteriaItemArr":[
+				{
+					"label":"手机号码",
+					"prop":"andMobileLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andMobileLike",
+							"placeholder":"手机号码",
+							"styleName":"width: 200px"
+						}
+					]
+				},
+				{
+					"label":"性别",
+					"prop":"andSexLike",
+					"formRadioFlag":true,
+					"formRadiosDataSource":[
+						{
+							"modelName":"andSexLike",
+							"styleName":"width: 200px",
+							"options":[
+								{
+									"value":"1",
+									"label":"男"
+								},
+								{
+									"value":"2",
+									"label":"女"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
+
+
+
+
+
+
+var mobileTest  ='{ "validator": "eval#checkMobile", "message": "请输入正确的手机号码", "trigger": ["blur", "change"] }';
+var jsonObj = JSON.parse(mobileTest,function(key,value){
+	if(key == 'validator' &&  "string" == typeof  value && value.indexOf('eval#')== 0 ){
+		return eval(value.split("#")[1]);
+	}
+	return value;
+});
+console.log(jsonObj);
+this.modularInfo = {
+	"name":"UserTab",
+	"cnName":"用户",
+	"modularTableItemArr":[
+		 {
+			 "prop":"id",
+			 "label":"ID",
+			 "sortable":true,
+			 "minWidth":"50px"
+		 },
+		 {
+			 "prop":"name",
+			 "label":"姓名",
+			 "sortable":true,
+			 "minWidth":"150px"
+		 },
+		 {
+			 "prop":"account",
+			 "label":"登录名",
+			 "sortable":true,
+			 "minWidth":"150px"
+		 },
+		 {
+			 "prop":"email",
+			 "label":"邮箱",
+			 "sortable":true,
+			 "minWidth":"150px"
+		 }
+	],
+	"modularFormItemObj":{
+			"rules":{
+				"email":[
+					{ required: true, message: '请输入邮箱地址', trigger: 'blur' },
+					{ type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur' }	
+				],
+				"account":[
+					{ required: true, message: '请输入登录名称', trigger: 'blur' },
+					{ min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+				],
+				"name":[
+					{ required: true, message: '请输入真实姓名', trigger: 'blur' },
+					{ min: 2, max: 10, message: '长度在 2 到 10 个字符', trigger: 'blur' }
+				],
+				"sex":[
+					{ required: true, message: '请选择性别', trigger: 'change' }	
+				],
+				"mobile":[
+					jsonObj
+				]
+			},
+			"formItemArr":[
+						{
+							"label":"登录邮箱",
+							"prop":"email",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"email",
+									"placeholder":"输入邮箱地址"
+								}
+							]
+						},
+						{
+							"label":"登录名称",
+							"prop":"account",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"account",
+									"placeholder":"我们该如何称呼您？"
+								}
+							]
+						},
+						{
+							"label":"真实姓名",
+							"prop":"name",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"name",
+									"placeholder":"真实姓名"
+								}
+							]
+						},
+						{
+							"label":"性别",
+							"prop":"sex",
+							"formRadioFlag":true,
+							"formRadiosDataSource":[
+								{
+									"modelName":"sex",
+									"options":[
+										{
+											"value":"1",
+											"label":"男"
+										},
+										{
+											"value":"2",
+											"label":"女"
+										}
+									]
+								}
+							]
+						},
+						{
+							"label":"手机号码",
+							"prop":"mobile",
+							"formInputFlag":true,
+							"formInputsDataSource":[
+								{
+									"modelName":"mobile",
+									"placeholder":"手机号码"
+								}
+							]
+						}
+					]
+		},
+	"modularQueryCriteriaRowArr":[
+		{
+			"queryCriteriaItemIndex":0,
+			"queryCriteriaItemArr":[
+				{
+					"label":"姓名",
+					"prop":"andNameLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andNameLike",
+							"placeholder":"姓名",
+							"styleName":"width: 200px"
+						}
+					]
+				},
+				{
+					"label":"登录名",
+					"prop":"andAccountLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andAccountLike",
+							"placeholder":"登录名",
+							"styleName":"width: 200px"
+						}
+					]
+				},
+				{
+					"label":"邮箱",
+					"prop":"andEmailLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andEmailLike",
+							"placeholder":"邮箱",
+							"styleName":"width: 200px"
+						}
+					]
+				}
+			]
+		},
+		{	
+			"queryCriteriaItemIndex":1,
+			"queryCriteriaItemArr":[
+				{
+					"label":"手机号码",
+					"prop":"andMobileLike",
+					"formInputFlag":true,
+					"formInputsDataSource":[
+						{
+							"modelName":"andMobileLike",
+							"placeholder":"手机号码",
+							"styleName":"width: 200px"
+						}
+					]
+				},
+				{
+					"label":"性别",
+					"prop":"andSexLike",
+					"formRadioFlag":true,
+					"formRadiosDataSource":[
+						{
+							"modelName":"andSexLike",
+							"styleName":"width: 200px",
+							"options":[
+								{
+									"value":"1",
+									"label":"男"
+								},
+								{
+									"value":"2",
+									"label":"女"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+};

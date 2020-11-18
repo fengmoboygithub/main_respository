@@ -1,0 +1,80 @@
+package ${serviceUrl};
+
+import java.util.List;
+import com.github.pagehelper.PageInfo;
+import ${url};
+import ${exampleurl};
+
+
+public interface ${name}Service {
+	/**
+	 * 根据id查询单个记录
+	 *
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 * @throws
+	 */
+    ${name} get${name}(${primaryType} ${primaryKey});
+	/**
+	 * 插入数据
+	 *
+	 * @param model
+	 * @return
+	 * @throws
+	 */
+    void save(${name} model);
+	/**
+	 * 更新数据
+	 *
+	 * @param model
+	 * @return
+	 * @throws
+	 */
+    void update(${name} model);
+    
+    /**
+	 * 根据ID删除数据
+	 *
+	 * @param id
+	 * @throws Exception
+	 * @throws
+	 */
+	void deleteByPrimaryKey(${primaryType} ${primaryKey});
+	
+	/**
+	 * 删除数据根据条件
+	 *
+	 * @param example
+	 * @throws Exception
+	 * @throws
+	 */
+    void deleteByExample(${name}Example example);
+	
+	/**
+	 * 根据条件统计数目
+	 *
+	 * @param example
+	 * @throws Exception
+	 * @throws
+	 */
+	long countByExample(${name}Example example);
+	
+	/**
+	 * 根据对象分页查询多条记录
+	 * @param start        起始页目
+	 * @param itemsPerPage 每页最多显示条目
+	 * @param example
+	 * @return
+	 */
+    PageInfo<${name}> getListByPage(int currentPage, int itemsPerPage, ${name}Example example);
+	
+	/**
+	 * 根据对象查询多条记录
+	 * @param example
+	 * @return
+	 */
+    List<${name}> getList(${name}Example example);
+    
+
+}

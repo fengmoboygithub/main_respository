@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interapi.app.modular.dao.ElementTabMapper">
+  <resultMap id="BaseResultMap" type="com.interapi.app.modular.model.ElementTab">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="FORM_ITEM_ID" jdbcType="BIGINT" property="formItemId" />
+    <result column="QUERY_CRITERIA_ITEM_ID" jdbcType="BIGINT" property="queryCriteriaItemId" />
+    <result column="ELEMENT_TYPE" jdbcType="VARCHAR" property="elementType" />
+    <result column="ELEMENT_TYPE_NAME" jdbcType="VARCHAR" property="elementTypeName" />
+    <result column="MODEL_NAME" jdbcType="VARCHAR" property="modelName" />
+    <result column="STYLE_NAME" jdbcType="VARCHAR" property="styleName" />
+    <result column="PLACEHOLDER" jdbcType="VARCHAR" property="placeholder" />
+    <result column="MULTIPLE" jdbcType="VARCHAR" property="multiple" />
+    <result column="FILTERABLE" jdbcType="VARCHAR" property="filterable" />
+    <result column="OPTIONS" jdbcType="VARCHAR" property="options" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="BIGINT" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, FORM_ITEM_ID, QUERY_CRITERIA_ITEM_ID, ELEMENT_TYPE, ELEMENT_TYPE_NAME, MODEL_NAME, 
+    STYLE_NAME, PLACEHOLDER, MULTIPLE, FILTERABLE, OPTIONS, IS_DELETE, CREATE_TIME, CREATE_USER, 
+    UPDATE_TIME, UPDATE_USER
+  </sql>
+  <select id="selectByExample" parameterType="com.interapi.app.modular.model.ElementTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from element_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from element_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from element_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.interapi.app.modular.model.ElementTabExample">
+    delete from element_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.interapi.app.modular.model.ElementTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into element_tab (FORM_ITEM_ID, QUERY_CRITERIA_ITEM_ID, ELEMENT_TYPE, 
+      ELEMENT_TYPE_NAME, MODEL_NAME, STYLE_NAME, 
+      PLACEHOLDER, MULTIPLE, FILTERABLE, 
+      OPTIONS, IS_DELETE, CREATE_TIME, 
+      CREATE_USER, UPDATE_TIME, UPDATE_USER
+      )
+    values (#{formItemId,jdbcType=BIGINT}, #{queryCriteriaItemId,jdbcType=BIGINT}, #{elementType,jdbcType=VARCHAR}, 
+      #{elementTypeName,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, #{styleName,jdbcType=VARCHAR}, 
+      #{placeholder,jdbcType=VARCHAR}, #{multiple,jdbcType=VARCHAR}, #{filterable,jdbcType=VARCHAR}, 
+      #{options,jdbcType=VARCHAR}, #{isDelete,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.interapi.app.modular.model.ElementTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into element_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="formItemId != null">
+        FORM_ITEM_ID,
+      </if>
+      <if test="queryCriteriaItemId != null">
+        QUERY_CRITERIA_ITEM_ID,
+      </if>
+      <if test="elementType != null">
+        ELEMENT_TYPE,
+      </if>
+      <if test="elementTypeName != null">
+        ELEMENT_TYPE_NAME,
+      </if>
+      <if test="modelName != null">
+        MODEL_NAME,
+      </if>
+      <if test="styleName != null">
+        STYLE_NAME,
+      </if>
+      <if test="placeholder != null">
+        PLACEHOLDER,
+      </if>
+      <if test="multiple != null">
+        MULTIPLE,
+      </if>
+      <if test="filterable != null">
+        FILTERABLE,
+      </if>
+      <if test="options != null">
+        OPTIONS,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="formItemId != null">
+        #{formItemId,jdbcType=BIGINT},
+      </if>
+      <if test="queryCriteriaItemId != null">
+        #{queryCriteriaItemId,jdbcType=BIGINT},
+      </if>
+      <if test="elementType != null">
+        #{elementType,jdbcType=VARCHAR},
+      </if>
+      <if test="elementTypeName != null">
+        #{elementTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelName != null">
+        #{modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="styleName != null">
+        #{styleName,jdbcType=VARCHAR},
+      </if>
+      <if test="placeholder != null">
+        #{placeholder,jdbcType=VARCHAR},
+      </if>
+      <if test="multiple != null">
+        #{multiple,jdbcType=VARCHAR},
+      </if>
+      <if test="filterable != null">
+        #{filterable,jdbcType=VARCHAR},
+      </if>
+      <if test="options != null">
+        #{options,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.interapi.app.modular.model.ElementTabExample" resultType="java.lang.Long">
+    select count(*) from element_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update element_tab
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.formItemId != null">
+        FORM_ITEM_ID = #{record.formItemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.queryCriteriaItemId != null">
+        QUERY_CRITERIA_ITEM_ID = #{record.queryCriteriaItemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.elementType != null">
+        ELEMENT_TYPE = #{record.elementType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.elementTypeName != null">
+        ELEMENT_TYPE_NAME = #{record.elementTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modelName != null">
+        MODEL_NAME = #{record.modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.styleName != null">
+        STYLE_NAME = #{record.styleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.placeholder != null">
+        PLACEHOLDER = #{record.placeholder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.multiple != null">
+        MULTIPLE = #{record.multiple,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filterable != null">
+        FILTERABLE = #{record.filterable,jdbcType=VARCHAR},
+      </if>
+      <if test="record.options != null">
+        OPTIONS = #{record.options,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update element_tab
+    set ID = #{record.id,jdbcType=BIGINT},
+      FORM_ITEM_ID = #{record.formItemId,jdbcType=BIGINT},
+      QUERY_CRITERIA_ITEM_ID = #{record.queryCriteriaItemId,jdbcType=BIGINT},
+      ELEMENT_TYPE = #{record.elementType,jdbcType=VARCHAR},
+      ELEMENT_TYPE_NAME = #{record.elementTypeName,jdbcType=VARCHAR},
+      MODEL_NAME = #{record.modelName,jdbcType=VARCHAR},
+      STYLE_NAME = #{record.styleName,jdbcType=VARCHAR},
+      PLACEHOLDER = #{record.placeholder,jdbcType=VARCHAR},
+      MULTIPLE = #{record.multiple,jdbcType=VARCHAR},
+      FILTERABLE = #{record.filterable,jdbcType=VARCHAR},
+      OPTIONS = #{record.options,jdbcType=VARCHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.interapi.app.modular.model.ElementTab">
+    update element_tab
+    <set>
+      <if test="formItemId != null">
+        FORM_ITEM_ID = #{formItemId,jdbcType=BIGINT},
+      </if>
+      <if test="queryCriteriaItemId != null">
+        QUERY_CRITERIA_ITEM_ID = #{queryCriteriaItemId,jdbcType=BIGINT},
+      </if>
+      <if test="elementType != null">
+        ELEMENT_TYPE = #{elementType,jdbcType=VARCHAR},
+      </if>
+      <if test="elementTypeName != null">
+        ELEMENT_TYPE_NAME = #{elementTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelName != null">
+        MODEL_NAME = #{modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="styleName != null">
+        STYLE_NAME = #{styleName,jdbcType=VARCHAR},
+      </if>
+      <if test="placeholder != null">
+        PLACEHOLDER = #{placeholder,jdbcType=VARCHAR},
+      </if>
+      <if test="multiple != null">
+        MULTIPLE = #{multiple,jdbcType=VARCHAR},
+      </if>
+      <if test="filterable != null">
+        FILTERABLE = #{filterable,jdbcType=VARCHAR},
+      </if>
+      <if test="options != null">
+        OPTIONS = #{options,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.interapi.app.modular.model.ElementTab">
+    update element_tab
+    set FORM_ITEM_ID = #{formItemId,jdbcType=BIGINT},
+      QUERY_CRITERIA_ITEM_ID = #{queryCriteriaItemId,jdbcType=BIGINT},
+      ELEMENT_TYPE = #{elementType,jdbcType=VARCHAR},
+      ELEMENT_TYPE_NAME = #{elementTypeName,jdbcType=VARCHAR},
+      MODEL_NAME = #{modelName,jdbcType=VARCHAR},
+      STYLE_NAME = #{styleName,jdbcType=VARCHAR},
+      PLACEHOLDER = #{placeholder,jdbcType=VARCHAR},
+      MULTIPLE = #{multiple,jdbcType=VARCHAR},
+      FILTERABLE = #{filterable,jdbcType=VARCHAR},
+      OPTIONS = #{options,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

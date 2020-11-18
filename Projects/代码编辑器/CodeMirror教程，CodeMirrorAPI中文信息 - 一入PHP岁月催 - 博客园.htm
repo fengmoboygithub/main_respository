@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodeMirror教程，CodeMirrorAPI中文信息 - 一入PHP岁月催 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link type="text/css" rel="stylesheet" href="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/201906.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-ThinkInside-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/oldphper/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/oldphper/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/oldphper/wlwmanifest.xml">
+<script async="" src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js"></script><script type="text/javascript" src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/encoder.js"></script><script src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script>
+<script type="text/javascript">var currentBlogApp = 'oldphper', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<!--PageBeginHtml Block Begin-->
+<!-- base href="https://www.cnblogs.com/oldphper/p/4065425.html" -->
+<div id="myheader">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/oldphper/"><img id="blogLogo" src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/oldphper/">一入PHP岁月催</a></h1>
+<h2>改版中...</h2>
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/oldphper/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://www.cnblogs.com/oldphper/category/622305.html">PHP</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://www.cnblogs.com/oldphper/category/622306.html">前端</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" rel="nofollow" href="http://www.cnblogs.com/oldphper/category/622307.html">数据库</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" rel="nofollow" href="http://www.cnblogs.com/oldphper/category/622308.html">杂谈</a></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+	</div><!--end: navigator 博客导航栏 -->
+</div>
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/oldphper/"><img id="blogLogo" src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/oldphper/">一入PHP岁月催</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li></li>
+<li></li>
+<li></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC">联系</a></li>
+<li>
+<!----></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/oldphper/p/4065425.html">CodeMirror教程，CodeMirrorAPI中文信息</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span><br>
+<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">link&nbsp;</span><span style="color: #FF0000;">rel</span><span style="color: #0000FF;">="stylesheet"</span><span style="color: #FF0000;">&nbsp;href</span><span style="color: #0000FF;">="codemirror.css"</span><span style="color: #0000FF;">&gt;</span>&nbsp;&nbsp;<span style="color: #008000;">&lt;!--</span><span style="color: #008000;">&nbsp;引入CSS文件&nbsp;</span><span style="color: #008000;">--&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script&nbsp;</span><span style="color: #FF0000;">src</span><span style="color: #0000FF;">="codemirror.js"</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span>&nbsp;&nbsp;<span style="color: #008000;">&lt;!--</span><span style="color: #008000;">&nbsp;引入JS文件&nbsp;</span><span style="color: #008000;">--&gt;</span><br>
+<span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><br>
+<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">textarea&nbsp;</span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">="code"</span><span style="color: #FF0000;">&nbsp;name</span><span style="color: #0000FF;">="code"</span><span style="color: #0000FF;">&gt;</span>http://www.cnblogs.com/oldphper<span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">textarea</span><span style="color: #0000FF;">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff;">var</span>&nbsp;editor&nbsp;=&nbsp;CodeMirror.fromTextArea(document.getElementById("code"),&nbsp;{&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;标识到textarea</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;:&nbsp;"http://www.cnblogs.com/oldphper",&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;文本域默认显示的文本</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode&nbsp;:&nbsp;"text/html",&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;模式</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;theme&nbsp;:&nbsp;"",&nbsp;&nbsp;//&nbsp;CSS样式选择</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indentUnit&nbsp;:&nbsp;2,&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;缩进单位，默认2</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smartIndent&nbsp;:&nbsp;<span style="color: #0000ff;">true</span>,&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;是否智能缩进</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tabSize&nbsp;:&nbsp;4,&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;Tab缩进，默认4</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readOnly&nbsp;:&nbsp;<span style="color: #0000ff;">false</span>,&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;是否只读，默认false</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showCursorWhenSelecting&nbsp;:&nbsp;<span style="color: #0000ff;">true</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineNumbers&nbsp;:&nbsp;<span style="color: #0000ff;">true</span>&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;是否显示行号</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;..&nbsp;还有好多，翻译不完。需要的去看http://codemirror.net/doc/manual.html#config</span><span style="color: #008000;"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><br>
+<span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><br>
+<span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span><br>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>
+</p><p>&nbsp;</p>
+<p>&nbsp;API 部分信息。一个一个测试出来的。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div><span style="color: #008080;">&nbsp;1</span>&nbsp; &nbsp; &nbsp;<span style="color: #0000FF;">function</span>&nbsp;fun()&nbsp;{<br>
+<span style="color: #008080;">&nbsp;2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ob&nbsp;=&nbsp;"";<br>
+<span style="color: #008080;">&nbsp;3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.getValue());&nbsp;//&nbsp;得到所有内容</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">&nbsp;4</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.setValue("abc");&nbsp;//&nbsp;将编辑器内容改为"abc"</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">&nbsp;5</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">&nbsp;6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;0为起点，2行第3个字母到2行第5个字母</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">&nbsp;7</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.getRange({line:1,ch:2},{line:1,ch:5}));&nbsp;&nbsp;//得到</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">&nbsp;8</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.replaceRange("shashasha",{line:1,ch:2},{line:2,ch:5});</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">&nbsp;9</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.getLine(2));&nbsp;&nbsp;&nbsp;//&nbsp;第三行数据</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">11</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.lineCount());&nbsp;&nbsp;&nbsp;//&nbsp;总共几行</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">12</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.firstLine());&nbsp;&nbsp;&nbsp;//&nbsp;首行数0</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">13</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.lastLine());&nbsp;&nbsp;&nbsp;//&nbsp;末行数19，共20行</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">14</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.getLineHandle(1);&nbsp;&nbsp;&nbsp;//&nbsp;第二行数据句柄</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">15</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(editor.getLineNumber(ob));&nbsp;//&nbsp;行句柄在哪行</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">16</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.eachLine(0,2,alert(ob));</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">17</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.changeGeneration();&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;编辑动作次数，1次起</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">19</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.markClean();&nbsp;&nbsp;&nbsp;//&nbsp;清除动作</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">20</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.isClearn();&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;是否清除</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">21</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.getSelection();&nbsp;&nbsp;&nbsp;//&nbsp;获得选中的数据一条</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">23</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.getSelections();&nbsp;&nbsp;//&nbsp;获得选中数据多条</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">24</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;editor.replaceSelection("ttttttt");&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;选中替换，一条根多条都替换，不选中则在光标处插入</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">25</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.replaceSelections(["aaa","bbb"]);&nbsp;//&nbsp;选中替换，多条对多选</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">26</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.setSelection();&nbsp;&nbsp;//设置选中</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">27</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.setSelections();&nbsp;&nbsp;//设置选中</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">28</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.listSelections();&nbsp;//boj</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">29</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.somethingSelected();&nbsp;//&nbsp;是否有选中</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">30</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.addSelection({line:2,ch:6},&nbsp;{line:1,ch:2});&nbsp;&nbsp;//&nbsp;选中此段</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">31</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.getCursor();&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;ob['line']、['ch']</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">33</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.setCursor(2);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;设置光标位置</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">34</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.hasFocus();&nbsp;&nbsp;&nbsp;//&nbsp;focus?全false</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">36</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.addOverlay("aaaaa");&nbsp;//..</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">38</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.removeOverlay("aaaaa");&nbsp;//..</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">39</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.getDoc();&nbsp;&nbsp;&nbsp;//&nbsp;文档对象,很多</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">41</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.getEditor();&nbsp;&nbsp;&nbsp;//..</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">42</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">ob&nbsp;=&nbsp;editor.setBookmark({line:1,ch:3});&nbsp;//&nbsp;书签对象</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">44</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.addWidget({line:1,ch:2},"&lt;if&gt;&lt;/if&gt;",true);&nbsp;//添加部件</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">46</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.setSize(1100,1100);&nbsp;&nbsp;&nbsp;&nbsp;//设置宽高</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">48</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.scrollTo(800,300);&nbsp;//&nbsp;设置滚动条位置</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">49</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">editor.cursorCoords({line:1,ch:2},"aaaaaa");&nbsp;//..</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">51</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span style="color: #008080;">52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">for&nbsp;(var&nbsp;i&nbsp;in&nbsp;ob)</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">53</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">&nbsp;&nbsp;&nbsp;&nbsp;alert(i);</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">54</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">//</span><span style="color: #008000;">alert(ob);</span><span style="color: #008000;"><br>
+</span><span style="color: #008080;">55</span>&nbsp;<span style="color: #008000;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/oldphper/category/622306.html" target="_blank">前端</a></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/oldphper/tag/codemirror/">codemirror</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(4065425,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow('ec6b1e75-bf58-e411-b908-9dcfd8948a71');" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/oldphper/" target="_blank"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20141021092027.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/oldphper/">一入PHP岁月催</a><br>
+            <a href="http://home.cnblogs.com/u/oldphper/followees">关注 - 0</a><br>
+            <a href="http://home.cnblogs.com/u/oldphper/followers">粉丝 - 2</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow('ec6b1e75-bf58-e411-b908-9dcfd8948a71');return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(4065425,'Digg')">
+        <span class="diggnum" id="digg_count">2</span>
+    </div>
+    <div class="buryit" onclick="votePost(4065425,'Bury')">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/oldphper/p/4065277.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/oldphper/p/4065277.html" title="发布于2014-10-31 15:58">jQuery判断checkbox是否选中?操作checkbox（不）选中?</a><br><a href="http://www.cnblogs.com/oldphper/p/4078008.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/oldphper/p/4078008.html" title="发布于2014-11-06 10:15">php执行与curl区别</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2014-10-31 16:38</span> <a href="http://www.cnblogs.com/oldphper/">一入PHP岁月催</a> 阅读(<span id="post_view_count">5831</span>) 评论(<span id="post_comment_count">1</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=4065425" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4065425);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=201906,cb_entryId=4065425,cb_blogApp=currentBlogApp,cb_blogUserGuid='ec6b1e75-bf58-e411-b908-9dcfd8948a71',cb_entryCreatedDate='2014/10/31 16:38:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<br>
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#3312746" class="layer">#1楼</a><a name="3312746" id="comment_anchor_3312746"></a><span id="comment-maxId" style="display:none;">3312746</span><span id="comment-maxDate" style="display:none;">2015/11/24 11:30:10</span>  <span class="comment_date">2015-11-24 11:30</span> <a id="a_comment_author_3312746" href="http://www.cnblogs.com/bugong/" target="_blank">bugong</a> <a href="http://msg.cnblogs.com/send/bugong" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3312746" class="blog_comment_body">mark</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3312746,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3312746,'Bury',this)">反对(0)</a></div><span id="comment_3312746_avatar" style="display:none;">http://pic.cnblogs.com/face/654013/20140724163050.png</span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型工控、组态\仿真、建模CAD源码2018！</a><br><a href="https://dnspod.cloud.tencent.com/act/weapp?fromSource=gwzcw.741360.741360.741360" target="_blank">【腾讯云】小程序普惠节精美模板1元起</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/act/first_purchase?fromSource=gwzcw.741358.741358.741358" target="_blank"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20180122123322209-1359966176.jpg" alt="tencent0122" width="300" height="250"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/588054/" target="_blank">联通董事会拟从7人扩编至13人：李彦宏领衔BATJ占4席</a><br> ·  <a href="https://news.cnblogs.com/n/588053/" target="_blank">在争夺激烈的印度市场，OPPO和vivo遭遇了“水土不服”</a><br> ·  <a href="https://news.cnblogs.com/n/588057/" target="_blank">中国新首富！马化腾身家达525亿美元：全球第11位</a><br> ·  <a href="https://news.cnblogs.com/n/588044/" target="_blank">腾讯QQ发布全新视频社交应用DOV：拍小视频神器</a><br> ·  <a href="https://news.cnblogs.com/n/588052/" target="_blank">不再只限8座城市 智米全直流变频空调开放全国购买</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/34770/" target="_blank"><img src="CodeMirror%E6%95%99%E7%A8%8B%EF%BC%8CCodeMirrorAPI%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%20-%20%E4%B8%80%E5%85%A5PHP%E5%B2%81%E6%9C%88%E5%82%AC%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20171208101900738-116140477.jpg" alt="阿里云C2-1208" width="468" height="60"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/586236/" target="_blank">领域驱动设计在互联网业务开发中的实践</a><br> ·  <a href="http://kb.cnblogs.com/page/585502/" target="_blank">步入云计算</a><br> ·  <a href="http://kb.cnblogs.com/page/531409/" target="_blank">以操作系统的角度述说线程与进程</a><br> ·  <a href="http://kb.cnblogs.com/page/141729/" target="_blank">软件测试转型之路</a><br> ·  <a href="http://kb.cnblogs.com/page/177402/" target="_blank">门内门外看招聘</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block"></div><div id="sidebar_categories">
+</div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/oldphper/p/4065425.html">1. CodeMirror教程，CodeMirrorAPI中文信息(5832)</a></li><li><a href="http://www.cnblogs.com/oldphper/p/4123415.html">2. php json_encode 中文乱码解决方法(4150)</a></li><li><a href="http://www.cnblogs.com/oldphper/p/4128138.html">3. php 空格无法替换，utf-8空格惹的祸(1086)</a></li><li><a href="http://www.cnblogs.com/oldphper/p/4060380.html">4. PHP接口对方（C#）接收不到数据？ContentLength=-1(701)</a></li><li><a href="http://www.cnblogs.com/oldphper/p/4065277.html">5. jQuery判断checkbox是否选中?操作checkbox（不）选中?(150)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/oldphper/p/4123415.html">1. php json_encode 中文乱码解决方法(2)</a></li><li><a href="http://www.cnblogs.com/oldphper/p/4065425.html">2. CodeMirror教程，CodeMirrorAPI中文信息(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/oldphper/p/4123415.html">1. php json_encode 中文乱码解决方法(2)</a></li><li><a href="http://www.cnblogs.com/oldphper/p/4065425.html">2. CodeMirror教程，CodeMirrorAPI中文信息(2)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 一入PHP岁月催
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

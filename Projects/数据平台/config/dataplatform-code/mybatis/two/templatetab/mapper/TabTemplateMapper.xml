@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.two.templatetab.dao.TabTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.company.two.templatetab.model.TabTemplate">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="T_TEMPLATE_TYPE" jdbcType="VARCHAR" property="tTemplateType" />
+    <result column="T_ELEMENT_ID" jdbcType="VARCHAR" property="tElementId" />
+    <result column="T_ELEMENT_NAME" jdbcType="VARCHAR" property="tElementName" />
+    <result column="T_VALIDATE_RULES" jdbcType="VARCHAR" property="tValidateRules" />
+    <result column="D_FIELD" jdbcType="VARCHAR" property="dField" />
+    <result column="D_FIELD_TYPE" jdbcType="VARCHAR" property="dFieldType" />
+    <result column="D_TABLE_NAME" jdbcType="VARCHAR" property="dTableName" />
+    <result column="D_IS_TUPLE" jdbcType="VARCHAR" property="dIsTuple" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="D_DICT" jdbcType="VARCHAR" property="dDict" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="D_TUPLE_UP_NAME" jdbcType="VARCHAR" property="dTupleUpName" />
+    <result column="T_CONTROL_TYPE" jdbcType="VARCHAR" property="tControlType" />
+    <result column="D_TUPLE_UP_XBRL_NAME" jdbcType="VARCHAR" property="dTupleUpXbrlName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, T_TEMPLATE_TYPE, T_ELEMENT_ID, T_ELEMENT_NAME, T_VALIDATE_RULES, D_FIELD, D_FIELD_TYPE, 
+    D_TABLE_NAME, D_IS_TUPLE, STATUS, D_DICT, REMARK, D_TUPLE_UP_NAME, T_CONTROL_TYPE, 
+    D_TUPLE_UP_XBRL_NAME
+  </sql>
+  <select id="selectByExample" parameterType="com.company.two.templatetab.model.TabTemplateExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tab_template
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tab_template
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tab_template
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.two.templatetab.model.TabTemplateExample">
+    delete from tab_template
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.two.templatetab.model.TabTemplate">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tab_template (T_TEMPLATE_TYPE, T_ELEMENT_ID, T_ELEMENT_NAME, 
+      T_VALIDATE_RULES, D_FIELD, D_FIELD_TYPE, 
+      D_TABLE_NAME, D_IS_TUPLE, STATUS, 
+      D_DICT, REMARK, D_TUPLE_UP_NAME, 
+      T_CONTROL_TYPE, D_TUPLE_UP_XBRL_NAME)
+    values (#{tTemplateType,jdbcType=VARCHAR}, #{tElementId,jdbcType=VARCHAR}, #{tElementName,jdbcType=VARCHAR}, 
+      #{tValidateRules,jdbcType=VARCHAR}, #{dField,jdbcType=VARCHAR}, #{dFieldType,jdbcType=VARCHAR}, 
+      #{dTableName,jdbcType=VARCHAR}, #{dIsTuple,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{dDict,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{dTupleUpName,jdbcType=VARCHAR}, 
+      #{tControlType,jdbcType=VARCHAR}, #{dTupleUpXbrlName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.two.templatetab.model.TabTemplate">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tab_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tTemplateType != null">
+        T_TEMPLATE_TYPE,
+      </if>
+      <if test="tElementId != null">
+        T_ELEMENT_ID,
+      </if>
+      <if test="tElementName != null">
+        T_ELEMENT_NAME,
+      </if>
+      <if test="tValidateRules != null">
+        T_VALIDATE_RULES,
+      </if>
+      <if test="dField != null">
+        D_FIELD,
+      </if>
+      <if test="dFieldType != null">
+        D_FIELD_TYPE,
+      </if>
+      <if test="dTableName != null">
+        D_TABLE_NAME,
+      </if>
+      <if test="dIsTuple != null">
+        D_IS_TUPLE,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="dDict != null">
+        D_DICT,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="dTupleUpName != null">
+        D_TUPLE_UP_NAME,
+      </if>
+      <if test="tControlType != null">
+        T_CONTROL_TYPE,
+      </if>
+      <if test="dTupleUpXbrlName != null">
+        D_TUPLE_UP_XBRL_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tTemplateType != null">
+        #{tTemplateType,jdbcType=VARCHAR},
+      </if>
+      <if test="tElementId != null">
+        #{tElementId,jdbcType=VARCHAR},
+      </if>
+      <if test="tElementName != null">
+        #{tElementName,jdbcType=VARCHAR},
+      </if>
+      <if test="tValidateRules != null">
+        #{tValidateRules,jdbcType=VARCHAR},
+      </if>
+      <if test="dField != null">
+        #{dField,jdbcType=VARCHAR},
+      </if>
+      <if test="dFieldType != null">
+        #{dFieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="dTableName != null">
+        #{dTableName,jdbcType=VARCHAR},
+      </if>
+      <if test="dIsTuple != null">
+        #{dIsTuple,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="dDict != null">
+        #{dDict,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="dTupleUpName != null">
+        #{dTupleUpName,jdbcType=VARCHAR},
+      </if>
+      <if test="tControlType != null">
+        #{tControlType,jdbcType=VARCHAR},
+      </if>
+      <if test="dTupleUpXbrlName != null">
+        #{dTupleUpXbrlName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.two.templatetab.model.TabTemplateExample" resultType="java.lang.Long">
+    select count(*) from tab_template
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tab_template
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.tTemplateType != null">
+        T_TEMPLATE_TYPE = #{record.tTemplateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tElementId != null">
+        T_ELEMENT_ID = #{record.tElementId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tElementName != null">
+        T_ELEMENT_NAME = #{record.tElementName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tValidateRules != null">
+        T_VALIDATE_RULES = #{record.tValidateRules,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dField != null">
+        D_FIELD = #{record.dField,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dFieldType != null">
+        D_FIELD_TYPE = #{record.dFieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dTableName != null">
+        D_TABLE_NAME = #{record.dTableName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dIsTuple != null">
+        D_IS_TUPLE = #{record.dIsTuple,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dDict != null">
+        D_DICT = #{record.dDict,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dTupleUpName != null">
+        D_TUPLE_UP_NAME = #{record.dTupleUpName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tControlType != null">
+        T_CONTROL_TYPE = #{record.tControlType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dTupleUpXbrlName != null">
+        D_TUPLE_UP_XBRL_NAME = #{record.dTupleUpXbrlName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tab_template
+    set ID = #{record.id,jdbcType=INTEGER},
+      T_TEMPLATE_TYPE = #{record.tTemplateType,jdbcType=VARCHAR},
+      T_ELEMENT_ID = #{record.tElementId,jdbcType=VARCHAR},
+      T_ELEMENT_NAME = #{record.tElementName,jdbcType=VARCHAR},
+      T_VALIDATE_RULES = #{record.tValidateRules,jdbcType=VARCHAR},
+      D_FIELD = #{record.dField,jdbcType=VARCHAR},
+      D_FIELD_TYPE = #{record.dFieldType,jdbcType=VARCHAR},
+      D_TABLE_NAME = #{record.dTableName,jdbcType=VARCHAR},
+      D_IS_TUPLE = #{record.dIsTuple,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      D_DICT = #{record.dDict,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      D_TUPLE_UP_NAME = #{record.dTupleUpName,jdbcType=VARCHAR},
+      T_CONTROL_TYPE = #{record.tControlType,jdbcType=VARCHAR},
+      D_TUPLE_UP_XBRL_NAME = #{record.dTupleUpXbrlName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.two.templatetab.model.TabTemplate">
+    update tab_template
+    <set>
+      <if test="tTemplateType != null">
+        T_TEMPLATE_TYPE = #{tTemplateType,jdbcType=VARCHAR},
+      </if>
+      <if test="tElementId != null">
+        T_ELEMENT_ID = #{tElementId,jdbcType=VARCHAR},
+      </if>
+      <if test="tElementName != null">
+        T_ELEMENT_NAME = #{tElementName,jdbcType=VARCHAR},
+      </if>
+      <if test="tValidateRules != null">
+        T_VALIDATE_RULES = #{tValidateRules,jdbcType=VARCHAR},
+      </if>
+      <if test="dField != null">
+        D_FIELD = #{dField,jdbcType=VARCHAR},
+      </if>
+      <if test="dFieldType != null">
+        D_FIELD_TYPE = #{dFieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="dTableName != null">
+        D_TABLE_NAME = #{dTableName,jdbcType=VARCHAR},
+      </if>
+      <if test="dIsTuple != null">
+        D_IS_TUPLE = #{dIsTuple,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="dDict != null">
+        D_DICT = #{dDict,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="dTupleUpName != null">
+        D_TUPLE_UP_NAME = #{dTupleUpName,jdbcType=VARCHAR},
+      </if>
+      <if test="tControlType != null">
+        T_CONTROL_TYPE = #{tControlType,jdbcType=VARCHAR},
+      </if>
+      <if test="dTupleUpXbrlName != null">
+        D_TUPLE_UP_XBRL_NAME = #{dTupleUpXbrlName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.two.templatetab.model.TabTemplate">
+    update tab_template
+    set T_TEMPLATE_TYPE = #{tTemplateType,jdbcType=VARCHAR},
+      T_ELEMENT_ID = #{tElementId,jdbcType=VARCHAR},
+      T_ELEMENT_NAME = #{tElementName,jdbcType=VARCHAR},
+      T_VALIDATE_RULES = #{tValidateRules,jdbcType=VARCHAR},
+      D_FIELD = #{dField,jdbcType=VARCHAR},
+      D_FIELD_TYPE = #{dFieldType,jdbcType=VARCHAR},
+      D_TABLE_NAME = #{dTableName,jdbcType=VARCHAR},
+      D_IS_TUPLE = #{dIsTuple,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      D_DICT = #{dDict,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      D_TUPLE_UP_NAME = #{dTupleUpName,jdbcType=VARCHAR},
+      T_CONTROL_TYPE = #{tControlType,jdbcType=VARCHAR},
+      D_TUPLE_UP_XBRL_NAME = #{dTupleUpXbrlName,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

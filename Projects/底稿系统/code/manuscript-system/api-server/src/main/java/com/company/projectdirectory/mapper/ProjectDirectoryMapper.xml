@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.projectdirectory.dao.ProjectDirectoryMapper">
+  <resultMap id="BaseResultMap" type="com.company.projectdirectory.model.ProjectDirectory">
+    <id column="PROJECTID" jdbcType="VARCHAR" property="projectid" />
+    <id column="DIRECTORYID" jdbcType="VARCHAR" property="directoryid" />
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="STAGE" jdbcType="VARCHAR" property="stage" />
+    <result column="VERSIONHASH" jdbcType="VARCHAR" property="versionhash" />
+    <result column="FULLNAME" jdbcType="VARCHAR" property="fullname" />
+    <result column="SNAME" jdbcType="VARCHAR" property="sname" />
+    <result column="PARENTID" jdbcType="VARCHAR" property="parentid" />
+    <result column="ISAPP" jdbcType="INTEGER" property="isapp" />
+    <result column="PROCESSNODE" jdbcType="VARCHAR" property="processnode" />
+    <result column="DIRECTORYNO" jdbcType="INTEGER" property="directoryno" />
+    <result column="LEVEL" jdbcType="VARCHAR" property="level" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PROJECTID, DIRECTORYID, ID, STAGE, VERSIONHASH, FULLNAME, SNAME, PARENTID, ISAPP,
+    PROCESSNODE, PROCESSNODENAME, DIRECTORYNO, LEVEL, REMARKS
+  </sql>
+  <sql id="Base_Column_List_Me">
+    pd.PROJECTID, pd.DIRECTORYID, pd.ID, pd.STAGE, pd.VERSIONHASH, pd.FULLNAME, pd.SNAME, pd.PARENTID, pd.ISAPP,
+    pd.PROCESSNODE, pni.PROCESSNODENAME, pd.DIRECTORYNO, pd.LEVEL, pd.REMARKS
+  </sql>
+  <select id="selectByExample" parameterType="com.company.projectdirectory.model.ProjectDirectoryExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List_Me" />
+    from projectdirectory pd join processnodeinfo pni on pni.PROCESSNODE=pd.PROCESSNODE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List_Me" />
+    from projectdirectory pd join processnodeinfo pni on pni.PROCESSNODE=pd.PROCESSNODE
+    where PROJECTID = #{projectid,jdbcType=VARCHAR}
+      and DIRECTORYID = #{directoryid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from projectdirectory
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.projectdirectory.model.ProjectDirectoryExample">
+    delete from projectdirectory
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.projectdirectory.model.ProjectDirectory">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into projectdirectory (PROJECTID, DIRECTORYID, ID, 
+      STAGE, VERSIONHASH, FULLNAME, 
+      SNAME, PARENTID, ISAPP, 
+      PROCESSNODE, DIRECTORYNO, LEVEL,
+    REMARKS
+      )
+    values (#{projectid,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR},
+      #{stage,jdbcType=VARCHAR}, #{versionhash,jdbcType=VARCHAR}, #{fullname,jdbcType=VARCHAR}, 
+      #{sname,jdbcType=VARCHAR}, #{parentid,jdbcType=VARCHAR}, #{isapp,jdbcType=INTEGER}, 
+      #{processnode,jdbcType=VARCHAR}, #{directoryno,jdbcType=INTEGER}, #{level,jdbcType=VARCHAR},
+      #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.projectdirectory.model.ProjectDirectory">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into projectdirectory
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="projectid != null">
+        PROJECTID,
+      </if>
+      DIRECTORYID,
+      ID,
+      <if test="stage != null">
+        STAGE,
+      </if>
+      <if test="versionhash != null">
+        VERSIONHASH,
+      </if>
+      <if test="fullname != null">
+        FULLNAME,
+      </if>
+      <if test="sname != null">
+        SNAME,
+      </if>
+      <if test="parentid != null">
+        PARENTID,
+      </if>
+      <if test="isapp != null">
+        ISAPP,
+      </if>
+      <if test="processnode != null">
+        PROCESSNODE,
+      </if>
+      <if test="directoryno != null">
+        DIRECTORYNO,
+      </if>
+      <if test="level != null">
+        LEVEL,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="projectid != null">
+        #{projectid,jdbcType=VARCHAR},
+      </if>
+      #{id,jdbcType=VARCHAR},
+      #{id,jdbcType=VARCHAR},
+      <if test="stage != null">
+        #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="versionhash != null">
+        #{versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="isapp != null">
+        #{isapp,jdbcType=INTEGER},
+      </if>
+      <if test="processnode != null">
+        #{processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryno != null">
+        #{directoryno,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertSelectiveForMe" parameterType="com.company.projectdirectory.model.ProjectDirectory">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into projectdirectory
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="projectid != null">
+        PROJECTID,
+      </if>
+      <if test="directoryid != null">
+        DIRECTORYID,
+      </if>
+      ID,
+      <if test="stage != null">
+        STAGE,
+      </if>
+      <if test="versionhash != null">
+        VERSIONHASH,
+      </if>
+      <if test="fullname != null">
+        FULLNAME,
+      </if>
+      <if test="sname != null">
+        SNAME,
+      </if>
+      <if test="parentid != null">
+        PARENTID,
+      </if>
+      <if test="isapp != null">
+        ISAPP,
+      </if>
+      <if test="processnode != null">
+        PROCESSNODE,
+      </if>
+      <if test="directoryno != null">
+        DIRECTORYNO,
+      </if>
+      <if test="level != null">
+        LEVEL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="projectid != null">
+        #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryid != null">
+        #{directoryid,jdbcType=VARCHAR},
+      </if>
+      #{id,jdbcType=VARCHAR},
+      <if test="stage != null">
+        #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="versionhash != null">
+        #{versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="isapp != null">
+        #{isapp,jdbcType=INTEGER},
+      </if>
+      <if test="processnode != null">
+        #{processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryno != null">
+        #{directoryno,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.projectdirectory.model.ProjectDirectoryExample" resultType="java.lang.Long">
+    select count(*) from projectdirectory
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update projectdirectory
+    <set>
+      <if test="record.projectid != null">
+        PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.directoryid != null">
+        DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stage != null">
+        STAGE = #{record.stage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionhash != null">
+        VERSIONHASH = #{record.versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fullname != null">
+        FULLNAME = #{record.fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sname != null">
+        SNAME = #{record.sname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentid != null">
+        PARENTID = #{record.parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isapp != null">
+        ISAPP = #{record.isapp,jdbcType=INTEGER},
+      </if>
+      <if test="record.processnode != null">
+        PROCESSNODE = #{record.processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.directoryno != null">
+        DIRECTORYNO = #{record.directoryno,jdbcType=INTEGER},
+      </if>
+      <if test="record.level != null">
+        LEVEL = #{record.level,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remarks != null">
+        REMARKS = #{record.remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update projectdirectory
+    set PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+      ID = #{record.id,jdbcType=VARCHAR},
+      STAGE = #{record.stage,jdbcType=VARCHAR},
+      VERSIONHASH = #{record.versionhash,jdbcType=VARCHAR},
+      FULLNAME = #{record.fullname,jdbcType=VARCHAR},
+      SNAME = #{record.sname,jdbcType=VARCHAR},
+      PARENTID = #{record.parentid,jdbcType=VARCHAR},
+      ISAPP = #{record.isapp,jdbcType=INTEGER},
+      PROCESSNODE = #{record.processnode,jdbcType=VARCHAR},
+      DIRECTORYNO = #{record.directoryno,jdbcType=INTEGER},
+      LEVEL = #{record.level,jdbcType=VARCHAR},
+      REMARKS = #{record.remarks,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.projectdirectory.model.ProjectDirectory">
+    update projectdirectory
+    <set>
+      <if test="id != null">
+        ID = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null">
+        STAGE = #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="versionhash != null">
+        VERSIONHASH = #{versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        FULLNAME = #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="sname != null">
+        SNAME = #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null">
+        PARENTID = #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="isapp != null">
+        ISAPP = #{isapp,jdbcType=INTEGER},
+      </if>
+      <if test="processnode != null">
+        PROCESSNODE = #{processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryno != null">
+        DIRECTORYNO = #{directoryno,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        LEVEL = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PROJECTID = #{projectid,jdbcType=VARCHAR}
+      and DIRECTORYID = #{directoryid,jdbcType=VARCHAR}
+    <!--<if test="stage != null">-->
+      <!--and STAGE &lt;= #{stage,jdbcType=VARCHAR}-->
+    <!--</if>-->
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.projectdirectory.model.ProjectDirectory">
+    update projectdirectory
+    set ID = #{id,jdbcType=VARCHAR},
+      STAGE = #{stage,jdbcType=VARCHAR},
+      VERSIONHASH = #{versionhash,jdbcType=VARCHAR},
+      FULLNAME = #{fullname,jdbcType=VARCHAR},
+      SNAME = #{sname,jdbcType=VARCHAR},
+      PARENTID = #{parentid,jdbcType=VARCHAR},
+      ISAPP = #{isapp,jdbcType=INTEGER},
+      PROCESSNODE = #{processnode,jdbcType=VARCHAR},
+      DIRECTORYNO = #{directoryno,jdbcType=INTEGER},
+      LEVEL = #{level,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR}
+    where PROJECTID = #{projectid,jdbcType=VARCHAR}
+      and DIRECTORYID = #{directoryid,jdbcType=VARCHAR}
+  </update>
+  
+    <!-- 通过父目录id查询同级全部目录 -->
+  <select id="getSiblingDirectoryProcessnode" parameterType="map" resultMap="BaseResultMap">
+    select
+      PROJECTID, DIRECTORYID, ID, STAGE, VERSIONHASH, FULLNAME, SNAME, PARENTID, ISAPP,
+      PROCESSNODE, DIRECTORYNO, LEVEL
+    from projectdirectory
+    where PARENTID = #{pid,jdbcType=VARCHAR}
+    and stage = #{projectStage,jdbcType=VARCHAR}
+    and PROJECTID = #{projectId,jdbcType=VARCHAR}
+  </select>
+
+  <!--批量更新-->
+  <update id="batchUpdateByPrimaryKey" parameterType="map">
+    update projectdirectory
+    set processnode = #{processnode,jdbcType=VARCHAR}
+    where projectid = #{projectid,jdbcType=VARCHAR}
+    and stage &lt;= #{projectStage,jdbcType=VARCHAR}
+    and directoryid in
+    <foreach collection="list" item="item" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </update>
+
+  <!-- 根据子目录查询全部父目录 -->
+  <select id="getAllParentDirectoryById" parameterType="map" resultMap="BaseResultMap">
+    SELECT
+      PROJECTID, DIRECTORYID, ID, STAGE, VERSIONHASH, FULLNAME, SNAME, PARENTID, ISAPP,
+      PROCESSNODE, DIRECTORYNO, LEVEL
+    FROM
+      projectdirectory t
+    WHERE
+      find_in_set(DIRECTORYID,get_all_parent_node (#{pid,jdbcType=VARCHAR}))
+      and t.PROJECTID = #{projectId,jdbcType=VARCHAR}
+    ORDER BY LEVEL DESC
+  </select>
+
+  <!--批量更新适用性-->
+  <update id="batchUpdateIsapp" parameterType="map">
+    update projectdirectory
+    set
+      <if test="remarks != null and remarks!=''">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      isapp = #{isapp,jdbcType=VARCHAR}
+    where projectid = #{projectid,jdbcType=VARCHAR}
+    and directoryid in
+    <foreach collection="pdlist" item="item" open="(" separator="," close=")">
+        #{item,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+
+  <!-- 不符合条件的目录数量 -->
+  <select id="countIneligible" parameterType="map" resultType="java.lang.Integer">
+    SELECT
+      count(*)
+    FROM
+      projectdirectory t3
+    WHERE
+      t3.PROJECTID = #{projectid,jdbcType=VARCHAR}
+      AND t3.STAGE &lt;= #{stage,jdbcType=VARCHAR}
+      AND t3.PROCESSNODE &lt;&gt; #{processnode,jdbcType=VARCHAR}
+  </select>
+
+  <!-- 查询全部目录 -->
+  <select id="selectAllDirectory" parameterType="map" resultMap="BaseResultMap">
+    SELECT
+      PROJECTID, DIRECTORYID, ID, STAGE, VERSIONHASH, FULLNAME, SNAME, PARENTID, ISAPP,
+      PROCESSNODE, DIRECTORYNO, LEVEL
+    FROM
+      projectdirectory t3
+    WHERE
+      t3.PROJECTID = #{projectid,jdbcType=VARCHAR}
+      AND t3.STAGE &lt;= #{stage,jdbcType=VARCHAR}
+  </select>
+
+  <!--更新会签节点到47-->
+  <update id="updateCountersignProcessnodeTo47" parameterType="map">
+    UPDATE projectdirectory t
+      SET t.PROCESSNODE = #{nextProcessnode,jdbcType=VARCHAR}
+    WHERE
+      t.PROJECTID = #{projectid,jdbcType=VARCHAR}
+    AND t.STAGE &lt;= #{projectstage,jdbcType=VARCHAR}
+  </update>
+
+  <!-- 根据目录id得到全部项目目录信息 -->
+  <select id="selectDirectoryById" parameterType="map" resultMap="BaseResultMap">
+    select
+      PROJECTID, DIRECTORYID, ID, STAGE, VERSIONHASH, FULLNAME, SNAME, PARENTID, ISAPP,
+      PROCESSNODE, DIRECTORYNO, LEVEL
+    FROM
+      projectdirectory t
+    where projectid = #{projectid,jdbcType=VARCHAR}
+    and directoryid in
+    <foreach collection="list" item="item" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </select>
+
+
+
+  <insert id="batchInsertSelective" parameterType="java.util.List">
+    insert into projectdirectory
+    (ID, PROJECTID, DIRECTORYID,
+      STAGE, VERSIONHASH, FULLNAME,
+      SNAME, PARENTID, ISAPP,
+      PROCESSNODE, DIRECTORYNO, LEVEL,
+      REMARKS)
+      values
+    <foreach collection="list" item="item" index="index"
+             separator=",">
+      (
+        #{item.id},
+        #{item.projectid},
+        #{item.directoryid},
+        #{item.stage},
+        #{item.versionhash},
+        #{item.fullname},
+        #{item.sname},
+        #{item.parentid},
+        #{item.isapp},
+        #{item.processnode},
+        #{item.directoryno},
+        #{item.level},
+        #{item.remarks}
+      )
+    </foreach>
+  </insert>
+</mapper>

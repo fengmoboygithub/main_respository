@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.processnodeinfo.dao.ProcessNodeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.processnodeinfo.model.ProcessNodeInfo">
+    <id column="PROCESSNODE" jdbcType="VARCHAR" property="processnode" />
+    <result column="PROCESSNODENAME" jdbcType="VARCHAR" property="processnodename" />
+    <result column="OPERTYPE" jdbcType="VARCHAR" property="opertype" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="IS_DELETE" jdbcType="CHAR" property="isDelete" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PROCESSNODE, PROCESSNODENAME, OPERTYPE, CREATE_TIME, CREATE_USER, UPDATE_TIME, UPDATE_USER, 
+    IS_DELETE
+  </sql>
+  <select id="selectByExample" parameterType="com.company.processnodeinfo.model.ProcessNodeInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from processnodeinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from processnodeinfo
+    where PROCESSNODE = #{processnode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from processnodeinfo
+    where PROCESSNODE = #{processnode,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.processnodeinfo.model.ProcessNodeInfoExample">
+    delete from processnodeinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.processnodeinfo.model.ProcessNodeInfo">
+    insert into processnodeinfo (PROCESSNODE, PROCESSNODENAME, OPERTYPE, 
+      CREATE_TIME, CREATE_USER, UPDATE_TIME, 
+      UPDATE_USER, IS_DELETE)
+    values (#{processnode,jdbcType=VARCHAR}, #{processnodename,jdbcType=VARCHAR}, #{opertype,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=DATE}, #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, 
+      #{updateUser,jdbcType=VARCHAR}, #{isDelete,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.processnodeinfo.model.ProcessNodeInfo">
+    insert into processnodeinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="processnode != null">
+        PROCESSNODE,
+      </if>
+      <if test="processnodename != null">
+        PROCESSNODENAME,
+      </if>
+      <if test="opertype != null">
+        OPERTYPE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="processnode != null">
+        #{processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="processnodename != null">
+        #{processnodename,jdbcType=VARCHAR},
+      </if>
+      <if test="opertype != null">
+        #{opertype,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.processnodeinfo.model.ProcessNodeInfoExample" resultType="java.lang.Long">
+    select count(*) from processnodeinfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update processnodeinfo
+    <set>
+      <if test="record.processnode != null">
+        PROCESSNODE = #{record.processnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processnodename != null">
+        PROCESSNODENAME = #{record.processnodename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opertype != null">
+        OPERTYPE = #{record.opertype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=DATE},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=DATE},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update processnodeinfo
+    set PROCESSNODE = #{record.processnode,jdbcType=VARCHAR},
+      PROCESSNODENAME = #{record.processnodename,jdbcType=VARCHAR},
+      OPERTYPE = #{record.opertype,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=DATE},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=DATE},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.processnodeinfo.model.ProcessNodeInfo">
+    update processnodeinfo
+    <set>
+      <if test="processnodename != null">
+        PROCESSNODENAME = #{processnodename,jdbcType=VARCHAR},
+      </if>
+      <if test="opertype != null">
+        OPERTYPE = #{opertype,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=CHAR},
+      </if>
+    </set>
+    where PROCESSNODE = #{processnode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.processnodeinfo.model.ProcessNodeInfo">
+    update processnodeinfo
+    set PROCESSNODENAME = #{processnodename,jdbcType=VARCHAR},
+      OPERTYPE = #{opertype,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=CHAR}
+    where PROCESSNODE = #{processnode,jdbcType=VARCHAR}
+  </update>
+
+  <!-- 获取下一流程节点 -->
+  <select id="getNextProcessNode" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+        ENDPROCESSNODE as processnode
+    FROM
+        processinfo t
+    WHERE
+        t.STARTPROCESSNODE = #{startprocessnode,jdbcType=VARCHAR}
+    AND t.OPERID = #{operid,jdbcType=VARCHAR}
+    AND t.PROCESSID IN (
+        SELECT
+            PROCESSID
+        FROM
+            processstage t1
+        WHERE
+            t1.PROJECTSTAGE = #{projectstage,jdbcType=VARCHAR}
+        AND t1.PROJECTTYPE = #{projecttype,jdbcType=VARCHAR}
+    )
+  </select>
+
+  <!-- 查询当前阶段流程的最大节点 -->
+  <select id="selectMaxProcessnodeByStage" parameterType="com.company.projectinfo.model.ProjectInfo" resultMap="BaseResultMap">
+    SELECT
+        max(t2.ENDPROCESSNODE) AS processnode
+    FROM
+        processinfo t2
+    WHERE
+        t2.PROCESSID IN (
+            SELECT
+                t1.PROCESSID
+            FROM
+                processstage t1
+            WHERE
+                t1.PROJECTTYPE = #{projecttype,jdbcType=VARCHAR}
+            AND t1.PROJECTSTAGE = #{stage,jdbcType=VARCHAR}
+        )
+        AND OPERID &lt;&gt; '4'
+  </select>
+
+</mapper>

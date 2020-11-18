@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.ComponentDao">
+	
+	<resultMap type="com.zzjs.cms.entity.vo.ComponentVo" id="ComponentResultMap">  
+        <id column="componentId" property="componentId"/>  
+        <result column="compTypeId" property="compTypeId"/>
+        <result column="componentName" property="componentName"/>
+        <result column="className" property="className"/>
+        <result column="htmlCode" property="htmlCode"/>
+        <result column="sort" property="sort"/>
+        <result column="createTime" property="createTime"/>  
+        <result column="updateTime" property="updateTime"/>  
+        
+        <association property="componentType" javaType="com.zzjs.cms.entity.ComponentType">  
+            <id column="compTypeId" property="compTypeId"/>  
+            <result column="compTypeName" property="compTypeName"/>  
+            <result column="compTypeTip" property="compTypeTip"/>  
+            <result column="sort" property="sort"/>  
+            <result column="createTime" property="createTime"/>
+            <result column="updateTime" property="updateTime"/>
+        </association>  
+    </resultMap> 
+    
+    <resultMap type="com.zzjs.cms.entity.vo.ComponentTypeVo" id="ComponentTypeResultMap">  
+        
+        <id column="tpCompTypeId" property="tpCompTypeId"/>  
+        <result column="compTypeName" property="compTypeName"/>  
+        <result column="compTypeTip" property="compTypeTip"/>  
+        <result column="tpSort" property="tpSort"/>  
+        <result column="tpCreateTime" property="tpCreateTime"/>
+        <result column="tpUpdateTime" property="tpUpdateTime"/>
+        <result column="htmlId" property="htmlId"/>
+        
+        <collection  property="components"  ofType="com.zzjs.cms.entity.Component">  
+            <id column="componentId" property="componentId"/>  
+	        <result column="compTypeId" property="compTypeId"/>
+	        <result column="componentName" property="componentName"/>
+	        <result column="className" property="className"/>
+	        <result column="htmlCode" property="htmlCode"/>
+	        <result column="sort" property="sort"/>
+	        <result column="tCreateTime" property="createTime"/>  
+	        <result column="tUpdateTime" property="updateTime"/>  
+        </collection >  
+    </resultMap> 
+	
+	<!-- ############################## -->
+	<!-- ###### 增加组件 ###### -->
+	<!-- ############################## -->
+
+	<insert id="addComponent" parameterType="com.zzjs.cms.entity.Component">
+		insert into component(compTypeId,componentName,className,htmlCode,createTime,updateTime,sort)
+		value(#{compTypeId},#{componentName},#{className},#{htmlCode},#{createTime},#{updateTime},#{sort})
+		<selectKey resultType="long" keyProperty="componentId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteComponent" parameterType="long">
+		delete from component where
+		componentId=#{componentId}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateComponentById" parameterType="com.zzjs.cms.entity.Component">
+		update component set 
+		componentName=#{componentName},
+		compTypeId=#{compTypeId},
+		updateTime=#{updateTime},
+		className=#{className},
+		htmlCode=#{htmlCode},
+		sort=#{sort}
+		where componentId=#{componentId}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="getAllComponentType" resultType="com.zzjs.cms.entity.ComponentType">
+		select * from component_type
+	</select>
+	
+	<select id="getComponentById" parameterType="long"
+		resultType="com.zzjs.cms.entity.vo.ComponentVo">
+		select * from component where componentId=#{componentId}
+	</select>
+	
+	<select id="getAllComponent" parameterType="com.zzjs.cms.entity.vo.ComponentVo"
+		resultType="com.zzjs.cms.entity.vo.ComponentVo">
+		select t.* from component t where 1=1 and t.compTypeId != '1'
+	</select>
+	
+	<select id="getComponentList" resultMap="ComponentResultMap">
+		select t.*,tp.* from component t, component_type tp where t.compTypeId=tp.compTypeId 
+		<if test="componentName !=null">and t.componentName like  '%'||#{componentName}||'%'  </if> <if test="compTypeId !=null">and t.compTypeId=#{compTypeId}</if>
+		limit #{offset},#{rows}
+	</select>
+
+	<select id="getComponentListCount" resultType="int">
+		select count(*) from component t where 1=1 
+		<if test="componentName !=null">and t.componentName like  '%'||#{componentName}||'%'  </if> <if test="compTypeId !=null">and t.compTypeId=#{compTypeId}</if>
+	</select>
+	
+	<select id="getAllComponentTypeVos" resultMap="ComponentTypeResultMap">
+		select tp.compTypeId tpCompTypeId,
+			tp.compTypeName compTypeName,
+			tp.compTypeTip compTypeTip,
+			tp.sort tpSort,
+			tp.createTime tpCreateTime,
+			tp.updateTime tpUpdateTime,
+			tp.htmlId htmlId,
+			t.componentId componentId,
+			t.compTypeId compTypeId,
+			t.componentName componentName,
+			t.className className,
+			t.htmlCode htmlCode,
+			t.sort sort,
+			t.createTime tCreateTime,
+			t.updateTime tUpdateTime from component_type tp 
+LEFT JOIN component t ON t.compTypeId=tp.compTypeId 
+	</select>
+	
+	<select id="getHaveTempComponentTypeVos" resultMap="ComponentTypeResultMap">
+		select tp.compTypeId tpCompTypeId,
+			tp.compTypeName compTypeName,
+			tp.compTypeTip compTypeTip,
+			tp.sort tpSort,
+			tp.createTime tpCreateTime,
+			tp.updateTime tpUpdateTime,
+			tp.htmlId htmlId,
+			t.componentId componentId,
+			t.compTypeId compTypeId,
+			t.componentName componentName,
+			t.className className,
+			t.htmlCode htmlCode,
+			t.sort sort,
+			t.createTime tCreateTime,
+			t.updateTime tUpdateTime from component_type tp 
+		LEFT JOIN component t ON t.compTypeId=tp.compTypeId 
+		where
+		(t.compTypeId=1 or EXISTS(
+			select 1 from component_template_tab ctt 
+				where ctt.componentId=t.componentId 
+					and ctt.isDefault='1' 
+					and ctt.isDelete='1') )
+	</select>
+	
+	
+</mapper>  

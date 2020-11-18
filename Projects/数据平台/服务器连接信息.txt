@@ -1,0 +1,9 @@
+10.0.48.19
+root   zzjs1808
+nohup java -jar dataplatform-code-1.0.0.jar  --spring.config.location=/home/zzjs/app/dataplatform/config/dataplatform-code/application.properties  >  temp.out &
+
+nohup java -jar dataplatform-verify-2.0.9.RELEASE.jar  --spring.config.location=/home/zzjs/app/dataplatform/config/dataplatform-verify/application.properties  >  temp.out &
+
+nohup java -jar dataplatform-eureka-2.0.9.RELEASE.jar >temp.out &
+
+共享文件夹目录/home/zzjs/gongxiangja/gxwj

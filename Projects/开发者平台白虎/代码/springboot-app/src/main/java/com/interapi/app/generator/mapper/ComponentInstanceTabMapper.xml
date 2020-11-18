@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interapi.app.generator.dao.ComponentInstanceTabMapper">
+  <resultMap id="BaseResultMap" type="com.interapi.app.generator.model.ComponentInstanceTab">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="componentId" jdbcType="BIGINT" property="componentid" />
+    <result column="fileId" jdbcType="BIGINT" property="fileid" />
+    <result column="isDelete" jdbcType="VARCHAR" property="isdelete" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="createUser" jdbcType="BIGINT" property="createuser" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="updateUser" jdbcType="BIGINT" property="updateuser" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.interapi.app.generator.model.ComponentInstanceTab">
+    <result column="htmlCode" jdbcType="LONGVARCHAR" property="htmlcode" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, componentId, fileId, isDelete, createTime, createUser, updateTime, updateUser
+  </sql>
+  <sql id="Blob_Column_List">
+    htmlCode
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.interapi.app.generator.model.ComponentInstanceTabExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from component_instance_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.interapi.app.generator.model.ComponentInstanceTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from component_instance_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from component_instance_tab
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from component_instance_tab
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.interapi.app.generator.model.ComponentInstanceTabExample">
+    delete from component_instance_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.interapi.app.generator.model.ComponentInstanceTab">
+    insert into component_instance_tab (id, componentId, fileId, 
+      isDelete, createTime, createUser, 
+      updateTime, updateUser, htmlCode
+      )
+    values (#{id,jdbcType=BIGINT}, #{componentid,jdbcType=BIGINT}, #{fileid,jdbcType=BIGINT}, 
+      #{isdelete,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{createuser,jdbcType=BIGINT}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{updateuser,jdbcType=BIGINT}, #{htmlcode,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.interapi.app.generator.model.ComponentInstanceTab">
+    insert into component_instance_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="componentid != null">
+        componentId,
+      </if>
+      <if test="fileid != null">
+        fileId,
+      </if>
+      <if test="isdelete != null">
+        isDelete,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="createuser != null">
+        createUser,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="updateuser != null">
+        updateUser,
+      </if>
+      <if test="htmlcode != null">
+        htmlCode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="componentid != null">
+        #{componentid,jdbcType=BIGINT},
+      </if>
+      <if test="fileid != null">
+        #{fileid,jdbcType=BIGINT},
+      </if>
+      <if test="isdelete != null">
+        #{isdelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuser != null">
+        #{createuser,jdbcType=BIGINT},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null">
+        #{updateuser,jdbcType=BIGINT},
+      </if>
+      <if test="htmlcode != null">
+        #{htmlcode,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.interapi.app.generator.model.ComponentInstanceTabExample" resultType="java.lang.Long">
+    select count(*) from component_instance_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update component_instance_tab
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.componentid != null">
+        componentId = #{record.componentid,jdbcType=BIGINT},
+      </if>
+      <if test="record.fileid != null">
+        fileId = #{record.fileid,jdbcType=BIGINT},
+      </if>
+      <if test="record.isdelete != null">
+        isDelete = #{record.isdelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null">
+        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createuser != null">
+        createUser = #{record.createuser,jdbcType=BIGINT},
+      </if>
+      <if test="record.updatetime != null">
+        updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateuser != null">
+        updateUser = #{record.updateuser,jdbcType=BIGINT},
+      </if>
+      <if test="record.htmlcode != null">
+        htmlCode = #{record.htmlcode,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update component_instance_tab
+    set id = #{record.id,jdbcType=BIGINT},
+      componentId = #{record.componentid,jdbcType=BIGINT},
+      fileId = #{record.fileid,jdbcType=BIGINT},
+      isDelete = #{record.isdelete,jdbcType=VARCHAR},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      createUser = #{record.createuser,jdbcType=BIGINT},
+      updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      updateUser = #{record.updateuser,jdbcType=BIGINT},
+      htmlCode = #{record.htmlcode,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update component_instance_tab
+    set id = #{record.id,jdbcType=BIGINT},
+      componentId = #{record.componentid,jdbcType=BIGINT},
+      fileId = #{record.fileid,jdbcType=BIGINT},
+      isDelete = #{record.isdelete,jdbcType=VARCHAR},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      createUser = #{record.createuser,jdbcType=BIGINT},
+      updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      updateUser = #{record.updateuser,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.interapi.app.generator.model.ComponentInstanceTab">
+    update component_instance_tab
+    <set>
+      <if test="componentid != null">
+        componentId = #{componentid,jdbcType=BIGINT},
+      </if>
+      <if test="fileid != null">
+        fileId = #{fileid,jdbcType=BIGINT},
+      </if>
+      <if test="isdelete != null">
+        isDelete = #{isdelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuser != null">
+        createUser = #{createuser,jdbcType=BIGINT},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null">
+        updateUser = #{updateuser,jdbcType=BIGINT},
+      </if>
+      <if test="htmlcode != null">
+        htmlCode = #{htmlcode,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.interapi.app.generator.model.ComponentInstanceTab">
+    update component_instance_tab
+    set componentId = #{componentid,jdbcType=BIGINT},
+      fileId = #{fileid,jdbcType=BIGINT},
+      isDelete = #{isdelete,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      createUser = #{createuser,jdbcType=BIGINT},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      updateUser = #{updateuser,jdbcType=BIGINT},
+      htmlCode = #{htmlcode,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.interapi.app.generator.model.ComponentInstanceTab">
+    update component_instance_tab
+    set componentId = #{componentid,jdbcType=BIGINT},
+      fileId = #{fileid,jdbcType=BIGINT},
+      isDelete = #{isdelete,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      createUser = #{createuser,jdbcType=BIGINT},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      updateUser = #{updateuser,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

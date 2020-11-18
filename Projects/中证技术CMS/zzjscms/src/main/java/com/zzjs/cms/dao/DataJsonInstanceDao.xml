@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zzjs.cms.dao.DataJsonInstanceDao">
+	<resultMap id="BaseResultMap" type="com.zzjs.cms.entity.DataJsonInstance" >
+    <id column="id" property="id"/>
+    <result column="instanceId" property="instanceId"/>
+    <result column="dataJsonEnName" property="dataJsonEnName"/>
+    <result column="dataJsonName" property="dataJsonName"/>
+    <result column="dataJsonCode" property="dataJsonCode"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id,
+	instanceId,
+	dataJsonEnName,
+	dataJsonName,
+	dataJsonCode
+  </sql>
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="insert" parameterType="com.zzjs.cms.entity.DataJsonInstance">
+		insert into 
+		data_json_instance_tab (
+			id,
+			instanceId,
+			dataJsonEnName,
+			dataJsonName,
+			dataJsonCode
+		) value (
+			#{id},
+			#{instanceId},
+			#{dataJsonEnName},
+			#{dataJsonName},
+			#{dataJsonCode}
+		)
+		<selectKey resultType="long" keyProperty="id">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteByEntity" parameterType="com.zzjs.cms.entity.DataJsonInstance">
+		delete from data_json_instance_tab  
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="dataJsonEnName  != null and dataJsonEnName != ''">
+	        	<![CDATA[ and  dataJsonEnName = #{dataJsonEnName } ]]>
+			</if>
+			<if test="id != null and id != 0">
+	        	<![CDATA[ and  id != #{id}  ]]>
+		    </if>
+		    <if test="instanceId  != null and instanceId != 0">
+	        	<![CDATA[ and  instanceId = #{instanceId } ]]>
+			</if>
+		</trim>
+	</delete>
+	
+	<delete id="deleteByEntityByFileId" parameterType="java.lang.Long">
+		delete from data_json_instance_tab 
+		where instanceId in 
+		(select id from component_instance_tab where fileId=#{fileId}) 
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateByPrimaryKey" parameterType="com.zzjs.cms.entity.DataJsonInstance">
+		update data_json_instance_tab t set 
+		<if test="dataJsonEnName  != null and dataJsonEnName != ''">
+			<![CDATA[ t.dataJsonEnName=#{dataJsonEnName}, ]]>
+		</if>
+		<if test="dataJsonName  != null and dataJsonName != ''">
+			<![CDATA[ t.dataJsonName=#{dataJsonName}, ]]>
+		</if>
+		t.dataJsonCode=#{dataJsonCode}
+		<include refid="Base_Where_Clause" />
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="selectByPrimaryKey" parameterType="com.zzjs.cms.entity.DataJsonInstance"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from data_json_instance_tab t
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByPrimaryKeys" parameterType="com.zzjs.cms.entity.DataJsonInstance"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from data_json_instance_tab t
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<!-- 查询条件 -->
+	<sql id="Base_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="dataJsonEnName  != null and dataJsonEnName != ''">
+	        	<![CDATA[ and  t.dataJsonEnName = #{dataJsonEnName } ]]>
+			</if>
+			<if test="id != null and id != 0">
+	        	<![CDATA[ and  t.id = #{id}  ]]>
+		    </if>
+		    <if test="instanceId  != null and instanceId != 0">
+	        	<![CDATA[ and  t.instanceId = #{instanceId } ]]>
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 查询,排序,分页,模型 -->
+	<select id="selectByModelPagingCount" parameterType="com.zzjs.cms.entity.DataJsonInstance" resultType="int">
+		select count(*) from data_json_instance_tab t
+		<include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByModelPaging" resultMap="BaseResultMap"
+		parameterType="com.zzjs.cms.entity.DataJsonInstance">
+		select
+		<include refid="Base_Column_List" />
+		from data_json_instance_tab t
+		<include refid="Base_Where_Clause" />
+		limit #{offset},#{rows}
+	</select>
+</mapper>  

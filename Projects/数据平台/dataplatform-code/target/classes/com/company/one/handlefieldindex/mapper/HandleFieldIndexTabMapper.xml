@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.one.handlefieldindex.dao.HandleFieldIndexTabMapper">
+  <resultMap id="BaseResultMap" type="com.company.one.handlefieldindex.model.HandleFieldIndexTab">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="t_template_type" jdbcType="VARCHAR" property="tTemplateType" />
+    <result column="t_element_name" jdbcType="VARCHAR" property="tElementName" />
+    <result column="d_field" jdbcType="VARCHAR" property="dField" />
+    <result column="d_tuple_up_name" jdbcType="VARCHAR" property="dTupleUpName" />
+    <result column="t_control_type" jdbcType="VARCHAR" property="tControlType" />
+    <result column="index_value" jdbcType="INTEGER" property="indexValue" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, t_template_type, t_element_name, d_field, d_tuple_up_name, t_control_type, index_value
+  </sql>
+  <select id="selectByExample" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from handle_field_index_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from handle_field_index_tab
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from handle_field_index_tab
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTabExample">
+    delete from handle_field_index_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into handle_field_index_tab (t_template_type, t_element_name, d_field, 
+      d_tuple_up_name, t_control_type, index_value
+      )
+    values (#{tTemplateType,jdbcType=VARCHAR}, #{tElementName,jdbcType=VARCHAR}, #{dField,jdbcType=VARCHAR}, 
+      #{dTupleUpName,jdbcType=VARCHAR}, #{tControlType,jdbcType=VARCHAR}, #{indexValue,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into handle_field_index_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tTemplateType != null">
+        t_template_type,
+      </if>
+      <if test="tElementName != null">
+        t_element_name,
+      </if>
+      <if test="dField != null">
+        d_field,
+      </if>
+      <if test="dTupleUpName != null">
+        d_tuple_up_name,
+      </if>
+      <if test="tControlType != null">
+        t_control_type,
+      </if>
+      <if test="indexValue != null">
+        index_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tTemplateType != null">
+        #{tTemplateType,jdbcType=VARCHAR},
+      </if>
+      <if test="tElementName != null">
+        #{tElementName,jdbcType=VARCHAR},
+      </if>
+      <if test="dField != null">
+        #{dField,jdbcType=VARCHAR},
+      </if>
+      <if test="dTupleUpName != null">
+        #{dTupleUpName,jdbcType=VARCHAR},
+      </if>
+      <if test="tControlType != null">
+        #{tControlType,jdbcType=VARCHAR},
+      </if>
+      <if test="indexValue != null">
+        #{indexValue,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTabExample" resultType="java.lang.Long">
+    select count(*) from handle_field_index_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update handle_field_index_tab
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.tTemplateType != null">
+        t_template_type = #{record.tTemplateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tElementName != null">
+        t_element_name = #{record.tElementName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dField != null">
+        d_field = #{record.dField,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dTupleUpName != null">
+        d_tuple_up_name = #{record.dTupleUpName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tControlType != null">
+        t_control_type = #{record.tControlType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.indexValue != null">
+        index_value = #{record.indexValue,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update handle_field_index_tab
+    set id = #{record.id,jdbcType=INTEGER},
+      t_template_type = #{record.tTemplateType,jdbcType=VARCHAR},
+      t_element_name = #{record.tElementName,jdbcType=VARCHAR},
+      d_field = #{record.dField,jdbcType=VARCHAR},
+      d_tuple_up_name = #{record.dTupleUpName,jdbcType=VARCHAR},
+      t_control_type = #{record.tControlType,jdbcType=VARCHAR},
+      index_value = #{record.indexValue,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTab">
+    update handle_field_index_tab
+    <set>
+      <if test="tTemplateType != null">
+        t_template_type = #{tTemplateType,jdbcType=VARCHAR},
+      </if>
+      <if test="tElementName != null">
+        t_element_name = #{tElementName,jdbcType=VARCHAR},
+      </if>
+      <if test="dField != null">
+        d_field = #{dField,jdbcType=VARCHAR},
+      </if>
+      <if test="dTupleUpName != null">
+        d_tuple_up_name = #{dTupleUpName,jdbcType=VARCHAR},
+      </if>
+      <if test="tControlType != null">
+        t_control_type = #{tControlType,jdbcType=VARCHAR},
+      </if>
+      <if test="indexValue != null">
+        index_value = #{indexValue,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.one.handlefieldindex.model.HandleFieldIndexTab">
+    update handle_field_index_tab
+    set t_template_type = #{tTemplateType,jdbcType=VARCHAR},
+      t_element_name = #{tElementName,jdbcType=VARCHAR},
+      d_field = #{dField,jdbcType=VARCHAR},
+      d_tuple_up_name = #{dTupleUpName,jdbcType=VARCHAR},
+      t_control_type = #{tControlType,jdbcType=VARCHAR},
+      index_value = #{indexValue,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

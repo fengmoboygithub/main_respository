@@ -1,0 +1,39 @@
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+        <h4 class="modal-title" id="myModalLabel">编辑网站顶部加载入参</h4>
+      </div>
+      <div class="modal-body">
+				<form role="form">
+				   <div class="form-group">
+					  <label for="name">URL</label>
+					  <input type="text" class="form-control" id="ajaxUrl"
+						 placeholder="请输入URL" value="http://127.0.0.1/portal/xxpl/topData.co"></input>
+				   </div>
+				   <div class="form-group">
+					  <label for="callMethod">回调函数(参数：json)</label>
+					  <textarea type="text" class="form-control" id="dealMethod"
+						 placeholder="请输入回调函数">
+						 console.log(json);
+						 var topUl = $('.'+targetId).find('.userPanel').find('ul');
+						 var welcomeDiv = $('.'+targetId).find('.welcome');
+						 welcomeDiv.empty();
+						 welcomeDiv.html(json.message.welcome);
+						 if(json.message.showlist.length>0){
+							 topUl.empty();
+							 $.each(json.message.showlist, function(i, e){
+								var li = $('<li>',{'html':'<a href="'+e.href+'">'+e.name+'</a>'});
+								topUl.append(li);	  
+							 });						
+						 }
+						</textarea>
+				   </div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->

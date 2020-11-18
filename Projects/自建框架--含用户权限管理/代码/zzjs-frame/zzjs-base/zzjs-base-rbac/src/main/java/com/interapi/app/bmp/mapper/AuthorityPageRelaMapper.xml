@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interapi.app.bmp.dao.AuthorityPageRelaMapper">
+  <resultMap id="BaseResultMap" type="com.interapi.app.bmp.model.AuthorityPageRela">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="AUTHORITY_ID" jdbcType="BIGINT" property="authorityId" />
+    <result column="PAGE_ID" jdbcType="BIGINT" property="pageId" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="BIGINT" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, AUTHORITY_ID, PAGE_ID, IS_DELETE, CREATE_TIME, CREATE_USER, UPDATE_TIME, UPDATE_USER
+  </sql>
+  <select id="selectByExample" parameterType="com.interapi.app.bmp.model.AuthorityPageRelaExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from authority_page_rela
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from authority_page_rela
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from authority_page_rela
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.interapi.app.bmp.model.AuthorityPageRelaExample">
+    delete from authority_page_rela
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.interapi.app.bmp.model.AuthorityPageRela">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into authority_page_rela (AUTHORITY_ID, PAGE_ID, IS_DELETE, 
+      CREATE_TIME, CREATE_USER, UPDATE_TIME, 
+      UPDATE_USER)
+    values (#{authorityId,jdbcType=BIGINT}, #{pageId,jdbcType=BIGINT}, #{isDelete,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.interapi.app.bmp.model.AuthorityPageRela">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into authority_page_rela
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="authorityId != null">
+        AUTHORITY_ID,
+      </if>
+      <if test="pageId != null">
+        PAGE_ID,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="authorityId != null">
+        #{authorityId,jdbcType=BIGINT},
+      </if>
+      <if test="pageId != null">
+        #{pageId,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.interapi.app.bmp.model.AuthorityPageRelaExample" resultType="java.lang.Long">
+    select count(*) from authority_page_rela
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update authority_page_rela
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.authorityId != null">
+        AUTHORITY_ID = #{record.authorityId,jdbcType=BIGINT},
+      </if>
+      <if test="record.pageId != null">
+        PAGE_ID = #{record.pageId,jdbcType=BIGINT},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update authority_page_rela
+    set ID = #{record.id,jdbcType=BIGINT},
+      AUTHORITY_ID = #{record.authorityId,jdbcType=BIGINT},
+      PAGE_ID = #{record.pageId,jdbcType=BIGINT},
+      IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.interapi.app.bmp.model.AuthorityPageRela">
+    update authority_page_rela
+    <set>
+      <if test="authorityId != null">
+        AUTHORITY_ID = #{authorityId,jdbcType=BIGINT},
+      </if>
+      <if test="pageId != null">
+        PAGE_ID = #{pageId,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.interapi.app.bmp.model.AuthorityPageRela">
+    update authority_page_rela
+    set AUTHORITY_ID = #{authorityId,jdbcType=BIGINT},
+      PAGE_ID = #{pageId,jdbcType=BIGINT},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <!-- 根据权限id查询菜单 -->
+  <select id="getListByAuthorityId" parameterType="java.lang.Long" resultType="com.interapi.app.bmp.model.PageTab">
+    SELECT
+      t2.id,
+      t2.NAME,
+      t1.IS_DELETE AS isDelete,
+      t1.CREATE_USER AS createUser,
+      t1.CREATE_TIME AS createTime
+    FROM
+    authority_page_rela t1
+    LEFT JOIN page_tab t2 ON t1.PAGE_ID = t2.ID
+    WHERE
+    t1.AUTHORITY_ID = #{authorityId,jdbcType=BIGINT}
+  </select>
+
+  <!-- 根据权限id删除全部菜单 -->
+  <delete id="deleteByAuthorityId" parameterType="java.lang.Long">
+    delete from authority_page_rela
+    where AUTHORITY_ID = #{authorityId,jdbcType=BIGINT}
+  </delete>
+
+  <!-- 批量插入权限菜单关系 -->
+  <insert id="insertBatch">
+    INSERT INTO authority_page_rela
+    (AUTHORITY_ID, PAGE_ID, IS_DELETE, CREATE_TIME, CREATE_USER)
+    VALUES
+    <foreach collection ="list" item="authoritypagerela" separator =",">
+      (#{authoritypagerela.authorityId}, #{authoritypagerela.pageId}, #{authoritypagerela.isDelete},#{authoritypagerela.createTime}, #{authoritypagerela.createUser})
+    </foreach >
+  </insert>
+</mapper>

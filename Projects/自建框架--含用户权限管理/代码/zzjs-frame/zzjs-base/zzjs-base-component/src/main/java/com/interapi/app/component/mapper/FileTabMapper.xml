@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interapi.app.component.dao.FileTabMapper">
+  <resultMap id="BaseResultMap" type="com.interapi.app.component.model.FileTab">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="EN_NAME" jdbcType="VARCHAR" property="enName" />
+    <result column="PATH" jdbcType="VARCHAR" property="path" />
+    <result column="FILE_TYPE" jdbcType="CHAR" property="fileType" />
+    <result column="FILE_VERSION" jdbcType="BIGINT" property="fileVersion" />
+    <result column="SITE_ID" jdbcType="BIGINT" property="siteId" />
+    <result column="FOLDER_ID" jdbcType="BIGINT" property="folderId" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="BIGINT" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.interapi.app.component.model.FileTab">
+    <result column="SOURCE_CODE" jdbcType="LONGVARCHAR" property="sourceCode" />
+    <result column="HTML_CODE" jdbcType="LONGVARCHAR" property="htmlCode" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, NAME, EN_NAME, PATH, FILE_TYPE, FILE_VERSION, SITE_ID, FOLDER_ID, IS_DELETE, 
+    CREATE_TIME, CREATE_USER, UPDATE_TIME, UPDATE_USER
+  </sql>
+  <sql id="Blob_Column_List">
+    SOURCE_CODE, HTML_CODE
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.interapi.app.component.model.FileTabExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from file_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.interapi.app.component.model.FileTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from file_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from file_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from file_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.interapi.app.component.model.FileTabExample">
+    delete from file_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.interapi.app.component.model.FileTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into file_tab (NAME, EN_NAME, PATH, 
+      FILE_TYPE, FILE_VERSION, SITE_ID, 
+      FOLDER_ID, IS_DELETE, CREATE_TIME, 
+      CREATE_USER, UPDATE_TIME, UPDATE_USER, 
+      SOURCE_CODE, HTML_CODE)
+    values (#{name,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{fileType,jdbcType=CHAR}, #{fileVersion,jdbcType=BIGINT}, #{siteId,jdbcType=BIGINT}, 
+      #{folderId,jdbcType=BIGINT}, #{isDelete,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=BIGINT}, 
+      #{sourceCode,jdbcType=LONGVARCHAR}, #{htmlCode,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.interapi.app.component.model.FileTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into file_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="enName != null">
+        EN_NAME,
+      </if>
+      <if test="path != null">
+        PATH,
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE,
+      </if>
+      <if test="fileVersion != null">
+        FILE_VERSION,
+      </if>
+      <if test="siteId != null">
+        SITE_ID,
+      </if>
+      <if test="folderId != null">
+        FOLDER_ID,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="sourceCode != null">
+        SOURCE_CODE,
+      </if>
+      <if test="htmlCode != null">
+        HTML_CODE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="fileType != null">
+        #{fileType,jdbcType=CHAR},
+      </if>
+      <if test="fileVersion != null">
+        #{fileVersion,jdbcType=BIGINT},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="folderId != null">
+        #{folderId,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="sourceCode != null">
+        #{sourceCode,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="htmlCode != null">
+        #{htmlCode,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.interapi.app.component.model.FileTabExample" resultType="java.lang.Long">
+    select count(*) from file_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update file_tab
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null">
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enName != null">
+        EN_NAME = #{record.enName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.path != null">
+        PATH = #{record.path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileType != null">
+        FILE_TYPE = #{record.fileType,jdbcType=CHAR},
+      </if>
+      <if test="record.fileVersion != null">
+        FILE_VERSION = #{record.fileVersion,jdbcType=BIGINT},
+      </if>
+      <if test="record.siteId != null">
+        SITE_ID = #{record.siteId,jdbcType=BIGINT},
+      </if>
+      <if test="record.folderId != null">
+        FOLDER_ID = #{record.folderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.sourceCode != null">
+        SOURCE_CODE = #{record.sourceCode,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.htmlCode != null">
+        HTML_CODE = #{record.htmlCode,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update file_tab
+    set ID = #{record.id,jdbcType=BIGINT},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      EN_NAME = #{record.enName,jdbcType=VARCHAR},
+      PATH = #{record.path,jdbcType=VARCHAR},
+      FILE_TYPE = #{record.fileType,jdbcType=CHAR},
+      FILE_VERSION = #{record.fileVersion,jdbcType=BIGINT},
+      SITE_ID = #{record.siteId,jdbcType=BIGINT},
+      FOLDER_ID = #{record.folderId,jdbcType=BIGINT},
+      IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=BIGINT},
+      SOURCE_CODE = #{record.sourceCode,jdbcType=LONGVARCHAR},
+      HTML_CODE = #{record.htmlCode,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update file_tab
+    set ID = #{record.id,jdbcType=BIGINT},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      EN_NAME = #{record.enName,jdbcType=VARCHAR},
+      PATH = #{record.path,jdbcType=VARCHAR},
+      FILE_TYPE = #{record.fileType,jdbcType=CHAR},
+      FILE_VERSION = #{record.fileVersion,jdbcType=BIGINT},
+      SITE_ID = #{record.siteId,jdbcType=BIGINT},
+      FOLDER_ID = #{record.folderId,jdbcType=BIGINT},
+      IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.interapi.app.component.model.FileTab">
+    update file_tab
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        EN_NAME = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        PATH = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE = #{fileType,jdbcType=CHAR},
+      </if>
+      <if test="fileVersion != null">
+        FILE_VERSION = #{fileVersion,jdbcType=BIGINT},
+      </if>
+      <if test="siteId != null">
+        SITE_ID = #{siteId,jdbcType=BIGINT},
+      </if>
+      <if test="folderId != null">
+        FOLDER_ID = #{folderId,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=BIGINT},
+      </if>
+      <if test="sourceCode != null">
+        SOURCE_CODE = #{sourceCode,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="htmlCode != null">
+        HTML_CODE = #{htmlCode,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.interapi.app.component.model.FileTab">
+    update file_tab
+    set NAME = #{name,jdbcType=VARCHAR},
+      EN_NAME = #{enName,jdbcType=VARCHAR},
+      PATH = #{path,jdbcType=VARCHAR},
+      FILE_TYPE = #{fileType,jdbcType=CHAR},
+      FILE_VERSION = #{fileVersion,jdbcType=BIGINT},
+      SITE_ID = #{siteId,jdbcType=BIGINT},
+      FOLDER_ID = #{folderId,jdbcType=BIGINT},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=BIGINT},
+      SOURCE_CODE = #{sourceCode,jdbcType=LONGVARCHAR},
+      HTML_CODE = #{htmlCode,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.interapi.app.component.model.FileTab">
+    update file_tab
+    set NAME = #{name,jdbcType=VARCHAR},
+      EN_NAME = #{enName,jdbcType=VARCHAR},
+      PATH = #{path,jdbcType=VARCHAR},
+      FILE_TYPE = #{fileType,jdbcType=CHAR},
+      FILE_VERSION = #{fileVersion,jdbcType=BIGINT},
+      SITE_ID = #{siteId,jdbcType=BIGINT},
+      FOLDER_ID = #{folderId,jdbcType=BIGINT},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

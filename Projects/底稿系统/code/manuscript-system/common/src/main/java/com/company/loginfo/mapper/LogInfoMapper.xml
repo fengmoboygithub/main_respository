@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.loginfo.dao.LogInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.loginfo.model.LogInfo">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROJECTID" jdbcType="VARCHAR" property="projectid" />
+    <result column="REQUESTTYPE" jdbcType="VARCHAR" property="requesttype" />
+    <result column="REQUESTCONTROLLERPATH" jdbcType="VARCHAR" property="requestcontrollerpath" />
+    <result column="REQUESTURL" jdbcType="VARCHAR" property="requesturl" />
+    <result column="REQUESTPARAMS" jdbcType="VARCHAR" property="requestparams" />
+    <result column="USERID" jdbcType="VARCHAR" property="userid" />
+    <result column="IS_DELETE" jdbcType="CHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PROJECTID, REQUESTTYPE, REQUESTCONTROLLERPATH, REQUESTURL, REQUESTPARAMS, USERID, 
+    IS_DELETE, CREATE_TIME, CREATE_USER, UPDATE_TIME, UPDATE_USER
+  </sql>
+  <select id="selectByExample" parameterType="com.company.loginfo.model.LogInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from loginfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from loginfo
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from loginfo
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.loginfo.model.LogInfoExample">
+    delete from loginfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.loginfo.model.LogInfo">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into loginfo (ID, PROJECTID, REQUESTTYPE, 
+      REQUESTCONTROLLERPATH, REQUESTURL, REQUESTPARAMS, 
+      USERID, IS_DELETE, CREATE_TIME, 
+      CREATE_USER, UPDATE_TIME, UPDATE_USER
+      )
+    values (#{id,jdbcType=VARCHAR}, #{projectid,jdbcType=VARCHAR}, #{requesttype,jdbcType=VARCHAR}, 
+      #{requestcontrollerpath,jdbcType=VARCHAR}, #{requesturl,jdbcType=VARCHAR}, #{requestparams,jdbcType=VARCHAR}, 
+      #{userid,jdbcType=VARCHAR}, #{isDelete,jdbcType=CHAR}, #{createTime,jdbcType=DATE}, 
+      #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateUser,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.loginfo.model.LogInfo">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into loginfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="projectid != null">
+        PROJECTID,
+      </if>
+      <if test="requesttype != null">
+        REQUESTTYPE,
+      </if>
+      <if test="requestcontrollerpath != null">
+        REQUESTCONTROLLERPATH,
+      </if>
+      <if test="requesturl != null">
+        REQUESTURL,
+      </if>
+      <if test="requestparams != null">
+        REQUESTPARAMS,
+      </if>
+      <if test="userid != null">
+        USERID,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=VARCHAR},
+      <if test="projectid != null">
+        #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="requesttype != null">
+        #{requesttype,jdbcType=VARCHAR},
+      </if>
+      <if test="requestcontrollerpath != null">
+        #{requestcontrollerpath,jdbcType=VARCHAR},
+      </if>
+      <if test="requesturl != null">
+        #{requesturl,jdbcType=VARCHAR},
+      </if>
+      <if test="requestparams != null">
+        #{requestparams,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.loginfo.model.LogInfoExample" resultType="java.lang.Long">
+    select count(*) from loginfo
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update loginfo
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectid != null">
+        PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requesttype != null">
+        REQUESTTYPE = #{record.requesttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requestcontrollerpath != null">
+        REQUESTCONTROLLERPATH = #{record.requestcontrollerpath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requesturl != null">
+        REQUESTURL = #{record.requesturl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requestparams != null">
+        REQUESTPARAMS = #{record.requestparams,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userid != null">
+        USERID = #{record.userid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=DATE},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=DATE},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update loginfo
+    set ID = #{record.id,jdbcType=VARCHAR},
+      PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      REQUESTTYPE = #{record.requesttype,jdbcType=VARCHAR},
+      REQUESTCONTROLLERPATH = #{record.requestcontrollerpath,jdbcType=VARCHAR},
+      REQUESTURL = #{record.requesturl,jdbcType=VARCHAR},
+      REQUESTPARAMS = #{record.requestparams,jdbcType=VARCHAR},
+      USERID = #{record.userid,jdbcType=VARCHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=DATE},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=DATE},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.loginfo.model.LogInfo">
+    update loginfo
+    <set>
+      <if test="projectid != null">
+        PROJECTID = #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="requesttype != null">
+        REQUESTTYPE = #{requesttype,jdbcType=VARCHAR},
+      </if>
+      <if test="requestcontrollerpath != null">
+        REQUESTCONTROLLERPATH = #{requestcontrollerpath,jdbcType=VARCHAR},
+      </if>
+      <if test="requesturl != null">
+        REQUESTURL = #{requesturl,jdbcType=VARCHAR},
+      </if>
+      <if test="requestparams != null">
+        REQUESTPARAMS = #{requestparams,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        USERID = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.loginfo.model.LogInfo">
+    update loginfo
+    set PROJECTID = #{projectid,jdbcType=VARCHAR},
+      REQUESTTYPE = #{requesttype,jdbcType=VARCHAR},
+      REQUESTCONTROLLERPATH = #{requestcontrollerpath,jdbcType=VARCHAR},
+      REQUESTURL = #{requesturl,jdbcType=VARCHAR},
+      REQUESTPARAMS = #{requestparams,jdbcType=VARCHAR},
+      USERID = #{userid,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=CHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

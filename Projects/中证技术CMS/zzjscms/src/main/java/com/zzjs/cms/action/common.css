@@ -1,0 +1,72 @@
+/* reset */
+body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+em { font-style:normal; }
+li { list-style:none;}
+a { text-decoration:none; }
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; }
+textarea { resize:none; overflow:auto; }
+body { font-size:14px; color:#666;font-family:"微软雅黑" !important; background-color:#f8f8f8 }
+/* end reset */
+/* 轮播图媒体查询 */
+@media screen and (max-width:1680px){
+	.nav_bar{
+		height: 50px !important;
+    	line-height: 50px !important;
+	}
+	.nav_li{
+		font-size: 20px !important;
+	}
+	.logo_area{
+		height: 100px !important;
+    	line-height: 100px !important;
+	}
+	.login_bar{
+		padding: 6px 0 !important;
+	}
+	.left_wel_tips,.welcome_tips{
+		font-size: 14px !important;
+	}
+	.yw_rule, .help_info, .about_us{
+		font-size: 14px !important;
+	}
+    .banner_area{
+    	min-height:355px !important;
+    }
+    .example{
+    	height:355px !important;
+    }
+    .data_show{
+    	top: 100px !important;
+    	height: 330px !important;
+    }
+    .kh_item{
+    	margin: 5px 16px 5px 21px !important;
+    }
+    .drjysj{
+    	margin: 5px 16px 0px 21px !important;
+    }
+    .drjysj_right, .lsjysj_right, .jycps_right{
+        margin: 0px 12px 0px 5px !important;
+    }
+    .msdl_margin{
+    	margin-bottom: 0px !important;
+    }
+    .login_btn{
+    	margin-top: 10px !important;
+    	margin-left: 40px !important;
+    }
+    .reg_tips{
+    	margin-top: 5px !important;
+    }
+    .jgxx_xl,.cpzx_xl,.gs_xl,.sm_xl{
+    	top: 50px !important;
+    }
+    .cwbg_area{
+    	height: 40px !important;
+    	line-height: 38px !important;
+    }
+}
+
+

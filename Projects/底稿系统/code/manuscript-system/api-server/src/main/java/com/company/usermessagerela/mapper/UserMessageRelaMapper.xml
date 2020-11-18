@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.usermessagerela.dao.UserMessageRelaMapper">
+  <resultMap id="BaseResultMap" type="com.company.usermessagerela.model.UserMessageRela">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="USERID" jdbcType="VARCHAR" property="userid" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="MGID" jdbcType="VARCHAR" property="mgid" />
+    <result column="MGTYPE" jdbcType="VARCHAR" property="mgtype" />
+    <result column="MGSTATE" jdbcType="VARCHAR" property="mgstate" />
+    <result column="MGCONTENT" jdbcType="VARCHAR" property="mgcontent" />
+    <result column="USERMGSTATE" jdbcType="VARCHAR" property="usermgstate" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    a.ID, a.USERID, a.USERNAME, a.MGID, a.MGTYPE, a.MGSTATE, a.MGCONTENT, a.USERMGSTATE, a.CREATE_TIME, a.CREATE_USER, a.UPDATE_TIME, a.UPDATE_USER
+  </sql>
+  <select id="selectByExample" parameterType="com.company.usermessagerela.model.UserMessageRelaExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ( select ur.ID, ur.USERID, ur.USERNAME, ur.MGID, mc.MGTYPE, mc.MGSTATE, mc.MGCONTENT, ur.USERMGSTATE, ur.CREATE_TIME, ur.CREATE_USER, ur.UPDATE_TIME, ur.UPDATE_USER from usermessagerela ur join messagecenter mc on mc.id=ur.mgid ) a
+
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ( select ur.ID, ur.USERID, ur.USERNAME, ur.MGID, mc.MGCONTENT, ur.USERMGSTATE, ur.CREATE_TIME, ur.CREATE_USER, ur.UPDATE_TIME, ur.UPDATE_USER from usermessagerela ur join messagecenter mc on mc.id=ur.mgid ) a
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from usermessagerela
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.usermessagerela.model.UserMessageRelaExample">
+    delete from usermessagerela
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.usermessagerela.model.UserMessageRela">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into usermessagerela (ID, USERID, USERNAME, 
+      MGID, USERMGSTATE, CREATE_TIME, 
+      CREATE_USER, UPDATE_TIME, UPDATE_USER
+      )
+    values (#{id,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{mgid,jdbcType=VARCHAR}, #{usermgstate,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.usermessagerela.model.UserMessageRela">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into usermessagerela
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="userid != null">
+        USERID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="mgid != null">
+        MGID,
+      </if>
+      <if test="usermgstate != null">
+        USERMGSTATE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=VARCHAR},
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="mgid != null">
+        #{mgid,jdbcType=VARCHAR},
+      </if>
+      <if test="usermgstate != null">
+        #{usermgstate,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.usermessagerela.model.UserMessageRelaExample" resultType="java.lang.Long">
+    select count(*) from usermessagerela
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update usermessagerela
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userid != null">
+        USERID = #{record.userid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.username != null">
+        USERNAME = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mgid != null">
+        MGID = #{record.mgid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usermgstate != null">
+        USERMGSTATE = #{record.usermgstate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update usermessagerela
+    set ID = #{record.id,jdbcType=VARCHAR},
+      USERID = #{record.userid,jdbcType=VARCHAR},
+      USERNAME = #{record.username,jdbcType=VARCHAR},
+      MGID = #{record.mgid,jdbcType=VARCHAR},
+      USERMGSTATE = #{record.usermgstate,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.usermessagerela.model.UserMessageRela">
+    update usermessagerela
+    <set>
+      <if test="userid != null">
+        USERID = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="mgid != null">
+        MGID = #{mgid,jdbcType=VARCHAR},
+      </if>
+      <if test="usermgstate != null">
+        USERMGSTATE = #{usermgstate,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.usermessagerela.model.UserMessageRela">
+    update usermessagerela
+    set USERID = #{userid,jdbcType=VARCHAR},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      MGID = #{mgid,jdbcType=VARCHAR},
+      USERMGSTATE = #{usermgstate,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

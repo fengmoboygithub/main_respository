@@ -1,0 +1,758 @@
+2020-01-07 15:41:53.462 [restartedMain] INFO  com.company.StartApiServer - Starting StartApiServer on DESKTOP-11MB8RT with PID 2924 (started by yangyanchao in E:\工作底稿系统\code\manuscript-system\api-server)
+2020-01-07 15:41:53.469 [restartedMain] INFO  com.company.StartApiServer - The following profiles are active: dev
+2020-01-07 15:41:54.356 [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@452fb0b0: startup date [Tue Jan 07 15:41:54 CST 2020]; root of context hierarchy
+2020-01-07 15:42:01.091 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-01-07 15:42:02.371 [restartedMain] INFO  c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+2020-01-07 15:42:02.578 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2020-01-07 15:42:02.582 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2020-01-07 15:42:02.584 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2020-01-07 15:42:02.586 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:42:02.587 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:42:02.589 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2020-01-07 15:42:02.589 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application-dev.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:42:02.589 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:42:02.589 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource refresh [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:42:02.590 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource class path resource [kaptcha-config.properties] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:42:03.034 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a4d7ad17] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.154 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$ede9e335] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.202 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$e25da7d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.260 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.305 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.326 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.336 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$92ef4433] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.362 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.411 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$b9f16b61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:03.844 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:04.031 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:04.084 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:04.086 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:42:04.286 [restartedMain] INFO  c.u.j.resolver.DefaultLazyPropertyResolver - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2020-01-07 15:42:04.291 [restartedMain] INFO  c.u.j.detector.DefaultLazyPropertyDetector - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2020-01-07 15:42:06.922 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8091 (http)
+2020-01-07 15:42:07.010 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2020-01-07 15:42:07.086 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-07 15:42:07.086 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+2020-01-07 15:42:07.187 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Program Files\Java\jre8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:/Program Files/Java/jdk1.8.0_91/bin/../jre/bin/server;D:/Program Files/Java/jdk1.8.0_91/bin/../jre/bin;D:/Program Files/Java/jdk1.8.0_91/bin/../jre/lib/amd64;C:\Program Files (x86)\Common Files\NetSarang;D:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;C:\WINDOWS\System32\OpenSSH\;E:\yyc\mysql\mysql-5.6.27-winx64\bin;D:\maven\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin;D:\install\PLSQL\instantclient_11_2;D:\Program Files\Microsoft VS Code Insiders\bin;D:\Program Files\Redis-x64;D:\Program Files\TortoiseSVN\bin;%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME%;C:\Users\yangyanchao\AppData\Roaming\搜狐影音\6.2.3.0;D:\eclipse;;.]
+2020-01-07 15:42:07.824 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-01-07 15:42:07.825 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 13469 ms
+2020-01-07 15:42:10.285 [localhost-startStop-1] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-01-07 15:42:11.099 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-01-07 15:42:12.369 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-07 15:42:12.371 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-07 15:42:12.372 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-07 15:42:12.373 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-07 15:42:12.373 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'sessionFilter' to urls: [/*]
+2020-01-07 15:42:12.374 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-01-07 15:42:12.374 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+2020-01-07 15:42:12.374 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-01-07 15:42:12.375 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-01-07 15:42:12.377 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet statViewServlet mapped to [/druid/*]
+2020-01-07 15:42:15.797 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/add],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.add(com.company.dictionarys.model.DictionaryTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.801 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/get],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.get(java.lang.Long)
+2020-01-07 15:42:15.804 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/update],methods=[PUT],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.update(com.company.dictionarys.model.DictionaryTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.806 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/getListByPage],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataPageListForBootModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.getListByPage(int,int,java.lang.String,java.lang.String) throws com.company.base.exception.BaseException
+2020-01-07 15:42:15.809 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/batchDel],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.dictionarys.controller.DictionaryTabController.batchDel(java.lang.String)
+2020-01-07 15:42:15.810 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/del],methods=[DELETE],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.dictionarys.controller.DictionaryTabController.del(java.lang.Long)
+2020-01-07 15:42:15.811 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/getDictionaryByKey],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<java.lang.String> com.company.dictionarys.controller.DictionaryTabController.getDictionaryByKey(java.lang.String)
+2020-01-07 15:42:15.812 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/getDictionarysByKey],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataListModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.getDictionarysByKey(java.lang.String)
+2020-01-07 15:42:15.814 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/platform/index.htm],methods=[GET]}" onto public java.lang.String com.company.index.action.IndexAction.indexPage(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.815 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/Index/getUserTabListByPage],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataPageListForBootModel<com.company.userinfo.model.UserTab> com.company.index.controller.IndexController.getUserTabListByPage(int,int,java.lang.Long) throws com.company.base.exception.BaseException
+2020-01-07 15:42:15.830 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login.json],methods=[POST]}" onto public com.company.bean.ResponseDataModel<java.lang.String> com.company.login.controller.LoginController.login(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.832 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login.htm],methods=[GET]}" onto public java.lang.String com.company.login.controller.LoginController.loginPage(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.833 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout.htm],methods=[GET]}" onto public java.lang.String com.company.login.controller.LoginController.logout(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.835 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/captcha.htm],methods=[GET]}" onto public void com.company.login.controller.LoginController.captcha(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2020-01-07 15:42:15.836 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/ueditor/config]}" onto public void com.company.ueditor.UEditorController.config(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws org.json.JSONException
+2020-01-07 15:42:15.837 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/ueditor]}" onto private java.lang.String com.company.ueditor.UEditorController.showPage()
+2020-01-07 15:42:15.844 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/add],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.add(com.company.userinfo.model.UserTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.846 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/get],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.get(java.lang.Long)
+2020-01-07 15:42:15.848 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/update],methods=[PUT],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.update(com.company.userinfo.model.UserTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.853 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/getListByPage],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataPageListForBootModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.getListByPage(int,int,java.lang.Long) throws com.company.base.exception.BaseException
+2020-01-07 15:42:15.853 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/batchDel],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.userinfo.controller.UserTabController.batchDel(java.lang.String)
+2020-01-07 15:42:15.855 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/del],methods=[DELETE],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.userinfo.controller.UserTabController.del(java.lang.Long,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.868 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2020-01-07 15:42:15.872 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2020-01-07 15:42:15.876 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2020-01-07 15:42:15.885 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:42:15.887 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-07 15:42:16.268 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-07 15:42:16.296 [restartedMain] INFO  o.s.b.a.e.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2020-01-07 15:42:16.299 [restartedMain] INFO  o.s.b.a.e.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2020-01-07 15:42:16.301 [restartedMain] INFO  o.s.b.a.e.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-07 15:42:16.848 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-01-07 15:42:17.323 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-07 15:42:17.841 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@452fb0b0: startup date [Tue Jan 07 15:41:54 CST 2020]; root of context hierarchy
+2020-01-07 15:42:17.966 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-07 15:42:17.966 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-07 15:42:21.259 [restartedMain] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-01-07 15:42:26.217 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-07 15:42:26.330 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-07 15:42:26.338 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-01-07 15:42:26.338 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-01-07 15:42:26.370 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-01-07 15:42:26.374 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-01-07 15:42:26.391 [restartedMain] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2020-01-07 15:42:26.392 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-01-07 15:42:26.460 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-01-07 15:42:26.569 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-01-07 15:42:27.585 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2020-01-07 15:42:27.592 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: batchDelUsingPOST_1
+2020-01-07 15:42:27.596 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: delUsingDELETE_1
+2020-01-07 15:42:27.600 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingPOST_1
+2020-01-07 15:42:27.611 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getListByPageUsingPOST_1
+2020-01-07 15:42:27.686 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2020-01-07 15:42:27.810 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2020-01-07 15:42:27.954 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-07 15:42:28.039 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8091 (http) with context path ''
+2020-01-07 15:42:28.050 [restartedMain] INFO  com.company.StartApiServer - Started StartApiServer in 36.039 seconds (JVM running for 38.575)
+2020-01-07 15:42:56.253 [http-nio-8091-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-07 15:42:56.254 [http-nio-8091-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-07 15:42:56.345 [http-nio-8091-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 90 ms
+2020-01-07 15:42:56.432 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/+++++++++++++++++++++++++++++
+2020-01-07 15:42:56.644 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/login.htm+++++++++++++++++++++++++++++
+2020-01-07 15:42:56.644 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 指定不作处理的uri通过, /login.htm
+2020-01-07 15:42:56.723 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:42:56.805 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/favicon.ico+++++++++++++++++++++++++++++
+2020-01-07 15:42:56.805 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /favicon.ico
+2020-01-07 15:42:59.907 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.907 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/bootstrap.min.css
+2020-01-07 15:42:59.907 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/style.css+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.908 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/style.css
+2020-01-07 15:42:59.915 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/bootstrap-reset.css+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.915 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/bootstrap-reset.css
+2020-01-07 15:42:59.931 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/style-responsive.css+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.931 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/style-responsive.css
+2020-01-07 15:42:59.935 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.js+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.935 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.js
+2020-01-07 15:42:59.945 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.990 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/font-awesome/css/font-awesome.css+++++++++++++++++++++++++++++
+2020-01-07 15:42:59.991 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/font-awesome/css/font-awesome.css
+2020-01-07 15:43:00.031 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.form.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:00.031 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.form.min.js
+2020-01-07 15:43:00.293 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/template/output/images/logo2.png+++++++++++++++++++++++++++++
+2020-01-07 15:43:00.294 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/template/output/images/logo2.png
+2020-01-07 15:43:00.303 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/captcha.htm+++++++++++++++++++++++++++++
+2020-01-07 15:43:00.303 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 指定不作处理的uri通过, /captcha.htm
+2020-01-07 15:43:01.218 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/img/favicon.ico+++++++++++++++++++++++++++++
+2020-01-07 15:43:01.218 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/img/favicon.ico
+2020-01-07 15:43:35.099 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/login.json+++++++++++++++++++++++++++++
+2020-01-07 15:43:35.100 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 指定不作处理的uri通过, /login.json
+2020-01-07 15:43:35.223 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/platform/index.htm+++++++++++++++++++++++++++++
+2020-01-07 15:43:35.815 [http-nio-8091-exec-4] WARN  n.n.u.thymeleaf.expressions.ExpressionProcessor - Fragment expression "platform/layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2020-01-07 15:43:36.908 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/font-awesome/css/font-awesome.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:36.908 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/font-awesome/css/font-awesome.min.css
+2020-01-07 15:43:36.917 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap/dist/css/bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:36.917 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap/dist/css/bootstrap.min.css
+2020-01-07 15:43:36.935 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:36.935 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.css
+2020-01-07 15:43:36.997 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/Ionicons/css/ionicons.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:36.998 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/Ionicons/css/ionicons.min.css
+2020-01-07 15:43:37.018 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/all.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.019 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/all.css
+2020-01-07 15:43:37.030 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/timepicker/bootstrap-timepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.030 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/timepicker/bootstrap-timepicker.min.css
+2020-01-07 15:43:37.040 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/css/AdminLTE.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.041 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/css/AdminLTE.min.css
+2020-01-07 15:43:37.055 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/select2/dist/css/select2.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.055 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/select2/dist/css/select2.min.css
+2020-01-07 15:43:37.079 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.079 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css
+2020-01-07 15:43:37.087 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.087 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css
+2020-01-07 15:43:37.098 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/css/skins/_all-skins.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.098 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/css/skins/_all-skins.min.css
+2020-01-07 15:43:37.111 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.111 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css
+2020-01-07 15:43:37.125 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/fancybox/source/jquery.fancybox.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.125 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/fancybox/source/jquery.fancybox.css
+2020-01-07 15:43:37.281 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/uploadify/uploadify.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.281 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/uploadify/uploadify.css
+2020-01-07 15:43:37.306 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/vendor/webuploader/css/webuploader.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.306 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/vendor/webuploader/css/webuploader.css
+2020-01-07 15:43:37.326 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/vendor/webuploader/css/upload.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.326 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/vendor/webuploader/css/upload.css
+2020-01-07 15:43:37.441 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.441 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css
+2020-01-07 15:43:37.458 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/img/avatar5.png+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.458 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/img/avatar5.png
+2020-01-07 15:43:37.618 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/square/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.619 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/square/_all.css
+2020-01-07 15:43:37.622 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/line/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.623 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/line/_all.css
+2020-01-07 15:43:37.618 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/minimal/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.630 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/minimal/_all.css
+2020-01-07 15:43:37.636 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/flat/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.636 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/flat/_all.css
+2020-01-07 15:43:37.641 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/polaris/polaris.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.641 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/polaris/polaris.css
+2020-01-07 15:43:37.649 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/futurico/futurico.css+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.649 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/futurico/futurico.css
+2020-01-07 15:43:37.870 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/jquery/dist/jquery.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.870 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/jquery/dist/jquery.min.js
+2020-01-07 15:43:37.879 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/vue/vue.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.879 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/vue/vue.min.js
+2020-01-07 15:43:37.913 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/vue-resource/vue-resource.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.914 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/vue-resource/vue-resource.min.js
+2020-01-07 15:43:37.962 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/validateMe/jquery.validate-1.0.1.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.962 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/validateMe/jquery.validate-1.0.1.js
+2020-01-07 15:43:37.963 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/select2/dist/js/select2.full.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:37.963 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/select2/dist/js/select2.full.min.js
+2020-01-07 15:43:38.048 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.048 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.js
+2020-01-07 15:43:38.062 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.date.extensions.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.063 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.date.extensions.js
+2020-01-07 15:43:38.090 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.extensions.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.091 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/moment/min/moment.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.091 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.extensions.js
+2020-01-07 15:43:38.091 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/moment/min/moment.min.js
+2020-01-07 15:43:38.152 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap/dist/js/bootstrap.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.153 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap/dist/js/bootstrap.min.js
+2020-01-07 15:43:38.228 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.228 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js
+2020-01-07 15:43:38.233 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.233 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.js
+2020-01-07 15:43:38.252 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/timepicker/bootstrap-timepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.252 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.253 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js
+2020-01-07 15:43:38.254 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/timepicker/bootstrap-timepicker.min.js
+2020-01-07 15:43:38.292 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net/js/jquery.dataTables.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.293 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net/js/jquery.dataTables.min.js
+2020-01-07 15:43:38.318 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.318 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js
+2020-01-07 15:43:38.330 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/jquery-slimscroll/jquery.slimscroll.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.330 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
+2020-01-07 15:43:38.350 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/fastclick/lib/fastclick.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.351 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/fastclick/lib/fastclick.js
+2020-01-07 15:43:38.354 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/icheck.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.408 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/icheck.min.js
+2020-01-07 15:43:38.373 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/adminlte.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.421 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/adminlte.min.js
+2020-01-07 15:43:38.389 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/demo.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.438 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/demo.js
+2020-01-07 15:43:38.521 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/fancybox/source/jquery.fancybox.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.521 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/fancybox/source/jquery.fancybox.js
+2020-01-07 15:43:38.558 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.558 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js
+2020-01-07 15:43:38.579 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.579 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js
+2020-01-07 15:43:38.603 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/common-scripts.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.603 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/common-scripts.js
+2020-01-07 15:43:38.623 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/common.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.624 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/common.js
+2020-01-07 15:43:38.628 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.paging-1.0.1.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.628 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.paging-1.0.1.js
+2020-01-07 15:43:38.684 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/bootbox.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.684 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/bootbox.min.js
+2020-01-07 15:43:38.695 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.json.js+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.696 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.json.js
+2020-01-07 15:43:38.754 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.989 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/font-awesome/fonts/fontawesome-webfont.woff2+++++++++++++++++++++++++++++
+2020-01-07 15:43:38.989 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/font-awesome/fonts/fontawesome-webfont.woff2
+2020-01-07 15:43:39.064 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/Ionicons/fonts/ionicons.ttf+++++++++++++++++++++++++++++
+2020-01-07 15:43:39.064 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/Ionicons/fonts/ionicons.ttf
+2020-01-07 15:43:39.765 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/img/icon.ico+++++++++++++++++++++++++++++
+2020-01-07 15:43:39.765 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/img/icon.ico
+2020-01-07 15:43:40.209 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getSiteTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:40.210 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:40.212 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getFileTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:40.212 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:40.212 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:40.212 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getFileTabList
+2020-01-07 15:43:40.213 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:40.214 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getComponentInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:40.217 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:40.210 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:40.217 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:40.220 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getComponentInstanceTabList
+2020-01-07 15:43:40.220 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:40.218 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getSiteTabList
+2020-01-07 15:43:40.222 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:40.228 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getDataJsonInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:40.228 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:40.228 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:40.228 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getDataJsonInstanceTabList
+2020-01-07 15:43:40.228 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:40.239 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：27
+2020-01-07 15:43:40.239 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:40.252 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：24
+2020-01-07 15:43:40.252 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:40.254 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：37
+2020-01-07 15:43:40.254 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:40.256 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：46
+2020-01-07 15:43:40.256 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:54.906 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/platform/dictionary/list.htm+++++++++++++++++++++++++++++
+2020-01-07 15:43:55.119 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:43:57.070 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:43:57.523 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getSiteTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:57.524 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:57.524 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:57.525 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getSiteTabList
+2020-01-07 15:43:57.526 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:57.530 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：6
+2020-01-07 15:43:57.530 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:57.544 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getFileTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:57.544 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:57.545 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:57.545 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getFileTabList
+2020-01-07 15:43:57.545 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:57.549 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：5
+2020-01-07 15:43:57.550 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:57.568 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getComponentInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:57.569 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:57.569 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:57.569 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getComponentInstanceTabList
+2020-01-07 15:43:57.569 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:57.577 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：8
+2020-01-07 15:43:57.578 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:43:57.579 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getDataJsonInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:43:57.579 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:43:57.580 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:43:57.580 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getDataJsonInstanceTabList
+2020-01-07 15:43:57.580 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:43:57.585 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：6
+2020-01-07 15:43:57.585 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:44:27.950 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/index.html+++++++++++++++++++++++++++++
+2020-01-07 15:44:28.135 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:44:29.914 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:44:30.820 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getSiteTabList+++++++++++++++++++++++++++++
+2020-01-07 15:44:30.821 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:44:30.821 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:44:30.821 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getSiteTabList
+2020-01-07 15:44:30.821 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:44:30.829 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：8
+2020-01-07 15:44:30.829 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:44:30.833 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getFileTabList+++++++++++++++++++++++++++++
+2020-01-07 15:44:30.835 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:44:30.835 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:44:30.835 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getFileTabList
+2020-01-07 15:44:30.835 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:44:30.839 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：4
+2020-01-07 15:44:30.840 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:44:30.879 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getComponentInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:44:30.879 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:44:30.879 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:44:30.879 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getComponentInstanceTabList
+2020-01-07 15:44:30.879 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:44:30.886 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getDataJsonInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:44:30.886 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：7
+2020-01-07 15:44:30.887 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:44:30.887 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:44:30.887 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:44:30.887 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getDataJsonInstanceTabList
+2020-01-07 15:44:30.887 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:44:30.892 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：5
+2020-01-07 15:44:30.892 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:46:54.773 [restartedMain] INFO  com.company.StartApiServer - Starting StartApiServer on DESKTOP-11MB8RT with PID 18916 (started by yangyanchao in E:\工作底稿系统\code\manuscript-system\api-server)
+2020-01-07 15:46:54.781 [restartedMain] INFO  com.company.StartApiServer - The following profiles are active: dev
+2020-01-07 15:46:55.421 [restartedMain] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@130f75df: startup date [Tue Jan 07 15:46:55 CST 2020]; root of context hierarchy
+2020-01-07 15:47:00.721 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-01-07 15:47:02.382 [restartedMain] INFO  c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor - Post-processing PropertySource instances
+2020-01-07 15:47:02.532 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2020-01-07 15:47:02.536 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2020-01-07 15:47:02.538 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2020-01-07 15:47:02.540 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:47:02.541 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:47:02.546 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2020-01-07 15:47:02.546 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application-dev.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:47:02.547 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:47:02.547 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource refresh [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:47:02.549 [restartedMain] INFO  c.u.j.EncryptablePropertySourceConverter - Converting PropertySource class path resource [kaptcha-config.properties] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2020-01-07 15:47:02.921 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6a49dd1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.013 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$b35c1339] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.052 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$a7cfd7dd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.093 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.125 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.198 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.210 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$58617437] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.246 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.262 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$7f639b65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.519 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.739 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.790 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:03.794 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-07 15:47:04.036 [restartedMain] INFO  c.u.j.resolver.DefaultLazyPropertyResolver - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2020-01-07 15:47:04.040 [restartedMain] INFO  c.u.j.detector.DefaultLazyPropertyDetector - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2020-01-07 15:47:05.751 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8091 (http)
+2020-01-07 15:47:05.780 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2020-01-07 15:47:05.808 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-01-07 15:47:05.809 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.29
+2020-01-07 15:47:05.841 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Program Files\Java\jre8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:/Program Files/Java/jdk1.8.0_91/bin/../jre/bin/server;D:/Program Files/Java/jdk1.8.0_91/bin/../jre/bin;D:/Program Files/Java/jdk1.8.0_91/bin/../jre/lib/amd64;C:\Program Files (x86)\Common Files\NetSarang;D:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;C:\WINDOWS\System32\OpenSSH\;E:\yyc\mysql\mysql-5.6.27-winx64\bin;D:\maven\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin;D:\install\PLSQL\instantclient_11_2;D:\Program Files\Microsoft VS Code Insiders\bin;D:\Program Files\Redis-x64;D:\Program Files\TortoiseSVN\bin;%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME%;C:\Users\yangyanchao\AppData\Roaming\搜狐影音\6.2.3.0;D:\eclipse;;.]
+2020-01-07 15:47:06.301 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-01-07 15:47:06.301 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 10880 ms
+2020-01-07 15:47:08.050 [localhost-startStop-1] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-01-07 15:47:08.805 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-01-07 15:47:10.716 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-07 15:47:10.717 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-07 15:47:10.735 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-01-07 15:47:10.737 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-07 15:47:10.739 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'sessionFilter' to urls: [/*]
+2020-01-07 15:47:10.740 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-01-07 15:47:10.742 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+2020-01-07 15:47:10.743 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-01-07 15:47:10.743 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-01-07 15:47:10.747 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet statViewServlet mapped to [/druid/*]
+2020-01-07 15:47:14.369 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/add],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.add(com.company.dictionarys.model.DictionaryTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.373 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/get],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.get(java.lang.Long)
+2020-01-07 15:47:14.375 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/update],methods=[PUT],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.update(com.company.dictionarys.model.DictionaryTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.378 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/del],methods=[DELETE],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.dictionarys.controller.DictionaryTabController.del(java.lang.Long)
+2020-01-07 15:47:14.382 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/batchDel],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.dictionarys.controller.DictionaryTabController.batchDel(java.lang.String)
+2020-01-07 15:47:14.383 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/getListByPage],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataPageListForBootModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.getListByPage(int,int,java.lang.String,java.lang.String) throws com.company.base.exception.BaseException
+2020-01-07 15:47:14.384 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/getDictionarysByKey],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataListModel<com.company.dictionarys.model.DictionaryTab> com.company.dictionarys.controller.DictionaryTabController.getDictionarysByKey(java.lang.String)
+2020-01-07 15:47:14.384 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/DictionaryTab/getDictionaryByKey],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<java.lang.String> com.company.dictionarys.controller.DictionaryTabController.getDictionaryByKey(java.lang.String)
+2020-01-07 15:47:14.385 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/platform/index.htm],methods=[GET]}" onto public java.lang.String com.company.index.action.IndexAction.indexPage(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.388 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/Index/getUserTabListByPage],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataPageListForBootModel<com.company.userinfo.model.UserTab> com.company.index.controller.IndexController.getUserTabListByPage(int,int,java.lang.Long) throws com.company.base.exception.BaseException
+2020-01-07 15:47:14.392 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login.json],methods=[POST]}" onto public com.company.bean.ResponseDataModel<java.lang.String> com.company.login.controller.LoginController.login(java.lang.String,java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.399 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/captcha.htm],methods=[GET]}" onto public void com.company.login.controller.LoginController.captcha(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2020-01-07 15:47:14.400 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/login.htm],methods=[GET]}" onto public java.lang.String com.company.login.controller.LoginController.loginPage(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.401 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/logout.htm],methods=[GET]}" onto public java.lang.String com.company.login.controller.LoginController.logout(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.403 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/ueditor/config]}" onto public void com.company.ueditor.UEditorController.config(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws org.json.JSONException
+2020-01-07 15:47:14.404 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/ueditor]}" onto private java.lang.String com.company.ueditor.UEditorController.showPage()
+2020-01-07 15:47:14.409 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/add],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.add(com.company.userinfo.model.UserTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.410 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/get],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.get(java.lang.Long)
+2020-01-07 15:47:14.411 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/update],methods=[PUT],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.update(com.company.userinfo.model.UserTab,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.411 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/del],methods=[DELETE],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.userinfo.controller.UserTabController.del(java.lang.Long,javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.412 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/batchDel],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseModel com.company.userinfo.controller.UserTabController.batchDel(java.lang.String)
+2020-01-07 15:47:14.413 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/UserTab/getListByPage],methods=[POST],produces=[application/json;charset=UTF-8]}" onto public com.company.bean.ResponseDataPageListForBootModel<com.company.userinfo.model.UserTab> com.company.userinfo.controller.UserTabController.getListByPage(int,int,java.lang.Long) throws com.company.base.exception.BaseException
+2020-01-07 15:47:14.432 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2020-01-07 15:47:14.466 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2020-01-07 15:47:14.468 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2020-01-07 15:47:14.474 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-01-07 15:47:14.476 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-07 15:47:14.788 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-07 15:47:14.832 [restartedMain] INFO  o.s.b.a.e.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2020-01-07 15:47:14.833 [restartedMain] INFO  o.s.b.a.e.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2020-01-07 15:47:14.837 [restartedMain] INFO  o.s.b.a.e.web.servlet.WebMvcEndpointHandlerMapping - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-01-07 15:47:15.429 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-01-07 15:47:15.777 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-07 15:47:16.391 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@130f75df: startup date [Tue Jan 07 15:46:55 CST 2020]; root of context hierarchy
+2020-01-07 15:47:16.545 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-07 15:47:16.548 [restartedMain] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-01-07 15:47:19.858 [restartedMain] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-01-07 15:47:24.165 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-01-07 15:47:24.306 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-07 15:47:24.311 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-01-07 15:47:24.312 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-01-07 15:47:24.329 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-01-07 15:47:24.337 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-01-07 15:47:24.472 [restartedMain] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 2147483647
+2020-01-07 15:47:24.475 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-01-07 15:47:24.672 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-01-07 15:47:24.911 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-01-07 15:47:25.812 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUsingPOST_1
+2020-01-07 15:47:25.816 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: batchDelUsingPOST_1
+2020-01-07 15:47:25.822 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: delUsingDELETE_1
+2020-01-07 15:47:25.882 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingPOST_1
+2020-01-07 15:47:25.890 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getListByPageUsingPOST_1
+2020-01-07 15:47:25.894 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPUT_1
+2020-01-07 15:47:26.003 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2020-01-07 15:47:26.065 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-07 15:47:26.127 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8091 (http) with context path ''
+2020-01-07 15:47:26.138 [restartedMain] INFO  com.company.StartApiServer - Started StartApiServer in 32.305 seconds (JVM running for 34.612)
+2020-01-07 15:47:35.284 [http-nio-8091-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-07 15:47:35.284 [http-nio-8091-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-01-07 15:47:35.385 [http-nio-8091-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 100 ms
+2020-01-07 15:47:35.439 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/platform/index.htm+++++++++++++++++++++++++++++
+2020-01-07 15:47:35.560 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/login.htm+++++++++++++++++++++++++++++
+2020-01-07 15:47:35.560 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 指定不作处理的uri通过, /login.htm
+2020-01-07 15:47:35.652 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:47:36.066 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/favicon.ico+++++++++++++++++++++++++++++
+2020-01-07 15:47:36.066 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /favicon.ico
+2020-01-07 15:47:37.780 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.809 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.form.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.810 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.form.min.js
+2020-01-07 15:47:37.810 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.814 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.js
+2020-01-07 15:47:37.835 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.835 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/bootstrap.min.css
+2020-01-07 15:47:37.837 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/bootstrap-reset.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.837 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/bootstrap-reset.css
+2020-01-07 15:47:37.860 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/style-responsive.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.860 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/style-responsive.css
+2020-01-07 15:47:37.868 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/font-awesome/css/font-awesome.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.868 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/font-awesome/css/font-awesome.css
+2020-01-07 15:47:37.877 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/css/style.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.878 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/css/style.css
+2020-01-07 15:47:37.951 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/captcha.htm+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.952 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 指定不作处理的uri通过, /captcha.htm
+2020-01-07 15:47:37.959 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/template/output/images/logo2.png+++++++++++++++++++++++++++++
+2020-01-07 15:47:37.962 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/template/output/images/logo2.png
+2020-01-07 15:47:53.138 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/login.json+++++++++++++++++++++++++++++
+2020-01-07 15:47:53.138 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 指定不作处理的uri通过, /login.json
+2020-01-07 15:47:53.262 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/platform/index.htm+++++++++++++++++++++++++++++
+2020-01-07 15:47:54.237 [http-nio-8091-exec-10] WARN  n.n.u.thymeleaf.expressions.ExpressionProcessor - Fragment expression "platform/layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2020-01-07 15:47:55.460 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/font-awesome/css/font-awesome.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.460 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/font-awesome/css/font-awesome.min.css
+2020-01-07 15:47:55.472 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.472 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.css
+2020-01-07 15:47:55.494 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.494 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css
+2020-01-07 15:47:55.497 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap/dist/css/bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.498 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/Ionicons/css/ionicons.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.498 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/Ionicons/css/ionicons.min.css
+2020-01-07 15:47:55.498 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap/dist/css/bootstrap.min.css
+2020-01-07 15:47:55.504 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/all.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.505 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/all.css
+2020-01-07 15:47:55.526 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.526 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css
+2020-01-07 15:47:55.528 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/timepicker/bootstrap-timepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.528 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/timepicker/bootstrap-timepicker.min.css
+2020-01-07 15:47:55.610 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.610 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css
+2020-01-07 15:47:55.644 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/css/AdminLTE.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.644 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/css/AdminLTE.min.css
+2020-01-07 15:47:55.673 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/fancybox/source/jquery.fancybox.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.673 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/fancybox/source/jquery.fancybox.css
+2020-01-07 15:47:55.684 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/css/skins/_all-skins.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.684 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/css/skins/_all-skins.min.css
+2020-01-07 15:47:55.692 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.692 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css
+2020-01-07 15:47:55.704 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/uploadify/uploadify.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.704 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/uploadify/uploadify.css
+2020-01-07 15:47:55.712 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/select2/dist/css/select2.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.712 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/select2/dist/css/select2.min.css
+2020-01-07 15:47:55.722 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/vendor/webuploader/css/upload.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.723 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/vendor/webuploader/css/upload.css
+2020-01-07 15:47:55.736 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/vendor/webuploader/css/webuploader.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.736 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/vendor/webuploader/css/webuploader.css
+2020-01-07 15:47:55.859 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/img/avatar5.png+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.859 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/img/avatar5.png
+2020-01-07 15:47:55.971 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/minimal/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.971 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/minimal/_all.css
+2020-01-07 15:47:55.998 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/square/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:55.998 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/square/_all.css
+2020-01-07 15:47:56.004 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/flat/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.004 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/flat/_all.css
+2020-01-07 15:47:56.015 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/line/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.015 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/line/_all.css
+2020-01-07 15:47:56.019 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/polaris/polaris.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.024 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/polaris/polaris.css
+2020-01-07 15:47:56.135 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/jquery/dist/jquery.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.135 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/jquery/dist/jquery.min.js
+2020-01-07 15:47:56.140 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/vue/vue.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.140 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/vue/vue.min.js
+2020-01-07 15:47:56.147 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/futurico/futurico.css+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.148 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/futurico/futurico.css
+2020-01-07 15:47:56.155 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/vue-resource/vue-resource.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.155 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/vue-resource/vue-resource.min.js
+2020-01-07 15:47:56.166 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/validateMe/jquery.validate-1.0.1.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.167 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/validateMe/jquery.validate-1.0.1.js
+2020-01-07 15:47:56.192 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/select2/dist/js/select2.full.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.193 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/select2/dist/js/select2.full.min.js
+2020-01-07 15:47:56.197 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.197 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.js
+2020-01-07 15:47:56.225 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.date.extensions.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.226 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.date.extensions.js
+2020-01-07 15:47:56.249 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.249 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js
+2020-01-07 15:47:56.261 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.261 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js
+2020-01-07 15:47:56.261 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.extensions.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.267 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/moment/min/moment.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.299 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/moment/min/moment.min.js
+2020-01-07 15:47:56.279 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net/js/jquery.dataTables.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.299 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net/js/jquery.dataTables.min.js
+2020-01-07 15:47:56.264 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.299 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.extensions.js
+2020-01-07 15:47:56.306 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.js
+2020-01-07 15:47:56.329 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/jquery-slimscroll/jquery.slimscroll.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.329 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
+2020-01-07 15:47:56.334 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/icheck.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.334 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/icheck.min.js
+2020-01-07 15:47:56.342 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/adminlte.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.343 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.343 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js
+2020-01-07 15:47:56.345 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/adminlte.min.js
+2020-01-07 15:47:56.354 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/demo.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.356 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/demo.js
+2020-01-07 15:47:56.370 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap/dist/js/bootstrap.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.371 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap/dist/js/bootstrap.min.js
+2020-01-07 15:47:56.411 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/bootbox.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.412 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/bootbox.min.js
+2020-01-07 15:47:56.415 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.529 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js
+2020-01-07 15:47:56.536 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.537 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js
+2020-01-07 15:47:56.412 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.json.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.544 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.json.js
+2020-01-07 15:47:56.554 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.paging-1.0.1.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.555 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.paging-1.0.1.js
+2020-01-07 15:47:56.565 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/common.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.566 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/common.js
+2020-01-07 15:47:56.568 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/common-scripts.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.569 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/common-scripts.js
+2020-01-07 15:47:56.416 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/fancybox/source/jquery.fancybox.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.574 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/fancybox/source/jquery.fancybox.js
+2020-01-07 15:47:56.494 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/timepicker/bootstrap-timepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.581 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/timepicker/bootstrap-timepicker.min.js
+2020-01-07 15:47:56.681 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/fastclick/lib/fastclick.js+++++++++++++++++++++++++++++
+2020-01-07 15:47:56.681 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/fastclick/lib/fastclick.js
+2020-01-07 15:47:56.818 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:47:57.303 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/img/icon.ico+++++++++++++++++++++++++++++
+2020-01-07 15:47:57.303 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/img/icon.ico
+2020-01-07 15:47:57.568 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getSiteTabList+++++++++++++++++++++++++++++
+2020-01-07 15:47:57.568 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:47:57.568 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:47:57.568 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getSiteTabList
+2020-01-07 15:47:57.569 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:47:57.584 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getFileTabList+++++++++++++++++++++++++++++
+2020-01-07 15:47:57.584 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:47:57.584 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:47:57.585 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getFileTabList
+2020-01-07 15:47:57.585 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:47:57.597 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：13
+2020-01-07 15:47:57.597 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:47:57.606 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：38
+2020-01-07 15:47:57.606 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:47:57.647 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getComponentInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:47:57.647 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:47:57.647 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:47:57.647 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getComponentInstanceTabList
+2020-01-07 15:47:57.647 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:47:57.653 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：6
+2020-01-07 15:47:57.653 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:47:57.671 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getDataJsonInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:47:57.671 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:47:57.671 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:47:57.671 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getDataJsonInstanceTabList
+2020-01-07 15:47:57.671 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:47:57.676 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：5
+2020-01-07 15:47:57.677 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:50:18.607 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/platform/index.htm+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.877 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/jquery/dist/jquery.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.878 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/jquery/dist/jquery.min.js
+2020-01-07 15:50:18.884 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/vue/vue.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.885 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/vue/vue.min.js
+2020-01-07 15:50:18.944 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/vue-resource/vue-resource.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.944 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/vue-resource/vue-resource.min.js
+2020-01-07 15:50:18.957 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/vendor/validateMe/jquery.validate-1.0.1.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.957 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/vendor/validateMe/jquery.validate-1.0.1.js
+2020-01-07 15:50:18.962 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/font-awesome/css/font-awesome.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.962 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/font-awesome/css/font-awesome.min.css
+2020-01-07 15:50:18.969 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.969 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.js
+2020-01-07 15:50:18.970 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap/dist/css/bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.970 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap/dist/css/bootstrap.min.css
+2020-01-07 15:50:18.995 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap/dist/js/bootstrap.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.996 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap/dist/js/bootstrap.min.js
+2020-01-07 15:50:18.999 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.date.extensions.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:18.999 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.date.extensions.js
+2020-01-07 15:50:19.139 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.139 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js
+2020-01-07 15:50:19.139 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/input-mask/jquery.inputmask.extensions.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.140 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/input-mask/jquery.inputmask.extensions.js
+2020-01-07 15:50:19.141 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/moment/min/moment.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.149 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/moment/min/moment.min.js
+2020-01-07 15:50:19.158 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.159 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.js
+2020-01-07 15:50:19.165 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.165 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js
+2020-01-07 15:50:19.166 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.167 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css
+2020-01-07 15:50:19.179 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/Ionicons/css/ionicons.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.179 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/Ionicons/css/ionicons.min.css
+2020-01-07 15:50:19.180 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net/js/jquery.dataTables.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.180 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net/js/jquery.dataTables.min.js
+2020-01-07 15:50:19.182 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/timepicker/bootstrap-timepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.182 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/timepicker/bootstrap-timepicker.min.js
+2020-01-07 15:50:19.220 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/icheck.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.220 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/icheck.min.js
+2020-01-07 15:50:19.224 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.245 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/adminlte.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.226 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/jquery-slimscroll/jquery.slimscroll.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.287 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/adminlte.min.js
+2020-01-07 15:50:19.287 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/jquery-slimscroll/jquery.slimscroll.min.js
+2020-01-07 15:50:19.231 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.287 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js
+2020-01-07 15:50:19.301 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-daterangepicker/daterangepicker.css
+2020-01-07 15:50:19.306 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/demo.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.308 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/demo.js
+2020-01-07 15:50:19.258 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/select2/dist/js/select2.full.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.314 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/select2/dist/js/select2.full.min.js
+2020-01-07 15:50:19.325 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/bootbox.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.326 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/bootbox.min.js
+2020-01-07 15:50:19.346 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.json.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.346 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.json.js
+2020-01-07 15:50:19.347 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.form.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.347 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.form.min.js
+2020-01-07 15:50:19.358 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.358 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css
+2020-01-07 15:50:19.370 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.370 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js
+2020-01-07 15:50:19.374 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/robots.txt+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.403 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/all.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.378 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/common-scripts.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.405 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/common-scripts.js
+2020-01-07 15:50:19.382 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/js/jquery.paging-1.0.1.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.406 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/js/jquery.paging-1.0.1.js
+2020-01-07 15:50:19.405 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/all.css
+2020-01-07 15:50:19.389 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.408 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js
+2020-01-07 15:50:19.391 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/fancybox/source/jquery.fancybox.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.410 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/fancybox/source/jquery.fancybox.js
+2020-01-07 15:50:19.421 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.421 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css
+2020-01-07 15:50:19.421 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/timepicker/bootstrap-timepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.422 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/timepicker/bootstrap-timepicker.min.css
+2020-01-07 15:50:19.431 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/select2/dist/css/select2.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.431 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/select2/dist/css/select2.min.css
+2020-01-07 15:50:19.433 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/css/skins/_all-skins.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.433 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/css/skins/_all-skins.min.css
+2020-01-07 15:50:19.433 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/css/AdminLTE.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.438 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/css/AdminLTE.min.css
+2020-01-07 15:50:19.456 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/vendor/webuploader/css/webuploader.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.457 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/vendor/webuploader/css/webuploader.css
+2020-01-07 15:50:19.462 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/vendor/webuploader/css/upload.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.462 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/vendor/webuploader/css/upload.css
+2020-01-07 15:50:19.452 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.468 [http-nio-8091-exec-4] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/bootstrap.datetimepicker/css/bootstrap-datetimepicker.min.css
+2020-01-07 15:50:19.470 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/js/common.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.471 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/js/common.js
+2020-01-07 15:50:19.454 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/uploadify/uploadify.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.477 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/uploadify/uploadify.css
+2020-01-07 15:50:19.521 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/bower_components/fastclick/lib/fastclick.js+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.522 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/bower_components/fastclick/lib/fastclick.js
+2020-01-07 15:50:19.552 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/manage/assets/fancybox/source/jquery.fancybox.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.552 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/manage/assets/fancybox/source/jquery.fancybox.css
+2020-01-07 15:50:19.567 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/dist/img/avatar5.png+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.567 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/dist/img/avatar5.png
+2020-01-07 15:50:19.921 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/minimal/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.922 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/minimal/_all.css
+2020-01-07 15:50:19.937 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/square/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.937 [http-nio-8091-exec-6] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/square/_all.css
+2020-01-07 15:50:19.961 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/line/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.961 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/line/_all.css
+2020-01-07 15:50:19.990 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/futurico/futurico.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:19.990 [http-nio-8091-exec-2] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/futurico/futurico.css
+2020-01-07 15:50:20.015 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/polaris/polaris.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.015 [http-nio-8091-exec-3] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/polaris/polaris.css
+2020-01-07 15:50:20.115 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/plugins/iCheck/flat/_all.css+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.115 [http-nio-8091-exec-7] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/plugins/iCheck/flat/_all.css
+2020-01-07 15:50:20.526 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/static/platform/img/icon.ico+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.527 [http-nio-8091-exec-10] INFO  com.company.config.SessionFilter - 安全过滤器, 资源uri通过, /static/platform/img/icon.ico
+2020-01-07 15:50:20.642 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getSiteTabList+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.643 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:50:20.643 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:50:20.644 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getSiteTabList
+2020-01-07 15:50:20.644 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:50:20.652 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：9
+2020-01-07 15:50:20.652 [http-nio-8091-exec-1] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:50:20.652 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getDataJsonInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.652 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:50:20.653 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:50:20.653 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getComponentInstanceTabList+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.653 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getDataJsonInstanceTabList
+2020-01-07 15:50:20.653 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:50:20.653 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:50:20.653 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:50:20.653 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getComponentInstanceTabList
+2020-01-07 15:50:20.653 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:50:20.657 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：5
+2020-01-07 15:50:20.657 [http-nio-8091-exec-5] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:50:20.661 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：8
+2020-01-07 15:50:20.661 [http-nio-8091-exec-9] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================
+2020-01-07 15:50:20.704 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - +++++++++++++++++安全过滤器, 请求URI：/api/Index/getFileTabList+++++++++++++++++++++++++++++
+2020-01-07 15:50:20.704 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - ==================================调用接口开始==================================
+2020-01-07 15:50:20.705 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 调用方ip：localhost:8091
+2020-01-07 15:50:20.705 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 请求URI：/api/Index/getFileTabList
+2020-01-07 15:50:20.705 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 请求参数信息：null
+2020-01-07 15:50:20.710 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - 调用接口所用毫秒数：6
+2020-01-07 15:50:20.710 [http-nio-8091-exec-8] INFO  com.company.config.SessionFilter - ==================================调用接口调用结束=============================

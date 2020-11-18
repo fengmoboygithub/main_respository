@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="otc.tech.mapper.TemplateMapper">
+	<resultMap id="TemplateResult" type="Template">
+		<result column="t_template_type" jdbcType="VARCHAR" property="tTemplateType" />
+		<result column="t_element_id" jdbcType="VARCHAR" property="tElementId" />
+		<result column="t_element_name" jdbcType="VARCHAR" property="tElementName" />
+		<result column="t_validate_rules" jdbcType="VARCHAR" property="tValidateRules" />
+		<result column="d_field" jdbcType="VARCHAR" property="dField" />
+		<result column="d_field_type" jdbcType="VARCHAR" property="dFieldType" />
+		<result column="d_table_name" jdbcType="VARCHAR" property="dTableName" />
+		<result column="d_is_tuple" jdbcType="INTEGER" property="dIsTuple" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+		<result column="d_dict" jdbcType="VARCHAR" property="dDict" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="id" jdbcType="VARCHAR" property="id" />
+		<result column="d_tuple_up_name" jdbcType="VARCHAR" property="dTupleUpName" />
+		<result column="t_control_type" jdbcType="INTEGER" property="tControlType" />
+		<result column="reporttype_type_id" jdbcType="VARCHAR" property="reporttypeTypeId" />
+		<result column="d_tuple_up_xbrl_name" jdbcType="VARCHAR" property="dTupleUpXbrlName" />
+	</resultMap>
+
+
+
+	<select id="selectTupleName" parameterType="Template" resultType="String">
+		select d_tuple_up_name from TAB_TEMPLATE
+		where d_is_tuple = '1'
+		<if test="tTemplateType != null and tTemplateType != 0"> and t_template_type = #{tTemplateType} </if>
+		group by d_tuple_up_name
+	</select>
+</mapper>

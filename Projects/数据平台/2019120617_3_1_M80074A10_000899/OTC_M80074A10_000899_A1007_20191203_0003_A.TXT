@@ -1,0 +1,6 @@
+﻿1
+M800740008992019120600000001|123123|ReportingOnImportantMattersTuple|张莹测试1
+END
+ReportingOnImportantMattersTuple|1
+M800740008992019120600000001|中银国际111投资者风险承受能力评估结果确认书.pdf
+END

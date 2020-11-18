@@ -1,0 +1,78 @@
+{
+    "copyId":"38a4b104f0b011e982dc005056b3bcfe",
+    "fullQuantity":"-1",
+    "tokenId":"d14a1579354c4073ba95e7e1ccb89c05",
+    --"data":"{"BELONG_TYPE":"","BUSSINESS_SERIAL":"主协议编号（双方约定）","DMAI_ID":"","FILLER_ROLE_TYPE":"0","LAST_SUBMIT_DATE":"2019-10-17 15:50:03","MEMO":"备注","M_ID":"e32adb6589bb421290e93f4bb61c3c7f","NOFI_INSTRU_ID":"非金融机构行业代码","OPPONENT_ID":"00000000","OPPONENT_NAME":"交易对手方名称","OPPONENT_TYPE":"15","OPPO_PRODUCT_ID":"乙方代签产品代码","OPPO_PRODUCT_NAME":"乙方代签产品名称","ORGANIZATION_NAME":"","ORG_NAME":"","PRODUCT_CODE":"甲方代签产品代码","PRODUCT_NAME":"甲方代签产品名称","PROFESSIONAL_COUNTER":"1","PROT_VERSION":"1","REG_CAPITAL":"11.33","REPORTER_CONTACT":"","REPORTER_TEL":"","SIGN_DATE":"2019-10-17","SUBMIT_DATE":"2019-10-17 15:50:03","SUBMIT_STATE":"submit","ZXYBBT":[{"ID":"0","OPPO_BMZW":"222","OPPO_DH":"22","OPPO_DZYX":"22","OPPO_SJ":"22","OPPO_XM":"填报方业务代表姓名","m_ID":"e32adb6589bb421290e93f4bb61c3c7f"}],"ZXYFJ":"记录.pdf|/home/zyb/uploadPath/2019-10-17/记录20191017154917.pdf","copyid":"38a4b104f0b011e982dc005056b3bcfe","counterpartySignedProductName":"","rivalOrganizationCategory":""}",
+    "edit":"",
+    --"bizId":"e32adb6589bb421290e93f4bb61c3c7f",
+    --"operationType":"2",
+    "sessionId":"859753a83abe4ba0bc2c14145990f770",
+    "type":"13103002",
+    "userId":"M80074001",
+    --"orgId":"M80074",
+    "fuctionType":"FN_001"
+}
+
+
+
+{
+    "copyId":"010acf14f0b411e982dc005056b3bcfe",
+    "tokenId":"d14a1579354c4073ba95e7e1ccb89c05",
+    "data":"{"BCXYFJT":[{"BCXYFJ":"记录.pdf|/home/zyb/uploadPath/2019-10-17/记录20191017155831.pdf","HHJYQRS":"","ID":"","QQJYQRSFJ":"","SORT":"1"}],"BELONG_TYPE":"网页报送","DMAI_ID":"Z19101700100000000002","DSUP_ID":"","DSUP_SERIAL":"补充协议编号（双方约定","LAST_SUBMIT_DATE":"2019-10-17 15:59:01","MEMO":"补充协议备注","SIGN_DATE":"2019-10-17","SUBMIT_DATE":"2019-10-17 15:59:01","SUBMIT_STATE":"submit","SUP_TYPE":"0","copyid":"010acf14f0b411e982dc005056b3bcfe","m_ID":"","mid":""}",
+    "edit":"",
+    "bizId":"",
+    "operationType":"2",
+    "sessionId":"cf2ac340dd84497e9fd9230304fed709",
+    "type":"13203002",
+    "userId":"M80074001",
+    "orgId":"M80074",
+    "fuctionType":"FN_001"
+}
+
+//履约
+{
+    "copyId":"2034ac3ff0b511e982dc005056b3bcfe",
+    "tokenId":"d14a1579354c4073ba95e7e1ccb89c05",
+    "data":"{"BELONG_TYPE":"网页报送","DMAI_ID":"Z19101700100000000002","DSUP_ID":"B19101700100000000002","FILE_LVBZXY":"记录.pdf|/home/zyb/uploadPath/2019-10-17/记录20191017160651.pdf","LAST_SUBMIT_DATE":"2019-10-17 16:07:02","PERF_GUARANTEE_ID":"","SIGN_DATE":"","SUBMIT_DATE":"2019-10-17 16:07:02","SUBMIT_STATE":"submit","bcid":"","copyid":"2034ac3ff0b511e982dc005056b3bcfe","m_ID":""}",
+    "edit":"",
+    "bizId":"",
+    "operationType":"2",
+    "sessionId":"a451330e102d4efc930a90ce688e3e81",
+    "type":"13503002",
+    "userId":"M80074001",
+    "orgId":"M80074",
+    "fuctionType":"FN_001"
+}
+
+
+
+{
+    "copyId":"813662caf0b711e982dc005056b3bcfe",
+    "tokenId":"d14a1579354c4073ba95e7e1ccb89c05",
+    "data":"{"BELONG_TYPE":"网页报送","BILATERAL_AGREEMENT":"交易确认书编号（双方约定）","BUSINESS_MODEL_TYPE":"1","CALCULATION_EXERCISE":"期权收益计算说明","CHASE_RATIO":"2.33","CLEARING_HOUSE":"0","COLLATERAL_USE_TYPE":"true","CORPORE_NAME":"","CORPORE_TYPE":"","CURRENCY":"0","DMAI_ID":"Z19101700100000000002","DSUP_ID":"B19101700100000000002","DUE_DATE":"2019-10-17","EXCHANGE":"0","FILLER_ROLE_TYPE":"0","GUARANTEE_SUPPLIER_TYPE":"0","HGYJS":"","INITIAL_RATIO":"23.00","INTEREST_TYPE":"true","LAST_SUBMIT_DATE":"2019-10-17 16:24:04","MEMO":"备注","MEMO_BASE":"","MEMO_EXECUTE":"备注","NOMI_PRINCIPAL":"1111111.00","NOMI_YXPRINCIPAL":"2222222.00","OPTIONID":"","OPTION_DIRECTION_TYPE":"0","OPTION_EXERCISE_TYPE":"1","OPTION_PUTER":"01","OPTION_STRUCTURE":"","OPTION_STRUCTURE_TYPE":"7","ORGANIZATION_NAME":"","PERF_GUARANT_MEMO":"","PERF_GUARANT_TYPE":"1","POSITION_RATIO":"33.00","PREMIUM":"1","QQBD":"","QQJYQRSBT":[{"CORPORE_AMOUNT":"123.333333","CORPORE_CODE":"dd1","CORPORE_NAME":"标的名称","CORPORE_TRADEPLACE":"02","CORPORE_TYPE":"0","LAST_SUBMIT_DATE":null,"SORT":"0","SUBMIT_DATE":null}],"QQJYQRSFJT":[{"BCXYFJ":"","HHJYQRS":"","ID":"","QQJYQRSFJ":"记录.pdf|/home/zyb/uploadPath/2019-10-17/记录20191017161858.pdf","SORT":"1"}],"QQJYQRSLYBZT":[{"GUARANTEE_RANGE_TYPE":"0","GUARANTEE_TYPE":"1","LAST_SUBMIT_DATE":null,"MULTI_CONF_ID":"23","SORT":"0","SUBMIT_DATE":null}],"QQLYDBFJ":"记录.pdf|/home/zyb/uploadPath/2019-10-17/记录20191017162203.pdf","SETTLEMENT_DATE":"2019-10-16","START_DATE":"2019-10-17","SUBJECT_NUMBER":"0","SUBJECT_TYPE":"0","SUBMIT_DATE":"2019-10-17 16:24:04","SUBMIT_STATE":"submit","TRANS_CONFIRM_ID":"","TRANS_CONFIRM_TYPE":"0","WARRANTY_DESC":"111","XQJG1":"4.31","XQJG2":"222.32","YSPXS":"","bcid":"","copyid":"813662caf0b711e982dc005056b3bcfe","m_ID":"c1822477cbf340bab4a786020a38336b"}",
+    "edit":"",
+    "bizId":"c1822477cbf340bab4a786020a38336b",
+    "operationType":"2",
+    "sessionId":"19102d9b7f324f5e943c8130368e20e6",
+    "type":"13313002",
+    "userId":"M80074001",
+    "orgId":"M80074",
+    "fuctionType":"FN_001"
+}
+
+
+
+//互换
+{
+    "copyId":"bcf9110ff0bb11e982dc005056b3bcfe",
+    "tokenId":"d14a1579354c4073ba95e7e1ccb89c05",
+    "data":"{"BELONG_TYPE":"网页报送","BILATERAL_AGREEMENT":"交易确认书编号（双方约定","CALCULATION_INC_A":"rrrr","CALCULATION_INC_B":"","CHASE_RATIO":"","CLEARING_HOUSE":"0","COLLATERAL_USE_TYPE":"","CURRENCY":"1","DMAI_ID":"Z19101700100000000002","DSUP_ID":"B19101700100000000002","DUE_DATE":"2019-10-18","EXCHANGE":"0","FILLER_ROLE_TYPE":"0","GUARANTEE_SUPPLIER_TYPE":"","HGYJS":"","HHFDLLJYT":[],"HHFDLLYJT":[],"HHJYQRST":[],"HHJYQRSTT":[{"BCXYFJ":"","HHJYQRS":"记录.pdf|/home/zyb/uploadPath/2019-10-17/记录20191017165356.pdf","ID":"","QQJYQRSFJ":"","SORT":"1"}],"HHLYDBFJ":"","HHQYSYJYT":[],"HHQYSYYJT":[],"HHYDLLJYT":[],"HHYDLLYJT":[],"INITIAL_RATIO":"","INTEREST_TYPE":"","JYBD":"","JYCORPORE_NAME":"","JYCORPORE_TYPE":"","LAST_SUBMIT_DATE":"2019-10-17 16:54:22","MEMO":"","MEMO_A":"rr","MEMO_B":"","MEMO_BASE":"","NOMI_PRINCIPAL":"22222.00","OPPO_PAYMENT_TYPE":"0","ORGANIZATION_NAME":"","PAYMENT_FREQUENCY_A":"0","PAYMENT_FREQUENCY_B":"0","PAYMENT_TYPE":"0","PERF_GUARANT_MEMO":"","PERF_GUARANT_TYPE":"","POSITION_RATIO":"","SETTLEMENT_DATE":"2019-10-17","START_DATE":"2019-10-10","SUBJECT_NUMBER_A":"0","SUBJECT_NUMBER_B":"","SUBJECT_TYPE":"0","SUBMIT_DATE":"2019-10-17 16:54:22","SUBMIT_STATE":"","SWAPID":"","TRANS_CONFIRM_ID":"","TRANS_CONFIRM_TYPE":"0","WARRANTY_DESC":"","YJBD":"","YJCORPORE_NAME":"","YJCORPORE_TYPE":"","YSPXS":"","bcid":"","copyid":"bcf9110ff0bb11e982dc005056b3bcfe","m_ID":"","mid":""}",
+    "edit":"",
+    "bizId":"",
+    "operationType":"1",
+    "sessionId":"e14a4c404b7d4841b294cc72a1623c70",
+    "type":"13303002",
+    "userId":"M80074001",
+    "orgId":"M80074",
+    "fuctionType":"FN_001"
+}

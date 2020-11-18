@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zzjs.cms.dao.DataJsonTemplateDao">
+	<resultMap id="BaseResultMap" type="com.zzjs.cms.entity.DataJsonTemplate" >
+    <id column="id" property="id"/>
+    <result column="templateId" property="templateId"/>
+    <result column="dataJsonEnName" property="dataJsonEnName"/>
+    <result column="dataJsonName" property="dataJsonName"/>
+    <result column="dataJsonCode" property="dataJsonCode"/>
+    <result column="createTime" property="createTime"/>
+    <result column="updateTime" property="updateTime"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id,
+	templateId,
+	dataJsonEnName,
+	dataJsonName,
+	dataJsonCode,
+	isDelete,
+	createTime,
+	createUser,
+	updateTime,
+	updateUser
+  </sql>
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="insert" parameterType="com.zzjs.cms.entity.DataJsonTemplate">
+		insert into 
+		data_json_template_tab (
+			id,
+			templateId,
+			dataJsonEnName,
+			dataJsonName,
+			dataJsonCode
+		) value (
+			#{id},
+			#{templateId},
+			#{dataJsonEnName},
+			#{dataJsonName},
+			#{dataJsonCode}
+		)
+		<selectKey resultType="long" keyProperty="id">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<sql id="insertColumns">
+		<trim suffix="" suffixOverrides=",">
+			<if test="id != null and id !=0 ">
+				id ,
+			</if>
+			<if test="templateId != null and templateId !=0 ">
+				templateId ,
+			</if>
+			<if test="dataJsonEnName != null and dataJsonEnName !='' ">
+				dataJsonEnName ,
+			</if>
+			<if test="dataJsonName != null and dataJsonName !='' ">
+				dataJsonName ,
+			</if>
+			<if test="dataJsonCode != null and dataJsonCode !='' ">
+				dataJsonCode ,
+			</if>
+			<if test="isDelete != null and isDelete !='' ">
+				isDelete ,
+			</if>
+			<if test="createTime != null   ">
+				createTime ,
+			</if>
+			<if test="createUser != null and createUser !=0 ">
+				createUser ,
+			</if>
+			<if test="updateTime != null   ">
+				updateTime ,
+			</if>
+			<if test="updateUser != null and updateUser !=0 ">
+				updateUser ,
+			</if>
+		</trim>
+	</sql>
+	
+	
+	<!-- insertParams 入库值 -->
+	<sql id="insertParams">
+		<trim suffix="" suffixOverrides=",">
+			<if test="id != null and id !=0 ">
+				#{id,jdbcType=BIGINT} ,
+			</if>
+			<if test="templateId != null and templateId !=0 ">
+				#{templateId,jdbcType=BIGINT} ,
+			</if>
+			<if test="dataJsonEnName != null and dataJsonEnName !='' ">
+				#{dataJsonEnName,jdbcType=VARCHAR} ,
+			</if>
+			<if test="dataJsonName != null and dataJsonName !='' ">
+				#{dataJsonName,jdbcType=VARCHAR} ,
+			</if>
+			<if test="dataJsonCode != null and dataJsonCode !='' ">
+				#{dataJsonCode,jdbcType=VARCHAR} ,
+			</if>
+			<if test="isDelete != null and isDelete !='' ">
+				#{isDelete,jdbcType=VARCHAR} ,
+			</if>
+			<if test="createTime != null   ">
+				#{createTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="createUser != null and createUser !=0 ">
+				#{createUser,jdbcType=BIGINT} ,
+			</if>
+			<if test="updateTime != null   ">
+				#{updateTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="updateUser != null and updateUser !=0 ">
+				#{updateUser,jdbcType=BIGINT} ,
+			</if>
+		</trim>
+	</sql>
+	
+	
+	<!-- updateParams 更新列-->
+	<sql id="updateParams">
+		<trim suffix="" suffixOverrides=",">
+			<if test="templateId != null and templateId !=0 ">
+				templateId=#{templateId,jdbcType=BIGINT} ,
+			</if>
+			<if test="dataJsonEnName != null and dataJsonEnName !='' ">
+				dataJsonEnName=#{dataJsonEnName,jdbcType=VARCHAR} ,
+			</if>
+			<if test="dataJsonName != null and dataJsonName !='' ">
+				dataJsonName=#{dataJsonName,jdbcType=VARCHAR} ,
+			</if>
+			<if test="dataJsonCode != null and dataJsonCode !='' ">
+				dataJsonCode=#{dataJsonCode,jdbcType=VARCHAR} ,
+			</if>
+			<if test="isDelete != null and isDelete !='' ">
+				isDelete=#{isDelete,jdbcType=VARCHAR} ,
+			</if>
+			<if test="createTime != null   ">
+				createTime=#{createTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="createUser != null and createUser !=0 ">
+				createUser=#{createUser,jdbcType=BIGINT} ,
+			</if>
+			<if test="updateTime != null   ">
+				updateTime=#{updateTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="updateUser != null and updateUser !=0 ">
+				updateUser=#{updateUser,jdbcType=BIGINT} ,
+			</if>
+		</trim>
+	</sql>
+	
+	
+	<insert id="addDataJsonTemplate" parameterType="com.zzjs.cms.entity.DataJsonTemplate" useGeneratedKeys="true" keyProperty="id">
+		insert into 
+		data_json_template_tab (
+			<include refid="insertColumns" />
+		) values (
+			<include refid="insertParams" />
+		)
+		</insert>
+	
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<update id="deleteByEntity" parameterType="com.zzjs.cms.entity.DataJsonTemplate">
+		delete from data_json_template_tab 
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="dataJsonEnName  != null and dataJsonEnName != ''">
+	        	<![CDATA[ and  dataJsonEnName = #{dataJsonEnName } ]]>
+			</if>
+			<if test="id != null and id != 0">
+	        	<![CDATA[ and  id != #{id}  ]]>
+		    </if>
+		    <if test="templateId  != null and templateId != 0">
+	        	<![CDATA[ and  templateId = #{templateId } ]]>
+			</if>
+		</trim>
+	</update>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateByPrimaryKey" parameterType="com.zzjs.cms.entity.DataJsonTemplate">
+		update data_json_template_tab set 
+		<if test="dataJsonEnName  != null and dataJsonEnName != ''">
+			<![CDATA[ t.dataJsonEnName=#{dataJsonEnName}, ]]>
+		</if>
+		<if test="dataJsonName  != null and dataJsonName != ''">
+			<![CDATA[ t.dataJsonName=#{dataJsonName}, ]]>
+		</if>
+		t.dataJsonCode=#{dataJsonCode}
+		<include refid="Base_Where_Clause" />
+	</update>
+	
+	<!-- 通过主键选择性更新 -->
+	<update id="updateByIdSelective" parameterType="com.zzjs.cms.entity.DataJsonTemplate">
+		update data_json_template_tab 
+		<set>
+			<include refid="updateParams" />
+		</set>
+		where id=#{id,jdbcType=BIGINT}
+	</update>
+	
+	
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="selectByPrimaryKey" parameterType="com.zzjs.cms.entity.DataJsonTemplate"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from data_json_template_tab t
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByPrimaryKeys" parameterType="com.zzjs.cms.entity.DataJsonTemplate"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from data_json_template_tab t
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<!-- 查询条件 -->
+	<sql id="Base_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+		
+			<if test="id != null and id != 0">
+	        	<![CDATA[ and  t.id = #{id}  ]]>
+		    </if>
+		    <if test="templateId  != null and templateId != 0">
+	        	<![CDATA[ and  t.templateId = #{templateId } ]]>
+			</if>
+			<if test="dataJsonEnName  != null and dataJsonEnName != ''">
+	        	<![CDATA[ and  t.dataJsonEnName = #{dataJsonEnName } ]]>
+			</if>
+			<if test="dataJsonName  != null and dataJsonName != ''">
+	        	<![CDATA[ and  t.dataJsonName = #{dataJsonName } ]]>
+			</if>
+			<if test="dataJsonCode  != null and dataJsonCode != ''">
+	        	<![CDATA[ and  t.dataJsonCode = #{dataJsonCode } ]]>
+			</if>
+			<if test="isDelete  != null and isDelete != ''">
+	        	<![CDATA[ and  t.isDelete = #{isDelete } ]]>
+			</if>
+			<if test="createTime  != null ">
+	        	<![CDATA[ and  t.createTime = #{createTime } ]]>
+			</if>
+			<if test="createUser  != null and createUser != 0">
+	        	<![CDATA[ and  t.createUser = #{createUser } ]]>
+			</if>
+			<if test="createTime  != null ">
+	        	<![CDATA[ and  t.createTime = #{createTime } ]]>
+			</if>
+			<if test="updateUser  != null and updateUser != 0">
+	        	<![CDATA[ and  t.updateUser = #{updateUser } ]]>
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 查询,排序,分页,模型 -->
+	<select id="selectByModelPagingCount" parameterType="com.zzjs.cms.entity.DataJsonTemplate" resultType="int">
+		select count(*) from data_json_template_tab t
+		<include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByModelPaging" resultMap="BaseResultMap"
+		parameterType="com.zzjs.cms.entity.DataJsonTemplate">
+		select
+		<include refid="Base_Column_List" />
+		from data_json_template_tab t
+		<include refid="Base_Where_Clause" />
+		limit #{offset},#{rows}
+	</select>
+</mapper>  

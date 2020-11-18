@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:flowable="http://flowable.org/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             typeLanguage="http://www.w3.org/2001/XMLSchema"
+             expressionLanguage="http://www.w3.org/1999/XPath"
+             targetNamespace="http://www.flowable.org/processdef">
+    <process id="Countersign" name="CountersignProcess" isExecutable="true">
+        <documentation>会签功能</documentation>
+        <!-- 开始 -->
+        <startEvent id="Start"></startEvent>
+        <!-- 待审议  -->
+        <!--<userTask id="UserTask1" name="U1" flowable:assignee="${task1}"></userTask>-->
+        <!-- 审议中 -->
+        <userTask id="UserTask2" name="U2" flowable:assignee="${assignee}">
+            <multiInstanceLoopCharacteristics isSequential="false" flowable:collection="assigneeList" flowable:elementVariable="assignee">
+                <!-- 可以指定完成数量比例 -->
+                <completionCondition>${nrOfCompletedInstances/nrOfInstances >= 1}</completionCondition>
+            </multiInstanceLoopCharacteristics>
+        </userTask>
+        <!--<userTask id="UserTask3" name="U3" flowable:assignee="${task1}">-->
+            <!--<extensionElements>-->
+                <!--<flowable:taskListener event="create" class="com.company.internalauditreviewresult.listener.InternalAuditReviewResultTaskHandler"></flowable:taskListener>-->
+            <!--</extensionElements>-->
+        <!--</userTask>-->
+        <!--<userTask id="UserTask3" name="U3">-->
+            <!--<extensionElements>-->
+                <!--<flowable:taskListener event="create" class="com.company.internalauditreviewresult.listener.InternalAuditReviewResultTaskHandler"></flowable:taskListener>-->
+            <!--</extensionElements>-->
+        <!--</userTask>-->
+        <serviceTask id="UserTask3" name="U3" flowable:class="com.company.internalauditreviewresult.listener.InternalAuditReviewResultDelegate"/>
+        <!-- 审议结束 -->
+        <endEvent id="End"></endEvent>
+        <!--<sequenceFlow id="S-U1" sourceRef="Start" targetRef="UserTask1"></sequenceFlow>-->
+        <sequenceFlow id="U1-U2" sourceRef="Start" targetRef="UserTask2"></sequenceFlow>
+        <sequenceFlow id="U2-U3" sourceRef="UserTask2" targetRef="UserTask3"></sequenceFlow>
+        <sequenceFlow id="U3-E" sourceRef="UserTask3" targetRef="End"></sequenceFlow>
+        <!--<sequenceFlow id="U2-E" sourceRef="UserTask2" targetRef="End"></sequenceFlow>-->
+    </process>
+</definitions>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: dataplatform-verify
+Implementation-Version: 2.0.9.RELEASE
+Built-By: zzjs
+Implementation-Vendor-Id: otc.tech
+Build-Jdk: 1.8.0_31
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/dataplatform-verify
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="otc.tech.mapper.ReportTypesMapper">
+  <resultMap id="BaseResultMap" type="ReportTypes">
+    <result column="type_id" jdbcType="VARCHAR" property="typeId" />
+    <result column="type_code" jdbcType="VARCHAR" property="typeCode" />
+    <result column="type_code_interface" jdbcType="VARCHAR" property="typeCodeInterface" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="d_is_dqbg" jdbcType="VARCHAR" property="dIsDqbg" />
+    <result column="t_template_type" jdbcType="VARCHAR" property="tTemplateType" />
+    <result column="report_type" jdbcType="VARCHAR" property="reportType" />
+  </resultMap>
+</mapper>

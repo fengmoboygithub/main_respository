@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.processConfig.dao.ProcessStageInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.processConfig.model.ProcessStageInfo">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROCESSID" jdbcType="VARCHAR" property="processid" />
+    <result column="PROJECTTYPE" jdbcType="VARCHAR" property="projecttype" />
+    <result column="PROJECTSTAGE" jdbcType="VARCHAR" property="projectstage" />
+    <result column="GRAPHID" jdbcType="VARCHAR" property="graphid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PROCESSID, PROJECTTYPE, PROJECTSTAGE, GRAPHID
+  </sql>
+  <select id="selectByExample" parameterType="com.company.processConfig.model.ProcessStageInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from processstage
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from processstage
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from processstage
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.processConfig.model.ProcessStageInfoExample">
+    delete from processstage
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.processConfig.model.ProcessStageInfo">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into processstage (ID, PROCESSID, PROJECTTYPE, 
+      PROJECTSTAGE, GRAPHID)
+    values (#{id,jdbcType=VARCHAR}, #{processid,jdbcType=VARCHAR}, #{projecttype,jdbcType=VARCHAR}, 
+      #{projectstage,jdbcType=VARCHAR}, #{graphid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.processConfig.model.ProcessStageInfo">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into processstage
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="processid != null">
+        PROCESSID,
+      </if>
+      <if test="projecttype != null">
+        PROJECTTYPE,
+      </if>
+      <if test="projectstage != null">
+        PROJECTSTAGE,
+      </if>
+      <if test="graphid != null">
+        GRAPHID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=VARCHAR},
+      <if test="processid != null">
+        #{processid,jdbcType=VARCHAR},
+      </if>
+      <if test="projecttype != null">
+        #{projecttype,jdbcType=VARCHAR},
+      </if>
+      <if test="projectstage != null">
+        #{projectstage,jdbcType=VARCHAR},
+      </if>
+      <if test="graphid != null">
+        #{graphid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.processConfig.model.ProcessStageInfoExample" resultType="java.lang.Long">
+    select count(*) from processstage
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update processstage
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processid != null">
+        PROCESSID = #{record.processid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projecttype != null">
+        PROJECTTYPE = #{record.projecttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectstage != null">
+        PROJECTSTAGE = #{record.projectstage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.graphid != null">
+        GRAPHID = #{record.graphid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update processstage
+    set ID = #{record.id,jdbcType=VARCHAR},
+      PROCESSID = #{record.processid,jdbcType=VARCHAR},
+      PROJECTTYPE = #{record.projecttype,jdbcType=VARCHAR},
+      PROJECTSTAGE = #{record.projectstage,jdbcType=VARCHAR},
+      GRAPHID = #{record.graphid,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.processConfig.model.ProcessStageInfo">
+    update processstage
+    <set>
+      <if test="processid != null">
+        PROCESSID = #{processid,jdbcType=VARCHAR},
+      </if>
+      <if test="projecttype != null">
+        PROJECTTYPE = #{projecttype,jdbcType=VARCHAR},
+      </if>
+      <if test="projectstage != null">
+        PROJECTSTAGE = #{projectstage,jdbcType=VARCHAR},
+      </if>
+      <if test="graphid != null">
+        GRAPHID = #{graphid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.processConfig.model.ProcessStageInfo">
+    update processstage
+    set PROCESSID = #{processid,jdbcType=VARCHAR},
+      PROJECTTYPE = #{projecttype,jdbcType=VARCHAR},
+      PROJECTSTAGE = #{projectstage,jdbcType=VARCHAR},
+      GRAPHID = #{graphid,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

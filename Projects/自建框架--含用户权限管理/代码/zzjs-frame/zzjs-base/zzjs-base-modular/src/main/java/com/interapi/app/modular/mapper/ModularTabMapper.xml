@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.interapi.app.modular.dao.ModularTabMapper">
+  <resultMap id="BaseResultMap" type="com.interapi.app.modular.model.ModularTab">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="NAMESPACE" jdbcType="VARCHAR" property="namespace" />
+    <result column="MAPING" jdbcType="VARCHAR" property="maping" />
+    <result column="SCHEMA_NAME" jdbcType="VARCHAR" property="schemaName" />
+    <result column="MENU_ID" jdbcType="BIGINT" property="menuId" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="BIGINT" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <resultMap id="BaseFieldResultMap" type="com.interapi.app.modular.model.ModularFieldTab">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="MODULAR_ID" jdbcType="BIGINT" property="modularId" />
+    <result column="COLUMN_NAME" jdbcType="VARCHAR" property="columnName" />
+    <result column="PROP" jdbcType="VARCHAR" property="prop" />
+    <result column="COLUMN_COMMENT" jdbcType="VARCHAR" property="columnComment" />
+    <result column="LABEL" jdbcType="VARCHAR" property="label" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="BIGINT" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, NAME, NAMESPACE, MAPING, SCHEMA_NAME, MENU_ID, IS_DELETE, CREATE_TIME, CREATE_USER, 
+    UPDATE_TIME, UPDATE_USER
+  </sql>
+  <select id="selectByExample" parameterType="com.interapi.app.modular.model.ModularTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from modular_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from modular_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from modular_tab
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.interapi.app.modular.model.ModularTabExample">
+    delete from modular_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.interapi.app.modular.model.ModularTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into modular_tab (NAME, NAMESPACE, MAPING, 
+      SCHEMA_NAME, MENU_ID, IS_DELETE, 
+      CREATE_TIME, CREATE_USER, UPDATE_TIME, 
+      UPDATE_USER)
+    values (#{name,jdbcType=VARCHAR}, #{namespace,jdbcType=VARCHAR}, #{maping,jdbcType=VARCHAR}, 
+      #{schemaName,jdbcType=VARCHAR}, #{menuId,jdbcType=BIGINT}, #{isDelete,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.interapi.app.modular.model.ModularTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into modular_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="namespace != null">
+        NAMESPACE,
+      </if>
+      <if test="maping != null">
+        MAPING,
+      </if>
+      <if test="schemaName != null">
+        SCHEMA_NAME,
+      </if>
+      <if test="menuId != null">
+        MENU_ID,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="namespace != null">
+        #{namespace,jdbcType=VARCHAR},
+      </if>
+      <if test="maping != null">
+        #{maping,jdbcType=VARCHAR},
+      </if>
+      <if test="schemaName != null">
+        #{schemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuId != null">
+        #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.interapi.app.modular.model.ModularTabExample" resultType="java.lang.Long">
+    select count(*) from modular_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update modular_tab
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null">
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.namespace != null">
+        NAMESPACE = #{record.namespace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.maping != null">
+        MAPING = #{record.maping,jdbcType=VARCHAR},
+      </if>
+      <if test="record.schemaName != null">
+        SCHEMA_NAME = #{record.schemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.menuId != null">
+        MENU_ID = #{record.menuId,jdbcType=BIGINT},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update modular_tab
+    set ID = #{record.id,jdbcType=BIGINT},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      NAMESPACE = #{record.namespace,jdbcType=VARCHAR},
+      MAPING = #{record.maping,jdbcType=VARCHAR},
+      SCHEMA_NAME = #{record.schemaName,jdbcType=VARCHAR},
+      MENU_ID = #{record.menuId,jdbcType=BIGINT},
+      IS_DELETE = #{record.isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.interapi.app.modular.model.ModularTab">
+    update modular_tab
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="namespace != null">
+        NAMESPACE = #{namespace,jdbcType=VARCHAR},
+      </if>
+      <if test="maping != null">
+        MAPING = #{maping,jdbcType=VARCHAR},
+      </if>
+      <if test="schemaName != null">
+        SCHEMA_NAME = #{schemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuId != null">
+        MENU_ID = #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.interapi.app.modular.model.ModularTab">
+    update modular_tab
+    set NAME = #{name,jdbcType=VARCHAR},
+      NAMESPACE = #{namespace,jdbcType=VARCHAR},
+      MAPING = #{maping,jdbcType=VARCHAR},
+      SCHEMA_NAME = #{schemaName,jdbcType=VARCHAR},
+      MENU_ID = #{menuId,jdbcType=BIGINT},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=BIGINT},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  
+  
+  <!-- 通过模块表名和实例名 查询所有列信息 -->
+  <select id="selectAllFields" parameterType="com.interapi.app.modular.model.ModularTab" resultMap="BaseFieldResultMap">
+    select lower(COLUMN_NAME) as COLUMN_NAME,COLUMN_COMMENT
+	from information_schema.columns 
+	where 
+	table_schema=#{schemaName,jdbcType=VARCHAR} 
+	and 
+	table_name=#{maping,jdbcType=VARCHAR}
+  </select>
+</mapper>

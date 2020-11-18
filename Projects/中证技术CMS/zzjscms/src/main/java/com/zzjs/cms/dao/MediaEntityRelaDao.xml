@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.MediaEntityRelaDao">
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="addMediaEntityRela" parameterType="com.zzjs.cms.entity.MediaEntityRela">
+		insert into
+		media_entity_rela(mediaId,entityId,entity,sort,createTime)
+		value(#{mediaId},#{entityId},#{entity},#{sort},#{createTime})
+		<selectKey resultType="long" keyProperty="relaId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteMediaEntityRela" parameterType="long">
+		delete from
+		media_entity_rela where relaId=#{relaId}
+	</delete>
+	
+	<delete id="deleteMediaEntityRelaByMediaId" parameterType="long">
+		delete from
+		media_entity_rela where mediaId=#{mediaId} 
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+	
+	<update id="updateSort" parameterType="com.zzjs.cms.entity.MediaEntityRela">
+		update media_entity_rela set
+		sort=#{sort} where relaId=#{relaId}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+
+	<select id="getMediaListByEntityId" resultType="com.zzjs.cms.entity.vo.MediaEntityRelaVo">
+		select m.*,mer.relaId,mer.entityId,mer.entity,mer.sort
+			from
+			media m join media_entity_rela mer on m.mediaId=mer.mediaId
+		where mer.entity = #{entity}
+			and mer.entityId = #{entityId} 
+			order by mer.sort 
+			limit #{offset},#{rows}
+	</select>
+	
+	<select id="getMediaEntityByEntityIdAndMediaId" resultType="com.zzjs.cms.entity.vo.MediaEntityRelaVo">
+		select m.*,mer.relaId,mer.entityId,mer.entity
+			from
+			media m join media_entity_rela mer on m.mediaId=mer.mediaId
+		where mer.entity = #{entity}
+			and mer.entityId = #{entityId} 
+			and m.mediaId = #{mediaId}
+	</select>
+
+</mapper>  

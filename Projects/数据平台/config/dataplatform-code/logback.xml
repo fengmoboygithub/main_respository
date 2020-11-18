@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 根节点 , logback的全局配置 , 包含3个属性
+    scan : 当文件发生变更时是否重载 , 默认值ture
+    scanPeriod : 监测文件的间隔时间 , 即每隔多少时间扫描一次配置文件 仅当scan=true时生效. 默认间隔时间1min , 如果不写单位默认是毫秒;
+    debug : 是否为debug模式 , 为true时会打印出logack内部日志 , 便于查看logback实时信息 . 默认值false
+ -->
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+	<!-- 配置日志输出目录 -->
+	<property name="LOG_HOME" value="E:/log/dataplatform-code"/>
+	<!-- 日志输出组件 有两个必须的属性
+        name : 当前appender的名称 , 在logger组件中相关联
+        class : 日志的输出控制类 , 通过class将日志输出到控制台/文件/远程socket服务器/数据库等
+            不同的class有着不同的配置
+    -->
+    <!-- ConsoleAppender , 将日志输出到控制台 . 有encoder和target两个子节点(新版本有filter子节点 , 在下文中详细说明) -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!--<layout class="ch.qos.logback.classic.PatternLayout">-->
+			<encoder>
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset> 
+			</encoder>
+		<!--</layout>-->
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_HOME}/mylog-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+			<!-- each file should be at most 10MB, keep 31 days worth of history, but at most 10GB -->
+			<maxFileSize>10MB</maxFileSize>
+			<!-- 子节点maxHistory : 非必填节点 , 控制历史归档的最大数量 , 超出该配置则删除旧文件 . 如果配置按天归档且maxHistory为30 , 则只保存最近30天的日志文件(包括为该文件而创建的目录) -->
+			<maxHistory>31</maxHistory>
+			<!-- 子节点totalSizeCap , 在 1.1.6版本后才开始支持, 配置总日志文件的大小上限 -->
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+		<!-- <layout class="ch.qos.logback.classic.PatternLayout">-->
+			<encoder> 
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+			</encoder>
+		<!--</layout>-->
+	</appender>
+		
+	<root level="INFO">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

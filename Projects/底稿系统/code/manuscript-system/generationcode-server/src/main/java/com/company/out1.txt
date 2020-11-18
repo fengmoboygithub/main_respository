@@ -1,0 +1,510 @@
+#云计算基础
+##弹性计算
+###云服务器
+{"title":"云服务器 ECS","link":"https://www.aliyun.com/product/ecs"},
+{"title":"弹性裸金属服务器（神龙）","link":"https://www.aliyun.com/product/ebm"},
+{"title":"轻量应用服务器","link":"https://www.aliyun.com/product/swas"},
+{"title":"FPGA 云服务器","link":"https://www.aliyun.com/product/ecs/fpga"},
+{"title":"GPU 云服务器","link":"https://www.aliyun.com/product/ecs/gpu"},
+{"title":"专有宿主机","link":"https://www.aliyun.com/product/ddh"},
+{"title":"阿里云服务器操作系统 Aliyun Linux","link":"https://www.aliyun.com/product/alinux"}
+###高性能计算 HPC
+{"title":"超级计算集群","link":"https://www.aliyun.com/product/scc"},
+{"title":"弹性高性能计算 E-HPC","link":"https://www.aliyun.com/product/ehpc"},
+{"title":"批量计算","link":"https://www.aliyun.com/product/batchcompute"}
+###容器服务
+{"title":"容器服务 ACK","link":"https://www.aliyun.com/product/kubernetes"},
+{"title":"Serverless容器服务 ASK","link":"https://www.aliyun.com/product/cs/ask"},
+{"title":"服务网格 ASM","link":"https://www.aliyun.com/product/servicemesh"},
+{"title":"弹性容器实例 ECI","link":"https://www.aliyun.com/product/eci"},
+{"title":"容器镜像服务 ACR","link":"https://www.aliyun.com/product/acr"}
+###弹性编排
+{"title":"弹性伸缩","link":"https://www.aliyun.com/product/ecs/ess"},
+{"title":"资源编排 ROS","link":"https://www.aliyun.com/product/ros"},
+{"title":"运维编排 OOS","link":"https://www.aliyun.com/product/oos"}
+###应用托管
+{"title":"Web应用托管服务（Web+）","link":"https://www.aliyun.com/product/webx"}
+###Serverless
+{"title":"函数计算 FC","link":"https://www.aliyun.com/product/fc"},
+{"title":"Serverless 应用引擎 SAE","link":"https://www.aliyun.com/product/aliware/product/sae"},
+{"title":"Serverless 工作流","link":"https://www.aliyun.com/product/fnf"}
+###其他
+{"title":"云桌面","link":"https://www.aliyun.com/product/gws"}
+##存储服务
+###云存储
+{"title":"存储容量单位包","link":"https://www.aliyun.com/product/scu"},
+{"title":"对象存储 OSS","link":"https://www.aliyun.com/product/oss"},
+{"title":"块存储","link":"https://www.aliyun.com/product/disk"},
+{"title":"数据库文件存储 DBFS（公测中）","link":"https://www.aliyun.com/product/dbfs"},
+{"title":"文件存储 NAS","link":"https://www.aliyun.com/product/nas"},
+{"title":"文件存储 CPFS","link":"https://www.aliyun.com/product/nas_cpfs"},
+{"title":"文件存储 HDFS（公测中）","link":"https://www.aliyun.com/product/alidfs"}
+###个人存储
+{"title":"内容协作平台（公测中）","link":"https://www.aliyun.com/product/ccp"}
+###存储数据迁移
+{"title":"闪电立方","link":"https://www.aliyun.com/product/mgw"}
+###智能存储
+{"title":"智能云相册（公测中）","link":"https://www.aliyun.com/product/cloudphoto"},
+{"title":"智能媒体管理","link":"https://www.aliyun.com/product/imm"}
+###混合云存储
+{"title":"混合云备份 HBR","link":"https://www.aliyun.com/product/hbr"},
+{"title":"混合云容灾 HDR","link":"https://www.aliyun.com/product/hdr"},
+{"title":"云存储网关","link":"https://www.aliyun.com/product/hcs"},
+{"title":"混合云存储阵列","link":"https://www.aliyun.com/product/hgw"}
+##CDN与边缘
+{"title":"CDN","link":"https://www.aliyun.com/product/cdn"},
+{"title":"安全加速 SCDN","link":"https://www.aliyun.com/product/scdn"},
+{"title":"全站加速 DCDN","link":"https://www.aliyun.com/product/dcdn"},
+{"title":"PCDN","link":"https://www.aliyun.com/product/pcdn"},
+{"title":"边缘节点服务 ENS","link":"https://www.aliyun.com/product/ens"}
+##云通信
+{"title":"短信服务","link":"https://www.aliyun.com/product/sms"},
+{"title":"语音服务","link":"https://www.aliyun.com/product/vms"},
+{"title":"智能联络中心（公测中）","link":"https://www.aliyun.com/product/aiccs"},
+{"title":"物联网无线连接服务","link":"https://www.aliyun.com/product/dyiot"},
+{"title":"号码隐私保护","link":"https://www.aliyun.com/product/pls"},
+{"title":"号码认证服务（公测中）","link":"https://www.aliyun.com/product/dypns"},
+{"title":"号码百科","link":"https://www.aliyun.com/product/dytns"},
+{"title":"云通信网络加速（公测中）","link":"https://www.aliyun.com/product/snsu"}
+##网络
+###云上网络
+{"title":"专有网络 VPC","link":"https://www.aliyun.com/product/vpc"},
+{"title":"云解析 PrivateZone","link":"https://www.aliyun.com/product/pvtz"},
+{"title":"负载均衡 SLB","link":"https://www.aliyun.com/product/slb"},
+{"title":"NAT 网关","link":"https://www.aliyun.com/product/nat"},
+{"title":"弹性公网 IP","link":"https://www.aliyun.com/product/eip"},
+{"title":"IPv6 转换服务（公测中）","link":"https://www.aliyun.com/product/ipv6trans"},
+{"title":"共享带宽","link":"https://www.aliyun.com/product/cbwp"},
+{"title":"共享流量包","link":"https://www.aliyun.com/product/flowbag"}
+###跨地域网络
+{"title":"云企业网","link":"https://www.aliyun.com/product/cbn"},
+{"title":"全球加速（公测中）","link":"https://www.aliyun.com/product/ga"}
+###混合云网络
+{"title":"VPN 网关","link":"https://www.aliyun.com/product/vpn"},
+{"title":"智能接入网关","link":"https://www.aliyun.com/product/smartag"},
+{"title":"高速通道","link":"https://www.aliyun.com/product/expressconnect"}
+##视频云
+{"title":"视频直播","link":"https://www.aliyun.com/product/live"},
+{"title":"视频点播","link":"https://www.aliyun.com/product/vod"},
+{"title":"媒体处理","link":"https://www.aliyun.com/product/mts"},
+{"title":"音视频通信 RTC","link":"https://www.aliyun.com/product/rtc"},
+{"title":"云视频会议 (公测中）","link":"https://www.aliyun.com/product/aliyuncvc"},
+{"title":"视频监控","link":"https://www.aliyun.com/product/vs"},
+{"title":"智能视觉","link":"https://ai.aliyun.com/vi/ivision"},
+{"title":"视频DNA","link":"https://ai.aliyun.com/vi/dna"},
+{"title":"视频审核","link":"https://ai.aliyun.com/vi/censor"},
+{"title":"多模态内容理解","link":"https://ai.aliyun.com/vi/multimodal"},
+{"title":"视频智能生产","link":"https://ai.aliyun.com/vi/produce"},
+{"title":"智能封面","link":"https://ai.aliyun.com/vi/cover"}
+##区块链
+{"title":"区块链服务","link":"https://www.aliyun.com/product/blockchainasaservice/blockchain"}
+#数据库
+##数据库专属集群
+{"title":"云数据库专属集群MyBase","link":"https://www.aliyun.com/product/apsaradb/cddc"}
+##关系型数据库
+{"title":"云数据库 PolarDB","link":"https://www.aliyun.com/product/polardb"},
+{"title":"云原生分布式数据库PolarDB-X（原DRDS升级版）","link":"https://www.aliyun.com/product/drds"},
+{"title":"云数据库 RDS MySQL 版","link":"https://www.aliyun.com/product/rds/mysql"},
+{"title":"云数据库 RDS MariaDB TX 版","link":"https://www.aliyun.com/product/rds/mariadb"},
+{"title":"云数据库 RDS SQL Server 版","link":"https://www.aliyun.com/product/rds/sqlserver"},
+{"title":"云数据库 RDS PostgreSQL 版","link":"https://www.aliyun.com/product/rds/postgresql"},
+{"title":"云数据库 RDS PPAS 版","link":"https://www.aliyun.com/product/rds/ppas"},
+{"title":"云数据库 OceanBase","link":"https://www.aliyun.com/product/oceanbase"},
+{"title":"PolarDB Box 一体机","link":"https://www.aliyun.com/product/polarbox"}
+##NoSQL数据库
+{"title":"云数据库 Redis 版","link":"https://www.aliyun.com/product/kvstore"},
+{"title":"云数据库 MongoDB 版","link":"https://www.aliyun.com/product/mongodb"},
+{"title":"云数据库 HBase 版","link":"https://cn.aliyun.com/product/hbase"},
+{"title":"云数据库 Cassandra版","link":"https://www.aliyun.com/product/cds"},
+{"title":"时序数据库 TSDB版","link":"https://www.aliyun.com/product/hitsdb"},
+{"title":"云原生多模数据库 Lindorm","link":"https://www.aliyun.com/product/apsaradb/lindorm"},
+{"title":"时序数据库 InfluxDB® 版","link":"https://www.aliyun.com/product/hitsdb_influxdb_pre"},
+{"title":"图数据库 GDB","link":"https://www.aliyun.com/product/gdb"},
+{"title":"云数据库 Memcache 版","link":"https://www.aliyun.com/product/ocs"},
+{"title":"表格存储 TableStore","link":"https://www.aliyun.com/product/ots"},
+{"title":"可信账本数据库 LedgerDB （公测中）","link":"https://www.aliyun.com/product/ledgerdb"}
+##数据仓库
+{"title":"云原生数据仓库AnalyticDB MySQL版","link":"https://www.aliyun.com/product/ads"},
+{"title":"云原生数据仓库AnalyticDB PostgreSQL版","link":"https://www.aliyun.com/product/gpdb"},
+{"title":"云数据库 ClickHouse","link":"https://www.aliyun.com/product/clickhouse"},
+{"title":"数据湖分析","link":"https://www.aliyun.com/product/datalakeanalytics"}
+##数据库生态工具
+{"title":"数据传输服务 DTS","link":"https://www.aliyun.com/product/dts"},
+{"title":"数据管理 DMS","link":"https://www.aliyun.com/product/dms"},
+{"title":"数据库备份 DBS","link":"https://www.aliyun.com/product/dbs"},
+{"title":"数据库自治服务 DAS","link":"https://www.aliyun.com/product/hdm"},
+{"title":"数据库网关 DG（公测中）","link":"https://www.aliyun.com/product/dg"},
+{"title":"数据库专家服务","link":"https://www.aliyun.com/product/dbes"},
+{"title":"数据库和应用迁移 ADAM（公测中）","link":"https://www.aliyun.com/product/adam"}
+#安全
+##云安全
+{"title":"DDoS防护","link":"https://www.aliyun.com/product/security/ddos"},
+{"title":"Web应用防火墙","link":"https://www.aliyun.com/product/waf"},
+{"title":"SSL 证书","link":"https://www.aliyun.com/product/security/markets/aliyun/product/cas"},
+{"title":"云安全中心（态势感知）","link":"https://www.aliyun.com/product/sas"},
+{"title":"云防火墙","link":"https://www.aliyun.com/product/cfw"},
+{"title":"堡垒机","link":"https://www.aliyun.com/product/bastionhost"},
+{"title":"漏洞扫描","link":"https://www.aliyun.com/product/avds"},
+{"title":"操作审计","link":"https://www.aliyun.com/product/actiontrail"},
+{"title":"配置审计（公测中）","link":"https://www.aliyun.com/product/config"},
+{"title":"云安全中心（安骑士）","link":"https://www.aliyun.com/product/aegis"}
+##身份管理
+{"title":"终端访问控制系统（公测中）","link":"https://www.aliyun.com/product/uem"},
+{"title":"访问控制","link":"https://www.aliyun.com/product/ram"},
+{"title":"应用身份服务 (IDaaS)","link":"https://www.aliyun.com/product/idaas"}
+##数据安全
+{"title":"数据库审计","link":"https://www.aliyun.com/product/dbaudit"},
+{"title":"加密服务","link":"https://www.aliyun.com/product/hsm"},
+{"title":"敏感数据保护 SDDP","link":"https://cn.aliyun.com/product/sddp"},
+{"title":"密钥管理服务","link":"https://www.aliyun.com/product/kms"}
+##业务安全
+{"title":"游戏盾","link":"https://www.aliyun.com/product/GameShield"},
+{"title":"内容安全","link":"https://www.aliyun.com/product/lvwang"},
+{"title":"风险识别","link":"https://www.aliyun.com/product/saf"},
+{"title":"实人认证","link":"https://www.aliyun.com/product/cloudauth"},
+{"title":"爬虫风险管理","link":"https://www.aliyun.com/product/antibot"}
+##安全服务
+{"title":"安全管家","link":"https://www.aliyun.com/product/sos"},
+{"title":"渗透测试","link":"https://www.aliyun.com/product/pt"},
+{"title":"安全众测","link":"https://www.aliyun.com/product/xianzhi"},
+{"title":"等保咨询","link":"https://www.aliyun.com/product/xianzhi/mlpse"},
+{"title":"应急响应","link":"https://www.aliyun.com/product/yundun_incident_response"},
+{"title":"安全培训","link":"https://www.aliyun.com/product/xianzhi_securitytrain"},
+{"title":"安全评估","link":"https://www.aliyun.com/product/xianzhi_online_car-hailing"},
+{"title":"代码审计","link":"https://www.aliyun.com/product/xianzhi_codeaudit"},
+{"title":"安全加固","link":"https://www.aliyun.com/product/xianzhi_securityconsolidate"},
+{"title":"安全通告","link":"https://www.aliyun.com/product/xianzhi_SecurityNotificationService"},
+{"title":"PCI DSS合规咨询","link":"https://www.aliyun.com/product/xianzhi_PCIDSS"}
+##安全解决方案
+{"title":"企业上云安全建设","link":"https://www.aliyun.com/solution/security/basicsecurity"},
+{"title":"等保合规安全","link":"https://www.aliyun.com/solution/security/compliance"},
+{"title":"新零售安全","link":"https://www.aliyun.com/solution/security/business"},
+{"title":"社交/媒体 Anti Spam","link":"https://www.aliyun.com/solution/security/spam"},
+{"title":"政务云安全","link":"https://www.aliyun.com/solution/security/affairs"},
+{"title":"专有云安全（云盾）","link":"https://www.aliyun.com/product/apsara-stack_security?wh_ttid=pc"}
+#大数据
+##大数据计算与分析
+{"title":"MaxCompute","link":"https://www.aliyun.com/product/odps"},
+{"title":"E-MapReduce","link":"https://www.aliyun.com/product/emapreduce"},
+{"title":"实时计算 Flink版","link":"https://www.aliyun.com/product/bigdata/product/sc"},
+{"title":"交互式分析 Hologres","link":"https://www.aliyun.com/product/hologram"},
+{"title":"Databricks 数据洞察（公测中）","link":"https://www.aliyun.com/product/spark"},
+{"title":"Elasticsearch","link":"https://www.aliyun.com/product/bigdata/product/elasticsearch"},
+{"title":"开放搜索","link":"https://www.aliyun.com/product/opensearch"},
+{"title":"图计算服务（公测中）","link":"https://www.aliyun.com/product/graphcompute"}
+##数据开发和治理
+{"title":"DataWorks","link":"https://www.aliyun.com/product/bigdata/ide"},
+{"title":"Dataphin","link":"https://www.aliyun.com/product/dataphin"}
+##大数据应用与可视化
+{"title":"Quick BI数据可视化分析","link":"https://www.aliyun.com/product/bigdata/bi"},
+{"title":"DataV数据可视化","link":"https://www.aliyun.com/product/bigdata/datav"},
+{"title":"智能推荐","link":"https://www.aliyun.com/product/airec"},
+{"title":"Quick Audience （公测中）","link":"https://www.aliyun.com/product/retailadvqa"},
+{"title":"DataQuotient 画像分析（公测中）","link":"https://www.aliyun.com/product/drp"}
+##大数据工具与服务
+{"title":"数据集成","link":"https://www.aliyun.com/product/cdp"},
+{"title":"数据总线DataHub","link":"https://www.aliyun.com/product/datahub"}
+##营销场景解决方案
+{"title":"精准营销","link":"https://et.aliyun.com/bigdata/solution"}
+##大数据基础设施解决方案
+{"title":"大数据仓库","link":"https://data.aliyun.com/solution/base"},
+{"title":"企业数据服务","link":"https://data.aliyun.com/solution/cds"},
+{"title":"云上数据集成","link":"https://data.aliyun.com/solution/cdp"}
+##大数据智能应用解决方案
+{"title":"人地关系数据智能","link":"https://www.aliyun.com/solution/lbsdi"},
+{"title":"个性化搜索和推荐","link":"https://www.aliyun.com/solution/datavexpo/airec"}
+#人工智能
+{"title":"录音文件识别","link":"https://ai.aliyun.com/nls/filetrans"},
+{"title":"实时语音转写","link":"https://ai.aliyun.com/nls/trans"},
+{"title":"一句话识别","link":"https://ai.aliyun.com/nls/asr"},
+{"title":"智能语音设备端解决方案","link":"https://www.aliyun.com/product/ai/nls/sdk"},
+{"title":"语音本地化部署方案","link":"https://ai.aliyun.com/nls/nlslocal"},
+{"title":"语音合成","link":"https://ai.aliyun.com/nls/tts"},
+{"title":"语音合成声音定制","link":"https://ai.aliyun.com/nls/customtts"},
+{"title":"语言模型自学习工具","link":"https://ai.aliyun.com/nls/lmlearning"}
+##机器翻译
+{"title":"通用版翻译引擎","link":"https://www.aliyun.com/product/ai/base_alimt"},
+{"title":"专业版翻译引擎","link":"https://www.aliyun.com/product/ai/domain_alimt"},
+{"title":"定制化翻译服务","link":"https://www.aliyun.com/product/ai/alimt/private_alimt"},
+{"title":"标准证件翻译","link":"https://www.aliyun.com/product/ai/alimt/certifictetranslation"},
+{"title":"语种识别","link":"https://www.aliyun.com/product/ai/alimt/language_detection"},
+{"title":"文档翻译","link":"https://www.aliyun.com/product/ai/alimt/document_translation"},
+{"title":"协同翻译工具平台","link":"https://www.aliyun.com/product/ai/internationalization"}
+##遥感影像智能解译
+{"title":"卫星及无人机遥感影像分析产品","link":"https://www.aliyun.com/product/rsimganalys"},
+{"title":"图像搜索","link":"https://ai.aliyun.com/imagesearch"},
+{"title":"图像识别","link":"https://ai.aliyun.com/image"}
+##视觉计算
+{"title":"视觉计算服务 VCS（公测中）","link":"https://www.aliyun.com/product/vcs"}
+##视觉生产
+{"title":"智能视觉生产","link":"https://www.aliyun.com/product/ai/ivpd"},
+{"title":"通用型卡证类","link":"https://ai.aliyun.com/ocr/card"},
+{"title":"汽车相关识别","link":"https://ai.aliyun.com/ocr/vehicle"},
+{"title":"行业票据识别","link":"https://ai.aliyun.com/ocr/invoice"},
+{"title":"资产类识别","link":"https://ai.aliyun.com/ocr/certification"},
+{"title":"通用类文字识别","link":"https://ai.aliyun.com/ocr/general"},
+{"title":"行业文档类识别","link":"https://ai.aliyun.com/ocr/document"},
+{"title":"自定义模板识别","link":"https://ai.aliyun.com/ocr/template"},
+{"title":"教育类识别","link":"https://ai.aliyun.com/ocr/edu"},
+{"title":"仪器仪表识别","link":"https://ai.aliyun.com/ocr/Instrument"},
+{"title":"混贴票据识别","link":"https://ai.aliyun.com/ocr/mixinvoice"},
+{"title":"多卡证智能分类识别","link":"https://ai.aliyun.com/ocr/mixcard"},
+{"title":"NLP自学习平台","link":"https://ai.aliyun.com/nlp/nlpautoml"},
+{"title":"智能短信解析","link":"https://www.aliyun.com/product/ai/sms"},
+{"title":"多语言分词","link":"https://ai.aliyun.com/nlp/ws"},
+{"title":"词性标注","link":"https://ai.aliyun.com/nlp/pos"},
+{"title":"命名实体","link":"https://ai.aliyun.com/nlp/ner"},
+{"title":"情感分析","link":"https://ai.aliyun.com/nlp/sa"},
+{"title":"中心词提取","link":"https://ai.aliyun.com/nlp/ke"},
+{"title":"智能文本分类","link":"https://ai.aliyun.com/nlp/tc"},
+{"title":"文本信息抽取","link":"https://ai.aliyun.com/nlp/ie"},
+{"title":"商品评价解析","link":"https://ai.aliyun.com/nlp/ra"},
+{"title":"知识图谱","link":"https://www.aliyun.com/product/ai/nlp/kg"}
+##三维视觉
+{"title":"三维空间重建（临云镜）","link":"https://www.aliyun.com/product/tdsr"},
+{"title":"人脸识别","link":"https://ai.aliyun.com/face"},
+{"title":"文本相似度 （公测中）","link":"https://www.aliyun.com/product/iqa_faq_pre"},
+{"title":"机器阅读理解（公测中）","link":"https://www.aliyun.com/product/iqa_mrc_pre"},
+{"title":"视觉智能开放平台","link":"https://vision.aliyun.com/"}
+##机器学习平台
+{"title":"机器学习平台 PAI ","link":"https://www.aliyun.com/product/bigdata/product/learn"},
+{"title":"人工智能众包（公测中）","link":"https://www.aliyun.com/product/aicrowd"}
+##多媒体AI
+{"title":"视频内容分析","link":"https://www.aliyun.com/activity/intelligent/media-ai-portal#/contentStructure"},
+{"title":"视频封面生成","link":"https://www.aliyun.com/activity/intelligent/media-ai-portal#/contentCreate"},
+{"title":"视频内容检索（公测中）","link":"https://www.aliyun.com/activity/intelligent/media-ai-portal#/videoFingerprinting"}
+##城市视觉
+{"title":"城市视觉智能引擎（公测中）","link":"https://www.aliyun.com/product/cityvisual"},
+{"title":"图片鉴黄","link":"https://ai.aliyun.com/lvwang/imgadult"},
+{"title":"图片涉政暴恐识别","link":"https://ai.aliyun.com/lvwang/imgterrorism"},
+{"title":"图片Logo商标检测","link":"https://ai.aliyun.com/lvwang/imglogo"},
+{"title":"图片垃圾广告识别","link":"https://ai.aliyun.com/lvwang/imgad"},
+{"title":"图片不良场景识别","link":"https://ai.aliyun.com/lvwang/imglive"},
+{"title":"图片风险人物识别","link":"https://ai.aliyun.com/lvwang/imgsface"},
+{"title":"视频风险内容识别","link":"https://ai.aliyun.com/lvwang/video"},
+{"title":"文本反垃圾识别","link":"https://ai.aliyun.com/lvwang/text"},
+{"title":"语音垃圾识别","link":"https://ai.aliyun.com/lvwang/audio"}
+##解决方案
+{"title":"图像自动外检","link":"https://et.aliyun.com/brain/image"},
+{"title":"工艺参数优化","link":"https://et.aliyun.com/brain/process"},
+{"title":"城市交通态势评价","link":"https://et.aliyun.com/brain/urbantraffic"},
+{"title":"特种车辆优先通行","link":"https://et.aliyun.com/brain/vehicle"},
+{"title":"大规模网格AI信号优化","link":"https://et.aliyun.com/ai/urbantraffic"},
+{"title":"“见远”视觉智能诊断方案","link":"https://et.aliyun.com/ai/visual_diagnosis"},
+{"title":"门禁/闸机人脸识别","link":"https://et.aliyun.com/ai/facegate"},
+{"title":"供应链智能","link":"https://et.aliyun.com/brain/supplychainai"},
+{"title":"智慧场馆","link":"https://www.aliyun.com/solution/datavexpo"},
+{"title":"设备数字运维","link":"https://et.aliyun.com/brain/industryoperation"},
+{"title":"工业设备故障诊断","link":"https://et.aliyun.com/brain/plantmanagement"},
+{"title":"智能助手","link":"https://et.aliyun.com/aisolution/itma"},
+{"title":"智能双录","link":"https://et.aliyun.com/ai/nls_aidoublerecord"},
+{"title":"智能培训","link":"https://et.aliyun.com/aisolution/training"}
+##数据智能
+{"title":"城市大脑","link":"https://et.aliyun.com/brain/city"},
+{"title":"工业大脑","link":"https://et.aliyun.com/brain/industry"},
+{"title":"农业大脑","link":"https://et.aliyun.com/brain/aos"},
+{"title":"环境大脑","link":"https://et.aliyun.com/brain/environment"},
+{"title":"医疗大脑","link":"https://et.aliyun.com/brain/healthcare"},
+{"title":"航空大脑","link":"https://et.aliyun.com/brain/aviation"}
+#物联网
+##设备服务
+{"title":"设备接入服务","link":"https://www.aliyun.com/product/iot-deviceconnect"},
+{"title":"AliOS Things (物操作系统)","link":"https://www.aliyun.com/product/aliosthings"},
+{"title":"设备身份认证","link":"https://www.aliyun.com/product/iotid"}
+##物联网云服务
+{"title":"物联网平台","link":"https://www.aliyun.com/product/iot"},
+{"title":"物联网应用开发","link":"https://www.aliyun.com/product/iotstudio"},
+{"title":"物联网数据分析","link":"https://www.aliyun.com/product/linkanalytics"}
+##边缘计算
+{"title":"边缘计算服务","link":"https://www.aliyun.com/product/iotedge"},
+{"title":"视频边缘智能服务","link":"https://www.aliyun.com/product/linkvisual"}
+##网络服务
+{"title":"物联网络管理","link":"https://www.aliyun.com/product/linkwan"},
+{"title":"物联网无线连接服务","link":"https://www.aliyun.com/product/dyiot"},
+{"title":"LoRaWAN组网服务","link":"https://www.aliyun.com/product/linkwan"}
+##物联网安全
+{"title":"物联网安全运营中心","link":"https://www.aliyun.com/product/isoc"},
+{"title":"物联网可信执行环境","link":"https://www.aliyun.com/product/iotid_tee_pre"},
+{"title":"物联网固件安全检测","link":"https://www.aliyun.com/product/isoc_fss_pre"},
+{"title":"物联网区块链可信应用系统","link":"https://www.aliyun.com/product/iotid_ltl_pre"}
+##生态
+{"title":"物联网市场","link":"https://linkmarket.aliyun.com"},
+{"title":"ICA物联网标准联盟","link":"https://www.ica-alliance.org"}
+##相关云服务
+{"title":"智联车管理云平台","link":"https://www.aliyun.com/product/iovcc"},
+{"title":"物联网云资源套餐","link":"https://iot.aliyun.com/zebra/cloudproductiot"}
+##行业平台
+{"title":"生活物联网平台（飞燕）","link":"https://www.aliyun.com/product/livinglink"},
+{"title":"城市物联网平台","link":"https://www.aliyun.com/product/iot/linkcity"}
+##行业场景解决方案
+{"title":"全域停车","link":"https://www.aliyun.com/solution/iot/parking"},
+{"title":"全域旅游","link":"https://www.aliyun.com/solution/iot/culturaltourism"},
+{"title":"非现场执法","link":"https://www.aliyun.com/solution/iot/flexibility"},
+{"title":"社区治理","link":"https://www.aliyun.com/solution/iot/community"},
+{"title":"智慧消防","link":"https://www.aliyun.com/solution/iot/outfire"},
+{"title":"玩具行业数字工厂","link":"https://www.aliyun.com/solution/iot/toyfactory"},
+{"title":"家电行业数字工厂","link":"https://www.aliyun.com/solution/iot/appliancefactory"},
+{"title":"数字农业","link":"https://www.aliyun.com/solution/iot/farm"},
+{"title":"智慧建筑","link":"https://www.aliyun.com/solution/iot/building"},
+{"title":"智能长租","link":"https://www.aliyun.com/solution/iot/longterm"},
+{"title":"AIoT教育实训","link":"https://www.aliyun.com/solution/iot/practicetraining"}
+#开发与运维
+##备份、迁移与容灾
+{"title":"应用发现服务 APDS（公测中）","link":"https://www.aliyun.com/product/apds"},
+{"title":"闪电立方","link":"https://www.aliyun.com/product/mgw"},
+{"title":"迁移工具","link":"https://help.aliyun.com/product/121538.html"}
+##开发者平台
+{"title":"小程序云（公测中）","link":"https://www.aliyun.com/product/miniappdev"},
+{"title":"开发者中心","link":"https://developer.aliyun.com/index"},
+{"title":"物联网开发者平台","link":"https://www.aliyun.com/product/iot"},
+{"title":"项目协作","link":"https://www.aliyun.com/product/yunxiao/project"},
+{"title":"知识库","link":"https://www.aliyun.com/product/yunxiao/thoughts"},
+{"title":"代码管理","link":"https://www.aliyun.com/product/yunxiao/codeup"},
+{"title":"测试管理","link":"https://www.aliyun.com/product/yunxiao/testhub"},
+{"title":"流水线","link":"https://www.aliyun.com/product/yunxiao/flow"},
+{"title":"制品仓库","link":"https://www.aliyun.com/product/yunxiao/packages"}
+###研发
+{"title":"移动 DevOps（公测中）","link":"https://www.aliyun.com/product/emascrash/mobile_devops"}
+###测试
+{"title":"移动测试","link":"https://www.aliyun.com/product/mqc"}
+###运维
+{"title":"移动热修复","link":"https://www.aliyun.com/product/hotfix"},
+{"title":"崩溃分析","link":"https://www.aliyun.com/product/emascrash/crash"},
+{"title":"性能分析","link":"https://www.aliyun.com/product/emascrash/apm"},
+{"title":"远程日志","link":"https://www.aliyun.com/product/emascrash/tlog"}
+###运营
+{"title":"移动推送","link":"https://www.aliyun.com/product/cps"},
+{"title":"移动数据分析","link":"https://www.aliyun.com/product/man"},
+{"title":"移动用户反馈","link":"https://www.aliyun.com/product/feedback"}
+###网络
+{"title":"HTTPDNS","link":"https://www.aliyun.com/product/httpdns"}
+##测试
+{"title":"性能测试 PTS","link":"https://www.aliyun.com/product/pts"},
+{"title":"移动测试","link":"https://www.aliyun.com/product/mqc"}
+##仓库服务
+{"title":"Maven 公共仓库服务","link":"https://m.aliyun.com/markets/aliyun/ali-repo"},
+{"title":"容器镜像服务","link":"https://www.aliyun.com/product/acr"},
+{"title":"Node 模块仓库","link":"https://node.console.aliyun.com/registry/home"}
+##企业IT治理
+{"title":"访问控制","link":"https://www.aliyun.com/product/ram"},
+{"title":"资源管理（公测中）","link":"https://www.aliyun.com/product/entconsole"},
+{"title":"操作审计（公测中）","link":"https://www.aliyun.com/product/actiontrail"},
+{"title":"配置审计 （公测中）","link":"https://www.aliyun.com/product/config"}
+##API与工具
+{"title":"OpenAPI","link":"https://open.aliyun.com/apis"},
+{"title":"SDK","link":"https://open.aliyun.com/sdk"},
+{"title":"OpenAPI Explorer（公测中）","link":"https://www.aliyun.com/product/openapiexplorer"},
+{"title":"云命令行（公测中）","link":"https://www.aliyun.com/product/cloudshell"},
+{"title":"逻辑编排（公测中）","link":"https://www.aliyun.com/product/logiccomposer"}
+##API 控制中心
+{"title":"API 错误中心","link":"https://error-center.aliyun.com/"},
+{"title":"Cloud Toolkit","link":"https://www.aliyun.com/product/cloudtoolkit"},
+{"title":"Dragonwell","link":"https://www.aliyun.com/product/dragonwell"}
+##开发与运维
+{"title":"应用实时监控服务 ARMS","link":"https://www.aliyun.com/product/arms"},
+{"title":"云监控","link":"https://www.aliyun.com/product/jiankong"},
+{"title":"应用高可用服务 AHAS","link":"https://www.aliyun.com/product/ahas"},
+{"title":"智能顾问（公测中）","link":"https://www.aliyun.com/product/advisor"},
+{"title":"日志服务 ","link":"https://www.aliyun.com/product/sls"},
+{"title":"Node.js性能平台","link":"https://www.aliyun.com/product/nodejs"},
+{"title":"链路追踪","link":"https://www.aliyun.com/product/xtrace"},
+{"title":"代码托管 ","link":"https://promotion.aliyun.com/ntms/act/code.html"}
+##解决方案
+{"title":"DevOps解决方案","link":"https://develop.aliyun.com/devops"},
+{"title":"敏捷研发","link":"https://www.aliyun.com/solution/devops/scrum"}
+#企业应用
+{"title":"域名注册","link":"https://wanwang.aliyun.com/"},
+{"title":"云解析 DNS","link":"https://wanwang.aliyun.com/domain/dns"},
+{"title":"域名交易","link":"https://mi.aliyun.com/"},
+{"title":"网站建设","link":"https://ac.aliyun.com/jianzhan"},
+{"title":"企业网站定制","link":"https://ac.aliyun.com/jianzhan/webdesign"},
+{"title":"网站模板","link":"https://ac.aliyun.com/jianzhan/website"},
+{"title":"云虚拟主机","link":"https://wanwang.aliyun.com/hosting"},
+{"title":"海外云虚拟主机","link":"https://www.aliyun.com/chinaglobal/promotion/virtual2017"},
+{"title":"备案","link":"https://beian.aliyun.com/"},
+{"title":"公司/个体工商注册","link":"https://gs.aliyun.com/product/gongshang"},
+{"title":"园区代理记账","link":"https://gs.aliyun.com/product/yqdz"},
+{"title":"ICP经营性备案","link":"https://tm.aliyun.com/channel/product/icp"}
+##知识产权服务
+{"title":"商标注册","link":"https://tm.aliyun.com/"},
+{"title":"商标交易","link":"https://tm.aliyun.com/trans"},
+{"title":"智能LOGO设计","link":"https://logo.aliyun.com/"},
+{"title":"软件著作权登记","link":"https://www.aliyun.com/acts/domain/copyright"}
+##应用服务
+{"title":"cloud desktop","link":"https://www.aliyun.com/product/clouddesktop"},
+{"title":"云AP","link":"https://www.aliyun.com/product/cloudap"},
+{"title":"API 网关","link":"https://www.aliyun.com/product/apigateway"},
+{"title":"邮件推送","link":"https://www.aliyun.com/product/directmail"},
+{"title":"云价签（公测中）","link":"https://www.aliyun.com/product/cloudesl"},
+{"title":"专属钉钉","link":"https://www.aliyun.com/product/dingtalkpro"}
+##智能设计服务
+{"title":"智能设计","link":"https://www.aliyun.com/product/luban"}
+##专有云
+{"title":"Apsara Stack","link":"https://www.aliyun.com/product/apsara-stack"},
+{"title":"消息队列 RocketMQ 版","link":"https://www.aliyun.com/product/rocketmq"},
+{"title":"消息队列 Kafka 版","link":"https://www.aliyun.com/product/kafka"},
+{"title":"消息队列 AMQP 版","link":"https://www.aliyun.com/product/amqp"},
+{"title":"微消息队列 MQTT 版","link":"https://www.aliyun.com/product/mq4iot"},
+{"title":"消息服务 MNS","link":"https://www.aliyun.com/product/mns"},
+{"title":"事件总线 EventBridge","link":"https://www.aliyun.com/product/aliware/eventbridge"},
+{"title":"企业级分布式应用服务 EDAS","link":"https://www.aliyun.com/product/edas"},
+{"title":"微服务引擎 MSE","link":"https://www.aliyun.com/product/aliware/mse"},
+{"title":"应用配置管理 ACM","link":"https://www.aliyun.com/product/acm"},
+{"title":"全局事务服务 GTS","link":"https://www.aliyun.com/aliware/txc"},
+{"title":"云服务总线 CSB","link":"https://www.aliyun.com/product/csb"}
+##智能客服
+{"title":"云呼叫中心","link":"https://www.aliyun.com/product/ccc"},
+{"title":"云小蜜","link":"https://www.aliyun.com/product/beebot"},
+{"title":"智能外呼(公测中)","link":"https://www.aliyun.com/product/outboundbot"},
+{"title":"智能语音导航(公测中)","link":"https://www.aliyun.com/product/voicebot"},
+{"title":"智能对话分析","link":"https://www.aliyun.com/product/sca"},
+{"title":"云客服","link":"https://www.aliyun.com/product/ccs"}
+##企业办公协同
+{"title":"Teambition企业协同","link":"https://www.teambition.com"},
+{"title":"宜搭","link":"https://www.aliyun.com/product/yida"},
+{"title":"云投屏","link":"https://www.aliyun.com/product/cd"},
+{"title":"企业邮箱","link":"https://wanwang.aliyun.com/mail"},
+{"title":"机器人流程自动化 RPA","link":"https://www.aliyun.com/product/codestore"},
+{"title":"专属钉钉","link":"https://www.aliyun.com/solution/dingtalkpro/index"}
+##企业服务解决方案
+{"title":"SAP云","link":"https://www.aliyun.com/solution/sap/index"},
+{"title":"双中台的会员营销","link":"https://www.aliyun.com/solution/membermarketing/index"},
+{"title":"业务中台技术","link":"https://www.aliyun.com/solution/bme/index"},
+{"title":"全域集成（iPaaS）","link":"https://www.aliyun.com/solution/ipaas/index"},
+{"title":"敏捷研发","link":"https://www.aliyun.com/solution/devops/scrum"},
+{"title":"DevOps解决方案","link":"https://www.aliyun.com/solution/devops/yunxiao"},
+{"title":"钉钉云小程序","link":"https://www.aliyun.com/solution/dingtalk/la/index"},
+{"title":"VMware云","link":"https://www.aliyun.com/solution/vmware/index"},
+{"title":"跨网机器人","link":"https://www.aliyun.com/solution/linkmore/index"},
+{"title":"AIOps故障管理","link":"https://www.aliyun.com/solution/aiops/index"},
+{"title":"端点全渠道零售","link":"https://www.aliyun.com/solution/terminuslingshou/"},
+{"title":"端点采购供应链","link":"https://www.aliyun.com/solution/CollaborationProcurements/index"},
+{"title":"端点企业级PaaS平台","link":"https://www.aliyun.com/solution/terminusPaaS/"}
+#行业引擎
+##智能交通
+{"title":"智能出行引擎","link":"https://m.aliyun.com/markets/aliyun/citybraintraffic"}
+##智能工业
+{"title":"工业视觉智能","link":"https://www.aliyun.com/product/indvi"}
+##新零售
+{"title":"货架商品识别与管理（公测中）","link":"https://www.aliyun.com/product/retailir"}
+##数字政府
+{"title":"政务钉钉（公测中）","link":"https://www.aliyun.com/product/govdingtalk"}
+##数字金融
+{"title":"金融分布式架构 SOFAStack ","link":"https://www.aliyun.com/product/sofa"},
+{"title":"云行情","link":"http://aliyun.com/product/assettech"}
+###小程序
+{"title":"mPaaS小程序","link":"https://www.aliyun.com/product/mobilepaas/mpaas-miniprogram"}
+###发布
+{"title":"移动发布","link":"https://www.aliyun.com/product/mobilepaas/mobile-deployment"}
+###分析
+{"title":"移动分析","link":"https://www.aliyun.com/product/mobilepaas/mobile-analysis"}
+###运营
+{"title":"智能投放","link":"https://www.aliyun.com/product/mobilepaas/mobile-contents-delivery"}
+###后台连接
+{"title":"移动网关","link":"https://www.aliyun.com/product/mobilepaas/mobile-gateway"},
+{"title":"数据同步","link":"https://www.aliyun.com/product/mobilepaas/mobile-sync"}
+##通用行业
+{"title":"地址标准化","link":"https://www.aliyun.com/product/addresspurification/addrp"},
+{"title":"IP地理位置库","link":"https://www.aliyun.com/product/dns/geoip"}
+##云游戏
+{"title":"云游戏平台","link":"https://www.aliyun.com/product/industryengine/cloudgamingplatform"},

@@ -1,0 +1,481 @@
+[2019-12-07T12:32:24,073][INFO ][o.e.n.Node               ] [] initializing ...
+[2019-12-07T12:32:26,052][INFO ][o.e.e.NodeEnvironment    ] [Lko3h2J] using [1] data paths, mounts [[软件 (E:)]], net usable_space [33.2gb], net total_space [111.7gb], types [NTFS]
+[2019-12-07T12:32:26,092][INFO ][o.e.e.NodeEnvironment    ] [Lko3h2J] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-12-07T12:32:26,131][INFO ][o.e.n.Node               ] node name [Lko3h2J] derived from node ID [Lko3h2JaSOatSnplTm9f6w]; set [node.name] to override
+[2019-12-07T12:32:26,132][INFO ][o.e.n.Node               ] version[6.2.2], pid[13280], build[10b1edd/2018-02-16T19:01:30.685723Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_91/25.91-b15]
+[2019-12-07T12:32:26,133][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2, -Des.path.conf=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2\config]
+[2019-12-07T12:32:26,394][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:32:26,410][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:42:26,297][WARN ][o.e.b.Natives            ] unable to load JNA native support library, native methods will be disabled.
+java.lang.UnsatisfiedLinkError: Failed to create temporary file for /com/sun/jna/win32-x86-64/jnidispatch.dll library: 拒绝访问。
+	at com.sun.jna.Native.loadNativeDispatchLibraryFromClasspath(Native.java:962) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at com.sun.jna.Native.loadNativeDispatchLibrary(Native.java:922) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at com.sun.jna.Native.<clinit>(Native.java:190) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_91]
+	at java.lang.Class.forName(Class.java:264) ~[?:1.8.0_91]
+	at org.elasticsearch.bootstrap.Natives.<clinit>(Natives.java:45) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:104) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:172) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:42:26,357][WARN ][o.e.b.Natives            ] cannot check if running as root because JNA is not available
+[2019-12-07T12:42:26,358][WARN ][o.e.b.Natives            ] cannot install system call filter because JNA is not available
+[2019-12-07T12:42:26,359][WARN ][o.e.b.Natives            ] cannot register console handler because JNA is not available
+[2019-12-07T12:42:26,362][WARN ][o.e.b.JNAKernel32Library ] JNA not found. native methods and handlers will be disabled.
+[2019-12-07T12:42:26,363][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_NPROC because JNA is not available
+[2019-12-07T12:42:26,365][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_AS beacuse JNA is not available
+[2019-12-07T12:42:26,367][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_FSIZE because JNA is not available
+[2019-12-07T12:42:27,409][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: org.elasticsearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\4953020056386869082.tmp
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: org.elasticsearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\4953020056386869082.tmp
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:210) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+Caused by: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\4953020056386869082.tmp
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:83) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_91]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_91]
+	at java.nio.file.TempFileHelper.create(TempFileHelper.java:138) ~[?:1.8.0_91]
+	at java.nio.file.TempFileHelper.createTempFile(TempFileHelper.java:161) ~[?:1.8.0_91]
+	at java.nio.file.Files.createTempFile(Files.java:897) ~[?:1.8.0_91]
+	at org.elasticsearch.bootstrap.Security.selfTest(Security.java:436) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Security.configure(Security.java:134) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:208) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:46:38,256][WARN ][o.e.b.Natives            ] unable to load JNA native support library, native methods will be disabled.
+java.lang.UnsatisfiedLinkError: Failed to create temporary file for /com/sun/jna/win32-x86-64/jnidispatch.dll library: 拒绝访问。
+	at com.sun.jna.Native.loadNativeDispatchLibraryFromClasspath(Native.java:962) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at com.sun.jna.Native.loadNativeDispatchLibrary(Native.java:922) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at com.sun.jna.Native.<clinit>(Native.java:190) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_91]
+	at java.lang.Class.forName(Class.java:264) ~[?:1.8.0_91]
+	at org.elasticsearch.bootstrap.Natives.<clinit>(Natives.java:45) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:104) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:172) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:46:38,271][WARN ][o.e.b.Natives            ] cannot check if running as root because JNA is not available
+[2019-12-07T12:46:38,271][WARN ][o.e.b.Natives            ] cannot install system call filter because JNA is not available
+[2019-12-07T12:46:38,271][WARN ][o.e.b.Natives            ] cannot register console handler because JNA is not available
+[2019-12-07T12:46:38,274][WARN ][o.e.b.JNAKernel32Library ] JNA not found. native methods and handlers will be disabled.
+[2019-12-07T12:46:38,274][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_NPROC because JNA is not available
+[2019-12-07T12:46:38,276][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_AS beacuse JNA is not available
+[2019-12-07T12:46:38,276][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_FSIZE because JNA is not available
+[2019-12-07T12:46:39,503][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: org.elasticsearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\754283136974279705.tmp
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: org.elasticsearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\754283136974279705.tmp
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:210) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+Caused by: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\754283136974279705.tmp
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:83) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_91]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_91]
+	at java.nio.file.TempFileHelper.create(TempFileHelper.java:138) ~[?:1.8.0_91]
+	at java.nio.file.TempFileHelper.createTempFile(TempFileHelper.java:161) ~[?:1.8.0_91]
+	at java.nio.file.Files.createTempFile(Files.java:897) ~[?:1.8.0_91]
+	at org.elasticsearch.bootstrap.Security.selfTest(Security.java:436) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Security.configure(Security.java:134) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:208) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:48:07,761][WARN ][o.e.b.Natives            ] unable to load JNA native support library, native methods will be disabled.
+java.lang.UnsatisfiedLinkError: Failed to create temporary file for /com/sun/jna/win32-x86-64/jnidispatch.dll library: 拒绝访问。
+	at com.sun.jna.Native.loadNativeDispatchLibraryFromClasspath(Native.java:962) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at com.sun.jna.Native.loadNativeDispatchLibrary(Native.java:922) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at com.sun.jna.Native.<clinit>(Native.java:190) ~[jna-4.5.1.jar:4.5.1 (b0)]
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_91]
+	at java.lang.Class.forName(Class.java:264) ~[?:1.8.0_91]
+	at org.elasticsearch.bootstrap.Natives.<clinit>(Natives.java:45) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:104) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:172) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:48:07,774][WARN ][o.e.b.Natives            ] cannot check if running as root because JNA is not available
+[2019-12-07T12:48:07,776][WARN ][o.e.b.Natives            ] cannot install system call filter because JNA is not available
+[2019-12-07T12:48:07,777][WARN ][o.e.b.Natives            ] cannot register console handler because JNA is not available
+[2019-12-07T12:48:07,779][WARN ][o.e.b.JNAKernel32Library ] JNA not found. native methods and handlers will be disabled.
+[2019-12-07T12:48:07,780][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_NPROC because JNA is not available
+[2019-12-07T12:48:07,781][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_AS beacuse JNA is not available
+[2019-12-07T12:48:07,783][WARN ][o.e.b.Natives            ] cannot getrlimit RLIMIT_FSIZE because JNA is not available
+[2019-12-07T12:48:08,711][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: org.elasticsearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\4565705911091037086.tmp
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: org.elasticsearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\4565705911091037086.tmp
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:210) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+Caused by: java.nio.file.AccessDeniedException: C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch\4565705911091037086.tmp
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:83) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_91]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_91]
+	at java.nio.file.TempFileHelper.create(TempFileHelper.java:138) ~[?:1.8.0_91]
+	at java.nio.file.TempFileHelper.createTempFile(TempFileHelper.java:161) ~[?:1.8.0_91]
+	at java.nio.file.Files.createTempFile(Files.java:897) ~[?:1.8.0_91]
+	at org.elasticsearch.bootstrap.Security.selfTest(Security.java:436) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Security.configure(Security.java:134) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:208) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:49:59,265][INFO ][o.e.n.Node               ] [master] initializing ...
+[2019-12-07T12:50:01,054][INFO ][o.e.e.NodeEnvironment    ] [master] using [1] data paths, mounts [[软件 (E:)]], net usable_space [33.2gb], net total_space [111.7gb], types [NTFS]
+[2019-12-07T12:50:01,058][INFO ][o.e.e.NodeEnvironment    ] [master] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-12-07T12:50:01,087][INFO ][o.e.n.Node               ] [master] node name [master], node ID [mXJbF7PuSBqIH7CSKnuK-w]
+[2019-12-07T12:50:01,087][INFO ][o.e.n.Node               ] [master] version[6.2.2], pid[24956], build[10b1edd/2018-02-16T19:01:30.685723Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_91/25.91-b15]
+[2019-12-07T12:50:01,088][INFO ][o.e.n.Node               ] [master] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2, -Des.path.conf=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2\config]
+[2019-12-07T12:50:01,284][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:50:01,291][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:50:54,054][INFO ][o.e.n.Node               ] [master] initializing ...
+[2019-12-07T12:50:54,241][INFO ][o.e.e.NodeEnvironment    ] [master] using [1] data paths, mounts [[软件 (E:)]], net usable_space [33.2gb], net total_space [111.7gb], types [NTFS]
+[2019-12-07T12:50:54,242][INFO ][o.e.e.NodeEnvironment    ] [master] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-12-07T12:50:54,248][INFO ][o.e.n.Node               ] [master] node name [master], node ID [mXJbF7PuSBqIH7CSKnuK-w]
+[2019-12-07T12:50:54,248][INFO ][o.e.n.Node               ] [master] version[6.2.2], pid[20308], build[10b1edd/2018-02-16T19:01:30.685723Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_91/25.91-b15]
+[2019-12-07T12:50:54,249][INFO ][o.e.n.Node               ] [master] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2, -Des.path.conf=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2\config]
+[2019-12-07T12:50:54,382][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:50:54,389][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:53:46,507][INFO ][o.e.n.Node               ] [master] initializing ...
+[2019-12-07T12:53:46,671][INFO ][o.e.e.NodeEnvironment    ] [master] using [1] data paths, mounts [[软件 (E:)]], net usable_space [33.2gb], net total_space [111.7gb], types [NTFS]
+[2019-12-07T12:53:46,672][INFO ][o.e.e.NodeEnvironment    ] [master] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-12-07T12:53:46,677][INFO ][o.e.n.Node               ] [master] node name [master], node ID [mXJbF7PuSBqIH7CSKnuK-w]
+[2019-12-07T12:53:46,678][INFO ][o.e.n.Node               ] [master] version[6.2.2], pid[9428], build[10b1edd/2018-02-16T19:01:30.685723Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_91/25.91-b15]
+[2019-12-07T12:53:46,678][INFO ][o.e.n.Node               ] [master] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2, -Des.path.conf=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2\config]
+[2019-12-07T12:53:46,815][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:53:46,824][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: java.lang.IllegalStateException: duplicate plugin: - Plugin information:
+Name: analysis-ik
+Description: IK Analyzer for Elasticsearch
+Version: 6.2.2
+Native Controller: false
+Requires Keystore: false
+Extended Plugins: []
+ * Classname: org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:355) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.getPluginBundles(PluginsService.java:328) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.plugins.PluginsService.<init>(PluginsService.java:135) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:303) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more
+[2019-12-07T12:55:18,016][INFO ][o.e.n.Node               ] [master] initializing ...
+[2019-12-07T12:55:18,181][INFO ][o.e.e.NodeEnvironment    ] [master] using [1] data paths, mounts [[软件 (E:)]], net usable_space [33.2gb], net total_space [111.7gb], types [NTFS]
+[2019-12-07T12:55:18,183][INFO ][o.e.e.NodeEnvironment    ] [master] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-12-07T12:55:18,189][INFO ][o.e.n.Node               ] [master] node name [master], node ID [mXJbF7PuSBqIH7CSKnuK-w]
+[2019-12-07T12:55:18,190][INFO ][o.e.n.Node               ] [master] version[6.2.2], pid[13548], build[10b1edd/2018-02-16T19:01:30.685723Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_91/25.91-b15]
+[2019-12-07T12:55:18,191][INFO ][o.e.n.Node               ] [master] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\YANGYA~1\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2, -Des.path.conf=E:\工作底稿系统\elasticsearch\elasticsearch-6.2.2\config]
+[2019-12-07T12:55:20,630][INFO ][o.e.p.PluginsService     ] [master] loaded module [aggs-matrix-stats]
+[2019-12-07T12:55:20,631][INFO ][o.e.p.PluginsService     ] [master] loaded module [analysis-common]
+[2019-12-07T12:55:20,635][INFO ][o.e.p.PluginsService     ] [master] loaded module [ingest-common]
+[2019-12-07T12:55:20,646][INFO ][o.e.p.PluginsService     ] [master] loaded module [lang-expression]
+[2019-12-07T12:55:20,649][INFO ][o.e.p.PluginsService     ] [master] loaded module [lang-mustache]
+[2019-12-07T12:55:20,653][INFO ][o.e.p.PluginsService     ] [master] loaded module [lang-painless]
+[2019-12-07T12:55:20,658][INFO ][o.e.p.PluginsService     ] [master] loaded module [mapper-extras]
+[2019-12-07T12:55:20,660][INFO ][o.e.p.PluginsService     ] [master] loaded module [parent-join]
+[2019-12-07T12:55:20,661][INFO ][o.e.p.PluginsService     ] [master] loaded module [percolator]
+[2019-12-07T12:55:20,663][INFO ][o.e.p.PluginsService     ] [master] loaded module [rank-eval]
+[2019-12-07T12:55:20,664][INFO ][o.e.p.PluginsService     ] [master] loaded module [reindex]
+[2019-12-07T12:55:20,665][INFO ][o.e.p.PluginsService     ] [master] loaded module [repository-url]
+[2019-12-07T12:55:20,668][INFO ][o.e.p.PluginsService     ] [master] loaded module [transport-netty4]
+[2019-12-07T12:55:20,671][INFO ][o.e.p.PluginsService     ] [master] loaded module [tribe]
+[2019-12-07T12:55:20,672][INFO ][o.e.p.PluginsService     ] [master] loaded plugin [analysis-ik]
+[2019-12-07T12:55:25,402][ERROR][o.e.b.Bootstrap          ] Exception
+java.lang.IllegalArgumentException: unknown setting [path.log] did you mean [path.logs]?
+	at org.elasticsearch.common.settings.AbstractScopedSettings.validate(AbstractScopedSettings.java:346) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.common.settings.AbstractScopedSettings.validate(AbstractScopedSettings.java:310) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.common.settings.AbstractScopedSettings.validate(AbstractScopedSettings.java:284) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.common.settings.SettingsModule.<init>(SettingsModule.java:134) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:331) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) [elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) [elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) [elasticsearch-6.2.2.jar:6.2.2]
+[2019-12-07T12:55:25,412][WARN ][o.e.b.ElasticsearchUncaughtExceptionHandler] [master] uncaught exception in thread [main]
+org.elasticsearch.bootstrap.StartupException: java.lang.IllegalArgumentException: unknown setting [path.log] did you mean [path.logs]?
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:125) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:112) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:86) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:124) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.cli.Command.main(Command.java:90) ~[elasticsearch-cli-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:92) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:85) ~[elasticsearch-6.2.2.jar:6.2.2]
+Caused by: java.lang.IllegalArgumentException: unknown setting [path.log] did you mean [path.logs]?
+	at org.elasticsearch.common.settings.AbstractScopedSettings.validate(AbstractScopedSettings.java:346) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.common.settings.AbstractScopedSettings.validate(AbstractScopedSettings.java:310) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.common.settings.AbstractScopedSettings.validate(AbstractScopedSettings.java:284) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.common.settings.SettingsModule.<init>(SettingsModule.java:134) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:331) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.node.Node.<init>(Node.java:246) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap$5.<init>(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:213) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:323) ~[elasticsearch-6.2.2.jar:6.2.2]
+	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:121) ~[elasticsearch-6.2.2.jar:6.2.2]
+	... 6 more

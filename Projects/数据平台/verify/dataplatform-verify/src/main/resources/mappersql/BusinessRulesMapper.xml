@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="otc.tech.mapper.BusinessRulesMapper">
+  <resultMap id="BusinessRulesMap" type="businessRules">
+    <result column="R_KEY" jdbcType="VARCHAR" property="rKey" />
+    <result column="R_NAME" jdbcType="VARCHAR" property="rName" />
+    <result column="R_TYPE" jdbcType="VARCHAR" property="rType" />
+    <result column="R_CONTENT" jdbcType="VARCHAR" property="rContent" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  
+  
+  
+  
+</mapper>
+
+
+
+

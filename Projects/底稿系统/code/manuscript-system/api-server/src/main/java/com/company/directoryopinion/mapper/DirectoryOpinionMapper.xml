@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.directoryopinion.dao.DirectoryOpinionMapper">
+  <resultMap id="BaseResultMap" type="com.company.directoryopinion.model.DirectoryOpinion">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROJECTID" jdbcType="VARCHAR" property="projectid" />
+    <result column="DIRECTORYID" jdbcType="VARCHAR" property="directoryid" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="VERSIONHASH" jdbcType="VARCHAR" property="versionhash" />
+    <result column="IS_DELETE" jdbcType="CHAR" property="isDelete" />
+    <result column="STARTPROCESSNODE" jdbcType="VARCHAR" property="startprocessnode" />
+    <result column="ENDPROCESSNODE" jdbcType="VARCHAR" property="endprocessnode" />
+    <result column="OPINIONTYPE" jdbcType="VARCHAR" property="opinionType" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.company.directoryopinion.model.DirectoryOpinion">
+    <result column="CONTENTS" jdbcType="LONGVARCHAR" property="contents" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PROJECTID, DIRECTORYID, CREATE_TIME, CREATE_USER, UPDATE_TIME, UPDATE_USER, VERSIONHASH, 
+    IS_DELETE, STARTPROCESSNODE, ENDPROCESSNODE,OPINIONTYPE
+  </sql>
+  <sql id="Blob_Column_List">
+    CONTENTS
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.company.directoryopinion.model.DirectoryOpinionExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from directoryopinion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.company.directoryopinion.model.DirectoryOpinionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from directoryopinion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from directoryopinion
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from directoryopinion
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.directoryopinion.model.DirectoryOpinionExample">
+    delete from directoryopinion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.directoryopinion.model.DirectoryOpinion">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into directoryopinion (ID, PROJECTID, DIRECTORYID, 
+      CREATE_TIME, CREATE_USER, UPDATE_TIME, 
+      UPDATE_USER, VERSIONHASH, IS_DELETE, 
+      STARTPROCESSNODE, ENDPROCESSNODE, CONTENTS
+      )
+    values (#{id,jdbcType=VARCHAR}, #{projectid,jdbcType=VARCHAR}, #{directoryid,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP},
+      #{updateUser,jdbcType=VARCHAR}, #{versionhash,jdbcType=VARCHAR}, #{isDelete,jdbcType=CHAR}, 
+      #{startprocessnode,jdbcType=VARCHAR}, #{endprocessnode,jdbcType=VARCHAR}, #{contents,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.directoryopinion.model.DirectoryOpinion">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into directoryopinion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="projectid != null">
+        PROJECTID,
+      </if>
+      <if test="directoryid != null">
+        DIRECTORYID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="versionhash != null">
+        VERSIONHASH,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="startprocessnode != null">
+        STARTPROCESSNODE,
+      </if>
+      <if test="endprocessnode != null">
+        ENDPROCESSNODE,
+      </if>
+      <if test="contents != null">
+        CONTENTS,
+      </if>
+      <if test="opinionType != null">
+        OPINIONTYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=VARCHAR},
+      <if test="projectid != null">
+        #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryid != null">
+        #{directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="versionhash != null">
+        #{versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="startprocessnode != null">
+        #{startprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="endprocessnode != null">
+        #{endprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="contents != null">
+        #{contents,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="opinionType != null">
+        #{opinionType,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.directoryopinion.model.DirectoryOpinionExample" resultType="java.lang.Long">
+    select count(*) from directoryopinion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update directoryopinion
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectid != null">
+        PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.directoryid != null">
+        DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionhash != null">
+        VERSIONHASH = #{record.versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.startprocessnode != null">
+        STARTPROCESSNODE = #{record.startprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endprocessnode != null">
+        ENDPROCESSNODE = #{record.endprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contents != null">
+        CONTENTS = #{record.contents,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update directoryopinion
+    set ID = #{record.id,jdbcType=VARCHAR},
+      PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      VERSIONHASH = #{record.versionhash,jdbcType=VARCHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      STARTPROCESSNODE = #{record.startprocessnode,jdbcType=VARCHAR},
+      ENDPROCESSNODE = #{record.endprocessnode,jdbcType=VARCHAR},
+      CONTENTS = #{record.contents,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update directoryopinion
+    set ID = #{record.id,jdbcType=VARCHAR},
+      PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      DIRECTORYID = #{record.directoryid,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      VERSIONHASH = #{record.versionhash,jdbcType=VARCHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      STARTPROCESSNODE = #{record.startprocessnode,jdbcType=VARCHAR},
+      ENDPROCESSNODE = #{record.endprocessnode,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.directoryopinion.model.DirectoryOpinion">
+    update directoryopinion
+    <set>
+      <if test="projectid != null">
+        PROJECTID = #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryid != null">
+        DIRECTORYID = #{directoryid,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="versionhash != null">
+        VERSIONHASH = #{versionhash,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="startprocessnode != null">
+        STARTPROCESSNODE = #{startprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="endprocessnode != null">
+        ENDPROCESSNODE = #{endprocessnode,jdbcType=VARCHAR},
+      </if>
+      <if test="contents != null">
+        CONTENTS = #{contents,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="opinionType != null">
+        OPINIONTYPE = #{opinionType,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.company.directoryopinion.model.DirectoryOpinion">
+    update directoryopinion
+    set PROJECTID = #{projectid,jdbcType=VARCHAR},
+      DIRECTORYID = #{directoryid,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      VERSIONHASH = #{versionhash,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=CHAR},
+      STARTPROCESSNODE = #{startprocessnode,jdbcType=VARCHAR},
+      ENDPROCESSNODE = #{endprocessnode,jdbcType=VARCHAR},
+      CONTENTS = #{contents,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.directoryopinion.model.DirectoryOpinion">
+    update directoryopinion
+    set PROJECTID = #{projectid,jdbcType=VARCHAR},
+      DIRECTORYID = #{directoryid,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      VERSIONHASH = #{versionhash,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=CHAR},
+      STARTPROCESSNODE = #{startprocessnode,jdbcType=VARCHAR},
+      ENDPROCESSNODE = #{endprocessnode,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!-- 根据参数获取意见 -->
+  <select id="getDirectoryOpinion" parameterType="com.company.directoryopinion.model.DirectoryOpinion" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from directoryopinion
+    where PROJECTID = #{projectid,jdbcType=VARCHAR}
+     and  DIRECTORYID = #{directoryid,jdbcType=VARCHAR}
+    <if test="opinionType != null">
+      and opiniontype = #{opinionType,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+</mapper>

@@ -1,0 +1,44 @@
+/* reset */
+body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+em { font-style:normal; }
+li { list-style:none;}
+a { text-decoration:none; }
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; }
+textarea { resize:none; overflow:auto; }
+body { font-size:14px; color:#666;font-family:"Î¢ÈíÑÅºÚ" !important; background-color:#f8f8f8 }
+/* end reset */
+/* ÂÖ²¥Í¼Ã½Ìå²éÑ¯ */
+@media screen and (max-width:1680px){
+    .banner_area{
+    	min-height:355px !important;
+    }
+    .example{
+    	height:355px !important;
+    }
+    .data_show{
+    	top: 232px !important;
+    	height: 330px !important;
+    }
+    .kh_item{
+    	margin: 5px 16px 5px 21px !important;
+    }
+    .drjysj{
+    	margin: 5px 16px 0px 21px !important;
+    }
+    .drjysj_right, .lsjysj_right, .jycps_right{
+        margin: 0px 12px 0px 5px !important;
+    }
+    .msdl_margin{
+    	margin-bottom: 0px !important;
+    }
+    .login_btn{
+    	margin-top: 10px !important;
+    }
+    .reg_tips{
+    	margin-top: 5px !important;
+    }
+}
+
+

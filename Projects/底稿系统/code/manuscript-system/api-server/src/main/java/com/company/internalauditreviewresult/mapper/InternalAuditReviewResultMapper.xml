@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.internalauditreviewresult.dao.InternalAuditReviewResultMapper">
+  <resultMap id="BaseResultMap" type="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROJECTID" jdbcType="VARCHAR" property="projectid" />
+    <result column="PROJECTSTAGE" jdbcType="VARCHAR" property="projectstage" />
+    <result column="ISAGREE" jdbcType="CHAR" property="isagree" />
+    <result column="IS_DELETE" jdbcType="CHAR" property="isDelete" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    <result column="CONTENTS" jdbcType="LONGVARCHAR" property="contents" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, PROJECTID, PROJECTSTAGE, ISAGREE, IS_DELETE, CREATE_USER, CREATE_TIME, UPDATE_USER, 
+    UPDATE_TIME
+  </sql>
+  <sql id="Blob_Column_List">
+    CONTENTS
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResultExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from internalauditreviewresult
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResultExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from internalauditreviewresult
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from internalauditreviewresult
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from internalauditreviewresult
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResultExample">
+    delete from internalauditreviewresult
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into internalauditreviewresult (ID, PROJECTID, PROJECTSTAGE, 
+      ISAGREE, IS_DELETE, CREATE_USER, 
+      CREATE_TIME, UPDATE_USER, UPDATE_TIME, 
+      CONTENTS)
+    values (#{id,jdbcType=VARCHAR}, #{projectid,jdbcType=VARCHAR}, #{projectstage,jdbcType=VARCHAR}, 
+      #{isagree,jdbcType=CHAR}, #{isDelete,jdbcType=CHAR}, #{createUser,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP},
+      #{contents,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+      select replace(uuid(),'-','') as uuid
+    </selectKey>
+    insert into internalauditreviewresult
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      ID,
+      <if test="projectid != null">
+        PROJECTID,
+      </if>
+      <if test="projectstage != null">
+        PROJECTSTAGE,
+      </if>
+      <if test="isagree != null">
+        ISAGREE,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="contents != null">
+        CONTENTS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=VARCHAR},
+      <if test="projectid != null">
+        #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectstage != null">
+        #{projectstage,jdbcType=VARCHAR},
+      </if>
+      <if test="isagree != null">
+        #{isagree,jdbcType=CHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contents != null">
+        #{contents,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResultExample" resultType="java.lang.Long">
+    select count(*) from internalauditreviewresult
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update internalauditreviewresult
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectid != null">
+        PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectstage != null">
+        PROJECTSTAGE = #{record.projectstage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isagree != null">
+        ISAGREE = #{record.isagree,jdbcType=CHAR},
+      </if>
+      <if test="record.isDelete != null">
+        IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.contents != null">
+        CONTENTS = #{record.contents,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update internalauditreviewresult
+    set ID = #{record.id,jdbcType=VARCHAR},
+      PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      PROJECTSTAGE = #{record.projectstage,jdbcType=VARCHAR},
+      ISAGREE = #{record.isagree,jdbcType=CHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      CONTENTS = #{record.contents,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update internalauditreviewresult
+    set ID = #{record.id,jdbcType=VARCHAR},
+      PROJECTID = #{record.projectid,jdbcType=VARCHAR},
+      PROJECTSTAGE = #{record.projectstage,jdbcType=VARCHAR},
+      ISAGREE = #{record.isagree,jdbcType=CHAR},
+      IS_DELETE = #{record.isDelete,jdbcType=CHAR},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    update internalauditreviewresult
+    <set>
+      <if test="projectid != null">
+        PROJECTID = #{projectid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectstage != null">
+        PROJECTSTAGE = #{projectstage,jdbcType=VARCHAR},
+      </if>
+      <if test="isagree != null">
+        ISAGREE = #{isagree,jdbcType=CHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=CHAR},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="contents != null">
+        CONTENTS = #{contents,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    update internalauditreviewresult
+    set PROJECTID = #{projectid,jdbcType=VARCHAR},
+      PROJECTSTAGE = #{projectstage,jdbcType=VARCHAR},
+      ISAGREE = #{isagree,jdbcType=CHAR},
+      IS_DELETE = #{isDelete,jdbcType=CHAR},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      CONTENTS = #{contents,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.internalauditreviewresult.model.InternalAuditReviewResult">
+    update internalauditreviewresult
+    set PROJECTID = #{projectid,jdbcType=VARCHAR},
+      PROJECTSTAGE = #{projectstage,jdbcType=VARCHAR},
+      ISAGREE = #{isagree,jdbcType=CHAR},
+      IS_DELETE = #{isDelete,jdbcType=CHAR},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,22 @@
+package ${serviceImplUrl};
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.interapi.app.base.dao.IBaseDao;
+import com.interapi.app.base.service.BaseServiceImpl;
+import ${serviceUrl}.${name}Service;
+import ${mapperUrl}.${name}Mapper;
+import ${url};
+import ${exampleurl};
+
+@Service
+public class ${name}ServiceImpl extends BaseServiceImpl<${name}, ${name}Example> implements ${name}Service<${name}, ${name}Example>{
+
+    @Autowired
+    private ${name}Mapper mapper;
+	
+	public IBaseDao<${name}, ${name}Example> getMapper(){
+		return mapper;
+	}
+}

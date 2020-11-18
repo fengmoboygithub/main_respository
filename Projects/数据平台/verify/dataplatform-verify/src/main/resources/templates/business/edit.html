@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-rule-edit" th:object="${rule}">
+            <input id="rId" name="rId" th:field="*{rId}"  type="hidden">
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">校验规则标识：</label>
+                <div class="col-sm-8">
+                    <input id="rKey" name="rKey" th:field="*{rKey}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">校验规名称：</label>
+                <div class="col-sm-8">
+                    <input id="rName" name="rName" th:field="*{rName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">校验规则类型：</label>
+                <div class="col-sm-8">
+                    <input id="rType" name="rType" th:field="*{rType}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">	
+                <label class="col-sm-3 control-label">校验规则：</label>
+                <div class="col-sm-8">
+                    <input id="rContent" name="rContent" th:field="*{rContent}" class="form-control" type="text">
+                </div>
+            </div>
+			<div class="form-group">	
+	            <label class="col-sm-3 control-label">备注：</label>
+	            <div class="col-sm-8">
+	                <textarea id="remark" name="remark" class="form-control">[[*{remark}]]</textarea>
+	            </div>
+	        </div>
+    	</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+	    var prefix = ctx + "business";
+	    
+	    $("#form-rule-edit").validate({
+	    	rules: {
+	        	rKey: {
+	                required: true,
+	                remote: {
+	                    url: prefix + "/checBusinessRulesUnique",
+	                    type: "post",
+	                    dataType: "json",
+	                    data: {
+	                    	"rId": function() {
+	                        	return $("#rId").val();
+	                        },
+	                        "rKey": function() {
+	                            return $.common.trim($("#rKey").val());
+	                        }
+	                    },
+	                    dataFilter: function(data, type) {
+	                        return $.validate.unique(data);
+	                    }
+	                }
+	            },
+	            rName: {
+	                required: true
+	            },
+	            rType: {
+	                required: true
+	            },
+	            rContent: {
+	                required: true
+	            },
+	            remark: {
+	                required: true
+	            }
+	        },
+	        messages: {
+	            "rKey": {
+	                remote: "规则标识已经存在"
+	            }
+	        }
+	    });
+	    
+	    function submitHandler() {
+	        if ($.validate.form()) {
+	        	$.operate.save(prefix + "/edit", $('#form-rule-edit').serialize());
+	        }
+	    }
+    </script>
+</body>
+</html>

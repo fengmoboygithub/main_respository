@@ -1,0 +1,224 @@
+package ${controllerUrl};
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
+import com.github.pagehelper.PageInfo;
+import javax.servlet.http.HttpServletRequest;
+import ${url};
+import ${exampleurl};
+import ${exampleurl}.Criteria;
+import ${beanName}.base.exception.BaseException;
+import ${serviceUrl}.${name}Service;
+import ${beanName}.bean.ResponseDataModel;
+import ${beanName}.bean.ResponseModel;
+import ${beanName}.bean.ResponseDataPageListForBootModel;
+import ${beanName}.utils.ListUtil;
+import ${beanName}.constant.BaseConstant;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+/**
+ * 	${cnObjectName}
+ * Controller类
+ *
+ */
+@Api(value="${cnObjectName}数据维护",tags={"${cnObjectName}数据操作接口"})
+@RestController("${name}Controller")
+@RequestMapping("/api/${name}")
+public class ${name}Controller {
+
+    public static Logger logger = LoggerFactory.getLogger(${name}Controller.class);
+
+    @Autowired
+    private ${name}Service<${name}, ${name}Example> service;
+	
+	/**
+	 * 	${cnObjectName}查询详情
+	 */
+	@ApiOperation("${cnObjectName}信息详情")
+    @PostMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseDataModel<${name}> get(
+    	@RequestParam(required = true) @ApiParam(name="${primaryKey}",value="主键",required=true) ${primaryType} ${primaryKey}
+    	) {
+        ResponseDataModel<${name}> responseModel = new ResponseDataModel<>();
+        try {
+            ${name} entity = service.get(${primaryKey});
+            responseModel.setSuccess(true);
+            responseModel.setEntity(entity);
+        } catch (Exception e) {
+            responseModel.setSuccess(false);
+            responseModel.setMessage("Fail:" + e.getMessage());
+            responseModel.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("详情查询成功");
+        return responseModel;
+    }
+	
+	/**
+	 * 	${cnObjectName}分页查询
+	 */
+	@ApiOperation("分页查询${cnObjectName}数据")
+    @PostMapping(value = "/getListByPage", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public ResponseDataPageListForBootModel<${name}> getListByPage(
+    		@RequestParam(required = false) @ApiParam(name="currentPage",value="当前页数",required=true) int currentPage, 
+    		@RequestParam(required = false) @ApiParam(name="itemsPerPage",value="每页最多显示条数",required=true) int itemsPerPage,
+    		@RequestParam(required = false) @ApiParam(name="${primaryKey}",value="主键",required=true) ${primaryType} ${primaryKey}
+    	)  throws BaseException{
+        logger.info("currentPage:{},itemsPerPage:{},${primaryKey}:{}", currentPage, itemsPerPage, ${primaryKey});
+        ResponseDataPageListForBootModel<${name}> responseModel = new ResponseDataPageListForBootModel<${name}>();
+        
+		try {
+            ${name}Example example = new ${name}Example();
+            //按主键倒序 查询
+            example.setOrderByClause("${primaryKey} desc");
+            Criteria criteria = example.createCriteria();
+            criteria.andIsDeleteEqualTo(BaseConstant.DEL_FLAG_NO);
+            
+            //若主键不为空
+            if (!StringUtils.isEmpty(${primaryKey})) {
+            	criteria.and${primaryKeyDa}EqualTo(${primaryKey});
+            }
+        	PageInfo<${name}> page = service.getListByPage(currentPage, itemsPerPage, example);
+        	responseModel.setSuccess(true);
+        	responseModel.setPageIndex(currentPage);
+        	responseModel.setPageSize(itemsPerPage);
+        	responseModel.setRecordsTotal(page.getTotal());
+        	responseModel.setData(page.getList());
+        	responseModel.setRecordsFiltered(page.getList()==null?0:page.getList().size());
+        	responseModel.setMessage("分页查询成功");
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			responseModel.setSuccess(false);
+            responseModel.setMessage("失败:" + e.getMessage());
+            logger.error("Fail:", e);
+            return responseModel;
+		}
+        return responseModel;
+    }
+    
+	/**
+	 * 	${cnObjectName}添加数据
+	 */
+	@ApiOperation("添加${cnObjectName}数据")
+    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseDataModel<${name}> add(@RequestBody @ApiParam(name="${cnObjectName}对象",value="传入json格式",required=true) ${name} model,HttpServletRequest request) {
+        ResponseDataModel<${name}> responseModel = new ResponseDataModel<${name}>();
+        Long currUserId = (Long)request.getSession().getAttribute(BaseConstant.LOGIN_KEY);
+        try {
+            ${name} record = new ${name}();
+            BeanUtils.copyProperties(model, record);
+			record.setCreateTime(new Date());
+			record.setCreateUser(currUserId);
+            record.setIsDelete(BaseConstant.DEL_FLAG_NO);
+            service.save(record);
+            responseModel.setEntity(record);
+        } catch (Exception e) {
+            responseModel.setSuccess(false);
+            responseModel.setMessage("Fail:" + e.getMessage());
+            responseModel.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("添加成功");
+        return responseModel;
+    }
+    
+	/**
+	 * 	${cnObjectName}修改数据
+	 */
+	@ApiOperation("修改${cnObjectName}数据")
+    @PutMapping(value = "/update", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseDataModel<${name}> update(@RequestBody @ApiParam(name="${cnObjectName}对象",value="传入json格式",required=true) ${name} model,HttpServletRequest request) {
+        ResponseDataModel<${name}> responseModel = new ResponseDataModel<${name}>();
+        Long currUserId = (Long)request.getSession().getAttribute(BaseConstant.LOGIN_KEY);
+        try {
+            ${name} record = new ${name}();
+            BeanUtils.copyProperties(model, record);
+			record.setUpdateTime(new Date());
+            record.setUpdateUser(currUserId);
+            service.update(record);
+            responseModel.setEntity(record);
+        } catch (Exception e) {
+            responseModel.setSuccess(false);
+            responseModel.setMessage("Fail:" + e.getMessage());
+            responseModel.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("编辑成功");
+        return responseModel;
+    }
+	
+	/**
+	 * 	${cnObjectName}删除数据
+	 */
+	@ApiOperation("删除${cnObjectName}数据")
+    @DeleteMapping(value = "/del", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseModel del(
+    	@ApiParam(name="${primaryKey}",value="主键",required=true) ${primaryType} ${primaryKey},HttpServletRequest request
+    	) {
+        ResponseModel responseModel = new ResponseModel();
+        Long currUserId = (Long)request.getSession().getAttribute(BaseConstant.LOGIN_KEY);
+        try {
+        	${name} record = new ${name}();
+            record.set${primaryKeyDa}(${primaryKey});
+            record.setIsDelete(BaseConstant.DEL_FLAG_YES);
+            record.setUpdateTime(new Date());
+            record.setUpdateUser(currUserId);
+            service.update(record);
+        } catch (Exception e) {
+        	responseModel.setSuccess(false);
+        	responseModel.setMessage("Fail:" + e.getMessage());
+        	responseModel.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("删除成功");
+        return responseModel;
+    }
+    
+    /**
+	 * 	${cnObjectName}批量删除数据
+	 */
+	@ApiOperation("批量删除${cnObjectName}数据")
+    @PostMapping(value = "/batchDel", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseModel batchDel(@ApiParam(name="主键列表",value="传入json格式",required=false)String param) {
+        ResponseModel responseModel = new ResponseModel();
+        try {
+            List<Map<String, Object>> list = ListUtil.toListMap(param);
+        	if(list == null || list.size() == 0) {
+        		throw new BaseException("传入参数list为空");
+        	}
+            service.batchDeleteByPrimaryKey(list);
+        } catch (Exception e) {
+        	responseModel.setSuccess(false);
+        	responseModel.setMessage("Fail:" + e.getMessage());
+        	responseModel.setCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("删除成功");
+        return responseModel;
+    }
+
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.SiteDao">
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="addSite" parameterType="com.zzjs.cms.entity.Site">
+		insert into
+		site(siteName,siteEname,siteAddress,createTime,createrAdminId)
+		value(#{siteName},#{siteEname},#{siteAddress},#{createTime},#{createrAdminId})
+		<selectKey resultType="long" keyProperty="siteId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteSite" parameterType="long">
+		delete from site where
+		siteId=#{siteId}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateSiteBySiteId" parameterType="com.zzjs.cms.entity.Site">
+		update site set 
+		siteName=#{siteName},
+		siteEname=#{siteEname},
+		siteAddress=#{siteAddress},
+		createTime=#{createTime},
+		updateTime=#{updateTime}
+		where siteId=#{siteId}
+	</update>
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+
+	<select id="getAllList" resultType="com.zzjs.cms.entity.vo.SiteVo">
+		select * from site limit
+		#{offset},#{rows}
+	</select>
+	
+	<select id="getAllSiteList" resultType="com.zzjs.cms.entity.vo.SiteVo">
+		select * from site
+	</select>
+
+	<select id="getAllListCount" resultType="int">
+		select count(*) from
+		site
+	</select>
+
+	<select id="getSiteById" parameterType="long"
+		resultType="com.zzjs.cms.entity.vo.SiteVo">
+		select * from site where siteId=#{siteId}
+	</select>
+	
+	<select id="getSiteListByAdminId" resultType="com.zzjs.cms.entity.vo.SiteVo">
+		select t.* from site t where EXISTS(select 1 from admin_site_rela asr where asr.siteId=t.siteId and asr.adminId=#{adminId}) 
+		limit #{offset},#{rows}
+	</select>
+
+	<select id="getSiteListCountByAdminId" resultType="int">
+		select count(*) from site t where EXISTS(select 1 from admin_site_rela asr where asr.siteId=t.siteId and asr.adminId=#{adminId})
+	</select>
+</mapper>  

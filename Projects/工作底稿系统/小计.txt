@@ -1,0 +1,32 @@
+http://10.0.50.86/svn/otcTech/项目配置库/DE-DGXT-2019121001证券公司投行业务工作底稿系统项目/开发库/manuscript-system
+运行必要环境：jdk1.8 maven3.5及以上
+后台系统代码
+框架分级描述
+manuscript-system             总框架工程
+	|--  	common						工具类库及基类
+			(子模块 jar)
+	|--     parent						引入所有相关的依赖jar包
+			(子模块 pom)
+	|--  	generationcode				反向工程库
+			(子模块 jar)
+	|--  	generationcode-server		反向工程服务
+			(依赖)
+			dependency  common
+			dependency  generationcode
+			(父级依赖)
+			parent      parent.pom
+	|--  	api-server					接口服务
+			(依赖)
+			dependency  common
+			(父级依赖)
+			parent      parent.pom
+			
+http://10.0.50.86/svn/otcTech/项目配置库/DE-DGXT-2019121001证券公司投行业务工作底稿系统项目/开发库/vue-manage-system-master
+运行必要环境：nodejs10
+前端代码
+cd vue-manage-system    // 进入模板目录
+npm install         // 安装项目依赖，等待安装完成之后，安装失败可用 cnpm 或 yarn
+// 开启服务器，浏览器访问 http://localhost:8080
+npm run serve
+// 执行构建命令，生成的dist文件夹放在服务器下即可访问
+npm run build

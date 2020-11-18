@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zzjs.cms.dao.ComponentTemplateDao">
+	<resultMap id="BaseResultMap" type="com.zzjs.cms.entity.ComponentTemplate" >
+    <id column="id" property="id"/>
+    <result column="componentId" property="componentId"/>
+    <result column="templateName" property="templateName"/>
+    <result column="isDefault" property="isDefault"/>
+    <result column="createTime" property="createTime"/>
+    <result column="updateTime" property="updateTime"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id,
+	componentId,
+	templateName,
+	isDefault,
+	updateTime,
+	createTime
+  </sql>
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="insert" parameterType="com.zzjs.cms.entity.ComponentTemplate">
+		insert into 
+		component_template_tab (
+			id,
+			componentId,
+			templateName,
+			isDefault,
+			isDelete
+		) value (
+			#{id},
+			#{componentId},
+			#{templateName},
+			#{isDefault},
+			#{isDelete}
+		)
+		<selectKey resultType="long" keyProperty="id">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<insert id="addTemplate" parameterType="com.zzjs.cms.entity.ComponentTemplate" useGeneratedKeys="true" keyProperty="id">
+		insert into 
+		component_template_tab (
+			<include refid="insertColumns" />
+		) values (
+			<include refid="insertParams" />
+		)
+	
+	</insert>
+	
+	<!-- insertColumns 入库列 -->
+	<sql id="insertColumns">
+		<trim suffix="" suffixOverrides=",">
+			<if test="id != null and id !=0 ">
+				id ,
+			</if>
+			<if test="componentId != null and componentId !=0 ">
+				componentId ,
+			</if>
+			<if test="templateName != null and templateName !='' ">
+				templateName ,
+			</if>
+			<if test="isDefault != null and isDefault !='' ">
+				isDefault ,
+			</if>
+			<if test="isDelete != null and isDelete !='' ">
+				isDelete ,
+			</if>
+			<if test="createTime != null   ">
+				createTime ,
+			</if>
+			<if test="createUser != null and createUser !=0 ">
+				createUser ,
+			</if>
+			<if test="updateTime != null   ">
+				updateTime ,
+			</if>
+			<if test="updateUser != null and updateUser !=0 ">
+				updateUser ,
+			</if>
+		</trim>
+	</sql>
+	
+	<!-- insertParams 入库值 -->
+	<sql id="insertParams">
+		<trim suffix="" suffixOverrides=",">
+			<if test="id != null and id !=0 ">
+				#{id,jdbcType=BIGINT} ,
+			</if>
+			<if test="componentId != null and componentId !=0 ">
+				#{componentId,jdbcType=BIGINT} ,
+			</if>
+			<if test="templateName != null and templateName !='' ">
+				#{templateName,jdbcType=VARCHAR} ,
+			</if>
+			<if test="isDefault != null and isDefault !='' ">
+				#{isDefault,jdbcType=VARCHAR} ,
+			</if>
+			<if test="isDelete != null and isDelete !='' ">
+				#{isDelete,jdbcType=VARCHAR} ,
+			</if>
+			<if test="createTime != null   ">
+				#{createTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="createUser != null and createUser !=0 ">
+				#{createUser,jdbcType=BIGINT} ,
+			</if>
+			<if test="updateTime != null   ">
+				#{updateTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="updateUser != null and updateUser !=0 ">
+				#{updateUser,jdbcType=BIGINT} ,
+			</if>
+			
+		</trim>
+	</sql>
+	
+	
+	<!-- updateParams 更新列 -->
+	<sql id="updateParams">
+		<trim suffix="" suffixOverrides=",">
+			<if test="componentId != null and componentId !=0 ">
+				componentId=#{componentId,jdbcType=BIGINT} ,
+			</if>
+			<if test="templateName != null and templateName !='' ">
+				templateName=#{templateName,jdbcType=VARCHAR} ,
+			</if>
+			<if test="isDefault != null and isDefault !='' ">
+				isDefault=#{isDefault,jdbcType=VARCHAR} ,
+			</if>
+			<if test="isDelete != null and isDelete !='' ">
+				isDelete=#{isDelete,jdbcType=VARCHAR} ,
+			</if>
+			<if test="createTime != null   ">
+				createTime=#{createTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="createUser != null and createUser !=0 ">
+				createUser=#{createUser,jdbcType=BIGINT} ,
+			</if>
+			<if test="updateTime != null   ">
+				updateTime=#{updateTime,jdbcType=TIMESTAMP} ,
+			</if>
+			<if test="updateUser != null and updateUser !=0 ">
+				updateUser=#{updateUser,jdbcType=BIGINT} ,
+			</if>
+			
+		</trim>
+	</sql>
+	
+	
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<update id="deleteByEntity" parameterType="com.zzjs.cms.entity.ComponentTemplate">
+		delete from component_template_tab where
+		id=#{id}
+	</update>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateByPrimaryKey" parameterType="com.zzjs.cms.entity.ComponentTemplate">
+		update component_template_tab set 
+		templateName=#{templateName},
+		isDefault=#{isDefault}
+		where id=#{id}
+	</update>
+	
+	<update id="updateByIdSelective" parameterType="com.zzjs.cms.entity.ComponentTemplate">
+		update component_template_tab 
+		<set>
+			<include refid="updateParams" />
+		</set>
+		where id=#{id,jdbcType=BIGINT}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="selectByPrimaryKey" parameterType="com.zzjs.cms.entity.ComponentTemplate"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from component_template_tab t
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByPrimaryKeys" parameterType="com.zzjs.cms.entity.ComponentTemplate"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from component_template_tab t
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<!-- 查询条件 -->
+	<sql id="Base_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="templateName != null and templateName != ''">
+	        	<![CDATA[ and  t.templateName like CONCAT('%',#{templateName },'%')
+ ]]>
+			</if>
+			<if test="isDefault  != null and isDefault != ''">
+	        	<![CDATA[ and  t.isDefault = #{isDefault } ]]>
+			</if>
+			<if test="id != null and id != 0">
+	        	<![CDATA[ and  t.id = #{id}  ]]>
+		    </if>
+		    <if test="componentId  != null and componentId != 0">
+	        	<![CDATA[ and  t.componentId = #{componentId } ]]>
+			</if>
+			<if test="isDelete  != null and isDelete != ''">
+	        	<![CDATA[ and  t.isDelete = #{isDelete } ]]>
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 查询,排序,分页,模型 -->
+	<select id="selectByModelPagingCount" parameterType="com.zzjs.cms.entity.ComponentTemplate" resultType="int">
+		select count(*) from component_template_tab t
+		<include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByModelPaging" resultMap="BaseResultMap"
+		parameterType="com.zzjs.cms.entity.ComponentTemplate">
+		select
+		<include refid="Base_Column_List" />
+		from component_template_tab t
+		<include refid="Base_Where_Clause" />
+		limit #{offset},#{rows}
+	</select>
+	
+	<update id="deleteTemplateLogical" parameterType="long" >
+		update component_template_tab set isDelete='0' where id=#{id}
+	</update>
+</mapper>  

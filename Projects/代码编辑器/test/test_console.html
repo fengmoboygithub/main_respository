@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="在线编写、展示html、js、css代码">
+<meta name="keywords" content="JavaScript CSS HTML 在线运行 展示 效果">
+<title>脚本调试工作台</title>
+<link rel="stylesheet" type="text/css" href="js/CodeMirror-2.25/lib/codemirror.css">
+<link rel="stylesheet" type="text/css" href="js/CodeMirror-2.25/theme/theme.css?20121021">
+<link rel="stylesheet" href="css/theme.css?20121211" type="text/css">
+<link rel="stylesheet" href="css/zebra_dialog.css" type="text/css">
+<link rel="stylesheet" href="css/style1.css?2012120502" type="text/css">
+<link rel="stylesheet" href="js/CodeMirror-2.25/lib/util/simple-hint.css" type="text/css">
+<link rel="stylesheet" href="code/css/plugin_code_css" type="text/css">
+<script type="text/javascript" src="js/jquery/jquery.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+</head>
+<body class="NightTheme">
+	<!-- 主体开始 -->
+	<div id="main_container">
+		<!-- 头部开始 -->
+		<div class="header">
+			<!-- logo开始 -->
+			<div class="logo">
+				<h1>RunJs</h1>
+			</div>
+			<!-- logo结束 -->
+			<!-- 头部菜单开始 -->
+			<div class="headerMenu">
+				<!--<div class="view_control menuItem">
+					<div class="view">视图：</div>
+					<div class="view">
+						<input id="html_view" checked="checked" type="checkbox"/>
+						<label for="html_view">HTML</label>
+					</div>
+					<div class="view">
+						<input id="js_view" checked="checked" type="checkbox"/>
+						<label for="js_view">JavaScript</label>
+					</div>
+					<div class="view">
+						<input id="css_view" checked="checked" type="checkbox"/>
+						<label for="css_view">CSS</label>
+					</div>
+					<div class="view">
+						<input id="pre_view" checked="checked" type="checkbox"/>
+						<label for="pre_view">预览</label>
+					</div>
+				</div>-->
+				<div class="btnGroup menuItem view_btn">
+					<div class="btn" id="save">保存</div>
+				</div>
+			</div>
+			<!-- 头部菜单结束 -->
+		</div>
+		<!-- 头部结束 -->
+		<!-- 代码展示开始 -->
+		<div id="core" class="core core_margin1">
+			<div class="editor_wrapper" style="height: 218px;">
+	<fieldset class="editorSet left">
+	<div class="editor html top">
+        <span class="quick_tools" style="display: none;"><span>HTML</span><img src="img/arrow-out.png" width="14"></span>
+				<textarea rows="10" cols="40" id="code_html" style="position: absolute; left: -10000px; width: 10px;">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+  &lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+	&lt;script class="jquery library" src="/js/sandbox/jquery/jquery-1.8.2.min.js" type="text/javascript"&gt;&lt;/script&gt;
+	&lt;title&gt;RunJS 演示代码&lt;/title&gt;
+  &lt;/head&gt;
+&lt;body&gt;
+    &lt;div class='content'&gt;
+    &lt;div style='padding-right:40px'&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style='padding-right:20px'&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:122px'&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:142px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:82px' class="play"&gt;&lt;/div&gt;
+      &lt;div  class="play"&gt;&lt;/div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:62px' class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:42px' class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:62px' class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:82px' class="play"&gt;&lt;/div&gt;
+      &lt;div class="play"&gt;&lt;/div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style='margin-right:22px'&gt;&lt;/div&gt;
+      &lt;div style='margin-right:142px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:102px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style='margin-right:62px'&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:82px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style='margin-right:42px'&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:102px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style='margin-right:22px'&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:122px'&gt;&lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:142px'&gt;&lt;/div&gt;
+    &lt;/div&gt;      
+    &lt;div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div style='margin-right:162px'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+	<div class="CodeMirror CodeMirror-wrap" style="font-family: consolas; font-size: 12px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.8px; left: 33.8px;"><textarea style="position: absolute; left: -10000px; width: 10px;" autocorrect="off" autocapitalize="off" wrap="off"></textarea></div><div class="CodeMirror-scroll cm-s-night" tabindex="-1"><div style="position: relative; height: 1246px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-gutter" style="height: 1246px;"><div class="CodeMirror-gutter-text"><pre>1<br>&nbsp;</pre><pre>2</pre><pre>3</pre><pre>4</pre><pre>5<br>&nbsp;</pre><pre>6</pre><pre>7</pre><pre>8</pre><pre>9</pre><pre>10</pre><pre>11</pre><pre>12</pre><pre>13</pre><pre>14</pre><pre>15</pre><pre>16</pre><pre>17</pre><pre>18</pre><pre>19</pre><pre>20</pre><pre>21</pre><pre>22</pre><pre>23</pre><pre>24</pre><pre>25</pre><pre>26</pre><pre>27</pre><pre>28</pre><pre>29</pre><pre>30</pre><pre>31</pre><pre>32</pre><pre>33</pre><pre>34</pre><pre>35</pre><pre>36</pre><pre>37</pre><pre>38</pre><pre>39</pre><pre>40</pre><pre>41</pre><pre>42</pre><pre>43</pre><pre>44</pre><pre>45</pre><pre>46</pre><pre>47</pre><pre>48</pre><pre>49</pre><pre>50</pre><pre>51</pre><pre>52</pre><pre>53</pre><pre>54</pre><pre>55</pre><pre>56</pre><pre>57</pre><pre>58</pre><pre>59</pre><pre>60</pre><pre>61</pre><pre>62</pre><pre>63</pre><pre>64</pre><pre>65</pre><pre>66</pre><pre>67</pre><pre>68</pre><pre>69</pre><pre>70</pre><pre>71</pre><pre>72</pre><pre>73</pre><pre>74</pre><pre>75</pre><pre>76</pre><pre>77</pre><pre>78</pre><pre>79</pre><pre>80</pre><pre>81</pre><pre>82</pre><pre>83</pre><pre>84</pre><pre>85</pre><pre>86</pre><pre>87</pre><pre>88</pre><pre>89</pre><pre>90</pre><pre>91</pre><pre>92</pre><pre>93</pre><pre>94</pre><pre>95</pre><pre>96</pre><pre>97</pre><pre>98</pre><pre>99</pre><pre>100</pre><pre>101</pre></div></div><div class="CodeMirror-lines"><div style="position: relative; z-index: 0; outline: medium none currentcolor; margin-left: 29px;" draggable="true"><div style="position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;"></div><pre class="CodeMirror-cursor" style="top: 0px; left: 0px;">&nbsp;</pre><div style="position: relative; z-index: -1; display: none;"></div><div style=""><pre><span class="cm-meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></pre><pre><span class="cm-tag">&lt;html</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">"http://www.w3.org/1999/xhtml"</span><span class="cm-tag">&gt;</span></pre><pre>  <span class="cm-tag">&lt;head&gt;</span></pre><pre><span class="cm-tab">  </span><span class="cm-tag">&lt;meta</span> <span class="cm-attribute">http-equiv</span>=<span class="cm-string">"Content-Type"</span> <span class="cm-attribute">content</span>=<span class="cm-string">"text/html; charset=UTF-8"</span><span class="cm-tag">&gt;</span></pre><pre><span class="cm-tab">  </span><span class="cm-tag">&lt;script</span> <span class="cm-attribute">class</span>=<span class="cm-string">"jquery library"</span> <span class="cm-attribute">src</span>=<span class="cm-string">"/js/sandbox/jquery/jquery-1.8.2.min.js"</span> <span class="cm-attribute">type</span>=<span class="cm-string">"text/javascript"</span><span class="cm-tag">&gt;&lt;/script&gt;</span></pre><pre><span class="cm-tab">  </span><span class="cm-tag">&lt;title&gt;</span>RunJS 演示代码<span class="cm-tag">&lt;/title&gt;</span></pre><pre>  <span class="cm-tag">&lt;/head&gt;</span></pre><pre><span class="cm-tag">&lt;body&gt;</span></pre><pre>    <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">'content'</span><span class="cm-tag">&gt;</span></pre><pre>    <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'padding-right:40px'</span><span class="cm-tag">&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'padding-right:20px'</span><span class="cm-tag">&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:122px'</span><span class="cm-tag">&gt;</span></pre><pre>      <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:142px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:82px'</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span>  <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:62px'</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:62px'</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:82px'</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"play"</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:22px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:142px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:102px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:62px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:82px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:42px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:102px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:22px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:122px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span>    </pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:142px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span>      </pre><pre>    <span class="cm-tag">&lt;div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div&gt;&lt;/div&gt;</span></pre><pre>      <span class="cm-tag">&lt;div</span> <span class="cm-attribute">style</span>=<span class="cm-string">'margin-right:162px'</span><span class="cm-tag">&gt;&lt;/div&gt;</span></pre><pre>    <span class="cm-tag">&lt;/div&gt;</span></pre><pre>  <span class="cm-tag">&lt;/div&gt;</span></pre><pre>  <span class="cm-tag">&lt;/body&gt;</span></pre><pre><span class="cm-tag">&lt;/html&gt;</span></pre><pre> </pre></div></div></div></div></div></div></div></div>
+	<div class="handler handler_horizontal" style="top: 104px;"></div>
+	<div class="editor js bottom">
+        <span class="quick_tools" style="display: none;"><span onclick="runjs.editor.chooseJsType();">JavaScript</span><img src="img/arrow-out.png" width="14"></span>
+				<textarea rows="10" cols="40" id="code_js" style="position: absolute; left: -10000px; width: 10px;">$(document).ready(function(){
+	animate();
+  $(".play").click(animate).mouseover(function(){
+  	$(".play").css({"background-color":"#A55"});
+  }).mouseout(function(){
+  	$(".play").css({"background-color":"#060"});
+  });
+});
+function animate(){
+	  $('div&gt;div&gt;div').each(function(id){
+    $(this).css({
+      position: 'relative',
+      top: '-200px',
+      opacity: 0
+    });
+    var wait = Math.floor((Math.random()*3000)+1);
+    $(this).delay(wait).animate({
+      top: '0px',
+      opacity: 1
+    },1000);
+  });
+}
+</textarea>
+	<div class="CodeMirror CodeMirror-wrap" style="font-family: consolas; font-size: 12px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.8px; left: 29.8px;"><textarea style="position: absolute; left: -10000px; width: 10px;" autocorrect="off" autocapitalize="off" wrap="off"></textarea></div><div class="CodeMirror-scroll cm-s-night" tabindex="-1"><div style="position: relative; height: 286px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-gutter" style="height: 286px;"><div class="CodeMirror-gutter-text"><pre>1</pre><pre>2</pre><pre>3</pre><pre>4</pre><pre>5</pre><pre>6</pre><pre>7</pre><pre>8</pre><pre>9</pre><pre>10</pre><pre>11</pre><pre>12</pre><pre>13</pre><pre>14</pre><pre>15</pre><pre>16</pre><pre>17</pre><pre>18</pre><pre>19</pre><pre>20</pre><pre>21</pre><pre>22</pre><pre>23</pre></div></div><div class="CodeMirror-lines"><div style="position: relative; z-index: 0; outline: medium none currentcolor; margin-left: 25px;" draggable="true"><div style="position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;"></div><pre class="CodeMirror-cursor" style="top: 0px; left: 0px;">&nbsp;</pre><div style="position: relative; z-index: -1; display: none;"></div><div style=""><pre><span class="cm-variable">$</span>(<span class="cm-variable">document</span>).<span class="cm-property">ready</span>(<span class="cm-keyword">function</span>(){</pre><pre><span class="cm-tab">  </span><span class="cm-variable">animate</span>();</pre><pre>  <span class="cm-variable">$</span>(<span class="cm-string">".play"</span>).<span class="cm-property">click</span>(<span class="cm-variable">animate</span>).<span class="cm-property">mouseover</span>(<span class="cm-keyword">function</span>(){</pre><pre>  <span class="cm-tab">  </span><span class="cm-variable">$</span>(<span class="cm-string">".play"</span>).<span class="cm-property">css</span>({<span class="cm-string">"background-color"</span>:<span class="cm-string">"#A55"</span>});</pre><pre>  }).<span class="cm-property">mouseout</span>(<span class="cm-keyword">function</span>(){</pre><pre>  <span class="cm-tab">  </span><span class="cm-variable">$</span>(<span class="cm-string">".play"</span>).<span class="cm-property">css</span>({<span class="cm-string">"background-color"</span>:<span class="cm-string">"#060"</span>});</pre><pre>  });</pre><pre>});</pre><pre><span class="cm-keyword">function</span> <span class="cm-variable">animate</span>(){</pre><pre><span class="cm-tab">  </span>  <span class="cm-variable">$</span>(<span class="cm-string">'div&gt;div&gt;div'</span>).<span class="cm-property">each</span>(<span class="cm-keyword">function</span>(<span class="cm-def">id</span>){</pre><pre>    <span class="cm-variable">$</span>(<span class="cm-variable-2">this</span>).<span class="cm-property">css</span>({</pre><pre>      <span class="cm-property">position</span>: <span class="cm-string">'relative'</span>,</pre><pre>      <span class="cm-property">top</span>: <span class="cm-string">'-200px'</span>,</pre><pre>      <span class="cm-property">opacity</span>: <span class="cm-number">0</span></pre><pre>    });</pre><pre>    <span class="cm-keyword">var</span> <span class="cm-def">wait</span> = <span class="cm-variable">Math</span>.<span class="cm-property">floor</span>((<span class="cm-variable">Math</span>.<span class="cm-property">random</span>()*<span class="cm-number">3000</span>)+<span class="cm-number">1</span>);</pre><pre>    <span class="cm-variable">$</span>(<span class="cm-variable-2">this</span>).<span class="cm-property">delay</span>(<span class="cm-variable-2">wait</span>).<span class="cm-property">animate</span>({</pre><pre>      <span class="cm-property">top</span>: <span class="cm-string">'0px'</span>,</pre><pre>      <span class="cm-property">opacity</span>: <span class="cm-number">1</span></pre><pre>    },<span class="cm-number">1000</span>);</pre><pre>  });</pre><pre>}</pre><pre> </pre></div></div></div></div></div></div></div></div>
+</fieldset>
+<div class="handler handler_vertical" style="left: 665px;"></div>
+<fieldset class="editorSet right">
+	<div class="editor css top">
+        <span class="quick_tools"><span onclick="runjs.editor.chooseCssType();">CSS</span><img src="img/arrow-out.png" width="14"></span>
+				<textarea rows="10" cols="40" id="code_css" style="position: absolute; left: -10000px; width: 10px;">body{
+	margin:50px;
+  background-color:#2C3437;
+}
+.content{
+  display:inline-block;
+  width:350px;
+  height:239px;
+  margin-right:-4px;
+}
+.play{
+	cursor:pointer;
+	background-color:#060;
+}
+div&gt;div{
+  display:block;
+  height:20px;
+}
+div&gt;div&gt;div{
+  width:16px;
+  height:16px;
+  background-color:#FFF;
+  display:inline-block;
+  float:right;
+  margin:2px;
+}
+</textarea>
+	<div class="CodeMirror CodeMirror-wrap" style="font-family: consolas; font-size: 12px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.8px; left: 29.8px;"><textarea style="position: absolute; left: -10000px; width: 10px;" autocorrect="off" autocapitalize="off" wrap="off"></textarea></div><div class="CodeMirror-scroll cm-s-night" tabindex="-1"><div style="position: relative; height: 334px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-gutter" style="height: 334px;"><div class="CodeMirror-gutter-text"><pre>1</pre><pre>2</pre><pre>3</pre><pre>4</pre><pre>5</pre><pre>6</pre><pre>7</pre><pre>8</pre><pre>9</pre><pre>10</pre><pre>11</pre><pre>12</pre><pre>13</pre><pre>14</pre><pre>15</pre><pre>16</pre><pre>17</pre><pre>18</pre><pre>19</pre><pre>20</pre><pre>21</pre><pre>22</pre><pre>23</pre><pre>24</pre><pre>25</pre><pre>26</pre><pre>27</pre></div></div><div class="CodeMirror-lines"><div style="position: relative; z-index: 0; outline: medium none currentcolor; margin-left: 25px;" draggable="true"><div style="position: absolute; width: 100%; height: 0; overflow: hidden; visibility: hidden;"></div><pre class="CodeMirror-cursor" style="top: 0px; left: 0px;">&nbsp;</pre><div style="position: relative; z-index: -1; display: none;"></div><div style=""><pre><span class="cm-tag">body</span>{</pre><pre><span class="cm-tab">  </span><span class="cm-variable">margin</span>:<span class="cm-number">50px</span>;</pre><pre>  <span class="cm-variable">background-color</span>:<span class="cm-atom">#2C3437</span>;</pre><pre>}</pre><pre>.<span class="cm-tag">content</span>{</pre><pre>  <span class="cm-variable">display</span>:<span class="cm-number">inline-block</span>;</pre><pre>  <span class="cm-variable">width</span>:<span class="cm-number">350px</span>;</pre><pre>  <span class="cm-variable">height</span>:<span class="cm-number">239px</span>;</pre><pre>  <span class="cm-variable">margin-right</span>:<span class="cm-number">-4px</span>;</pre><pre>}</pre><pre>.<span class="cm-tag">play</span>{</pre><pre><span class="cm-tab">  </span><span class="cm-variable">cursor</span>:<span class="cm-number">pointer</span>;</pre><pre><span class="cm-tab">  </span><span class="cm-variable">background-color</span>:<span class="cm-atom">#060</span>;</pre><pre>}</pre><pre><span class="cm-tag">div</span>&gt;<span class="cm-tag">div</span>{</pre><pre>  <span class="cm-variable">display</span>:<span class="cm-number">block</span>;</pre><pre>  <span class="cm-variable">height</span>:<span class="cm-number">20px</span>;</pre><pre>}</pre><pre><span class="cm-tag">div</span>&gt;<span class="cm-tag">div</span>&gt;<span class="cm-tag">div</span>{</pre><pre>  <span class="cm-variable">width</span>:<span class="cm-number">16px</span>;</pre><pre>  <span class="cm-variable">height</span>:<span class="cm-number">16px</span>;</pre><pre>  <span class="cm-variable">background-color</span>:<span class="cm-atom">#FFF</span>;</pre><pre>  <span class="cm-variable">display</span>:<span class="cm-number">inline-block</span>;</pre><pre>  <span class="cm-variable">float</span>:<span class="cm-number">right</span>;</pre><pre>  <span class="cm-variable">margin</span>:<span class="cm-number">2px</span>;</pre><pre>}</pre><pre> </pre></div></div></div></div></div></div></div></div>
+	<div class="handler handler_horizontal" style="top: 104px;"></div>
+	<div class="editor preview bottom">
+        <span class="quick_tools" style="display: none;"><span>预览</span><img src="img/arrow-out.png" width="14"></span>
+	<iframe id="preview" frameborder="0"></iframe></div>
+</fieldset>
+</div>
+		</div>
+		<!-- 代码展示结束 -->
+	</div>
+	<!-- 主体结束 -->
+</body></html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zzjs.cms.dao.ComponentInstanceTabDao">
+	<resultMap id="BaseResultMap" type="com.zzjs.cms.entity.ComponentInstanceTab" >
+    <id column="id" property="id"/>
+    <result column="componentId" property="componentId"/>
+    <result column="componentName" property="componentName"/>
+    <result column="fileId" property="fileId"/>
+	<result column="importId" property="importId"/>
+	<result column="sort" property="sort"/>
+	<result column="isDelete" property="isDelete"/>
+	<result column="createTime" property="createTime"/>
+	<result column="createUser" property="createUser"/>
+	<result column="updateTime" property="updateTime"/>
+	<result column="updateUser" property="updateUser"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t.id,
+    t.componentId,
+    tc.componentName,
+	t.fileId,
+	t.htmlCode,
+	t.isDelete,
+	t.createTime,
+	t.createUser,
+	t.updateTime,
+	t.updateUser
+  </sql>
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="insert" parameterType="com.zzjs.cms.entity.ComponentInstanceTab">
+		insert into 
+		component_instance_tab (
+			id,
+			componentId,
+			fileId,
+			htmlCode,
+			isDelete,
+			createTime,
+			createUser
+		) value (
+			#{id},
+			#{componentId},
+			#{fileId},
+			#{htmlCode},
+			'1',
+			#{createTime},
+			#{createUser}
+		)
+		<selectKey resultType="long" keyProperty="id">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from component_instance_tab where
+		id=#{id}
+	</delete>
+	
+	<delete id="deleteByEntity" parameterType="com.zzjs.cms.entity.ComponentInstanceTab">
+		delete from component_instance_tab where
+		fileId=#{fileId}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateByPrimaryKey" parameterType="com.zzjs.cms.entity.ComponentInstanceTab">
+		update component_instance_tab set 
+		htmlCode=#{htmlCode}
+		where id=#{id}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	<select id="selectByPrimaryKey" parameterType="com.zzjs.cms.entity.ComponentInstanceTab"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from component_instance_tab t join component tc on tc.componentId=t.componentId
+	    <![CDATA[ and  t.id = #{id}  ]]>
+	</select>
+	<select id="selectByPrimaryKeys" parameterType="com.zzjs.cms.entity.ComponentInstanceTab"
+		resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from component_instance_tab t join component tc on tc.componentId=t.componentId
+	    <include refid="Base_Where_Clause" />
+	</select>
+	<!-- 查询条件 -->
+	<sql id="Base_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="fileId  != null and fileId != 0">
+	        	<![CDATA[ and  t.fileId = #{fileId} ]]>
+			</if>
+			<if test="componentId  != null and componentId != 0">
+	        	<![CDATA[ and  t.componentId = #{componentId} ]]>
+			</if>
+			<if test="id != null and id != 0">
+	        	<![CDATA[ and  t.id = #{id}  ]]>
+		    </if>
+		</trim>
+	</sql>
+
+	<!-- 查询,排序,分页,模型 -->
+	<select id="selectByModelPagingCount" parameterType="com.zzjs.cms.entity.ComponentInstanceTab" resultType="int">
+		select count(*) from component_instance_tab t
+		<include refid="Base_Where_Clause" />
+	</select>
+	<select id="selectByModelPaging" resultMap="BaseResultMap"
+		parameterType="com.zzjs.cms.entity.ComponentInstanceTab">
+		select
+		<include refid="Base_Column_List" />
+		from component_instance_tab t join component tc on tc.componentId=t.componentId
+		<include refid="Base_Where_Clause" />
+		limit #{offset},#{rows}
+	</select>
+</mapper>  

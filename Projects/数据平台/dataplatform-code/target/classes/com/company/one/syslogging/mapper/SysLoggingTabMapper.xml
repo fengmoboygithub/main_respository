@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.one.syslogging.dao.SysLoggingTabMapper">
+  <resultMap id="BaseResultMap" type="com.company.one.syslogging.model.SysLoggingTab">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="logging_type" jdbcType="INTEGER" property="loggingType" />
+    <result column="error_code" jdbcType="VARCHAR" property="errorCode" />
+    <result column="error_msg" jdbcType="VARCHAR" property="errorMsg" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, logging_type, error_code, error_msg, create_date
+  </sql>
+  <select id="selectByExample" parameterType="com.company.one.syslogging.model.SysLoggingTabExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from sys_logging_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_logging_tab
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_logging_tab
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.one.syslogging.model.SysLoggingTabExample">
+    delete from sys_logging_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.one.syslogging.model.SysLoggingTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_logging_tab (logging_type, error_code, error_msg, 
+      create_date)
+    values (#{loggingType,jdbcType=INTEGER}, #{errorCode,jdbcType=VARCHAR}, #{errorMsg,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.one.syslogging.model.SysLoggingTab">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_logging_tab
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loggingType != null">
+        logging_type,
+      </if>
+      <if test="errorCode != null">
+        error_code,
+      </if>
+      <if test="errorMsg != null">
+        error_msg,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loggingType != null">
+        #{loggingType,jdbcType=INTEGER},
+      </if>
+      <if test="errorCode != null">
+        #{errorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="errorMsg != null">
+        #{errorMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.one.syslogging.model.SysLoggingTabExample" resultType="java.lang.Long">
+    select count(*) from sys_logging_tab
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update sys_logging_tab
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.loggingType != null">
+        logging_type = #{record.loggingType,jdbcType=INTEGER},
+      </if>
+      <if test="record.errorCode != null">
+        error_code = #{record.errorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.errorMsg != null">
+        error_msg = #{record.errorMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update sys_logging_tab
+    set id = #{record.id,jdbcType=INTEGER},
+      logging_type = #{record.loggingType,jdbcType=INTEGER},
+      error_code = #{record.errorCode,jdbcType=VARCHAR},
+      error_msg = #{record.errorMsg,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.one.syslogging.model.SysLoggingTab">
+    update sys_logging_tab
+    <set>
+      <if test="loggingType != null">
+        logging_type = #{loggingType,jdbcType=INTEGER},
+      </if>
+      <if test="errorCode != null">
+        error_code = #{errorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="errorMsg != null">
+        error_msg = #{errorMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.one.syslogging.model.SysLoggingTab">
+    update sys_logging_tab
+    set logging_type = #{loggingType,jdbcType=INTEGER},
+      error_code = #{errorCode,jdbcType=VARCHAR},
+      error_msg = #{errorMsg,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

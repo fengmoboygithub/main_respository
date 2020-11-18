@@ -1,0 +1,163 @@
+package ${controllerUrl};
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.MediaType;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
+import com.github.pagehelper.PageInfo;
+import ${url};
+import ${exampleurl};
+import ${serviceUrl}.${name}Service;
+import ${packName}.bean.ResponseDataModel;
+import ${packName}.bean.ResponseModel;
+import ${packName}.bean.ResponseDataListModel;
+import ${packName}.bean.ResponseDataPageListModel;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+@RestController("${capitalName}Controller")
+@RequestMapping("/api/${capitalName}")
+public class ${name}Controller {
+
+    public static Logger logger = LoggerFactory.getLogger(${name}Controller.class);
+
+    @Autowired
+    private ${name}Service service;
+	
+	@Cacheable(value = "${name}")
+    @GetMapping(value = "/get", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseDataModel<${name}> get(${primaryType} ${primaryKey}) {
+        ResponseDataModel<${name}> responseModel = new ResponseDataModel<>();
+        try {
+            ${name} entity=service.get${name}(id);
+            responseModel.setSuccess(true);
+            responseModel.setEntity(entity);
+        } catch (Exception e) {
+            responseModel.setSuccess(false);
+            responseModel.setMessage("Fail:" + e.getMessage());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("SUCCESS");
+        return responseModel;
+    }
+	
+	@Cacheable(value = "${name}")
+    @GetMapping(value = "getListByPage/{currentPage}/{itemsPerPage}")
+    @ResponseBody
+    @SuppressWarnings("unchecked")
+    public ResponseDataPageListModel<${name}> getListByPage(@PathVariable int currentPage, @PathVariable int itemsPerPage, @RequestParam(required = false) String param) {
+        logger.info("currentPage:{},itemsPerPage:{},param:{}", currentPage, itemsPerPage, param);
+        ResponseDataPageListModel<${name}> responseModel = new ResponseDataPageListModel<${name}>();
+        HashMap<String, Object> paramMap = new HashMap<>();
+        if (!StringUtils.isEmpty(param)) {
+            try {
+                paramMap = new ObjectMapper().readValue(param, HashMap.class);
+            } catch (IOException e) {
+                logger.error(e.getMessage(), e);
+            }
+        }else{
+            paramMap.put("orderby","${primaryKey} desc");
+        }
+        ${name}Example example = new ${name}Example();
+        
+        PageInfo<${name}> page = service.getListByPage(currentPage, itemsPerPage, example);
+        responseModel.setSuccess(true);
+        responseModel.setPageIndex(currentPage);
+        responseModel.setPageSize(itemsPerPage);
+        responseModel.setMatchedTotal(page.getTotal());
+        responseModel.setResultSet(page.getList());
+        return responseModel;
+    }
+    
+    @Cacheable(value = "${name}")
+    @GetMapping(value = "getList")
+    @ResponseBody
+    @SuppressWarnings("unchecked")
+    public ResponseDataListModel<${name}> getList(@RequestParam(required = false) String param) {
+        logger.info("param:{}", param);
+        ResponseDataListModel<${name}> responseModel = new ResponseDataListModel<${name}>();
+        HashMap<String, Object> paramMap = new HashMap<>();
+        if (!StringUtils.isEmpty(param)) {
+            try {
+                paramMap = new ObjectMapper().readValue(param, HashMap.class);
+            } catch (IOException e) {
+                logger.error(e.getMessage(), e);
+            }
+        }else{
+            paramMap.put("orderby","${primaryKey} desc");
+        }
+        ${name}Example example = new ${name}Example();
+        
+        List<${name}> list = service.getList(example);
+        responseModel.setSuccess(true);
+        responseModel.setList(list);
+        return responseModel;
+    }
+	
+	@CachePut(value = "${name}", key = "#root.caches[0].name + ':' + #model.${primaryKey}")
+    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseModel add(@RequestBody ${name} model) {
+        ResponseModel responseModel = new ResponseModel();
+        try {
+            ${name} record = new ${name}();
+            BeanUtils.copyProperties(model, record);
+            service.save(record);
+        } catch (Exception e) {
+            responseModel.setSuccess(false);
+            responseModel.setMessage("Fail:" + e.getMessage());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("SUCCESS");
+        return responseModel;
+    }
+	
+	@CachePut(value = "${name}", key = "#root.caches[0].name + ':' + #model.${primaryKey}")
+    @PutMapping(value = "/update", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseModel update(@RequestBody ${name} model) {
+        ResponseModel responseModel = new ResponseModel();
+        try {
+            ${name} record = new ${name}();
+            BeanUtils.copyProperties(model, record);
+            service.update(record);
+        } catch (Exception e) {
+            responseModel.setSuccess(false);
+            responseModel.setMessage("Fail:" + e.getMessage());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("SUCCESS");
+        return responseModel;
+    }
+
+	@CacheEvict(value = "${name}")
+    @DeleteMapping(value = "/del", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseModel del(${primaryType} ${primaryKey}) {
+        ResponseModel responseModel = new ResponseModel();
+        try {
+            service.deleteByPrimaryKey(${primaryKey});
+        } catch (Exception e) {
+        responseModel.setSuccess(false);
+        responseModel.setMessage("Fail:" + e.getMessage());
+            logger.error("Fail:", e);
+            return responseModel;
+        }
+        responseModel.setSuccess(true);
+        responseModel.setMessage("SUCCESS");
+        return responseModel;
+    }
+
+}

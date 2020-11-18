@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.MediaDao">
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="addMedia" parameterType="com.zzjs.cms.entity.Media">
+		insert into
+		media(name,path,size,suffix,type,createTime)
+		value(#{name},#{path},#{size},#{suffix},#{type},#{createTime})
+		<selectKey resultType="long" keyProperty="mediaId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteMedia" parameterType="long">
+		delete from
+		media where mediaId=#{mediaId}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+
+	<update id="updateLinkByMediaId">
+		update media
+		set
+		link=#{link}
+		where
+		mediaId=#{mediaId}
+	</update>
+	
+	<update id="updateNameByMediaId">
+		update media
+		set
+		name=#{name}
+		where
+		mediaId=#{mediaId}
+	</update>
+
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+
+	<select id="getMediaById" parameterType="long"
+		resultType="com.zzjs.cms.entity.vo.MediaVo">
+		select * from media where mediaId=#{mediaId}
+	</select>
+
+	<select id="getMediaListBySiteId" resultType="com.zzjs.cms.entity.vo.MediaVo">
+		select m.*,f.folderId
+			from
+			media m join media_entity_rela mer on m.mediaId=mer.mediaId
+			join folder f on f.folderId=mer.entityId  
+		where f.siteId=#{siteId}
+			and mer.entity = #{entity}
+			and m.type = #{type}
+	</select>
+	
+	<select id="getMediaListAll" resultType="com.zzjs.cms.entity.vo.MediaVo">
+		select * from media order by createTime desc limit #{offset},#{rows}
+	</select>
+	
+	
+	
+</mapper>  

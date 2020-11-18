@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.AdminSiteDao">
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="addAdminSite" parameterType="com.zzjs.cms.entity.AdminSiteRela">
+		insert into
+		admin_site_rela(adminId,siteId,createTime)
+		value(#{adminId},#{siteId},#{createTime})
+		<selectKey resultType="long" keyProperty="relaId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteAdminSite" parameterType="long">
+		delete from admin_site_rela where
+		adminId=#{adminId} and siteId=#{siteId}
+	</delete>
+	
+	<delete id="deleteAdminSiteByAdminId" parameterType="long">
+		delete from admin_site_rela where
+		adminId=#{adminId}
+	</delete>
+	
+	<delete id="deleteAdminSiteBySiteId" parameterType="long">
+		delete from admin_site_rela where
+		siteId=#{siteId}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	
+	<select id="getAdminSiteListById" resultType="com.zzjs.cms.entity.vo.AdminSiteRelaVo">
+		select * from admin_site_rela where adminId=#{adminId}
+	</select>
+	
+	<select id="getAdminSiteListBySiteId" resultType="com.zzjs.cms.entity.vo.AdminSiteRelaVo">
+		select * from admin_site_rela where siteId=#{siteId}
+	</select>
+	
+	<select id="getAdminSiteById" resultType="com.zzjs.cms.entity.vo.AdminSiteRelaVo">
+		select * from admin_site_rela where adminId=#{adminId} and siteId=#{siteId}
+	</select>
+
+</mapper>  

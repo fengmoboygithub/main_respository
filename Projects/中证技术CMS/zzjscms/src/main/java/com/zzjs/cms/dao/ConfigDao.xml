@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.ConfigDao">
+	
+	<!-- ############################## -->
+	<!-- ######        增加                      ###### -->
+	<!-- ############################## -->
+	
+	<insert id="addConfig" parameterType="com.zzjs.cms.entity.Config">
+		insert into
+		config(`key`,`value`,description,createTime)
+		value(#{key},#{value},#{description},#{createTime})
+	</insert>
+	
+	<!-- ############################## -->
+	<!-- ######       删除                         ###### -->
+	<!-- ############################## -->
+		
+	<delete id="deleteConfig" parameterType="com.zzjs.cms.entity.Config">
+		delete from config where `key`=#{key}
+	</delete>
+	
+	<!-- ############################## -->
+	<!-- ######       修改                         ###### -->
+	<!-- ############################## -->
+	
+	<update id="updateConfig" parameterType="com.zzjs.cms.entity.Config">
+		update config t set t.value=#{value}
+		<if test="description !=null">, t.description=#{description}</if>
+		<if test="updateTime !=null">, t.updateTime=#{updateTime}</if>
+		where `key`=#{key}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ######       查询                         ###### -->
+	<!-- ############################## -->
+		
+	<select id="getConfigByKey"
+		resultType="com.zzjs.cms.entity.Config">
+		select * from config where `key`=#{key}
+	</select>
+	
+	
+	<select id="getConfigList" resultType="com.zzjs.cms.entity.Config">
+		select * from config limit #{offset},#{rows}
+	</select>
+	
+	
+	<select id="getConfigListCount" resultType="int">
+		select count(*) from config 
+	</select>
+</mapper>  

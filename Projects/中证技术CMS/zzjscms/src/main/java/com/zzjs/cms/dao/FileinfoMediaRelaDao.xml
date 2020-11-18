@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Changsha Shishuo Network Technology Co., Ltd. All rights reserved. -->
+<!-- 中证技术股份有限公司 版权所有 -->
+<!-- http://www.otc-tech.cn/ -->
+
+<mapper namespace="com.zzjs.cms.dao.FileinfoMediaRelaDao">
+
+	<!-- ############################## -->
+	<!-- ###### 增加 ###### -->
+	<!-- ############################## -->
+
+	<insert id="addFileinfoMedia" parameterType="com.zzjs.cms.entity.FileinfoMediaRela">
+		insert into
+		fileinfo_media_rela(mediaId,fileId,sort,createTime)
+		value(#{mediaId},#{fileId},#{sort},#{createTime})
+		<selectKey resultType="long" keyProperty="relaId">
+			SELECT
+			LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- ############################## -->
+	<!-- ###### 删除 ###### -->
+	<!-- ############################## -->
+
+	<delete id="deleteFileinfoMedia" parameterType="long">
+		delete from fileinfo_media_rela where
+		mediaId=#{mediaId} and fileId=#{fileId}
+	</delete>
+	
+	<delete id="deleteFileinfoMediaByFileId" parameterType="long">
+		delete from fileinfo_media_rela where
+		fileId=#{fileId}
+	</delete>
+	
+	<delete id="deleteFileinfoMediaByMediaId" parameterType="long">
+		delete from fileinfo_media_rela where
+		mediaId=#{mediaId}
+	</delete>
+
+	<!-- ############################## -->
+	<!-- ###### 修改 ###### -->
+	<!-- ############################## -->
+	<update id="updateSort" parameterType="long">
+		update fileinfo_media_rela set
+		sort=#{sort} where mediaId=#{mediaId} and fileId=#{fileId}
+	</update>
+	
+	<!-- ############################## -->
+	<!-- ###### 查询 ###### -->
+	<!-- ############################## -->
+	
+	<select id="getFileinfoMediaListByFileId" resultType="com.zzjs.cms.entity.vo.FileinfoMediaRelaVo">
+		select * from fileinfo_media_rela where fileId=#{fileId} order by sort
+	</select>
+	
+	<select id="getFileinfoMediaByfileIdAndmediaId" resultType="com.zzjs.cms.entity.vo.FileinfoMediaRelaVo">
+		select * from fileinfo_media_rela where mediaId=#{mediaId} and fileId=#{fileId}
+	</select>
+
+</mapper>  

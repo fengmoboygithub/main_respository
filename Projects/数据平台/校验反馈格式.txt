@@ -1,0 +1,33 @@
+{
+    "error": [
+        {
+            "msg": "履约保障品追保比率（%）:不是数字类型，请修改!",
+            "errcode": "-1005",
+            "rule": "CHASE_RATIO"
+        },
+        {
+            "msg": "第1行标的小类:不是数字类型，请修改!",
+            "errcode": "-1005",
+            "rule": "CORPORE_TYPE"
+        }
+    ],
+    "businesserror": [
+        {
+            "msg": "交易确认书类型:格式错误,不能为空",
+            "errcode": "-1003",
+            "rule": "TRANS_CONFIRM_TYPE"
+        },
+        {
+            "msg": "履约保障品追保比率（%）:格式错误,只能是两位小数",
+            "errcode": "-1002",
+            "rule": "CHASE_RATIO"
+        },
+        {
+            "msg": "第1行标的代码:乙方支付现金流方式为权益收益时必填，该值为必填项",
+            "errcode": "-1002",
+            "rule": "CORPORE_CODE"
+        }
+    ],
+    "code": "-1"
+}
+控件类型0|普通元素、1|Tuple子项元素、2|多附件、3|单附件、4|Tuple父元素（虚元素）

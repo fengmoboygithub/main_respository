@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.one.publisherinfo.dao.PublisherInfoMapper">
+  <resultMap id="BaseResultMap" type="com.company.one.publisherinfo.model.PublisherInfo">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="bond_code" jdbcType="VARCHAR" property="bondCode" />
+	<result column="issuer_name" jdbcType="VARCHAR" property="issuerName" />
+    <result column="bond_main_type" jdbcType="VARCHAR" property="bondMainType" />
+	<result column="issuer_nature" jdbcType="VARCHAR" property="issuerNature" />
+	<result column="issuer_rating" jdbcType="VARCHAR" property="issuerRating" />
+	<result column="issuer_business" jdbcType="VARCHAR" property="issuerBusiness" />
+	<result column="issuer_industry" jdbcType="VARCHAR" property="issuerIndustry" />
+	<result column="edit_state" jdbcType="INTEGER" property="editState" />
+	
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    a.bond_code, a.issuer_name, a.bond_main_type, a.issuer_nature, a.issuer_rating, a.issuer_business, a.issuer_industry, a.edit_state
+  </sql>
+  <select id="selectByExample" parameterType="com.company.one.publisherinfo.model.PublisherInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from (select
+		bond_code, 
+		issuer_name, 
+		'01' as bond_main_type, 
+		issuer_nature, 
+		issuer_rating, 
+		issuer_business, 
+		issuer_industry, 
+		edit_state
+		from bond_base_info where state=1 and edit_state=1
+	union all
+	select
+		b1.abs_code as bond_code, 
+		b1.original_owner_name as issuer_name, 
+		'02' as bond_main_type, 
+		b1.nature as issuer_nature, 
+		b1.main_rating as issuer_rating, 
+		b1.business_scope as issuer_business, 
+		b1.industry as issuer_industry, 
+		b1.edit_state
+		from abs_base_info b1 right join abs_issue_info a1 on a1.base_id=b1.id where a1.state=1) a
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bond_base_info
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bond_base_info
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.company.one.publisherinfo.model.PublisherInfoExample">
+    delete from bond_base_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.company.one.publisherinfo.model.PublisherInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into bond_base_info (bond_code, bond_name, short_name, 
+      bond_type, trading_location, rating, 
+      initial_rating, current_rating, stock_code, 
+      credit_measures, issue_way, be_issue_amount, 
+      real_issue_amount, trusteeship, trem, 
+      trem_remark, issue_rate, issue_time, 
+      list_time, approval_time, interest_time, 
+      due_time, resale_time, relate_srb, 
+      debt_account, individual_investor_account, 
+      personal_debt_rate, current_rate, proper_management, 
+      proper_management_time, issuer_name, other_issuer_name, 
+      issuer_industry, issuer_province, issuer_city, 
+      issuer_srb, issuer_business, issuer_nature, 
+      issuer_financial, issuer_rating, com_initial_rating, 
+      com_current_rating, issuer_contact_way, underwriter_name, 
+      underwriter_charge, underwriter_srb, accounting_name, 
+      accounting_signatory, law_name, law_signatory, 
+      rating_agency_name, other_rating_agency_name, 
+      rating_agency_charge, rating_agency_srb, trustee_name, 
+      trustee_charge, trustee_charge_contact_way, 
+      trustee_srb, issuer_id, underwriter_id, 
+      law_firm_id, accounting_firm_id, guarantor_id, 
+      credit_rating_agency_id, trustee_id, intermediary_agency_id, 
+      publisher_id, state, create_time, 
+      update_time, remark, user_id, 
+      jur_srb, audit_state, edit_state, 
+      serial_number)
+    values (#{bondCode,jdbcType=VARCHAR}, #{bondName,jdbcType=VARCHAR}, #{shortName,jdbcType=VARCHAR}, 
+      #{bondType,jdbcType=VARCHAR}, #{tradingLocation,jdbcType=VARCHAR}, #{rating,jdbcType=VARCHAR}, 
+      #{initialRating,jdbcType=VARCHAR}, #{currentRating,jdbcType=VARCHAR}, #{stockCode,jdbcType=VARCHAR}, 
+      #{creditMeasures,jdbcType=VARCHAR}, #{issueWay,jdbcType=VARCHAR}, #{beIssueAmount,jdbcType=VARCHAR}, 
+      #{realIssueAmount,jdbcType=VARCHAR}, #{trusteeship,jdbcType=VARCHAR}, #{trem,jdbcType=VARCHAR}, 
+      #{tremRemark,jdbcType=VARCHAR}, #{issueRate,jdbcType=VARCHAR}, #{issueTime,jdbcType=TIMESTAMP}, 
+      #{listTime,jdbcType=TIMESTAMP}, #{approvalTime,jdbcType=TIMESTAMP}, #{interestTime,jdbcType=TIMESTAMP}, 
+      #{dueTime,jdbcType=TIMESTAMP}, #{resaleTime,jdbcType=TIMESTAMP}, #{relateSrb,jdbcType=VARCHAR}, 
+      #{debtAccount,jdbcType=INTEGER}, #{individualInvestorAccount,jdbcType=INTEGER}, 
+      #{personalDebtRate,jdbcType=VARCHAR}, #{currentRate,jdbcType=VARCHAR}, #{properManagement,jdbcType=VARCHAR}, 
+      #{properManagementTime,jdbcType=TIMESTAMP}, #{issuerName,jdbcType=VARCHAR}, #{otherIssuerName,jdbcType=VARCHAR}, 
+      #{issuerIndustry,jdbcType=VARCHAR}, #{issuerProvince,jdbcType=VARCHAR}, #{issuerCity,jdbcType=VARCHAR}, 
+      #{issuerSrb,jdbcType=VARCHAR}, #{issuerBusiness,jdbcType=VARCHAR}, #{issuerNature,jdbcType=VARCHAR}, 
+      #{issuerFinancial,jdbcType=VARCHAR}, #{issuerRating,jdbcType=VARCHAR}, #{comInitialRating,jdbcType=VARCHAR}, 
+      #{comCurrentRating,jdbcType=VARCHAR}, #{issuerContactWay,jdbcType=VARCHAR}, #{underwriterName,jdbcType=VARCHAR}, 
+      #{underwriterCharge,jdbcType=VARCHAR}, #{underwriterSrb,jdbcType=VARCHAR}, #{accountingName,jdbcType=VARCHAR}, 
+      #{accountingSignatory,jdbcType=VARCHAR}, #{lawName,jdbcType=VARCHAR}, #{lawSignatory,jdbcType=VARCHAR}, 
+      #{ratingAgencyName,jdbcType=VARCHAR}, #{otherRatingAgencyName,jdbcType=VARCHAR}, 
+      #{ratingAgencyCharge,jdbcType=VARCHAR}, #{ratingAgencySrb,jdbcType=VARCHAR}, #{trusteeName,jdbcType=VARCHAR}, 
+      #{trusteeCharge,jdbcType=VARCHAR}, #{trusteeChargeContactWay,jdbcType=VARCHAR}, 
+      #{trusteeSrb,jdbcType=VARCHAR}, #{issuerId,jdbcType=INTEGER}, #{underwriterId,jdbcType=INTEGER}, 
+      #{lawFirmId,jdbcType=INTEGER}, #{accountingFirmId,jdbcType=INTEGER}, #{guarantorId,jdbcType=INTEGER}, 
+      #{creditRatingAgencyId,jdbcType=INTEGER}, #{trusteeId,jdbcType=INTEGER}, #{intermediaryAgencyId,jdbcType=INTEGER}, 
+      #{publisherId,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+      #{jurSrb,jdbcType=VARCHAR}, #{auditState,jdbcType=INTEGER}, #{editState,jdbcType=INTEGER}, 
+      #{serialNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.company.one.publisherinfo.model.PublisherInfo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into bond_base_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bondCode != null">
+        bond_code,
+      </if>
+      <if test="bondName != null">
+        bond_name,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+      <if test="bondType != null">
+        bond_type,
+      </if>
+      <if test="tradingLocation != null">
+        trading_location,
+      </if>
+      <if test="rating != null">
+        rating,
+      </if>
+      <if test="initialRating != null">
+        initial_rating,
+      </if>
+      <if test="currentRating != null">
+        current_rating,
+      </if>
+      <if test="stockCode != null">
+        stock_code,
+      </if>
+      <if test="creditMeasures != null">
+        credit_measures,
+      </if>
+      <if test="issueWay != null">
+        issue_way,
+      </if>
+      <if test="beIssueAmount != null">
+        be_issue_amount,
+      </if>
+      <if test="realIssueAmount != null">
+        real_issue_amount,
+      </if>
+      <if test="trusteeship != null">
+        trusteeship,
+      </if>
+      <if test="trem != null">
+        trem,
+      </if>
+      <if test="tremRemark != null">
+        trem_remark,
+      </if>
+      <if test="issueRate != null">
+        issue_rate,
+      </if>
+      <if test="issueTime != null">
+        issue_time,
+      </if>
+      <if test="listTime != null">
+        list_time,
+      </if>
+      <if test="approvalTime != null">
+        approval_time,
+      </if>
+      <if test="interestTime != null">
+        interest_time,
+      </if>
+      <if test="dueTime != null">
+        due_time,
+      </if>
+      <if test="resaleTime != null">
+        resale_time,
+      </if>
+      <if test="relateSrb != null">
+        relate_srb,
+      </if>
+      <if test="debtAccount != null">
+        debt_account,
+      </if>
+      <if test="individualInvestorAccount != null">
+        individual_investor_account,
+      </if>
+      <if test="personalDebtRate != null">
+        personal_debt_rate,
+      </if>
+      <if test="currentRate != null">
+        current_rate,
+      </if>
+      <if test="properManagement != null">
+        proper_management,
+      </if>
+      <if test="properManagementTime != null">
+        proper_management_time,
+      </if>
+      <if test="issuerName != null">
+        issuer_name,
+      </if>
+      <if test="otherIssuerName != null">
+        other_issuer_name,
+      </if>
+      <if test="issuerIndustry != null">
+        issuer_industry,
+      </if>
+      <if test="issuerProvince != null">
+        issuer_province,
+      </if>
+      <if test="issuerCity != null">
+        issuer_city,
+      </if>
+      <if test="issuerSrb != null">
+        issuer_srb,
+      </if>
+      <if test="issuerBusiness != null">
+        issuer_business,
+      </if>
+      <if test="issuerNature != null">
+        issuer_nature,
+      </if>
+      <if test="issuerFinancial != null">
+        issuer_financial,
+      </if>
+      <if test="issuerRating != null">
+        issuer_rating,
+      </if>
+      <if test="comInitialRating != null">
+        com_initial_rating,
+      </if>
+      <if test="comCurrentRating != null">
+        com_current_rating,
+      </if>
+      <if test="issuerContactWay != null">
+        issuer_contact_way,
+      </if>
+      <if test="underwriterName != null">
+        underwriter_name,
+      </if>
+      <if test="underwriterCharge != null">
+        underwriter_charge,
+      </if>
+      <if test="underwriterSrb != null">
+        underwriter_srb,
+      </if>
+      <if test="accountingName != null">
+        accounting_name,
+      </if>
+      <if test="accountingSignatory != null">
+        accounting_signatory,
+      </if>
+      <if test="lawName != null">
+        law_name,
+      </if>
+      <if test="lawSignatory != null">
+        law_signatory,
+      </if>
+      <if test="ratingAgencyName != null">
+        rating_agency_name,
+      </if>
+      <if test="otherRatingAgencyName != null">
+        other_rating_agency_name,
+      </if>
+      <if test="ratingAgencyCharge != null">
+        rating_agency_charge,
+      </if>
+      <if test="ratingAgencySrb != null">
+        rating_agency_srb,
+      </if>
+      <if test="trusteeName != null">
+        trustee_name,
+      </if>
+      <if test="trusteeCharge != null">
+        trustee_charge,
+      </if>
+      <if test="trusteeChargeContactWay != null">
+        trustee_charge_contact_way,
+      </if>
+      <if test="trusteeSrb != null">
+        trustee_srb,
+      </if>
+      <if test="issuerId != null">
+        issuer_id,
+      </if>
+      <if test="underwriterId != null">
+        underwriter_id,
+      </if>
+      <if test="lawFirmId != null">
+        law_firm_id,
+      </if>
+      <if test="accountingFirmId != null">
+        accounting_firm_id,
+      </if>
+      <if test="guarantorId != null">
+        guarantor_id,
+      </if>
+      <if test="creditRatingAgencyId != null">
+        credit_rating_agency_id,
+      </if>
+      <if test="trusteeId != null">
+        trustee_id,
+      </if>
+      <if test="intermediaryAgencyId != null">
+        intermediary_agency_id,
+      </if>
+      <if test="publisherId != null">
+        publisher_id,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="jurSrb != null">
+        jur_srb,
+      </if>
+      <if test="auditState != null">
+        audit_state,
+      </if>
+      <if test="editState != null">
+        edit_state,
+      </if>
+      <if test="serialNumber != null">
+        serial_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bondCode != null">
+        #{bondCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bondName != null">
+        #{bondName,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="bondType != null">
+        #{bondType,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingLocation != null">
+        #{tradingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="rating != null">
+        #{rating,jdbcType=VARCHAR},
+      </if>
+      <if test="initialRating != null">
+        #{initialRating,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRating != null">
+        #{currentRating,jdbcType=VARCHAR},
+      </if>
+      <if test="stockCode != null">
+        #{stockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="creditMeasures != null">
+        #{creditMeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="issueWay != null">
+        #{issueWay,jdbcType=VARCHAR},
+      </if>
+      <if test="beIssueAmount != null">
+        #{beIssueAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="realIssueAmount != null">
+        #{realIssueAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeship != null">
+        #{trusteeship,jdbcType=VARCHAR},
+      </if>
+      <if test="trem != null">
+        #{trem,jdbcType=VARCHAR},
+      </if>
+      <if test="tremRemark != null">
+        #{tremRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="issueRate != null">
+        #{issueRate,jdbcType=VARCHAR},
+      </if>
+      <if test="issueTime != null">
+        #{issueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="listTime != null">
+        #{listTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approvalTime != null">
+        #{approvalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interestTime != null">
+        #{interestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dueTime != null">
+        #{dueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resaleTime != null">
+        #{resaleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="relateSrb != null">
+        #{relateSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="debtAccount != null">
+        #{debtAccount,jdbcType=INTEGER},
+      </if>
+      <if test="individualInvestorAccount != null">
+        #{individualInvestorAccount,jdbcType=INTEGER},
+      </if>
+      <if test="personalDebtRate != null">
+        #{personalDebtRate,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRate != null">
+        #{currentRate,jdbcType=VARCHAR},
+      </if>
+      <if test="properManagement != null">
+        #{properManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="properManagementTime != null">
+        #{properManagementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="issuerName != null">
+        #{issuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="otherIssuerName != null">
+        #{otherIssuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerIndustry != null">
+        #{issuerIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerProvince != null">
+        #{issuerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerCity != null">
+        #{issuerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerSrb != null">
+        #{issuerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerBusiness != null">
+        #{issuerBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerNature != null">
+        #{issuerNature,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerFinancial != null">
+        #{issuerFinancial,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerRating != null">
+        #{issuerRating,jdbcType=VARCHAR},
+      </if>
+      <if test="comInitialRating != null">
+        #{comInitialRating,jdbcType=VARCHAR},
+      </if>
+      <if test="comCurrentRating != null">
+        #{comCurrentRating,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerContactWay != null">
+        #{issuerContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="underwriterName != null">
+        #{underwriterName,jdbcType=VARCHAR},
+      </if>
+      <if test="underwriterCharge != null">
+        #{underwriterCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="underwriterSrb != null">
+        #{underwriterSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingName != null">
+        #{accountingName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingSignatory != null">
+        #{accountingSignatory,jdbcType=VARCHAR},
+      </if>
+      <if test="lawName != null">
+        #{lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="lawSignatory != null">
+        #{lawSignatory,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyName != null">
+        #{ratingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRatingAgencyName != null">
+        #{otherRatingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyCharge != null">
+        #{ratingAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencySrb != null">
+        #{ratingAgencySrb,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeName != null">
+        #{trusteeName,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeCharge != null">
+        #{trusteeCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeChargeContactWay != null">
+        #{trusteeChargeContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeSrb != null">
+        #{trusteeSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerId != null">
+        #{issuerId,jdbcType=INTEGER},
+      </if>
+      <if test="underwriterId != null">
+        #{underwriterId,jdbcType=INTEGER},
+      </if>
+      <if test="lawFirmId != null">
+        #{lawFirmId,jdbcType=INTEGER},
+      </if>
+      <if test="accountingFirmId != null">
+        #{accountingFirmId,jdbcType=INTEGER},
+      </if>
+      <if test="guarantorId != null">
+        #{guarantorId,jdbcType=INTEGER},
+      </if>
+      <if test="creditRatingAgencyId != null">
+        #{creditRatingAgencyId,jdbcType=INTEGER},
+      </if>
+      <if test="trusteeId != null">
+        #{trusteeId,jdbcType=INTEGER},
+      </if>
+      <if test="intermediaryAgencyId != null">
+        #{intermediaryAgencyId,jdbcType=INTEGER},
+      </if>
+      <if test="publisherId != null">
+        #{publisherId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="jurSrb != null">
+        #{jurSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="auditState != null">
+        #{auditState,jdbcType=INTEGER},
+      </if>
+      <if test="editState != null">
+        #{editState,jdbcType=INTEGER},
+      </if>
+      <if test="serialNumber != null">
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.company.one.publisherinfo.model.PublisherInfoExample" resultType="java.lang.Long">
+    select count(*) from bond_base_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bond_base_info
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.bondCode != null">
+        bond_code = #{record.bondCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bondName != null">
+        bond_name = #{record.bondName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shortName != null">
+        short_name = #{record.shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bondType != null">
+        bond_type = #{record.bondType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradingLocation != null">
+        trading_location = #{record.tradingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rating != null">
+        rating = #{record.rating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.initialRating != null">
+        initial_rating = #{record.initialRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currentRating != null">
+        current_rating = #{record.currentRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stockCode != null">
+        stock_code = #{record.stockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creditMeasures != null">
+        credit_measures = #{record.creditMeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issueWay != null">
+        issue_way = #{record.issueWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.beIssueAmount != null">
+        be_issue_amount = #{record.beIssueAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realIssueAmount != null">
+        real_issue_amount = #{record.realIssueAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trusteeship != null">
+        trusteeship = #{record.trusteeship,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trem != null">
+        trem = #{record.trem,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tremRemark != null">
+        trem_remark = #{record.tremRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issueRate != null">
+        issue_rate = #{record.issueRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issueTime != null">
+        issue_time = #{record.issueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.listTime != null">
+        list_time = #{record.listTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.approvalTime != null">
+        approval_time = #{record.approvalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.interestTime != null">
+        interest_time = #{record.interestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.dueTime != null">
+        due_time = #{record.dueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.resaleTime != null">
+        resale_time = #{record.resaleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.relateSrb != null">
+        relate_srb = #{record.relateSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.debtAccount != null">
+        debt_account = #{record.debtAccount,jdbcType=INTEGER},
+      </if>
+      <if test="record.individualInvestorAccount != null">
+        individual_investor_account = #{record.individualInvestorAccount,jdbcType=INTEGER},
+      </if>
+      <if test="record.personalDebtRate != null">
+        personal_debt_rate = #{record.personalDebtRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currentRate != null">
+        current_rate = #{record.currentRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.properManagement != null">
+        proper_management = #{record.properManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="record.properManagementTime != null">
+        proper_management_time = #{record.properManagementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.issuerName != null">
+        issuer_name = #{record.issuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.otherIssuerName != null">
+        other_issuer_name = #{record.otherIssuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerIndustry != null">
+        issuer_industry = #{record.issuerIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerProvince != null">
+        issuer_province = #{record.issuerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerCity != null">
+        issuer_city = #{record.issuerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerSrb != null">
+        issuer_srb = #{record.issuerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerBusiness != null">
+        issuer_business = #{record.issuerBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerNature != null">
+        issuer_nature = #{record.issuerNature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerFinancial != null">
+        issuer_financial = #{record.issuerFinancial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerRating != null">
+        issuer_rating = #{record.issuerRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comInitialRating != null">
+        com_initial_rating = #{record.comInitialRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comCurrentRating != null">
+        com_current_rating = #{record.comCurrentRating,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerContactWay != null">
+        issuer_contact_way = #{record.issuerContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.underwriterName != null">
+        underwriter_name = #{record.underwriterName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.underwriterCharge != null">
+        underwriter_charge = #{record.underwriterCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.underwriterSrb != null">
+        underwriter_srb = #{record.underwriterSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountingName != null">
+        accounting_name = #{record.accountingName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountingSignatory != null">
+        accounting_signatory = #{record.accountingSignatory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawName != null">
+        law_name = #{record.lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawSignatory != null">
+        law_signatory = #{record.lawSignatory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ratingAgencyName != null">
+        rating_agency_name = #{record.ratingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.otherRatingAgencyName != null">
+        other_rating_agency_name = #{record.otherRatingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ratingAgencyCharge != null">
+        rating_agency_charge = #{record.ratingAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ratingAgencySrb != null">
+        rating_agency_srb = #{record.ratingAgencySrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trusteeName != null">
+        trustee_name = #{record.trusteeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trusteeCharge != null">
+        trustee_charge = #{record.trusteeCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trusteeChargeContactWay != null">
+        trustee_charge_contact_way = #{record.trusteeChargeContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.trusteeSrb != null">
+        trustee_srb = #{record.trusteeSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issuerId != null">
+        issuer_id = #{record.issuerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.underwriterId != null">
+        underwriter_id = #{record.underwriterId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lawFirmId != null">
+        law_firm_id = #{record.lawFirmId,jdbcType=INTEGER},
+      </if>
+      <if test="record.accountingFirmId != null">
+        accounting_firm_id = #{record.accountingFirmId,jdbcType=INTEGER},
+      </if>
+      <if test="record.guarantorId != null">
+        guarantor_id = #{record.guarantorId,jdbcType=INTEGER},
+      </if>
+      <if test="record.creditRatingAgencyId != null">
+        credit_rating_agency_id = #{record.creditRatingAgencyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.trusteeId != null">
+        trustee_id = #{record.trusteeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.intermediaryAgencyId != null">
+        intermediary_agency_id = #{record.intermediaryAgencyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.publisherId != null">
+        publisher_id = #{record.publisherId,jdbcType=INTEGER},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.jurSrb != null">
+        jur_srb = #{record.jurSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.auditState != null">
+        audit_state = #{record.auditState,jdbcType=INTEGER},
+      </if>
+      <if test="record.editState != null">
+        edit_state = #{record.editState,jdbcType=INTEGER},
+      </if>
+      <if test="record.serialNumber != null">
+        serial_number = #{record.serialNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bond_base_info
+    set ID = #{record.id,jdbcType=INTEGER},
+      bond_code = #{record.bondCode,jdbcType=VARCHAR},
+      bond_name = #{record.bondName,jdbcType=VARCHAR},
+      short_name = #{record.shortName,jdbcType=VARCHAR},
+      bond_type = #{record.bondType,jdbcType=VARCHAR},
+      trading_location = #{record.tradingLocation,jdbcType=VARCHAR},
+      rating = #{record.rating,jdbcType=VARCHAR},
+      initial_rating = #{record.initialRating,jdbcType=VARCHAR},
+      current_rating = #{record.currentRating,jdbcType=VARCHAR},
+      stock_code = #{record.stockCode,jdbcType=VARCHAR},
+      credit_measures = #{record.creditMeasures,jdbcType=VARCHAR},
+      issue_way = #{record.issueWay,jdbcType=VARCHAR},
+      be_issue_amount = #{record.beIssueAmount,jdbcType=VARCHAR},
+      real_issue_amount = #{record.realIssueAmount,jdbcType=VARCHAR},
+      trusteeship = #{record.trusteeship,jdbcType=VARCHAR},
+      trem = #{record.trem,jdbcType=VARCHAR},
+      trem_remark = #{record.tremRemark,jdbcType=VARCHAR},
+      issue_rate = #{record.issueRate,jdbcType=VARCHAR},
+      issue_time = #{record.issueTime,jdbcType=TIMESTAMP},
+      list_time = #{record.listTime,jdbcType=TIMESTAMP},
+      approval_time = #{record.approvalTime,jdbcType=TIMESTAMP},
+      interest_time = #{record.interestTime,jdbcType=TIMESTAMP},
+      due_time = #{record.dueTime,jdbcType=TIMESTAMP},
+      resale_time = #{record.resaleTime,jdbcType=TIMESTAMP},
+      relate_srb = #{record.relateSrb,jdbcType=VARCHAR},
+      debt_account = #{record.debtAccount,jdbcType=INTEGER},
+      individual_investor_account = #{record.individualInvestorAccount,jdbcType=INTEGER},
+      personal_debt_rate = #{record.personalDebtRate,jdbcType=VARCHAR},
+      current_rate = #{record.currentRate,jdbcType=VARCHAR},
+      proper_management = #{record.properManagement,jdbcType=VARCHAR},
+      proper_management_time = #{record.properManagementTime,jdbcType=TIMESTAMP},
+      issuer_name = #{record.issuerName,jdbcType=VARCHAR},
+      other_issuer_name = #{record.otherIssuerName,jdbcType=VARCHAR},
+      issuer_industry = #{record.issuerIndustry,jdbcType=VARCHAR},
+      issuer_province = #{record.issuerProvince,jdbcType=VARCHAR},
+      issuer_city = #{record.issuerCity,jdbcType=VARCHAR},
+      issuer_srb = #{record.issuerSrb,jdbcType=VARCHAR},
+      issuer_business = #{record.issuerBusiness,jdbcType=VARCHAR},
+      issuer_nature = #{record.issuerNature,jdbcType=VARCHAR},
+      issuer_financial = #{record.issuerFinancial,jdbcType=VARCHAR},
+      issuer_rating = #{record.issuerRating,jdbcType=VARCHAR},
+      com_initial_rating = #{record.comInitialRating,jdbcType=VARCHAR},
+      com_current_rating = #{record.comCurrentRating,jdbcType=VARCHAR},
+      issuer_contact_way = #{record.issuerContactWay,jdbcType=VARCHAR},
+      underwriter_name = #{record.underwriterName,jdbcType=VARCHAR},
+      underwriter_charge = #{record.underwriterCharge,jdbcType=VARCHAR},
+      underwriter_srb = #{record.underwriterSrb,jdbcType=VARCHAR},
+      accounting_name = #{record.accountingName,jdbcType=VARCHAR},
+      accounting_signatory = #{record.accountingSignatory,jdbcType=VARCHAR},
+      law_name = #{record.lawName,jdbcType=VARCHAR},
+      law_signatory = #{record.lawSignatory,jdbcType=VARCHAR},
+      rating_agency_name = #{record.ratingAgencyName,jdbcType=VARCHAR},
+      other_rating_agency_name = #{record.otherRatingAgencyName,jdbcType=VARCHAR},
+      rating_agency_charge = #{record.ratingAgencyCharge,jdbcType=VARCHAR},
+      rating_agency_srb = #{record.ratingAgencySrb,jdbcType=VARCHAR},
+      trustee_name = #{record.trusteeName,jdbcType=VARCHAR},
+      trustee_charge = #{record.trusteeCharge,jdbcType=VARCHAR},
+      trustee_charge_contact_way = #{record.trusteeChargeContactWay,jdbcType=VARCHAR},
+      trustee_srb = #{record.trusteeSrb,jdbcType=VARCHAR},
+      issuer_id = #{record.issuerId,jdbcType=INTEGER},
+      underwriter_id = #{record.underwriterId,jdbcType=INTEGER},
+      law_firm_id = #{record.lawFirmId,jdbcType=INTEGER},
+      accounting_firm_id = #{record.accountingFirmId,jdbcType=INTEGER},
+      guarantor_id = #{record.guarantorId,jdbcType=INTEGER},
+      credit_rating_agency_id = #{record.creditRatingAgencyId,jdbcType=INTEGER},
+      trustee_id = #{record.trusteeId,jdbcType=INTEGER},
+      intermediary_agency_id = #{record.intermediaryAgencyId,jdbcType=INTEGER},
+      publisher_id = #{record.publisherId,jdbcType=INTEGER},
+      state = #{record.state,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      jur_srb = #{record.jurSrb,jdbcType=VARCHAR},
+      audit_state = #{record.auditState,jdbcType=INTEGER},
+      edit_state = #{record.editState,jdbcType=INTEGER},
+      serial_number = #{record.serialNumber,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.company.one.publisherinfo.model.PublisherInfo">
+    update bond_base_info
+    <set>
+      <if test="bondCode != null">
+        bond_code = #{bondCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bondName != null">
+        bond_name = #{bondName,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="bondType != null">
+        bond_type = #{bondType,jdbcType=VARCHAR},
+      </if>
+      <if test="tradingLocation != null">
+        trading_location = #{tradingLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="rating != null">
+        rating = #{rating,jdbcType=VARCHAR},
+      </if>
+      <if test="initialRating != null">
+        initial_rating = #{initialRating,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRating != null">
+        current_rating = #{currentRating,jdbcType=VARCHAR},
+      </if>
+      <if test="stockCode != null">
+        stock_code = #{stockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="creditMeasures != null">
+        credit_measures = #{creditMeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="issueWay != null">
+        issue_way = #{issueWay,jdbcType=VARCHAR},
+      </if>
+      <if test="beIssueAmount != null">
+        be_issue_amount = #{beIssueAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="realIssueAmount != null">
+        real_issue_amount = #{realIssueAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeship != null">
+        trusteeship = #{trusteeship,jdbcType=VARCHAR},
+      </if>
+      <if test="trem != null">
+        trem = #{trem,jdbcType=VARCHAR},
+      </if>
+      <if test="tremRemark != null">
+        trem_remark = #{tremRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="issueRate != null">
+        issue_rate = #{issueRate,jdbcType=VARCHAR},
+      </if>
+      <if test="issueTime != null">
+        issue_time = #{issueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="listTime != null">
+        list_time = #{listTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approvalTime != null">
+        approval_time = #{approvalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interestTime != null">
+        interest_time = #{interestTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dueTime != null">
+        due_time = #{dueTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resaleTime != null">
+        resale_time = #{resaleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="relateSrb != null">
+        relate_srb = #{relateSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="debtAccount != null">
+        debt_account = #{debtAccount,jdbcType=INTEGER},
+      </if>
+      <if test="individualInvestorAccount != null">
+        individual_investor_account = #{individualInvestorAccount,jdbcType=INTEGER},
+      </if>
+      <if test="personalDebtRate != null">
+        personal_debt_rate = #{personalDebtRate,jdbcType=VARCHAR},
+      </if>
+      <if test="currentRate != null">
+        current_rate = #{currentRate,jdbcType=VARCHAR},
+      </if>
+      <if test="properManagement != null">
+        proper_management = #{properManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="properManagementTime != null">
+        proper_management_time = #{properManagementTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="issuerName != null">
+        issuer_name = #{issuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="otherIssuerName != null">
+        other_issuer_name = #{otherIssuerName,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerIndustry != null">
+        issuer_industry = #{issuerIndustry,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerProvince != null">
+        issuer_province = #{issuerProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerCity != null">
+        issuer_city = #{issuerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerSrb != null">
+        issuer_srb = #{issuerSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerBusiness != null">
+        issuer_business = #{issuerBusiness,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerNature != null">
+        issuer_nature = #{issuerNature,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerFinancial != null">
+        issuer_financial = #{issuerFinancial,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerRating != null">
+        issuer_rating = #{issuerRating,jdbcType=VARCHAR},
+      </if>
+      <if test="comInitialRating != null">
+        com_initial_rating = #{comInitialRating,jdbcType=VARCHAR},
+      </if>
+      <if test="comCurrentRating != null">
+        com_current_rating = #{comCurrentRating,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerContactWay != null">
+        issuer_contact_way = #{issuerContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="underwriterName != null">
+        underwriter_name = #{underwriterName,jdbcType=VARCHAR},
+      </if>
+      <if test="underwriterCharge != null">
+        underwriter_charge = #{underwriterCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="underwriterSrb != null">
+        underwriter_srb = #{underwriterSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingName != null">
+        accounting_name = #{accountingName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountingSignatory != null">
+        accounting_signatory = #{accountingSignatory,jdbcType=VARCHAR},
+      </if>
+      <if test="lawName != null">
+        law_name = #{lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="lawSignatory != null">
+        law_signatory = #{lawSignatory,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyName != null">
+        rating_agency_name = #{ratingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRatingAgencyName != null">
+        other_rating_agency_name = #{otherRatingAgencyName,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencyCharge != null">
+        rating_agency_charge = #{ratingAgencyCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="ratingAgencySrb != null">
+        rating_agency_srb = #{ratingAgencySrb,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeName != null">
+        trustee_name = #{trusteeName,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeCharge != null">
+        trustee_charge = #{trusteeCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeChargeContactWay != null">
+        trustee_charge_contact_way = #{trusteeChargeContactWay,jdbcType=VARCHAR},
+      </if>
+      <if test="trusteeSrb != null">
+        trustee_srb = #{trusteeSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="issuerId != null">
+        issuer_id = #{issuerId,jdbcType=INTEGER},
+      </if>
+      <if test="underwriterId != null">
+        underwriter_id = #{underwriterId,jdbcType=INTEGER},
+      </if>
+      <if test="lawFirmId != null">
+        law_firm_id = #{lawFirmId,jdbcType=INTEGER},
+      </if>
+      <if test="accountingFirmId != null">
+        accounting_firm_id = #{accountingFirmId,jdbcType=INTEGER},
+      </if>
+      <if test="guarantorId != null">
+        guarantor_id = #{guarantorId,jdbcType=INTEGER},
+      </if>
+      <if test="creditRatingAgencyId != null">
+        credit_rating_agency_id = #{creditRatingAgencyId,jdbcType=INTEGER},
+      </if>
+      <if test="trusteeId != null">
+        trustee_id = #{trusteeId,jdbcType=INTEGER},
+      </if>
+      <if test="intermediaryAgencyId != null">
+        intermediary_agency_id = #{intermediaryAgencyId,jdbcType=INTEGER},
+      </if>
+      <if test="publisherId != null">
+        publisher_id = #{publisherId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="jurSrb != null">
+        jur_srb = #{jurSrb,jdbcType=VARCHAR},
+      </if>
+      <if test="auditState != null">
+        audit_state = #{auditState,jdbcType=INTEGER},
+      </if>
+      <if test="editState != null">
+        edit_state = #{editState,jdbcType=INTEGER},
+      </if>
+      <if test="serialNumber != null">
+        serial_number = #{serialNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.company.one.publisherinfo.model.PublisherInfo">
+    update bond_base_info
+    set bond_code = #{bondCode,jdbcType=VARCHAR},
+      bond_name = #{bondName,jdbcType=VARCHAR},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      bond_type = #{bondType,jdbcType=VARCHAR},
+      trading_location = #{tradingLocation,jdbcType=VARCHAR},
+      rating = #{rating,jdbcType=VARCHAR},
+      initial_rating = #{initialRating,jdbcType=VARCHAR},
+      current_rating = #{currentRating,jdbcType=VARCHAR},
+      stock_code = #{stockCode,jdbcType=VARCHAR},
+      credit_measures = #{creditMeasures,jdbcType=VARCHAR},
+      issue_way = #{issueWay,jdbcType=VARCHAR},
+      be_issue_amount = #{beIssueAmount,jdbcType=VARCHAR},
+      real_issue_amount = #{realIssueAmount,jdbcType=VARCHAR},
+      trusteeship = #{trusteeship,jdbcType=VARCHAR},
+      trem = #{trem,jdbcType=VARCHAR},
+      trem_remark = #{tremRemark,jdbcType=VARCHAR},
+      issue_rate = #{issueRate,jdbcType=VARCHAR},
+      issue_time = #{issueTime,jdbcType=TIMESTAMP},
+      list_time = #{listTime,jdbcType=TIMESTAMP},
+      approval_time = #{approvalTime,jdbcType=TIMESTAMP},
+      interest_time = #{interestTime,jdbcType=TIMESTAMP},
+      due_time = #{dueTime,jdbcType=TIMESTAMP},
+      resale_time = #{resaleTime,jdbcType=TIMESTAMP},
+      relate_srb = #{relateSrb,jdbcType=VARCHAR},
+      debt_account = #{debtAccount,jdbcType=INTEGER},
+      individual_investor_account = #{individualInvestorAccount,jdbcType=INTEGER},
+      personal_debt_rate = #{personalDebtRate,jdbcType=VARCHAR},
+      current_rate = #{currentRate,jdbcType=VARCHAR},
+      proper_management = #{properManagement,jdbcType=VARCHAR},
+      proper_management_time = #{properManagementTime,jdbcType=TIMESTAMP},
+      issuer_name = #{issuerName,jdbcType=VARCHAR},
+      other_issuer_name = #{otherIssuerName,jdbcType=VARCHAR},
+      issuer_industry = #{issuerIndustry,jdbcType=VARCHAR},
+      issuer_province = #{issuerProvince,jdbcType=VARCHAR},
+      issuer_city = #{issuerCity,jdbcType=VARCHAR},
+      issuer_srb = #{issuerSrb,jdbcType=VARCHAR},
+      issuer_business = #{issuerBusiness,jdbcType=VARCHAR},
+      issuer_nature = #{issuerNature,jdbcType=VARCHAR},
+      issuer_financial = #{issuerFinancial,jdbcType=VARCHAR},
+      issuer_rating = #{issuerRating,jdbcType=VARCHAR},
+      com_initial_rating = #{comInitialRating,jdbcType=VARCHAR},
+      com_current_rating = #{comCurrentRating,jdbcType=VARCHAR},
+      issuer_contact_way = #{issuerContactWay,jdbcType=VARCHAR},
+      underwriter_name = #{underwriterName,jdbcType=VARCHAR},
+      underwriter_charge = #{underwriterCharge,jdbcType=VARCHAR},
+      underwriter_srb = #{underwriterSrb,jdbcType=VARCHAR},
+      accounting_name = #{accountingName,jdbcType=VARCHAR},
+      accounting_signatory = #{accountingSignatory,jdbcType=VARCHAR},
+      law_name = #{lawName,jdbcType=VARCHAR},
+      law_signatory = #{lawSignatory,jdbcType=VARCHAR},
+      rating_agency_name = #{ratingAgencyName,jdbcType=VARCHAR},
+      other_rating_agency_name = #{otherRatingAgencyName,jdbcType=VARCHAR},
+      rating_agency_charge = #{ratingAgencyCharge,jdbcType=VARCHAR},
+      rating_agency_srb = #{ratingAgencySrb,jdbcType=VARCHAR},
+      trustee_name = #{trusteeName,jdbcType=VARCHAR},
+      trustee_charge = #{trusteeCharge,jdbcType=VARCHAR},
+      trustee_charge_contact_way = #{trusteeChargeContactWay,jdbcType=VARCHAR},
+      trustee_srb = #{trusteeSrb,jdbcType=VARCHAR},
+      issuer_id = #{issuerId,jdbcType=INTEGER},
+      underwriter_id = #{underwriterId,jdbcType=INTEGER},
+      law_firm_id = #{lawFirmId,jdbcType=INTEGER},
+      accounting_firm_id = #{accountingFirmId,jdbcType=INTEGER},
+      guarantor_id = #{guarantorId,jdbcType=INTEGER},
+      credit_rating_agency_id = #{creditRatingAgencyId,jdbcType=INTEGER},
+      trustee_id = #{trusteeId,jdbcType=INTEGER},
+      intermediary_agency_id = #{intermediaryAgencyId,jdbcType=INTEGER},
+      publisher_id = #{publisherId,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      jur_srb = #{jurSrb,jdbcType=VARCHAR},
+      audit_state = #{auditState,jdbcType=INTEGER},
+      edit_state = #{editState,jdbcType=INTEGER},
+      serial_number = #{serialNumber,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
